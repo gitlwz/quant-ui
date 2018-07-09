@@ -52,3 +52,9 @@ export { default as Tooltip } from 'antd/lib/tooltip';
 export { default as Mention } from 'antd/lib/mention';
 export { default as Upload } from 'antd/lib/upload';
 export { default as version } from 'antd/lib/version';
+
+export { default as Exception } from './Exception';
+export { default as SiderMenu } from './SiderMenu';
+export { default as Authorized } from './Authorized';
+
+export { default as test } from './test';
