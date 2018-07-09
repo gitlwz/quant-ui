@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Layout,Icon } from '@';
+import { Layout,Icon } from 'quant-ui';
 const { Header} = Layout;
 class HeaderCustom extends Component {
     render() {

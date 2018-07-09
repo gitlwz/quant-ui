@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, Icon } from '@';
+import { Menu, Icon } from 'quant-ui';
 import { Link } from 'react-router-dom';
 
 const renderMenuItem = item => (    // item.route 菜单单独跳转的路由

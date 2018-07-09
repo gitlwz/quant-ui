@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Layout } from '@';
+import { Layout } from 'quant-ui';
 import './App.less';
 import SiderCustom from './examples/SiderCustom';
 import HeaderCustom from './examples/HeaderCustom';

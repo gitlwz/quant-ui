@@ -2,7 +2,7 @@
  * SiderCustom
  */
 import React, { Component } from 'react';
-import { Layout } from '@';
+import { Layout } from 'quant-ui';
 import { withRouter } from 'react-router-dom';
 import routes from '../routes/config';
 import SiderMenu from './SiderMenu';
