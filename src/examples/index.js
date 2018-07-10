@@ -2,9 +2,18 @@
  * 路由组件出口文件
  */
 import Home from './home/home';
-import UI from './UI/UI';
 
+//ui
+import QRCode from './UI/QRCode';
+import Copy from './UI/Copy'
+
+
+//util
+import webSocket from './util/webSocket'
 export default {
     Home,
-    UI
+    QRCode,
+    Copy,
+
+    webSocket
 }

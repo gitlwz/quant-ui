@@ -53,5 +53,11 @@ export { default as Mention } from './Mention';
 export { default as Upload } from './Upload';
 export { default as version } from './version';
 
+export { default as QRCode } from './QRCode';
+export { default as copy } from './copy'; 
+
 export { default as Authorized } from './Authorized';
 export { default as Exception } from './Exception';
+
+
+export { default as webSocket } from './webSocket'; 
