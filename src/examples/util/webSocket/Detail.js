@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { webSocket } from 'quant-ui';
-import data from './api.js';
-import Code from '../../Code.js';
-class CopyCode extends Component {
+class webSocketCode extends Component {
 	componentWillMount = () =>{
 		this.ws = new webSocket("ws://47.75.170.16/sundax/wsPublicMessage",null,{});
 		this.ws.onopen = function (evt) {
@@ -45,10 +43,9 @@ class CopyCode extends Component {
 				<h2>ws.send(data)</h2>
 				<h3>通过WebSocket连接将数据传输到服务器。
 					接受@param数据文本字符串，ArrayBuffer或Blob</h3>
-				<Code code={data.code}/>
 			</div>
 		);
 	}
 }
 
-export default CopyCode;
+export default webSocketCode;

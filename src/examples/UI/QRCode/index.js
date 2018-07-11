@@ -11,7 +11,7 @@ class App extends Component {
 			<Card >
 				<Detail/>
 			</Card>
-			<Api api={data.api}/>
+			<Api data={data}/>
      	</div>
     );
   }

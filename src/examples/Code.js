@@ -6,7 +6,7 @@ class Code extends Component {
 		return (
                 <Collapse bordered={false}  >
                     <Panel header="代码" key="1">
-                        <pre style={{'backgroundColor': '#eee','fontSize': '16px'}}>{this.props.code}</pre>
+                        <div dangerouslySetInnerHTML = {{__html:this.props.code}} ></div>
                     </Panel>
                 </Collapse>
 		 	)

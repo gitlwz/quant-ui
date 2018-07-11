@@ -1,55 +1,5 @@
 const code = `
-import React, { Component } from 'react';
-import { webSocket } from 'quant-ui';
-class CopyCode extends Component {
-	componentWillMount = () =>{
-		this.ws = new webSocket("ws://47.75.170.16/sundax/wsPublicMessage",null,{});
-		this.ws.onopen = function (evt) {
-		
-		};
-        this.ws.onmessage = function (evt) {
-		
-		};
-
-        this.ws.onclose = function (evt) {
-		
-		};
-        this.ws.onerror = function(){
-		
-		}
-        this.ws.onconnecting = function(){
-
-        }
-	}
-	componentWillUnmount = () =>{
-		this.ws.close();
-	}
-	render() {
-		return (
-			<div>
-				请打开F12查看链接过程！
-
-				<p>它装饰WebSocket API以提供WebSocket连接，如果连接断开，它将自动重新连接。</p>
-
-				<h1>方法</h1>
-				<h2>ws.open()</h2>
-				<h3>打开重新连接Websocket</h3>
-
-				<h2>ws.open()</h2>
-				<h3>关闭WebSocket连接或连接尝试（如果有）。</h3>
-
-				<h2>ws.refresh()</h2>
-				<h3>如果仍然打开则刷新连接（关闭然后重新打开）</h3>
-
-				<h2>ws.send(data)</h2>
-				<h3>通过WebSocket连接将数据传输到服务器。
-					接受@param数据文本字符串，ArrayBuffer或Blob</h3>
-			</div>
-		);
-	}
-}
-
-export default CopyCode;
+<pre class="prettyprint linenums prettyprinted" data-anchor-id="48uz" style=""><ol class="linenums"><li class="L0"><code><span class="kwd">import</span><span class="pln"> </span><span class="typ">React</span><span class="pun">,</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="typ">Component</span><span class="pln"> </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">from</span><span class="pln"> </span><span class="str">'react'</span><span class="pun">;</span></code></li><li class="L1"><code><span class="kwd">import</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> webSocket </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">from</span><span class="pln"> </span><span class="str">'quant-ui'</span><span class="pun">;</span></code></li><li class="L2"><code><span class="kwd">class</span><span class="pln"> webSocketCode </span><span class="kwd">extends</span><span class="pln"> </span><span class="typ">Component</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L3"><code><span class="pln">    componentWillMount </span><span class="pun">=</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">=&gt;{</span></code></li><li class="L4"><code><span class="pln">        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">ws </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> webSocket</span><span class="pun">(</span><span class="str">"ws://47.75.170.16/sundax/wsPublicMessage"</span><span class="pun">,</span><span class="kwd">null</span><span class="pun">,{});</span></code></li><li class="L5"><code><span class="pln">        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">ws</span><span class="pun">.</span><span class="pln">onopen </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">(</span><span class="pln">evt</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L6"><code></code></li><li class="L7"><code><span class="pln">        </span><span class="pun">};</span></code></li><li class="L8"><code><span class="pln">        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">ws</span><span class="pun">.</span><span class="pln">onmessage </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">(</span><span class="pln">evt</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L9"><code></code></li><li class="L0"><code><span class="pln">        </span><span class="pun">};</span></code></li><li class="L1"><code></code></li><li class="L2"><code><span class="pln">        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">ws</span><span class="pun">.</span><span class="pln">onclose </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">(</span><span class="pln">evt</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L3"><code></code></li><li class="L4"><code><span class="pln">        </span><span class="pun">};</span></code></li><li class="L5"><code><span class="pln">        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">ws</span><span class="pun">.</span><span class="pln">onerror </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(){</span></code></li><li class="L6"><code></code></li><li class="L7"><code><span class="pln">        </span><span class="pun">}</span></code></li><li class="L8"><code><span class="pln">        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">ws</span><span class="pun">.</span><span class="pln">onconnecting </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(){</span></code></li><li class="L9"><code></code></li><li class="L0"><code><span class="pln">        </span><span class="pun">}</span></code></li><li class="L1"><code><span class="pln">    </span><span class="pun">}</span></code></li><li class="L2"><code><span class="pln">    componentWillUnmount </span><span class="pun">=</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">=&gt;{</span></code></li><li class="L3"><code><span class="pln">        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">ws</span><span class="pun">.</span><span class="pln">close</span><span class="pun">();</span></code></li><li class="L4"><code><span class="pln">    </span><span class="pun">}</span></code></li><li class="L5"><code><span class="pln">    render</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L6"><code><span class="pln">        </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">(</span></code></li><li class="L7"><code><span class="pln">            </span><span class="str">&lt;div&gt;</span></code></li><li class="L8"><code><span class="pln">                </span><span class="pun">请打开</span><span class="pln">F12</span><span class="pun">查看链接过程！</span></code></li><li class="L9"><code></code></li><li class="L0"><code><span class="pln">                </span><span class="str">&lt;p&gt;</span><span class="pun">它装饰</span><span class="typ">WebSocket</span><span class="pln"> API</span><span class="pun">以提供</span><span class="typ">WebSocket</span><span class="pun">连接，如果连接断开，它将自动重新连接。&lt;/</span><span class="pln">p</span><span class="pun">&gt;</span></code></li><li class="L1"><code></code></li><li class="L2"><code><span class="pln">                </span><span class="str">&lt;h1&gt;</span><span class="pun">方法&lt;/</span><span class="pln">h1</span><span class="pun">&gt;</span></code></li><li class="L3"><code><span class="pln">                </span><span class="str">&lt;h2&gt;</span><span class="pln">ws</span><span class="pun">.</span><span class="pln">open</span><span class="pun">()&lt;/</span><span class="pln">h2</span><span class="pun">&gt;</span></code></li><li class="L4"><code><span class="pln">                </span><span class="str">&lt;h3&gt;</span><span class="pun">打开重新连接</span><span class="typ">Websocket</span><span class="pun">&lt;/</span><span class="pln">h3</span><span class="pun">&gt;</span></code></li><li class="L5"><code></code></li><li class="L6"><code><span class="pln">                </span><span class="str">&lt;h2&gt;</span><span class="pln">ws</span><span class="pun">.</span><span class="pln">open</span><span class="pun">()&lt;/</span><span class="pln">h2</span><span class="pun">&gt;</span></code></li><li class="L7"><code><span class="pln">                </span><span class="str">&lt;h3&gt;</span><span class="pun">关闭</span><span class="typ">WebSocket</span><span class="pun">连接或连接尝试（如果有）。&lt;/</span><span class="pln">h3</span><span class="pun">&gt;</span></code></li><li class="L8"><code></code></li><li class="L9"><code><span class="pln">                </span><span class="str">&lt;h2&gt;</span><span class="pln">ws</span><span class="pun">.</span><span class="pln">refresh</span><span class="pun">()&lt;/</span><span class="pln">h2</span><span class="pun">&gt;</span></code></li><li class="L0"><code><span class="pln">                </span><span class="str">&lt;h3&gt;</span><span class="pun">如果仍然打开则刷新连接（关闭然后重新打开）&lt;/</span><span class="pln">h3</span><span class="pun">&gt;</span></code></li><li class="L1"><code></code></li><li class="L2"><code><span class="pln">                </span><span class="str">&lt;h2&gt;</span><span class="pln">ws</span><span class="pun">.</span><span class="pln">send</span><span class="pun">(</span><span class="pln">data</span><span class="pun">)&lt;/</span><span class="pln">h2</span><span class="pun">&gt;</span></code></li><li class="L3"><code><span class="pln">                </span><span class="str">&lt;h3&gt;</span><span class="pun">通过</span><span class="typ">WebSocket</span><span class="pun">连接将数据传输到服务器。</span></code></li><li class="L4"><code><span class="pln">                    </span><span class="pun">接受</span><span class="lit">@param</span><span class="pun">数据文本字符串，</span><span class="typ">ArrayBuffer</span><span class="pun">或</span><span class="typ">Blob</span><span class="pun">&lt;/</span><span class="pln">h3</span><span class="pun">&gt;</span></code></li><li class="L5"><code><span class="pln">            </span><span class="pun">&lt;/</span><span class="pln">div</span><span class="pun">&gt;</span></code></li><li class="L6"><code><span class="pln">        </span><span class="pun">);</span></code></li><li class="L7"><code><span class="pln">    </span><span class="pun">}</span></code></li><li class="L8"><code><span class="pun">}</span></code></li><li class="L9"><code></code></li><li class="L0"><code><span class="kwd">export</span><span class="pln"> </span><span class="kwd">default</span><span class="pln"> webSocketCode</span><span class="pun">;</span></code></li></ol></pre>
 `;
 const api = [
 	{
