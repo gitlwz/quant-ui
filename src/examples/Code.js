@@ -4,9 +4,9 @@ const Panel = Collapse.Panel;
 class Code extends Component {
 	render() {
 		return (
-                <Collapse bordered={false}  >
+                <Collapse defaultActiveKey={['1']} bordered={false}  >
                     <Panel header="代码" key="1">
-                        <div dangerouslySetInnerHTML = {{__html:this.props.code}} ></div>
+                        <div dangerouslySetInnerHTML = {{__html:this.props.data.code}} ></div>
                     </Panel>
                 </Collapse>
 		 	)
