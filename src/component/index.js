@@ -61,3 +61,14 @@ export { default as Exception } from './exception';
 
 
 export { default as webSocket } from './web-socket'; 
+
+
+export { default as Nprogress } from './nprogress';   //进度条
+
+export { default as SlidingValidation } from './sliding-validation';   //滑动验证
+
+//page
+export { default as NotFound } from './not-found';
+
+//地图
+export { default as ReactQMap } from './react-qmap';
