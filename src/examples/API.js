@@ -33,8 +33,9 @@ class API extends Component {
     render() {
         return (<div>
 
-            <div style={{ marginTop: "30px", 'backgroundColor': "#fff", overflowX: "auto" }}>
+            <div style={{padding:"20px", 'backgroundColor': "#fff", overflowX: "auto" }}>
                 <div style={{ minWidth: "600px", }}>
+                    <h2>{this.props.title}</h2>
                     <Table bordered pagination={false} dataSource={this.props.data.api} columns={columns} />
                 </div>
             </div>
