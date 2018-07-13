@@ -3,13 +3,19 @@ const code = `
 `;
 const api = [
 	{
-		key:"1",
-		parameter:"img",  //字段名
-		type:'string',	//类型
-		must:'',
-		default:'404.png',							//默认值
-		instructions:'页面中间的404图片'	//描述
-	},
+		title: "API",
+		api: [
+			{
+				key: "1",
+				parameter: "img",  //字段名
+				type: 'string',	//类型
+				must: '',
+				default: '404.png',							//默认值
+				instructions: '页面中间的404图片'	//描述
+			},
+		]
+	}
+
 ];
 
 export default {

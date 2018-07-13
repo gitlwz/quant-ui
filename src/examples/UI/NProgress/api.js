@@ -3,21 +3,27 @@ const code = `
 `;
 const api = [
 	{
-		key:"1",
-		parameter:"set(n)",  //字段名
-		type:'function',	//类型
-		must:'',
-		default:'',							//默认值
-		instructions:'要设置进度百分比，请调用.set(n)，其中n是两者之间的数字0..1'	//描述
-	},
-	{
-		key:"2",
-		parameter:"inc(n)",  //字段名
-		type:'function',	//类型
-		must:'',
-		default:'',							//默认值
-		instructions:'要增加进度条，只需使用.inc()。这会随机增加它。这永远不会达到100％参数不必穿'	//描述
-	},
+		title: "API",
+		api: [
+			{
+				key: "1",
+				parameter: "set(n)",  //字段名
+				type: 'function',	//类型
+				must: '',
+				default: '',							//默认值
+				instructions: '要设置进度百分比，请调用.set(n)，其中n是两者之间的数字0..1'	//描述
+			},
+			{
+				key: "2",
+				parameter: "inc(n)",  //字段名
+				type: 'function',	//类型
+				must: '',
+				default: '',							//默认值
+				instructions: '要增加进度条，只需使用.inc()。这会随机增加它。这永远不会达到100％参数不必穿'	//描述
+			},
+		]
+	}
+
 ];
 
 export default {

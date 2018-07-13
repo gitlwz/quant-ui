@@ -3,27 +3,33 @@ const code = `
 `;
 const api = [
 	{
-		key:"1",
-		parameter:"succeed",  //字段名
-		type:'function',	//类型
-		must:'true',
-		default:'无',							//默认值
-		instructions:'滑动成功后的回调'	//描述
-	},{
-		key:"2",
-		parameter:"succeedColr",  //字段名
-		type:'string',	//类型
-		must:'',
-		default:'#7BBB55',							//默认值
-		instructions:'成功色'	//描述
-	},{
-		key:"3",
-		parameter:"width",  //字段名
-		type:'string',	//类型
-		must:'',
-		default:'100%',							//默认值
-		instructions:'宽度'	//描述
-	},
+		title: "API",
+		api: [
+			{
+				key: "1",
+				parameter: "succeed",  //字段名
+				type: 'function',	//类型
+				must: 'true',
+				default: '无',							//默认值
+				instructions: '滑动成功后的回调'	//描述
+			}, {
+				key: "2",
+				parameter: "succeedColr",  //字段名
+				type: 'string',	//类型
+				must: '',
+				default: '#7BBB55',							//默认值
+				instructions: '成功色'	//描述
+			}, {
+				key: "3",
+				parameter: "width",  //字段名
+				type: 'string',	//类型
+				must: '',
+				default: '100%',							//默认值
+				instructions: '宽度'	//描述
+			},
+		]
+	}
+
 ];
 
 export default {

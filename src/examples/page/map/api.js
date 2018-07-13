@@ -3,63 +3,69 @@ const code = `
 `;
 const api = [
 	{
-		key:"1",
-		parameter:"getMap",  //字段名
-		type:'function',	//类型
-		must:'false',
-		default:'',							//默认值
-		instructions:'获取地图的对象和当前容器的map对象,第一个参数是new的当前map对象，第二个参数是全局map对象'	//描述
-	},
-	{
-		key:"2",
-		parameter:"style",  //字段名
-		type:'object',	//类型
-		must:'false',
-		default:'',							//默认值
-		instructions:"设置组件的内联样式，默认样式width: '100%', height: '100%'"	//描述
-	},{
-		key:"3",
-		parameter:"className",  //字段名
-		type:'string',	//类型
-		must:'false',
-		default:'',							//默认值
-		instructions:"设置组件的class"	//描述
-	},{
-		key:"4",
-		parameter:"mySpot",  //字段名
-		type:'object',	//类型
-		must:'false',
-		default:'',							//默认值
-		instructions:"设置地图的定位坐标"	//描述
-	},{
-		key:"5",
-		parameter:"initialOptions",  //字段名
-		type:'object',	//类型
-		must:'false',
-		default:'zoom: 14,disableDefaultUI: true, zoomControl: false,mapTypeControl: false,',							//默认值
-		instructions:"初始化地图的参数，简单默认设置了几个，更多的初始化参数请参照http://lbs.qq.com/javascript_v2/doc/mapoptions.html "	//描述
-	},{
-		key:"6",
-		parameter:"apiKey",  //字段名
-		type:'string',	//类型
-		must:'true',
-		default:'',							//默认值
-		instructions:"设置地图引用的key,为防止限制调用API,建议官网申请自己的key -> http://lbs.qq.com/index.html"	//描述
-	},{
-		key:"7",
-		parameter:"center",  //字段名
-		type:'object',	//类型
-		must:'true',
-		default:'',							//默认值
-		instructions:"设置地图初始化的中心位置坐标"	//描述
-	},{
-		key:"8",
-		parameter:"getContainer",  //字段名
-		type:'function',	//类型
-		must:'false',
-		default:'',							//默认值
-		instructions:"获取地图的html dom元素的函数，参数是当前地图挂载的元素DOM"	//描述
-	},
+		title: "API",
+		api: [
+			{
+				key: "1",
+				parameter: "getMap",  //字段名
+				type: 'function',	//类型
+				must: 'false',
+				default: '',							//默认值
+				instructions: '获取地图的对象和当前容器的map对象,第一个参数是new的当前map对象，第二个参数是全局map对象'	//描述
+			},
+			{
+				key: "2",
+				parameter: "style",  //字段名
+				type: 'object',	//类型
+				must: 'false',
+				default: '',							//默认值
+				instructions: "设置组件的内联样式，默认样式width: '100%', height: '100%'"	//描述
+			}, {
+				key: "3",
+				parameter: "className",  //字段名
+				type: 'string',	//类型
+				must: 'false',
+				default: '',							//默认值
+				instructions: "设置组件的class"	//描述
+			}, {
+				key: "4",
+				parameter: "mySpot",  //字段名
+				type: 'object',	//类型
+				must: 'false',
+				default: '',							//默认值
+				instructions: "设置地图的定位坐标"	//描述
+			}, {
+				key: "5",
+				parameter: "initialOptions",  //字段名
+				type: 'object',	//类型
+				must: 'false',
+				default: 'zoom: 14,disableDefaultUI: true, zoomControl: false,mapTypeControl: false,',							//默认值
+				instructions: "初始化地图的参数，简单默认设置了几个，更多的初始化参数请参照http://lbs.qq.com/javascript_v2/doc/mapoptions.html "	//描述
+			}, {
+				key: "6",
+				parameter: "apiKey",  //字段名
+				type: 'string',	//类型
+				must: 'true',
+				default: '',							//默认值
+				instructions: "设置地图引用的key,为防止限制调用API,建议官网申请自己的key -> http://lbs.qq.com/index.html"	//描述
+			}, {
+				key: "7",
+				parameter: "center",  //字段名
+				type: 'object',	//类型
+				must: 'true',
+				default: '',							//默认值
+				instructions: "设置地图初始化的中心位置坐标"	//描述
+			}, {
+				key: "8",
+				parameter: "getContainer",  //字段名
+				type: 'function',	//类型
+				must: 'false',
+				default: '',							//默认值
+				instructions: "获取地图的html dom元素的函数，参数是当前地图挂载的元素DOM"	//描述
+			},
+		]
+	}
+
 ];
 
 export default {

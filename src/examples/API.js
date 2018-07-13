@@ -31,15 +31,25 @@ const columns = [{
 
 class API extends Component {
     render() {
-        return (<div>
-
-            <div style={{padding:"20px", 'backgroundColor': "#fff", overflowX: "auto" }}>
-                <div style={{ minWidth: "600px", }}>
-                    <h2>{this.props.title}</h2>
-                    <Table bordered pagination={false} dataSource={this.props.data.api} columns={columns} />
-                </div>
+        return (
+            <div>
+                {
+                    this.props.data.api.length>0?this.props.data.api.map((ele)=>{
+                        return (
+                            <div style={{padding:"20px",marginBottom:"20px", 'backgroundColor': "#fff", overflowX: "auto" }}>
+                                <div style={{ minWidth: "600px", }}>
+                                    <h2>{ele.title}</h2>
+                                    <Table bordered pagination={false} dataSource={ele.api} columns={columns} />
+                                </div>
+                            </div>
+                        )
+                    }):<div style={{padding:"20px",marginBottom:"20px", 'backgroundColor': "#fff", overflowX: "auto" }}>
+                            <div style={{ minWidth: "600px", }}>
+                                <Table bordered pagination={false} dataSource={[]} columns={columns} />
+                            </div>
+                        </div>
+                }
             </div>
-        </div>
         )
     }
 }
