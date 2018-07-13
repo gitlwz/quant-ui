@@ -64,7 +64,7 @@ export { default as HeaderSearch } from './header-search';
 
 export { default as webSocket } from './web-socket'; 
 
-
+export { default as Editor } from './editor';        //富文本
 export { default as Nprogress } from './nprogress';   //进度条
 
 export { default as SlidingValidation } from './sliding-validation';   //滑动验证

@@ -13,9 +13,9 @@ class App extends Component {
     render() {
         return (
             <div style={{ padding: "20px" }}>
-                <h1>顶部搜索框</h1>
+                <h1>富文本</h1>
                 <Tabs tabPosition={"right"}>
-                    <TabPane tab="通知图标" key="1">
+                    <TabPane tab="基本用法" key="1">
                         <Card >
                             <NotifyIcon />
                         </Card>

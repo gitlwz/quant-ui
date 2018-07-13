@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { HeaderSearch } from 'quant-ui';
-import { Editor } from 'react-draft-wysiwyg';
-import './style.less';
-
+import { Editor } from 'quant-ui';
+const draftToHtml = Editor.draftToHtml;
 
 
 class Detail extends Component {
@@ -19,7 +17,6 @@ class Detail extends Component {
 		this.setState({
             editorContent,
 		});
-		console.log("&&&&&&7",editorContent)
 	}
 	imageUploadCallBack = (file) =>new Promise(
         (resolve, reject) => {
@@ -54,11 +51,14 @@ class Detail extends Component {
 							},
 					}}             //自定义预先构建的工具栏选项。
 
-					localization={{ locale: 'zh' }}
+					localization={{ locale: 'zh' }}     //中英文
 
 					onEditorStateChange={this.onEditorStateChange}  //每次编辑器状态发生变化时调用函数，传递的函数参数是EditorState类型的  对象
 					onContentStateChange={this.onEditorChange}  //每次编辑器状态发生变化时调用函数，传递的函数参数是RawDraftContentState类型的  对象
 				/>
+				<br/><br/>
+				<h2>同步转换HTML</h2>
+				<pre>{draftToHtml(editorContent)}</pre>
 			</div>
 		);
 	}

@@ -4,7 +4,7 @@ class SlidingValidationCode extends Component {
 	render() {
 		return (
 			<div>
-				<SlidingValidation/>
+				<SlidingValidation width="300"/>
 			</div>
 		);
 	}
