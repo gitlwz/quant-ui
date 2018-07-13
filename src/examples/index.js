@@ -15,6 +15,9 @@ import RichText from './UI/RichText' //富文本
 //util
 import webSocket from './util/webSocket'
 
+//antd
+import Button from './antd/button'
+
 
 //page
 import NotFound from './page/NotFound'
@@ -31,6 +34,9 @@ export default {
     NoticeIcon,
     HeaderSearch,
     RichText,
+
+    //antd
+    Button,
 
     NotFound,
     Map,

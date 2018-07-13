@@ -3,9 +3,9 @@ export default {
         { key: '/app/home', title: '首页', icon: 'mobile', component: 'Home' },
         { key: '/app/antd', title: 'antd', icon: 'mobile', 
             subs: [
-                { key: '/app/antd/ge', title: '二维码生成', icon: 'mobile',
+                { key: '/app/antd/General', title: 'General组件', icon: 'mobile',
                     subs: [
-                        { key: '/app/antd/ge/button', title: '2222', component: 'QRCode'},
+                        { key: '/app/antd/General/button', title: 'button组件', component: 'Button'},
                        
                     ],
                 },
