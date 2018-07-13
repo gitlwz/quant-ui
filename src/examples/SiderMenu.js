@@ -13,8 +13,12 @@ const renderMenuItem = item => (    // item.route 菜单单独跳转的路由
     </Menu.Item>
 );
 
-const renderSubMenu = item => ( 
-    <Menu.SubMenu
+const renderSubMenu = item => {
+    if(!!item.component){
+        return this.renderSubMenu()
+    }
+    return (
+        <Menu.SubMenu
         key={item.key}
         title={
             <span>
@@ -23,9 +27,17 @@ const renderSubMenu = item => (
             </span>
         }
     >
-        {item.subs.map(item => renderMenuItem(item))}
+        {item.subs.map(item => {
+            if(!!item.component){
+                return renderMenuItem(item)
+            }else{
+               return renderSubMenu(item)
+            }
+        })}
     </Menu.SubMenu>
-);
+    )
+}
+    
 
 export default ({ menus, ...props }) => (
     <Menu {...props}>

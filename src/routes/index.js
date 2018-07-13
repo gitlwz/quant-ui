@@ -6,6 +6,23 @@ import { Route, Redirect, Switch } from 'react-router-dom';
 import AllComponents from '../examples';
 import routesConfig from './config';
 
+const renderRouter = (routes) =>{
+    return routes.map(r => {
+        const route = r => {
+            const Component = AllComponents[r.component];
+            return (
+                <Route
+                    key={r.route || r.key}
+                    exact
+                    path={r.route || r.key}
+                    component={(props)=><Component {...props} />}     //此处验证身份
+                />
+            )
+        }
+        return r.component ? route(r) : renderRouter(r.subs);
+    })
+}
+
 export default class CRouter extends Component {
     // requireAuth = (permission, component) => {
     //     const { auth } = this.props;
@@ -27,23 +44,10 @@ export default class CRouter extends Component {
             <Switch>
                 {
                     Object.keys(routesConfig).map(key => 
-                        routesConfig[key].map(r => {
-                            const route = r => {
-                                const Component = AllComponents[r.component];
-                                return (
-                                    <Route
-                                        key={r.route || r.key}
-                                        exact
-                                        path={r.route || r.key}
-                                        component={(props)=><Component {...props} />}     //此处验证身份
-                                    />
-                                )
-                            }
-                            return r.component ? route(r) : r.subs.map(r => route(r));
-                        })
+                        renderRouter(routesConfig[key])
                     )
                 }
-                <Route render={() => <Redirect to="/404" />} />
+                {/* <Route render={() => <Redirect to="/404" />} /> */}
             </Switch>
         )
     }

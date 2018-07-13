@@ -11,8 +11,18 @@ const { Sider } = Layout;
 class SiderCustom extends Component {
     static setMenuOpen = props => {
         const { pathname } = props.location;
+        console.log("*******",pathname.split('/'))
+        let openKey = [];
+        let str = ""
+        pathname.split('/').forEach((ele,index)=>{
+            if(index == 0) return
+                str += `/${ele}`
+            if(index >= 2){
+                openKey.push(str)
+            }
+        })
         return {
-            openKey: pathname.substr(0, pathname.lastIndexOf('/')),
+            openKey: openKey,
             selectedKey: pathname
         };
     };
@@ -21,7 +31,7 @@ class SiderCustom extends Component {
         mode: 'inline',
         openKey: '',
         selectedKey: '',
-        firstHide: true,        // 点击收缩菜单，第一次隐藏展开子菜单，openMenu时恢复
+        firstHide: false,        // 点击收缩菜单，第一次隐藏展开子菜单，openMenu时恢复
     };
     componentDidMount() {
         // this.setMenuOpen(this.props);
@@ -34,9 +44,8 @@ class SiderCustom extends Component {
         });
     };
     openMenu = v => {
-        console.log(v);
         this.setState({
-            openKey: v[v.length - 1],
+            openKey: v,
             firstHide: false,
         })
     };
@@ -56,7 +65,7 @@ class SiderCustom extends Component {
                     theme="dark"
                     mode="inline"
                     selectedKeys={[this.state.selectedKey]}
-                    openKeys={this.state.firstHide ? null : [this.state.openKey]}
+                    openKeys={this.state.firstHide ? null : [...this.state.openKey]}
                     onOpenChange={this.openMenu}
                 />
             </Sider>

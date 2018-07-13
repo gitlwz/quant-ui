@@ -1,6 +1,17 @@
 export default {
     menus: [    // 菜单相关路由
         { key: '/app/home', title: '首页', icon: 'mobile', component: 'Home' },
+        { key: '/app/antd', title: 'antd', icon: 'mobile', 
+            subs: [
+                { key: '/app/antd/ge', title: '二维码生成', icon: 'mobile',
+                    subs: [
+                        { key: '/app/antd/ge/button', title: '2222', component: 'QRCode'},
+                       
+                    ],
+                },
+                
+            ],
+        },
         { 
             key: '/app/ui', title: 'UI', icon: 'scan',
             subs: [
