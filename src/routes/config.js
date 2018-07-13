@@ -8,6 +8,9 @@ export default {
                 { key: '/app/ui/Copy', title: '右键复制', component: 'Copy'},
                 { key: '/app/ui/nprogress', title: '顶部进度条', component: 'NProgress'},
                 { key: '/app/ui/SlidingValidation', title: '滑动验证', component: 'SlidingValidation'},
+                { key: '/app/ui/NoticeIcon', title: '通知菜单', component: 'NoticeIcon'},
+                { key: '/app/ui/HeaderSearch', title: '顶部搜索框', component: 'HeaderSearch'},
+                { key: '/app/ui/RichText', title: '富文本', component: 'RichText'},
             ],
         },
         { 

@@ -8,6 +8,10 @@ import QRCode from './UI/QRCode';
 import Copy from './UI/Copy'
 import NProgress from './UI/NProgress'
 import SlidingValidation from './UI/SlidingValidation' //滑动验证
+import NoticeIcon from './UI/NoticeIcon' //通知菜单
+import HeaderSearch from './UI/HeaderSearch' //顶部搜索框
+import RichText from './UI/RichText' //富文本
+
 //util
 import webSocket from './util/webSocket'
 
@@ -24,6 +28,9 @@ export default {
     NProgress,
     SlidingValidation,
     webSocket,
+    NoticeIcon,
+    HeaderSearch,
+    RichText,
 
     NotFound,
     Map,
