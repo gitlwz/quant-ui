@@ -17,7 +17,7 @@ import webSocket from './util/webSocket'
 
 //antd
 import Button from './antd/button'
-
+import Icon from './antd/icon'
 
 //page
 import NotFound from './page/NotFound'
@@ -37,7 +37,7 @@ export default {
 
     //antd
     Button,
-
+    Icon,
     NotFound,
     Map,
     reactAmap

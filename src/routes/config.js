@@ -6,7 +6,7 @@ export default {
                 { key: '/app/antd/General', title: 'General组件', icon: 'mobile',
                     subs: [
                         { key: '/app/antd/General/button', title: 'button组件', component: 'Button'},
-                       
+                        { key: '/app/antd/General/Icon', title: 'Icon图标', component: 'Icon'},
                     ],
                 },
                 
