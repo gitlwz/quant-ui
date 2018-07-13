@@ -13,7 +13,8 @@ class Detail extends Component {
 				<br /><br />
 				<Button type="dashed">Dashed</Button>  &nbsp;
 				<Button type="dashed" disabled>Dashed(disabled)</Button>
-				<div style={{ padding: '8px 8px 0 8px', background: 'rgb(190, 200, 200)' }}>
+				<br/><br/>
+				<div style={{ padding: '8px 8px 8px 8px', background: 'rgb(190, 200, 200)' }}>
 					<Button ghost>Ghost</Button>  &nbsp;
 					<Button ghost disabled>Ghost(disabled)</Button>
 				</div>

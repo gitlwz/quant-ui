@@ -4,37 +4,37 @@ class Detail extends Component {
 	state = {
 		loading: false,
 		iconLoading: false,
-	  }
-	
-	  enterLoading = () => {
+	}
+
+	enterLoading = () => {
 		this.setState({ loading: true });
-	  }
-	
-	  enterIconLoading = () => {
+	}
+
+	enterIconLoading = () => {
 		this.setState({ iconLoading: true });
-	  }
-	
-	  render() {
+	}
+
+	render() {
 		return (
-		  <span>
+			<span>
 			<Button type="primary" loading>
-			  Loading
+					Loading
 			</Button> &nbsp;
 			<Button type="primary" size="small" loading>
-			  Loading
+					Loading
 			</Button> &nbsp;
 			<br /><br />
-			<Button type="primary" loading={this.state.loading} onClick={this.enterLoading}>
-			  Click me!
+				<Button type="primary" loading={this.state.loading} onClick={this.enterLoading}>
+					Click me!
 			</Button> &nbsp;
 			<Button type="primary" icon="poweroff" loading={this.state.iconLoading} onClick={this.enterIconLoading}>
-			  Click me!
+					Click me!
 			</Button> &nbsp;
 			<br /><br />
-			<Button shape="circle" loading /> &nbsp;
+				<Button shape="circle" loading /> &nbsp;
 			<Button type="primary" shape="circle" loading />
-		  </span>
+			</span>
 		);
-	  }
 	}
+}
 export default Detail;
