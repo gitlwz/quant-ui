@@ -27,8 +27,10 @@ export default {
 
                     subs: [
                         { key: '/app/antd/DataDisplay/Avatar', title: 'Avatar组件', component: 'Avatar' },
-                        
-                    ]
+                        { key: '/app/antd/DataDisplay/Badge', title: 'Badge徽标数', component: 'Badge' },
+                    ],
+                    
+
                 },
                  /*-------------END ------------------*/
                

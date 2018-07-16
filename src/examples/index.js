@@ -28,6 +28,7 @@ import Breadcrumb from './antd/breadcrumb'
 /*----DataDisplay start ---------*/
 
 import Avatar from './antd/Avatar'
+import Badge from './antd/Badge'
 
 /*-------END ----------------*/
 
@@ -51,6 +52,7 @@ export default {
 
     /*----DataDisplay start ---------*/
     Avatar,
+    Badge,
     /*-------END ----------------*/
     Button,
     Icon,
