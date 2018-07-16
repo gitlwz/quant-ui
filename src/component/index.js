@@ -75,3 +75,6 @@ export { default as NotFound } from './not-found';
 
 //地图
 export { default as ReactQMap } from './react-qmap';
+
+export { default as language } from './language';
+

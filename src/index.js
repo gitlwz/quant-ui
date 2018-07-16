@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.less';
 import App from './App';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import { LocaleProvider } from 'quant-ui';
+import { LocaleProvider ,language} from 'quant-ui';
 import zh_CN from 'antd/lib/locale-provider/zh_CN';
+import en_US from 'antd/lib/locale-provider/en_US';
 import 'moment/locale/zh-cn';
+let currlanguage = zh_CN;
+if(language.getCurrentLanguage !== 'zh_CN' ){
+    currlanguage = en_US;
+}
 ReactDOM.render(
-    <LocaleProvider locale={zh_CN}>
+    <LocaleProvider locale={currlanguage}>
         <Router>
             <Switch>
                 <Route exact path="/" render={() => <Redirect to="/app/home" push />} />        
