@@ -9,7 +9,48 @@ export default {
                         { key: '/app/antd/General/Icon', title: 'Icon图标', component: 'Icon'},
                     ],
                 },
-                
+                { key: '/app/antd/Layout', title: 'Layout组件', icon: 'mobile',//2018.7.14新增加的
+            
+                    subs:[
+                        { key: '/app/antd/General/button', title: 'button组件', component: 'Button'},
+                        { key: '/app/antd/General/Icon', title: 'Icon图标', component: 'Icon'},
+                    ]
+                },
+                { key: '/app/antd/Navigation', title: 'Navigation组件', icon: 'mobile',//2018.7.14新增加的
+            
+                subs:[
+                    { key: '/app/antd/Navigation/affix', title: 'Affix固钉', component: 'Affix'},
+                    { key: '/app/antd/Navigation/Breadcrumb', title: 'Breadcrumb面包屑', component: 'Breadcrumb'},
+                ]
+                },
+                { key: '/app/antd/Data Entry', title: 'Data Entry组件', icon: 'mobile',//2018.7.14新增加的
+            
+                subs:[
+                    { key: '/app/antd/General/button', title: 'button组件', component: 'Button'},
+                    { key: '/app/antd/General/Icon', title: 'Icon图标', component: 'Icon'},
+                ]
+                },
+                { key: '/app/antd/Data Display', title: 'Data Display组件', icon: 'mobile',//2018.7.14新增加的
+            
+                subs:[
+                    { key: '/app/antd/General/button', title: 'button组件', component: 'Button'},
+                    { key: '/app/antd/General/Icon', title: 'Icon图标', component: 'Icon'},
+                ]
+                },
+                { key: '/app/antd/Feedback', title: 'Feedback组件', icon: 'mobile',//2018.7.14新增加的
+            
+                subs:[
+                    { key: '/app/antd/General/button', title: 'button组件', component: 'Button'},
+                    { key: '/app/antd/General/Icon', title: 'Icon图标', component: 'Icon'},
+                ]
+                },
+                { key: '/app/antd/Others', title: 'Others', icon: 'mobile',//2018.7.14新增加的
+            
+                subs:[
+                    { key: '/app/antd/General/button', title: 'button组件', component: 'Button'},
+                    { key: '/app/antd/General/Icon', title: 'Icon图标', component: 'Icon'},
+                ]
+                },
             ],
         },
         { 

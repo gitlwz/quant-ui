@@ -18,7 +18,9 @@ import webSocket from './util/webSocket'
 //antd
 import Button from './antd/button'
 import Icon from './antd/icon'
-
+import Layout from './antd/layout'
+import Affix from './antd/affix'
+import Breadcrumb from './antd/breadcrumb'
 //page
 import NotFound from './page/NotFound'
 import Map from './page/map'   //地图
@@ -38,6 +40,10 @@ export default {
     //antd
     Button,
     Icon,
+    Layout,
+    Affix,
+    Breadcrumb,
+
     NotFound,
     Map,
     reactAmap
