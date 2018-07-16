@@ -11,6 +11,7 @@ import SlidingValidation from './UI/SlidingValidation' //滑动验证
 import NoticeIcon from './UI/NoticeIcon' //通知菜单
 import HeaderSearch from './UI/HeaderSearch' //顶部搜索框
 import RichText from './UI/RichText' //富文本
+import Ellipsis from './UI/Ellipsis' //文本自动省略
 
 //util
 import webSocket from './util/webSocket'
@@ -45,7 +46,7 @@ export default {
     NoticeIcon,
     HeaderSearch,
     RichText,
-
+    Ellipsis,
     //antd
 
     /*----DataDisplay start ---------*/

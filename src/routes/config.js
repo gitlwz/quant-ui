@@ -43,6 +43,7 @@ export default {
                 { key: '/app/ui/SlidingValidation', title: '滑动验证', component: 'SlidingValidation' },
                 { key: '/app/ui/NoticeIcon', title: '通知菜单', component: 'NoticeIcon' },
                 { key: '/app/ui/HeaderSearch', title: '顶部搜索框', component: 'HeaderSearch' },
+                { key: '/app/ui/Ellipsis', title: '文本自动省略号', component: 'Ellipsis' },
                 { key: '/app/ui/RichText', title: '富文本', component: 'RichText' },
             ],
         },
