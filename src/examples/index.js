@@ -15,7 +15,7 @@ import Ellipsis from './UI/Ellipsis' //文本自动省略
 import CountDown from "./UI/CountDown" //自动计时
 //util
 import webSocket from './util/webSocket'
-
+import Language from './util/Language'
 //antd
 import Button from './antd/button'
 import Icon from './antd/icon'
@@ -45,12 +45,16 @@ export default {
     Copy,
     NProgress,
     SlidingValidation,
-    webSocket,
+    
     NoticeIcon,
     HeaderSearch,
     RichText,
     Ellipsis,
     CountDown,
+
+    //util
+    webSocket,
+    Language,
     //antd
 
     /*----DataDisplay start ---------*/
