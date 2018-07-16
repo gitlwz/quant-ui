@@ -8,6 +8,7 @@ const { Content, Footer } = Layout;
 class App extends Component {
     state = {
         collapsed: false,
+        pathname:this.props.location.pathname
     };
     componentWillMount() {
         this.getClientWidth();
@@ -37,12 +38,17 @@ class App extends Component {
             collapsed: !this.state.collapsed,
         });
     };
+    historyChange = (pathname) =>{
+        this.setState({
+            pathname
+        })
+    }
     render() {
         return (
             <Layout>
-                <SiderCustom collapsed={this.state.collapsed} />
+                <SiderCustom pathname={this.state.pathname} collapsed={this.state.collapsed} />
                 <Layout style={{marginLeft:this.state.collapsed?0:200,flexDirection: 'column' }}>
-                    <HeaderCustom history={this.props.history} toggle={this.toggle} collapsed={this.state.collapsed}/>
+                    <HeaderCustom historyChange={this.historyChange} history={this.props.history} toggle={this.toggle} collapsed={this.state.collapsed}/>
                     {/* <HeaderCustom toggle={this.toggle} collapsed={this.state.collapsed} user={auth.data || {}} /> */}
                     <Content id="app_Content" className="Content">
                         <Routes auth={"是否登陆"} />

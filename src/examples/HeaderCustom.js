@@ -32,6 +32,7 @@ class HeaderCustom extends Component {
     onPressEnter = (value) => {
         let enterData = this.dataSource.find(({name})=>name === value);
         if(!!enterData){
+            this.props.historyChange(enterData.value)
             this.props.history.push(enterData.value)
         }
     }

@@ -11,7 +11,6 @@ const { Sider } = Layout;
 class SiderCustom extends Component {
     static setMenuOpen = props => {
         const { pathname } = props.location;
-        console.log("*******",pathname.split('/'))
         let openKey = [];
         let str = ""
         pathname.split('/').forEach((ele,index)=>{
@@ -43,12 +42,32 @@ class SiderCustom extends Component {
             selectedKey: e.key
         });
     };
+    setMenu  = (pathname) =>{
+        let openKey = [];
+        let str = ""
+        pathname.split('/').forEach((ele,index)=>{
+            if(index == 0) return
+                str += `/${ele}`
+            if(index >= 2){
+                openKey.push(str)
+            }
+        })
+        this.setState({
+            openKey,
+            selectedKey: pathname
+        });
+    }
     openMenu = v => {
         this.setState({
             openKey: v,
             firstHide: false,
         })
     };
+    componentWillReceiveProps = (nextProps) =>{
+        if(nextProps.pathname !== this.props.pathname){
+            this.setMenu(nextProps.pathname)
+        }
+    }
     render() {
         return (
             <Sider
