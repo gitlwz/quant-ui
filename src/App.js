@@ -42,7 +42,7 @@ class App extends Component {
             <Layout>
                 <SiderCustom collapsed={this.state.collapsed} />
                 <Layout style={{marginLeft:this.state.collapsed?0:200,flexDirection: 'column' }}>
-                    <HeaderCustom toggle={this.toggle} collapsed={this.state.collapsed}/>
+                    <HeaderCustom history={this.props.history} toggle={this.toggle} collapsed={this.state.collapsed}/>
                     {/* <HeaderCustom toggle={this.toggle} collapsed={this.state.collapsed} user={auth.data || {}} /> */}
                     <Content id="app_Content" className="Content">
                         <Routes auth={"是否登陆"} />
