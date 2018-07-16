@@ -5,44 +5,68 @@ const api = [
 		api: [
 			{
 				key: "1",
-				parameter: "icon",  //字段名
-				type: 'string',	//类型
+				parameter: "count",  //字段名
+				type: 'number | ReactNode',	//类型
 				must: '',				//是否必填
 				default: '-',							//默认值
-				instructions: '设置头像的图标类型，参考 Icon 组件'	//描述
+				instructions: '展示的数字，大于 overflowCount 时显示为 ${overflowCount}+，为 0 时隐藏'	//描述
             },
             {
                 key: "2",
-				parameter: "shape",  //字段名
-				type: "Enum{'circle' , 'square'}",	//类型
+				parameter: "dot",  //字段名
+				type: "boolean",	//类型
 				must: '',				//是否必填
-				default: 'circle',							//默认值
-				instructions: ' 指定头像形状'	//描述
+				default: 'false',							//默认值
+				instructions: ' 不展示数字，只有一个小红点'	//描述
             },
             {
                 key: "3",
-				parameter: "size",  
-				type: "Enum{'large' , 'small' , 'default'}",
+				parameter: "offset",  
+				type: "[number,number]",
 				must: '',
-				default: 'default',
-				instructions: ' 设置头像大小'
+				default: '-',
+				instructions: ' 设置状态点的位置偏移，格式为 [x, y]'
             },
             {
                 key: "4",
-				parameter: "src",  
-				type: "string",
+				parameter: "overflowCount",  
+				type: "number",
 				must: '',
-				default: '-',
-				instructions: ' 图像类头像的资源地址'
+				default: '99',
+				instructions: ' 展示封顶的数字值'
             },
             {
                 key: "5",
-				parameter: "alt",  
+				parameter: "showZero",  
+				type: "boolean",
+				must: '',
+				default: 'false',
+				instructions: ' 当数值为 0 时，是否展示 Badge'
+            },
+            {
+                key: "6",
+				parameter: "status",  
+				type: "Enum{ 'success', 'processing, 'default', 'error', 'warning' }",
+				must: '',
+				default: "''",
+				instructions: ' 设置 Badge 为状态点'
+            },
+            {
+                key: "7",
+				parameter: "text",  
 				type: "string",
 				must: '',
-				default: '-',
-				instructions: ' 图像无法显示时的替代文本'
-            }
+				default: "''",
+				instructions: ' 在设置了 status 的前提下有效，设置状态点的文本'
+            },
+            {
+                key: "8",
+				parameter: "title",  
+				type: "string",
+				must: '',
+				default: 'count',
+				instructions: ' 设置鼠标放在状态点上时显示的文字'
+            },
 		]
 	}
 

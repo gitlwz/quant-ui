@@ -25,6 +25,10 @@ import DynamicCode from './Dynamic/code.js';
 //状态点
 import Status from './Status/Detail.js';
 import StatusCode from './Status/code.js';
+//自定义标题
+import Title from './Title/Detail.js';
+import TitleCode from './Title/code.js';
+
 
 const TabPane = Tabs.TabPane;
 class App extends Component {
@@ -89,6 +93,14 @@ class App extends Component {
                             <Code data={StatusCode} />
                         </div>
                     </TabPane>           
+                    <TabPane tab="自定义标题" key="8">
+                        <Card >
+                            <Title />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={TitleCode} />
+                        </div>
+                    </TabPane>    
                     <TabPane tab="参数api" key="10">
                         <Api data={data} />
                     </TabPane>
