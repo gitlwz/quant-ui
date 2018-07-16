@@ -8,7 +8,9 @@ import BreadcrumbbasicCode from './breadcrumbbasic/code.js';
 //带图标的用法
 import Iconic from './iconic/Detail.js';
 import IconicCode from './iconic/code.js';
-
+//react-router
+import Reactrouter from './react-router/Detail.js';
+import ReactrouterCode from './react-router/code.js';
 import Code from '../../Code.js';
 const TabPane = Tabs.TabPane;
 class App extends Component {
@@ -33,7 +35,14 @@ class App extends Component {
                             <Code data={IconicCode} />
                         </div>
                     </TabPane>
-                    
+                    <TabPane tab="react-router" key="3">
+                        <Card >
+                            <Reactrouter />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={ReactrouterCode} />
+                        </div>
+                    </TabPane>
 
                     <TabPane tab="参数api" key="10">
                         <Api data={data} />

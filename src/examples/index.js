@@ -18,8 +18,11 @@ import webSocket from './util/webSocket'
 //antd
 import Button from './antd/button'
 import Icon from './antd/icon'
+
+/*-------Navigation start ----------*/
 import Affix from './antd/affix'
 import Breadcrumb from './antd/breadcrumb'
+/*-------END ----------*/
 
 /*----DataDisplay start ---------*/
 
@@ -50,8 +53,10 @@ export default {
     /*-------END ----------------*/
     Button,
     Icon,
+    /*-------Navigation start ----------*/
     Affix,
     Breadcrumb,
+     /*-------END ----------------*/
 
     NotFound,
     Map,

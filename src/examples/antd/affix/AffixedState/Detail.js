@@ -4,9 +4,9 @@ class Detail extends Component {
 
 	render() {
 		return (
-		<Affix offsetTop={120} onChange={affixed => console.log(affixed)}>
-			<Button>120px to affix top</Button>
-		</Affix>
+			<Affix offsetTop={120} onChange={affixed => console.log(affixed)}>
+				<Button>120px to affix top</Button>
+			</Affix>
 		);
 	}
 }

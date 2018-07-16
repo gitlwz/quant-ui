@@ -11,6 +11,7 @@ export default {
                         { key: '/app/antd/General/Icon', title: 'Icon图标', component: 'Icon' },
                     ],
                 },
+                /*-------------Navigation start ------------------*/
                 {
                     key: '/app/antd/Navigation', title: 'Navigation组件', icon: 'mobile',//2018.7.14新增加的
 
@@ -19,7 +20,7 @@ export default {
                         { key: '/app/antd/Navigation/Breadcrumb', title: 'Breadcrumb面包屑', component: 'Breadcrumb' },
                     ]
                 },
-
+                 /*-------------END ------------------*/
                 /*-------------Data Display start ------------------*/
                 {
                     key: '/app/antd/Data Display', title: '展示组件', icon: 'mobile',//2018.7.14新增加的
