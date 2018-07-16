@@ -61,6 +61,7 @@ export { default as Exception } from './exception';
 export { default as NoticeIcon } from './notice-icon';
 export { default as HeaderSearch } from './header-search';
 export { default as Ellipsis } from './ellipsis';
+export { default as CountDown } from './count-down';
 
 export { default as webSocket } from './web-socket'; 
 

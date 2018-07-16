@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Layout } from 'quant-ui';
+import { Layout,BackTop  } from 'quant-ui';
 import './App.less';
 import SiderCustom from './examples/SiderCustom';
 import HeaderCustom from './examples/HeaderCustom';
@@ -56,6 +56,7 @@ class App extends Component {
                     {/* <Footer style={{ textAlign: 'center' }}>
                         quantdo-ui ©{new Date().getFullYear()} Created by quantdo
                     </Footer> */}
+                    <BackTop visibilityHeight="1"/>
                 </Layout>
             </Layout>
         );

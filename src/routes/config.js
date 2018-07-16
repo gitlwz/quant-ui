@@ -47,6 +47,7 @@ export default {
                 { key: '/app/ui/HeaderSearch', title: '顶部搜索框', component: 'HeaderSearch' },
                 { key: '/app/ui/Ellipsis', title: '文本自动省略号', component: 'Ellipsis' },
                 { key: '/app/ui/RichText', title: '富文本', component: 'RichText' },
+                { key: '/app/ui/CountDown', title: '倒计时', component: 'CountDown' },
             ],
         },
         {

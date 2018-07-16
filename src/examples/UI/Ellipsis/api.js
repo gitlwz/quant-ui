@@ -5,40 +5,26 @@ const api = [
 		api: [
 			{
 				key: "1",
-				parameter: "placeholder",  //字段名
-				instructions: '占位文字',	//描述
-				type: '	string',	//类型
-				default: "",							//默认值
+				parameter: "tooltip",  //字段名
+				instructions: '移动到文本展示完整内容的提示',	//描述
+				type: '	boolean',	//类型
+				default: "-",							//默认值
 				must: '',
 			},{
 				key: "2",
-				parameter: "dataSource",  //字段名
-				instructions: '当前提示内容列表',	//描述
-				type: '	string[]',	//类型
+				parameter: "length",  //字段名
+				instructions: '在按照长度截取下的文本最大字符数，超过则截取省略',	//描述
+				type: 'number',	//类型
 				default: "",							//默认值
 				must: '',
 			},{
 				key: "3",
-				parameter: "onSearch",  //字段名
-				instructions: '选择某项或按下回车时的回调',	//描述
-				type: 'function(value)',	//类型
-				default: "",							//默认值
+				parameter: "lines",  //字段名
+				instructions: '在按照行数截取下最大的行数，超过则截取省略',	//描述
+				type: 'number',	//类型
+				default: "1",							//默认值
 				must: '',
-			},{
-				key: "4",
-				parameter: "onChange",  //字段名
-				instructions: '输入搜索字符的回调',	//描述
-				type: 'function(value)',	//类型
-				default: "",							//默认值
-				must: '',
-			},{
-				key: "5",
-				parameter: "onPressEnter",  //字段名
-				instructions: '按下回车时的回调',	//描述
-				type: 'function(value)',	//类型
-				default: "",							//默认值
-				must: '',
-			},
+			}
 		]
 	}
 ];

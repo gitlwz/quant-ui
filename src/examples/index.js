@@ -12,7 +12,7 @@ import NoticeIcon from './UI/NoticeIcon' //通知菜单
 import HeaderSearch from './UI/HeaderSearch' //顶部搜索框
 import RichText from './UI/RichText' //富文本
 import Ellipsis from './UI/Ellipsis' //文本自动省略
-
+import CountDown from "./UI/CountDown" //自动计时
 //util
 import webSocket from './util/webSocket'
 
@@ -48,6 +48,7 @@ export default {
     HeaderSearch,
     RichText,
     Ellipsis,
+    CountDown,
     //antd
 
     /*----DataDisplay start ---------*/
