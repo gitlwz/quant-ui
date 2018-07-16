@@ -24,6 +24,7 @@ import Icon from './antd/icon'
 import Affix from './antd/affix'
 import Breadcrumb from './antd/breadcrumb'
 import Dropdown from './antd/dropdown'
+import Menu from './antd/menu'
 /*-------END ----------*/
 
 /*----DataDisplay start ---------*/
@@ -69,6 +70,7 @@ export default {
     Affix,
     Breadcrumb,
     Dropdown,
+    Menu,
      /*-------END ----------------*/
 
     NotFound,

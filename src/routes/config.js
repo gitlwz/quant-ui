@@ -19,6 +19,7 @@ export default {
                         { key: '/app/antd/Navigation/affix', title: 'Affix固钉', component: 'Affix' },
                         { key: '/app/antd/Navigation/Breadcrumb', title: 'Breadcrumb面包屑', component: 'Breadcrumb' },
                         { key: '/app/antd/Navigation/Dropdown', title: 'Dropdown下拉菜单', component: 'Dropdown' },
+                        { key: '/app/antd/Navigation/Menu', title: 'Menu导航菜单', component: 'Menu' },
                     ]
                 },
                  /*-------------END ------------------*/
