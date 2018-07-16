@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.less';
 import App from './App';
+import history from './examples/history';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { LocaleProvider ,language} from 'quant-ui';
 import zh_CN from 'antd/lib/locale-provider/zh_CN';
@@ -17,6 +18,7 @@ ReactDOM.render(
             <Switch>
                 <Route exact path="/" render={() => <Redirect to="/app/home" push />} />        
                 <Route path="/app" component={App} />
+                <Route path="/history" component={history} />
             </Switch>
         </Router>
     </LocaleProvider >

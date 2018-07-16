@@ -76,7 +76,7 @@ class HeaderCustom extends Component {
                         onPressEnter={this.onPressEnter}
                     />
                     <span style={{display:'inline-block',margin:"0px 20px 0 20px",cursor:'pointer'}}>
-                        <Button icon="api">版本历史</Button>
+                        <Button onClick={()=>this.props.history.push("/history")}  icon="api">版本说明</Button>
                     </span >
                     <span style={{display:'inline-block',margin:"0px 20px 0 0px",cursor:'pointer'}}>
                         <Dropdown overlay={menu}>
