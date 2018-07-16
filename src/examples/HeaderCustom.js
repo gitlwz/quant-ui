@@ -5,7 +5,10 @@ import config from "../routes/config"
 const { Header } = Layout;
 let {getCurrentLanguage,setCurrentLanguage,refreshLanguage} = language;
 const menu = (
-    <Menu onClick = {handleMenuClick}>
+    <Menu 
+        onClick = {handleMenuClick} 
+        defaultSelectedKeys={[getCurrentLanguage()]}
+    >
         <Menu.Item key="zh_CN">中文</Menu.Item>
         <Menu.Item key="en_US">English</Menu.Item>
     </Menu>
