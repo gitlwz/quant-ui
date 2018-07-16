@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
-import { Layout, Icon, HeaderSearch } from 'quant-ui';
+import { Layout, Icon, HeaderSearch ,Button,Dropdown,Menu,language} from 'quant-ui';
 import "./HeaderCustom.less"
 import config from "../routes/config"
 const { Header } = Layout;
+let {getCurrentLanguage,setCurrentLanguage,refreshLanguage} = language;
+const menu = (
+    <Menu onClick = {handleMenuClick}>
+        <Menu.Item key="zh_CN">中文</Menu.Item>
+        <Menu.Item key="en_US">English</Menu.Item>
+    </Menu>
+);
+function handleMenuClick(e) {
+    setCurrentLanguage(e.key);
+    refreshLanguage();
+}
 class HeaderCustom extends Component {
     constructor(props){
         super(props)
@@ -11,7 +22,6 @@ class HeaderCustom extends Component {
         }
         this.dataSource = [];
         this.findDataSource(config.menus)
-        // option.props.children.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
     }
     findDataSource = (config) =>{
         config.forEach((ele)=>{
@@ -36,9 +46,12 @@ class HeaderCustom extends Component {
         }
     }
     render() {
+        let languageData = "中文";
+        if(getCurrentLanguage() === "en_US"){
+            languageData = "English"
+        }
         return (
             <Header className={this.props.collapsed?'HeaderCustom_0':'HeaderCustom_200'} >
-                
                 <div
                 style={{
                     textAlign: 'right',
@@ -60,7 +73,14 @@ class HeaderCustom extends Component {
                         onPressEnter={this.onPressEnter}
                     />
                     <span style={{display:'inline-block',margin:"0px 20px 0 20px",cursor:'pointer'}}>
-                        <Icon type="question-circle" />
+                        <Button icon="api">版本历史</Button>
+                    </span >
+                    <span style={{display:'inline-block',margin:"0px 20px 0 0px",cursor:'pointer'}}>
+                        <Dropdown overlay={menu}>
+                            <Button icon="setting" style={{ marginLeft: 8 }}>
+                                {languageData} <Icon type="down" />
+                            </Button>
+                        </Dropdown>
                     </span >
                 </div>
 
