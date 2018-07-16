@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Layout, Icon, HeaderSearch } from 'quant-ui';
-import {HashRouter} from 'react-router-dom';
 import "./HeaderCustom.less"
 import config from "../routes/config"
 const { Header } = Layout;

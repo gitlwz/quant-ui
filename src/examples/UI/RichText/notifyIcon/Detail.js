@@ -5,7 +5,6 @@ const draftToHtml = Editor.draftToHtml;
 
 class Detail extends Component {
 	state = {
-		editorContent: undefined,
         editorState: '',
     };
 	onEditorStateChange = (editorState) =>{

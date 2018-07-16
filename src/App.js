@@ -4,7 +4,7 @@ import './App.less';
 import SiderCustom from './examples/SiderCustom';
 import HeaderCustom from './examples/HeaderCustom';
 import Routes from './routes';
-const { Content, Footer } = Layout;
+const { Content } = Layout;
 class App extends Component {
     state = {
         collapsed: false,

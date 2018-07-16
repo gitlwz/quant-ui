@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Icon } from 'quant-ui';
+import { Button } from 'quant-ui';
 class Detail extends Component {
 	render() {
 		return (
