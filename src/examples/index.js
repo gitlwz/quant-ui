@@ -18,8 +18,14 @@ import webSocket from './util/webSocket'
 //antd
 import Button from './antd/button'
 import Icon from './antd/icon'
+import Affix from './antd/affix'
+import Breadcrumb from './antd/breadcrumb'
+
+/*----DataDisplay start ---------*/
+
 import Avatar from './antd/Avatar'
 
+/*-------END ----------------*/
 
 //page
 import NotFound from './page/NotFound'
@@ -38,9 +44,15 @@ export default {
     RichText,
 
     //antd
+
+    /*----DataDisplay start ---------*/
     Avatar,
+    /*-------END ----------------*/
     Button,
     Icon,
+    Affix,
+    Breadcrumb,
+
     NotFound,
     Map,
     reactAmap
