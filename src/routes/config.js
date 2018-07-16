@@ -22,11 +22,11 @@ export default {
 
                 /*-------------Data Display start ------------------*/
                 {
-                    key: '/app/antd/Data Display', title: 'Data Display组件', icon: 'mobile',//2018.7.14新增加的
+                    key: '/app/antd/Data Display', title: '展示组件', icon: 'mobile',//2018.7.14新增加的
 
                     subs: [
-                        { key: '/app/antd/General/button', title: 'button组件', component: 'Button' },
-                        { key: '/app/antd/General/Icon', title: 'Icon图标', component: 'Icon' },
+                        { key: '/app/antd/DataDisplay/Avatar', title: 'Avatar组件', component: 'Avatar' },
+                        
                     ]
                 },
                  /*-------------END ------------------*/
