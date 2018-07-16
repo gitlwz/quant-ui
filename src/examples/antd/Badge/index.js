@@ -19,8 +19,12 @@ import RedDotCode from './RedDot/code.js';
 //可点击
 import ToClick from './ToClick/Detail.js';
 import ToClickCode from './ToClick/code.js';
-
-
+//动态
+import Dynamic from './Dynamic/Detail.js';
+import DynamicCode from './Dynamic/code.js';
+//状态点
+import Status from './Status/Detail.js';
+import StatusCode from './Status/code.js';
 
 const TabPane = Tabs.TabPane;
 class App extends Component {
@@ -68,7 +72,23 @@ class App extends Component {
                         <div style={{ marginTop: "30px" }}>
                             <Code data={ToClickCode} />
                         </div>
-                    </TabPane>                   
+                    </TabPane>  
+                    <TabPane tab="动态" key="6">
+                        <Card >
+                            <Dynamic />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={DynamicCode} />
+                        </div>
+                    </TabPane>         
+                    <TabPane tab="状态点" key="7">
+                        <Card >
+                            <Status />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={StatusCode} />
+                        </div>
+                    </TabPane>           
                     <TabPane tab="参数api" key="10">
                         <Api data={data} />
                     </TabPane>
