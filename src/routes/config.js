@@ -30,6 +30,7 @@ export default {
                         { key: '/app/antd/DataDisplay/Avatar', title: 'Avatar组件', component: 'Avatar' },
                         { key: '/app/antd/DataDisplay/Badge', title: 'Badge徽标数', component: 'Badge' },
                         { key: '/app/antd/DataDisplay/Calendar', title: 'Calendar日历', component: 'Calendar' },
+                        { key: '/app/antd/DataDisplay/Card', title: 'Card卡片', component: 'Card' },
 
                     ],
                     

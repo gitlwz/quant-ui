@@ -31,7 +31,7 @@ import Dropdown from './antd/dropdown'
 import Avatar from './antd/Avatar'
 import Badge from './antd/Badge'
 import Calendar from './antd/Calendar'
-
+import Card from './antd/Card'
 /*-------END ----------------*/
 
 //page
@@ -61,6 +61,7 @@ export default {
     Avatar,
     Badge,
     Calendar,
+    Card,
     /*-------END ----------------*/
     Button,
     Icon,
