@@ -10,6 +10,12 @@ export default {
                     ],
                 },
                 
+                { key: '/app/antd/DataDisplay', title: 'DataDisplay数据展示', icon: 'mobile',
+                    subs: [
+                        { key: '/app/antd/DataDisplay/Avatar', title: 'Avatar头像', component: 'Avatar'}
+                    ],
+                },
+
             ],
         },
         { 
