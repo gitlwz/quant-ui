@@ -29,6 +29,8 @@ export default {
                     subs: [
                         { key: '/app/antd/DataDisplay/Avatar', title: 'Avatar组件', component: 'Avatar' },
                         { key: '/app/antd/DataDisplay/Badge', title: 'Badge徽标数', component: 'Badge' },
+                        { key: '/app/antd/DataDisplay/Calendar', title: 'Calendar日历', component: 'Calendar' },
+
                     ],
                     
 
@@ -55,7 +57,6 @@ export default {
             key: '/app/util', title: '方法', icon: 'tool',
             subs: [
                 { key: '/app/util/webSocket', title: 'webSocket链接', component: 'webSocket' },
-                { key: '/app/util/Language', title: 'Language多语言', component: 'Language' },
             ],
         }, {
             key: '/app/page', title: '页面', icon: 'database',
