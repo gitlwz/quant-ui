@@ -13,6 +13,12 @@ import UsedAloneCode from './UsedAlone/code.js';
 //封顶数字
 import MaxNum from './MaxNum/Detail.js';
 import MaxNumCode from './MaxNum/code.js';
+//小红点
+import RedDot from './RedDot/Detail.js';
+import RedDotCode from './RedDot/code.js';
+//可点击
+import ToClick from './ToClick/Detail.js';
+import ToClickCode from './ToClick/code.js';
 
 
 
@@ -45,6 +51,22 @@ class App extends Component {
                         </Card>
                         <div style={{ marginTop: "30px" }}>
                             <Code data={MaxNumCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab="小红点" key="4">
+                        <Card >
+                            <RedDot />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={RedDotCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab="可点击" key="5">
+                        <Card >
+                            <ToClick />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={ToClickCode} />
                         </div>
                     </TabPane>                   
                     <TabPane tab="参数api" key="10">
