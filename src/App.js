@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Layout,BackTop  } from 'quant-ui';
+import { Layout,BackTop ,screenfull } from 'quant-ui';
 import './App.less';
 import SiderCustom from './examples/SiderCustom';
 import HeaderCustom from './examples/HeaderCustom';
@@ -16,10 +16,16 @@ class App extends Component {
             console.log('屏幕变化了');
             this.getClientWidth();
         }
-    }
-    componentDidMount() {
-
-
+        if (screenfull.enabled) {
+            screenfull.on('change', () => {
+                if(!screenfull.isFullscreen && window.onresize === null){
+                    window.onresize = () => {
+                        console.log('屏幕变化了');
+                        this.getClientWidth();
+                    }
+                }
+            });
+        }
     }
     getClientWidth = () => {    // 获取当前浏览器宽度并设置responsive管理响应式
         const clientWidth = document.body.clientWidth;

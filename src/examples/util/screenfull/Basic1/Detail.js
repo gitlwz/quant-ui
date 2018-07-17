@@ -1,43 +1,26 @@
 import React, { Component } from 'react';
-import { language ,Button} from 'quant-ui';
-const $ = language.getLanguageData;
-
-
-language.setLanguageData({
-	'en_US':{
-		"你好！":"hello！",
-		"语言":"language",
-	},
-	'ja_JP':{
-		"你好！":"あろは",
-		"语言":"じ",
-	}
-})
+import { Button,screenfull} from 'quant-ui';
 class Detail extends Component {
-
-	zhClick = () =>{
-		language.setCurrentLanguage("zh_CN")
-		language.refreshLanguage()
+	screenFull = () =>{
+		if (screenfull.enabled) {
+			screenfull.request();
+		}
 	}
-	enClick = () =>{
-		language.setCurrentLanguage("en_US")
-		language.refreshLanguage()
-	}
-	jaClick = () =>{
-		language.setCurrentLanguage("ja_JP")
-		language.refreshLanguage()
+	screenFullDom = () =>{
+		window.onresize = null;
+		if (screenfull.enabled) {
+			screenfull.request(this.refs.img);
+		}
 	}
 	render() {
 		return (
 			<div>
-				<Button onClick={this.zhClick}>中文</Button>
-				<Button onClick={this.enClick}>英文</Button>
-				<Button onClick={this.jaClick}>日语</Button>
-				<div>
-					{$("你好！")} 
-					<br /><br />
-					{$("语言")}
-				</div>
+				<Button onClick={this.screenFull}>html全屏</Button>
+				<br/><br/>
+				
+				<Button onClick={this.screenFullDom}>图片元素全屏</Button>
+				<br/><br/>
+				<img ref="img" src="https://picsum.photos/200/300/?random" />
 			</div>
 			
 		);

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Layout, Icon, HeaderSearch ,Button,Dropdown,Menu,language} from 'quant-ui';
+import { Layout, Icon, HeaderSearch ,Button,Dropdown,Menu,language,screenfull} from 'quant-ui';
 import "./HeaderCustom.less"
 import config from "../routes/config"
 const { Header } = Layout;
@@ -25,6 +25,11 @@ class HeaderCustom extends Component {
         }
         this.dataSource = [];
         this.findDataSource(config.menus)
+    }
+    screenFull = () =>{
+        if (screenfull.enabled) {
+            screenfull.request();
+        }
     }
     findDataSource = (config) =>{
         config.forEach((ele)=>{
@@ -76,7 +81,7 @@ class HeaderCustom extends Component {
                         onPressEnter={this.onPressEnter}
                     />
                     <span style={{display:'inline-block',margin:"0px 20px 0 20px",cursor:'pointer'}}>
-                        <Button onClick={()=>this.props.history.push("/history")}  icon="api">版本说明</Button>
+                        <Button onClick={()=>this.props.history.push("/history")}  icon="api">0.1.8</Button>
                     </span >
                     <span style={{display:'inline-block',margin:"0px 20px 0 0px",cursor:'pointer'}}>
                         <Dropdown overlay={menu}>
@@ -85,6 +90,10 @@ class HeaderCustom extends Component {
                             </Button>
                         </Dropdown>
                     </span >
+                    <span onClick={this.screenFull} style={{display:'inline-block',margin:"0px 20px 0 0px",cursor:'pointer'}}>
+                        <Icon type="arrows-alt" />
+                    </span >
+                    
                 </div>
 
             </Header>
