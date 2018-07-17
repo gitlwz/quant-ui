@@ -6,6 +6,12 @@ import data from './api.js';
 import NotifyIcon from './notifyIcon/Detail.js';
 import NotifyIconCode from './notifyIcon/code.js';
 
+import ToolbarCustomButtons from './toolbarCustomButtons/Detail.js';
+import ToolbarCustomButtonsCode from './toolbarCustomButtons/code.js';
+
+import InDropdown from './inDropdown/Detail.js';
+import InDropdownCode from './inDropdown/code.js';
+
 
 import Code from '../../Code.js';
 const TabPane = Tabs.TabPane;
@@ -21,6 +27,22 @@ class App extends Component {
                         </Card>
                         <div style={{ marginTop: "30px" }}>
                             <Code data={NotifyIconCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab="添加新选项" key="2">
+                        <Card >
+                            <ToolbarCustomButtons />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={ToolbarCustomButtonsCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab="工具栏下拉" key="3">
+                        <Card >
+                            <InDropdown />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={InDropdownCode} />
                         </div>
                     </TabPane>
 
