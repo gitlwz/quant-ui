@@ -32,7 +32,9 @@ import InnerCardCode from './InnerCard/code.js'
 //带页签的卡片
 import TabsCard from './TabsCard/Detail'
 import TabsCardCode from './TabsCard/code'
-
+//支持更多内容配置
+import MoreContent from './MoreContent/Detail'
+import MoreContentCode from './MoreContent/code'
 
 const TabPane = Tabs.TabPane;
 class App extends Component {
@@ -113,7 +115,15 @@ class App extends Component {
                             <Code data={TabsCardCode} />
                         </div>
                     </TabPane>
-                    <TabPane tab="参数api" key="10">
+                    <TabPane tab="支持更多的内容配置" key="10">
+                        <Card >
+                            <MoreContent />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={MoreContentCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab="参数api" key="11">
                         <Api data={data} />
                     </TabPane>
                 </Tabs>

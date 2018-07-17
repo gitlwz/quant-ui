@@ -22,6 +22,7 @@ class Detail extends Component {
                     title="Inner Card title"
                     extra={<a href="#">More</a>}
                     style={{width:'50%'}}
+                    hoverable={true}
                 >
                     Inner Card content
                 </Card>

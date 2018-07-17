@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Card } from 'quant-ui';
+import { Card ,Avatar} from 'quant-ui';
 
 const tabList=[
     {
-        key:'article',
-        tab:'Article'
+        key:'person',
+        tab:<Avatar shape='square' icon='user'/>
     },
     {
         key:'app',
@@ -17,14 +17,14 @@ const tabList=[
 ]
 
 const contentList={
-    article:<p>article content</p>,
+    person:<p>Personal Information</p>,
     app:<p>app content</p>,
     project:<p>project content</p>,
 }
 
 class Detail extends Component {
     state={
-        key:'article',
+        key:'person',
     }
 
     onTabChange= (key,type)=>{
@@ -42,6 +42,7 @@ class Detail extends Component {
             extra={<a href="#">More</a>}
             tabList={tabList}
             onTabChange={(key) => { this.onTabChange(key, 'key'); }}
+            
           >
             {contentList[this.state.key]}
           </Card>
