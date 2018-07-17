@@ -30,6 +30,7 @@ export default {
                     key: '/app/antd/DataEntry', title: 'Data Entry组件', icon: 'mobile',
                     subs: [
                         { key: '/app/antd/DataEntry/AutoComplete', title: 'AutoComplete自动完成', component: 'AutoComplete' },
+                        { key: '/app/antd/DataEntry/Cascader', title: 'Cascader级联选择', component: 'Cascader' },
                     ]
                 },
                 /*-------------END ------------------*/
