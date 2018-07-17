@@ -29,8 +29,9 @@ import Menu from './antd/menu'
 import Pagination from './antd/pagination'
 import Steps from './antd/steps'
 /*-------END ----------*/
-/*-------AutoComplete start ----------*/
+/*-------Data Entry ----------*/
 import AutoComplete from './antd/autoComplete'
+import Cascader from './antd/cascader'
 /*-------END ----------*/
 /*----DataDisplay start ---------*/
 
@@ -86,7 +87,10 @@ export default {
     Pagination,
     Steps,
      /*-------END ----------------*/
+     /*-------Data Entry ----------*/
     AutoComplete,
+    Cascader,
+    /*-------END ----------------*/
     NotFound,
     Map,
     reactAmap
