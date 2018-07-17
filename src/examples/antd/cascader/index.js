@@ -20,6 +20,9 @@ import CascforbidCode from './cascforbid/code.js'
 //选择即改变
 import ChoAndcha from './choAndcha/Detail.js'
 import ChoAndchaCode from './choAndcha/code.js'
+//大小
+import Cascadersize from './cascadersize/Detail.js'
+import CascadersizeCode from './cascadersize/code.js'
 import Code from '../../Code.js';
 import { width } from 'window-size';
 const TabPane = Tabs.TabPane;
@@ -75,6 +78,14 @@ class App extends Component {
                         </Card>
                         <div style={{ marginTop: "30px"}}>
                             <Code data={ChoAndchaCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab="大小" key="7">
+                        <Card >
+                            <Cascadersize />
+                        </Card>
+                        <div style={{ marginTop: "30px"}}>
+                            <Code data={CascadersizeCode} />
                         </div>
                     </TabPane>
                 </Tabs>
