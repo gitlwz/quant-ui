@@ -21,11 +21,11 @@ class Detail extends Component {
 					<Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'} />
 				</Button>
 				<Menu
-				defaultSelectedKeys={['1']}
-				defaultOpenKeys={['sub1']}
-				mode="inline"
-				theme="dark"
-				inlineCollapsed={this.state.collapsed}
+					defaultSelectedKeys={['1']}
+					defaultOpenKeys={['sub1']}
+					mode="inline"
+					theme="dark"
+					inlineCollapsed={this.state.collapsed}
 				>
 					<Menu.Item key="1">
 						<Icon type="pie-chart" />

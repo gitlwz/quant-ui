@@ -14,6 +14,15 @@ import FlexmenuCode from './flexmenu/code.js'
 //只展开当前父级菜单
 import Parentmenu from './parentmenu/Detail.js'
 import ParentmenuCode from './parentmenu/code.js'
+//垂直菜单
+import Verticalmenu from './verticalmenu/Detail.js'
+import VerticalmenuCode from './verticalmenu/code.js'
+//主题
+import Theme from './theme/Detail.js'
+import ThemeCode from './theme/code.js'
+//切换菜单类型
+import Menutype from './menutype/Detail.js'
+import MenutypeCode from './menutype/code.js'
 import Code from '../../Code.js';
 const TabPane = Tabs.TabPane;
 class App extends Component {
@@ -53,6 +62,33 @@ class App extends Component {
                             <div style={{ marginTop: "30px" }}>
                                 <Code data={ParentmenuCode} />
                             </div>
+                    </TabPane>
+                    <TabPane tab="垂直菜单" key="5">
+                            <Card >
+                                <Verticalmenu/>
+                            </Card>
+                            <div style={{ marginTop: "30px" }}>
+                                <Code data={VerticalmenuCode} />
+                            </div>
+                    </TabPane>
+                    <TabPane tab="主题" key="6">
+                            <Card >
+                                <Theme/>
+                            </Card>
+                            <div style={{ marginTop: "30px" }}>
+                                <Code data={ThemeCode} />
+                            </div>
+                    </TabPane>
+                    <TabPane tab="切换菜单类型" key="7">
+                            <Card >
+                                <Menutype/>
+                            </Card>
+                            <div style={{ marginTop: "30px" }}>
+                                <Code data={MenutypeCode} />
+                            </div>
+                    </TabPane>
+                    <TabPane tab="参数api" key="10">
+                        <Api data={data} />
                     </TabPane>
                 </Tabs>
 
