@@ -25,6 +25,14 @@ export default {
                     ]
                 },
                  /*-------------END ------------------*/
+                /*-------------Data Entry start ------------------*/
+                {
+                    key: '/app/antd/DataEntry', title: 'Data Entry组件', icon: 'mobile',
+                    subs: [
+                        { key: '/app/antd/DataEntry/AutoComplete', title: 'AutoComplete自动完成', component: 'AutoComplete' },
+                    ]
+                },
+                /*-------------END ------------------*/
                 /*-------------Data Display start ------------------*/
                 {
                     key: '/app/antd/Data Display', title: '展示组件', icon: 'mobile',//2018.7.14新增加的

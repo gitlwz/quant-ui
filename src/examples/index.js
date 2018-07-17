@@ -29,7 +29,9 @@ import Menu from './antd/menu'
 import Pagination from './antd/pagination'
 import Steps from './antd/steps'
 /*-------END ----------*/
-
+/*-------AutoComplete start ----------*/
+import AutoComplete from './antd/autoComplete'
+/*-------END ----------*/
 /*----DataDisplay start ---------*/
 
 import Avatar from './antd/Avatar'
@@ -82,7 +84,7 @@ export default {
     Pagination,
     Steps,
      /*-------END ----------------*/
-
+    AutoComplete,
     NotFound,
     Map,
     reactAmap
