@@ -25,6 +25,7 @@ import Affix from './antd/affix'
 import Breadcrumb from './antd/breadcrumb'
 import Dropdown from './antd/dropdown'
 import Menu from './antd/menu'
+import Pagination from './antd/pagination'
 /*-------END ----------*/
 
 /*----DataDisplay start ---------*/
@@ -71,6 +72,7 @@ export default {
     Breadcrumb,
     Dropdown,
     Menu,
+    Pagination,
      /*-------END ----------------*/
 
     NotFound,
