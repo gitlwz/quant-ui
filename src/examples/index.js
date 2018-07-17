@@ -36,6 +36,7 @@ import Avatar from './antd/Avatar'
 import Badge from './antd/Badge'
 import Calendar from './antd/Calendar'
 import Card from './antd/Card'
+import Carousel from './antd/Carousel'
 /*-------END ----------------*/
 
 //page
@@ -67,6 +68,7 @@ export default {
     Badge,
     Calendar,
     Card,
+    Carousel,
     /*-------END ----------------*/
     Button,
     Icon,

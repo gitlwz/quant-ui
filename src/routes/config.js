@@ -34,6 +34,8 @@ export default {
                         { key: '/app/antd/DataDisplay/Badge', title: 'Badge徽标数', component: 'Badge' },
                         { key: '/app/antd/DataDisplay/Calendar', title: 'Calendar日历', component: 'Calendar' },
                         { key: '/app/antd/DataDisplay/Card', title: 'Card卡片', component: 'Card' },
+                        { key: '/app/antd/DataDisplay/Carousel', title: 'Carousel走马灯', component: 'Carousel' },
+
 
                     ],
                     
