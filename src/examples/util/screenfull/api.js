@@ -1,51 +1,77 @@
 
 const api = [
 	{
-		title: "API",
+		title: "Methods方法",
 		api: [
 			{
 				key: "1",
-				parameter: "getAllLanguage",  //字段名
-				instructions: '获取所有语言数据',	//描述
+				parameter: ".request()",  //字段名
+				instructions: '使元素全屏。默认是<html>',	//描述
 				type: 'function()',	//类型
-				default: "-",							//默认值
+				default: "html DOM",							//默认值
 				must: '',
 			},{
 				key: "2",
-				parameter: "getCurrentLanguage",  //字段名
-				instructions: '获取当前语言类型',	//描述
-				type: 'function',	//类型
-				default: "zh_CN",							//默认值
-				must: '',
-			},{
-				key: "3",
-				parameter: "getLanguageData",  //字段名
-				instructions: '	获取根据当前预览类型翻译后的语言',	//描述
-				type: 'funtion',	//类型
+				parameter: ".exit()",  //字段名
+				instructions: '退出全屏',	//描述
+				type: 'function()',	//类型
 				default: "",							//默认值
 				must: '',
 			},{
+				key: "3",
+				parameter: ".toggle()",  //字段名
+				instructions: '全屏切换',	//描述
+				type: 'function()',	//类型
+				default: "",							//默认值
+				must: '',
+			},{
+				key: "3",
+				parameter: ".on(event, function)",  //字段名
+				instructions: '添加侦听器，以便在浏览器进出全屏或出现错误时进行切换',	//描述
+				type: 'function()',	//类型
+				default: "event ：change error",							//默认值
+				must: '',
+			},{
 				key: "4",
-				parameter: "refreshLanguage",  //字段名
-				instructions: '	刷新语言',	//描述
-				type: 'funtion',	//类型
+				parameter: ".off(event, function)",  //字段名
+				instructions: '删除以前注册的事件侦听器。',	//描述
+				type: 'function()',	//类型
 				default: "",							//默认值
 				must: '',
 			},{
 				key: "5",
-				parameter: "setCurrentLanguage",  //字段名
-				instructions: '	设置当前语言类型',	//描述
-				type: 'funtion（String[语言类型]）',	//类型
-				default: "",							//默认值
-				must: '',
-			},{
-				key: "6",
-				parameter: "setLanguageData",  //字段名
-				instructions: '	设置语言数据',	//描述
-				type: 'funtion（Object）',	//类型
+				parameter: ".onchange(function)",  //字段名
+				instructions: '别名 .on("error", function)',	//描述
+				type: 'function()',	//类型
 				default: "",							//默认值
 				must: '',
 			}
+		]
+	},{
+		title:"属性",
+		api:[
+			{
+				key: "1",
+				parameter: ".isFullscreen",  //字段名
+				instructions: '返回布尔值，无判断是否为全屏状态。',	//描述
+				type: '',	//类型
+				default: "",							//默认值
+				must: '',
+			},{
+				key: "2",
+				parameter: ".element",  //字段名
+				instructions: '返回当前全屏的元素，否则返回null。',	//描述
+				type: '',	//类型
+				default: "",							//默认值
+				must: '',
+			},{
+				key: "3",
+				parameter: ".enabled",  //字段名
+				instructions: '返回一个布尔值，是否允许您进入全屏。',	//描述
+				type: '',	//类型
+				default: "",							//默认值
+				must: '',
+			},
 		]
 	}
 ];
