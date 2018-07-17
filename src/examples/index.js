@@ -40,6 +40,7 @@ import Calendar from './antd/Calendar'
 import Card from './antd/Card'
 import Carousel from './antd/Carousel'
 import Collapse from './antd/Collapse'
+import List from './antd/List'
 /*-------END ----------------*/
 
 //page
@@ -73,6 +74,7 @@ export default {
     Card,
     Carousel,
     Collapse,
+    List,
     /*-------END ----------------*/
     Button,
     Icon,

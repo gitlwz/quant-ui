@@ -44,6 +44,8 @@ export default {
                         { key: '/app/antd/DataDisplay/Card', title: 'Card卡片', component: 'Card' },
                         { key: '/app/antd/DataDisplay/Carousel', title: 'Carousel走马灯', component: 'Carousel' },
                         { key: '/app/antd/DataDisplay/Collapse', title: 'Collapse折叠面板', component: 'Collapse' },
+                        { key: '/app/antd/DataDisplay/List', title: 'List列表', component: 'List' },
+
 
 
                     ],
