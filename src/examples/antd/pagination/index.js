@@ -26,6 +26,9 @@ import PagcontrolledCode from './pagcontrolled/code.js'
 //总数
 import Sumpagination from './sumpagination/Detail.js'
 import SumpaginationCode from './sumpagination/code.js'
+//上一步和下一步
+import UpAnddown from './upAnddown/Detail.js'
+import UpAnddownCode from './upAnddown/code.js'
 import Code from '../../Code.js';
 const TabPane = Tabs.TabPane;
 class App extends Component {
@@ -98,6 +101,17 @@ class App extends Component {
                             <div style={{ marginTop: "30px" }}>
                                 <Code data={SumpaginationCode} />
                             </div>
+                    </TabPane>
+                    <TabPane tab="上一步和下一步" key="9">
+                            <Card >
+                                <UpAnddown/>
+                            </Card>
+                            <div style={{ marginTop: "30px" }}>
+                                <Code data={UpAnddownCode} />
+                            </div>
+                    </TabPane>
+                    <TabPane tab="参数api" key="10">
+                        <Api data={data} />
                     </TabPane>
                 </Tabs>
 
