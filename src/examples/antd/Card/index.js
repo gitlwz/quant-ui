@@ -20,6 +20,12 @@ import MoreContentCode from './MoreContent/code.js';
 //栅格卡片
 import CardInColumn from './CardInColumn/Detail.js';
 import CardInColumnCode from './CardInColumn/code.js';
+//loadingCard
+import LoadingCard from './LoadingCard/Detail.js';
+import LoadingCardCode from './LoadingCard/code.js';
+//网格型内嵌卡片
+import GridCard from './GridCard/Detail.js';
+import GridCardCode from './GridCard/code.js';
 
 const TabPane = Tabs.TabPane;
 class App extends Component {
@@ -66,6 +72,22 @@ class App extends Component {
                         </Card>
                         <div style={{ marginTop: "30px" }}>
                             <Code data={CardInColumnCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab="预加载的卡片" key="6">
+                        <Card >
+                            <LoadingCard />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={LoadingCardCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab="网格卡片" key="7">
+                        <Card >
+                            <GridCard />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={GridCardCode} />
                         </div>
                     </TabPane>
                     <TabPane tab="参数api" key="10">
