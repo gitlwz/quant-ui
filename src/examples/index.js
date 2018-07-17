@@ -16,6 +16,7 @@ import CountDown from "./UI/CountDown" //自动计时
 //util
 import webSocket from './util/webSocket'
 import Language from './util/Language'
+import Screenfull from './util/screenfull'
 //antd
 import Button from './antd/button'
 import Icon from './antd/icon'
@@ -57,6 +58,7 @@ export default {
     //util
     webSocket,
     Language,
+    Screenfull,
     //antd
 
     /*----DataDisplay start ---------*/
