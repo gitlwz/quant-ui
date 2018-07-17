@@ -20,6 +20,7 @@ export default {
                         { key: '/app/antd/Navigation/Breadcrumb', title: 'Breadcrumb面包屑', component: 'Breadcrumb' },
                         { key: '/app/antd/Navigation/Dropdown', title: 'Dropdown下拉菜单', component: 'Dropdown' },
                         { key: '/app/antd/Navigation/Menu', title: 'Menu导航菜单', component: 'Menu' },
+                        { key: '/app/antd/Navigation/Pagination', title: 'Pagination分页', component: 'Pagination' },
                     ]
                 },
                  /*-------------END ------------------*/
