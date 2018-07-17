@@ -37,6 +37,7 @@ import Badge from './antd/Badge'
 import Calendar from './antd/Calendar'
 import Card from './antd/Card'
 import Carousel from './antd/Carousel'
+import Collapse from './antd/Collapse'
 /*-------END ----------------*/
 
 //page
@@ -69,6 +70,7 @@ export default {
     Calendar,
     Card,
     Carousel,
+    Collapse,
     /*-------END ----------------*/
     Button,
     Icon,

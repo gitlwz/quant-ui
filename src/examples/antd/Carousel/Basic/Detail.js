@@ -8,7 +8,7 @@ class Detail extends Component {
     }
     render() {
         return (
-            <div style={{width:800}}> 
+            <div style={{width:'50%'}}> 
                 <Carousel afterChange={this.onChange}>
                     <div><h3>1</h3></div>
                     <div><h3>2</h3></div>
