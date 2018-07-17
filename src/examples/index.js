@@ -27,6 +27,7 @@ import Breadcrumb from './antd/breadcrumb'
 import Dropdown from './antd/dropdown'
 import Menu from './antd/menu'
 import Pagination from './antd/pagination'
+import Steps from './antd/steps'
 /*-------END ----------*/
 
 /*----DataDisplay start ---------*/
@@ -75,6 +76,7 @@ export default {
     Dropdown,
     Menu,
     Pagination,
+    Steps,
      /*-------END ----------------*/
 
     NotFound,
