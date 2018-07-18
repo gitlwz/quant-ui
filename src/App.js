@@ -29,11 +29,11 @@ class App extends Component {
     }
     getClientWidth = () => {    // 获取当前浏览器宽度并设置responsive管理响应式
         const clientWidth = document.body.clientWidth;
-        if(clientWidth <=992){
+        if(clientWidth <=992 && this.state.collapsed === false){
             this.setState({
                 collapsed: true,
             });
-        }else{
+        }else if(clientWidth > 992 && this.state.collapsed === true){
             this.setState({
                 collapsed: false,
             });
