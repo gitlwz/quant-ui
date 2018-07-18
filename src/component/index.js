@@ -73,6 +73,7 @@ export { default as screenfull } from './screenfull';
 export { default as Editor } from './editor';        //富文本
 export { default as Nprogress } from './nprogress';   //进度条
 export { default as SlidingValidation } from './sliding-validation';   //滑动验证
+export { default as DropTree } from './drop-tree';   //滑动验证
 
 //page
 export { default as NotFound } from './not-found';

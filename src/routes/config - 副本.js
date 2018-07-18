@@ -31,8 +31,6 @@ export default {
                     subs: [
                         { key: '/app/antd/DataEntry/AutoComplete', title: 'AutoComplete自动完成', component: 'AutoComplete' },
                         { key: '/app/antd/DataEntry/Cascader', title: 'Cascader级联选择', component: 'Cascader' },
-                        { key: '/app/antd/DataEntry/Checkbox', title: 'Checkbox多选框', component: 'Checkbox' },
-                        
                     ]
                 },
                 /*-------------END ------------------*/
@@ -46,9 +44,6 @@ export default {
                         { key: '/app/antd/DataDisplay/Calendar', title: 'Calendar日历', component: 'Calendar' },
                         { key: '/app/antd/DataDisplay/Card', title: 'Card卡片', component: 'Card' },
                         { key: '/app/antd/DataDisplay/Carousel', title: 'Carousel走马灯', component: 'Carousel' },
-                        { key: '/app/antd/DataDisplay/Collapse', title: 'Collapse折叠面板', component: 'Collapse' },
-                        { key: '/app/antd/DataDisplay/List', title: 'List列表', component: 'List' },
-
 
 
                     ],

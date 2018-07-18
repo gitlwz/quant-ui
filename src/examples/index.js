@@ -13,6 +13,7 @@ import HeaderSearch from './UI/HeaderSearch' //顶部搜索框
 import RichText from './UI/RichText' //富文本
 import Ellipsis from './UI/Ellipsis' //文本自动省略
 import CountDown from "./UI/CountDown" //自动计时
+import DropTree from "./UI/DropTree" //拖拽树形图
 //util
 import webSocket from './util/webSocket'
 import Language from './util/Language'
@@ -62,6 +63,7 @@ export default {
     RichText,
     Ellipsis,
     CountDown,
+    DropTree,
 
     //util
     webSocket,
