@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cloneDeep from 'lodash/cloneDeep';
 import { Input, Icon, AutoComplete } from 'antd';
 import classNames from 'classnames';
-import './index.less';
+
 let $ = window.jQuery
 export default class DropTree extends PureComponent {
   static propTypes = {
@@ -24,6 +24,9 @@ export default class DropTree extends PureComponent {
       dataSourse: props.dataSource,
     };
     this.dataSourseCP = cloneDeep(this.state.dataSourse)
+  }
+  onReset = () =>{
+    console.log("onReset调用了")
   }
   componentWillMount = () => {
     (function($) {
@@ -253,6 +256,7 @@ export default class DropTree extends PureComponent {
   componentDidMount = () => {
     //模拟异步
     setTimeout(() => {
+      $("#jOrgChart").empty()
       var result = {
         "data": [{ "id": 1, "name": "企业主体信用得分", "pid": null, "childrens": [{ "id": 2, "name": "企业素质", "pid": 1, "childrens": [{ "id": 5, "name": "基本信息", "pid": 2, "childrens": [{ "id": 10, "name": "企业主体信息识别", "pid": 5, "childrens": [] }, { "id": 11, "name": "企业持续注册时间", "pid": 5, "childrens": [] }, { "id": 12, "name": "注册资本", "pid": 5, "childrens": [] }] }, { "id": 6, "name": "管理认证", "pid": 2, "childrens": [] }] }, { "id": 3, "name": "履约记录", "pid": 1, "childrens": [{ "id": 7, "name": "税务执行情况", "pid": 3, "childrens": [{ "id": 14, "name": "是否按时缴纳税款", "pid": 7, "childrens": [{ "id": 13, "name": "国际性管理认证", "pid": 14, "childrens": [] }] }] }, { "id": 8, "name": "网贷情况", "pid": 3, "childrens": [{ "id": 15, "name": "网贷逾期", "pid": 8, "childrens": [] }] }] }, { "id": 4, "name": "公共监督", "pid": 1, "childrens": [{ "id": 9, "name": "行政处罚", "pid": 4, "childrens": [{ "id": 16, "name": "处罚信息", "pid": 9, "childrens": [] }] }] }] }
         ]
