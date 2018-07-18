@@ -45,6 +45,7 @@ import Card from './antd/Card'
 import Carousel from './antd/Carousel'
 import Collapse from './antd/Collapse'
 import List from './antd/List'
+import PopOver from './antd/PopOver'
 /*-------END ----------------*/
 
 //page
@@ -80,6 +81,7 @@ export default {
     Carousel,
     Collapse,
     List,
+    PopOver,
     /*-------END ----------------*/
     Button,
     Icon,
