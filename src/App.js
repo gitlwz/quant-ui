@@ -50,9 +50,6 @@ class App extends Component {
         })
     }
     shouldComponentUpdate = (newProps, newState)=>{
-        if(this.state.collapsed == newState.collapsed){
-            return false
-        }
         return true
     }
     render() {
