@@ -32,6 +32,7 @@ import Steps from './antd/steps'
 /*-------Data Entry ----------*/
 import AutoComplete from './antd/autoComplete'
 import Cascader from './antd/cascader'
+import Checkbox from './antd/checkbox'
 /*-------END ----------*/
 /*----DataDisplay start ---------*/
 
@@ -90,6 +91,7 @@ export default {
      /*-------Data Entry ----------*/
     AutoComplete,
     Cascader,
+    Checkbox,
     /*-------END ----------------*/
     NotFound,
     Map,

@@ -35,7 +35,8 @@ import Cascader_loadCode from './cascader_load/code.js'
 //自定义字段名
 import Cascadercustom_fieldName from './cascadercustom_fieldName/Detail.js'
 import Cascadercustom_fieldNameCode from './cascadercustom_fieldName/code.js'
-
+import Method from '../../METHOD.js';
+import methodData from './method.js'
 import Code from '../../Code.js';
 import { width } from 'window-size';
 const TabPane = Tabs.TabPane;
@@ -127,7 +128,7 @@ class App extends Component {
                     </TabPane>
                     <TabPane tab="自定义字段名" key="11">
                         <Card >
-                            <Cascadercustom_fieldName />
+                        <Cascadercustom_fieldName />
                         </Card>
                         <div style={{ marginTop: "30px" }}>
                             <Code data={Cascadercustom_fieldNameCode} />
@@ -135,6 +136,9 @@ class App extends Component {
                     </TabPane>
                     <TabPane tab="参数api" key="12">
                             <Api data={data}/>
+                    </TabPane>
+                    <TabPane tab="方法" key="13">
+                            <Method data={methodData} />
                     </TabPane>
                 </Tabs>
 
