@@ -133,6 +133,9 @@ class App extends Component {
                             <Code data={Cascadercustom_fieldNameCode} />
                         </div>
                     </TabPane>
+                    <TabPane tab="参数api" key="12">
+                            <Api data={data}/>
+                    </TabPane>
                 </Tabs>
 
             </div>
