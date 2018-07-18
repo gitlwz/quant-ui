@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Icon from "../icon"
-import "./style.less"
 class SlidingValidation extends Component {
     static defaultProps = {
         succeed:()=>{},

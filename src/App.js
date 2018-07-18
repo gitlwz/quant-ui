@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Layout,BackTop ,screenfull } from 'quant-ui';
+import { Layout,BackTop ,screenfull,Icon } from 'quant-ui';
 import './App.less';
 import SiderCustom from './examples/SiderCustom';
 import HeaderCustom from './examples/HeaderCustom';

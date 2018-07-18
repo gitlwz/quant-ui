@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Layout, Icon, HeaderSearch ,Button,Dropdown,Menu,language,screenfull} from 'quant-ui';
-import "./HeaderCustom.less"
+
 import config from "../routes/config"
 const { Header } = Layout;
 let {getCurrentLanguage,setCurrentLanguage,refreshLanguage} = language;
@@ -13,6 +13,20 @@ const menu = (
         <Menu.Item key="en_US">English</Menu.Item>
     </Menu>
 );
+const colormenu = (
+    <Menu 
+        onClick = {colorhandleMenuClick} 
+        defaultSelectedKeys={[window.localStorage.getItem("quant-theme")||"default"]}
+    >
+        <Menu.Item key="red">红色</Menu.Item>
+        <Menu.Item key="green">绿色</Menu.Item>
+        <Menu.Item key="purple">紫色</Menu.Item>
+    </Menu>
+)
+function colorhandleMenuClick(e){
+    window.localStorage.setItem("quant-theme",e.key);
+    window.location.reload()
+}
 function handleMenuClick(e) {
     setCurrentLanguage(e.key);
     refreshLanguage();
@@ -69,7 +83,7 @@ class HeaderCustom extends Component {
                     boxShadow: '0 1px 4px rgba(0,21,41,.12)',
                 }}>
                     <Icon
-                        style={{float: 'left'}}
+                        style={{float: 'left',marginTop:"20px"}}
                         className="app_trigger"
                         type={this.props.collapsed ? 'menu-unfold' : 'menu-fold'}
                         onClick={this.props.toggle}
@@ -88,6 +102,11 @@ class HeaderCustom extends Component {
                             <Button icon="setting" style={{ marginLeft: 8 }}>
                                 {languageData} <Icon type="down" />
                             </Button>
+                        </Dropdown>
+                    </span >
+                    <span className="HeaderCustom_color" style={{display:'inline-block',margin:"0px 20px 0 0px",cursor:'pointer'}}>
+                        <Dropdown overlay={colormenu}>
+                            <Icon className="icon" type="skin" />
                         </Dropdown>
                     </span >
                     <span onClick={this.screenFull} style={{display:'inline-block',margin:"0px 20px 0 0px",cursor:'pointer'}}>
