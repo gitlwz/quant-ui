@@ -1,36 +1,112 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import cloneDeep from 'lodash/cloneDeep';
+import isEqual from 'lodash/cloneDeep';
 import { Input, Icon, AutoComplete } from 'antd';
 import classNames from 'classnames';
 
-let $ = window.jQuery
+let $ = window.jQuery;
+let obj = {};
+let copyFrom = {};
 export default class DropTree extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
     onReset: PropTypes.func,
-    dataSource: PropTypes.array,
+    dataSource: PropTypes.object,
   };
 
   static defaultProps = {
     onReset: () => { },
     className: '',
-    dataSource: [],
+    dataSource: {},
   };
 
   constructor(props) {
     super(props);
     this.state = {
-      dataSourse: props.dataSource,
+      dataSource: props.dataSource,
     };
-    this.dataSourseCP = cloneDeep(this.state.dataSourse)
   }
-  onReset = () =>{
-    console.log("onReset调用了")
+  componentWillReceiveProps = (nextProps) => {
+    this.setState({
+      dataSource: nextProps.dataSource
+    })
+  };
+  onReset = (dataSource) =>{
+    //模拟异步
+    if((dataSource && dataSource.data) || this.state.dataSource.data){
+      setTimeout(() => {
+        $("#jOrgChart").empty()
+        var result = dataSource?dataSource:this.state.dataSource;
+        var showlist = $("<ul id='org' style='display:none'></ul>");
+        this.showall(result.data, showlist);
+        $("#jOrgChart").append(showlist);
+        $("#org").jOrgChart({
+          chartElement: '#jOrgChart',//指定在某个dom生成jorgchart
+          dragAndDrop: true //设置是否可拖动
+        });
+        this.dataSourceCP = cloneDeep(result)
+      }, 0)
+    }
+  }
+  onSetData = (dataSource) =>{
+    this.setState({
+      dataSource:dataSource
+    })
+    this.onReset(dataSource)
+  }
+  onGetData = () => {
+    return this.dataSourceCP?this.dataSourceCP:[]
+  }
+  changeNode = (from,to) => {
+    let fromData = from.split(',');
+    obj.fromId = fromData[0];
+    obj.fromPId = fromData[1];
+
+    fromData = to.split(',');
+    obj.toId = fromData[0];
+    obj.toPid = fromData[1];
+    this.recursion(this.dataSourceCP.data)
+  }
+  recursion = (item) => {
+    $.each(item,(index,value)=>{
+      if(value.childrens.length > 0){
+        if(obj.toId == value.id){
+          setTimeout(() => {
+            copyFrom.pid = value.id;
+            value.childrens.push(copyFrom)
+          }, 0);
+        }
+        if(obj.fromPId == value.id){//找到父节点，判断需要删哪个子节点
+          for(let index in value.childrens){
+            if(value.childrens[index].id == obj.fromId){
+              copyFrom = $.extend({},value.childrens[index])
+              value.childrens.splice(index,1);
+            }
+          }
+        }
+        this.recursion(value.childrens)
+      }else{
+        if(obj.toId == value.id){
+          setTimeout(() => {
+            copyFrom.pid = value.id;
+            value.childrens.push(copyFrom)
+          }, 0);
+        }
+        if(obj.fromPId == value.id){
+          for(let index in value.childrens){
+            if(value.childrens[index].id == obj.fromId){
+              copyFrom = $.extend({},value.childrens[index])
+              value.childrens.splice(index,1);
+            }
+          }
+        }
+      }
+    })
   }
   componentWillMount = () => {
+    let that = this;
     (function($) {
-
       $.fn.jOrgChart = function(options) {
         var opts = $.extend({}, $.fn.jOrgChart.defaults, options);
         var $appendTo = $(opts.chartElement);
@@ -94,7 +170,7 @@ export default class DropTree extends PureComponent {
             var sourceID = ui.draggable.data("tree-node");		
             var sourceLi = $this.find("li").filter(function() { return $(this).data("tree-node") === sourceID; } );		
             var sourceUl = sourceLi.parent('ul');
-            // changeNode(sourceLi[0].firstChild.id,targetLi[0].firstChild.id)
+            that.changeNode(sourceLi[0].firstChild.id,targetLi[0].firstChild.id)
             
     
             if (targetUl.length > 0){
@@ -254,23 +330,9 @@ export default class DropTree extends PureComponent {
     })(window.jQuery);
   };
   componentDidMount = () => {
-    //模拟异步
-    setTimeout(() => {
-      $("#jOrgChart").empty()
-      var result = {
-        "data": [{ "id": 1, "name": "企业主体信用得分", "pid": null, "childrens": [{ "id": 2, "name": "企业素质", "pid": 1, "childrens": [{ "id": 5, "name": "基本信息", "pid": 2, "childrens": [{ "id": 10, "name": "企业主体信息识别", "pid": 5, "childrens": [] }, { "id": 11, "name": "企业持续注册时间", "pid": 5, "childrens": [] }, { "id": 12, "name": "注册资本", "pid": 5, "childrens": [] }] }, { "id": 6, "name": "管理认证", "pid": 2, "childrens": [] }] }, { "id": 3, "name": "履约记录", "pid": 1, "childrens": [{ "id": 7, "name": "税务执行情况", "pid": 3, "childrens": [{ "id": 14, "name": "是否按时缴纳税款", "pid": 7, "childrens": [{ "id": 13, "name": "国际性管理认证", "pid": 14, "childrens": [] }] }] }, { "id": 8, "name": "网贷情况", "pid": 3, "childrens": [{ "id": 15, "name": "网贷逾期", "pid": 8, "childrens": [] }] }] }, { "id": 4, "name": "公共监督", "pid": 1, "childrens": [{ "id": 9, "name": "行政处罚", "pid": 4, "childrens": [{ "id": 16, "name": "处罚信息", "pid": 9, "childrens": [] }] }] }] }
-        ]
-      }
-      var showlist = $("<ul id='org' style='display:none'></ul>");
-      
-      this.showall(result.data, showlist);
-      $("#jOrgChart").append(showlist);
-      $("#org").jOrgChart({
-        chartElement: '#jOrgChart',//指定在某个dom生成jorgchart
-        dragAndDrop: true //设置是否可拖动
-      });
-    }, 500)
+    this.onReset(this.state.dataSource)
   };
+
   showall = (menu_list,parent) => {
     let that = this;
     $.each(menu_list, function(index, val) {
@@ -287,7 +349,6 @@ export default class DropTree extends PureComponent {
   }
   render() {
     const { className, ...restProps } = this.props;
-    const { dataSourse } = this.state;
     return (
       <div id='jOrgChart'></div>
     );
