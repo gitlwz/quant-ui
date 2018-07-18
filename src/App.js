@@ -7,7 +7,7 @@ import Routes from './routes';
 const { Content } = Layout;
 class App extends Component {
     state = {
-        collapsed: false,
+        collapsed: null,
         pathname:this.props.location.pathname
     };
     componentWillMount() {
@@ -29,11 +29,11 @@ class App extends Component {
     }
     getClientWidth = () => {    // 获取当前浏览器宽度并设置responsive管理响应式
         const clientWidth = document.body.clientWidth;
-        if(clientWidth <=992 && this.state.collapsed === false){
+        if(clientWidth <=992 ){
             this.setState({
                 collapsed: true,
             });
-        }else if(clientWidth > 992 && this.state.collapsed === true){
+        }else if(clientWidth > 992){
             this.setState({
                 collapsed: false,
             });
@@ -49,6 +49,12 @@ class App extends Component {
             pathname
         })
     }
+    shouldComponentUpdate = (newProps, newState)=>{
+        if(this.state.collapsed == newState.collapsed){
+            return false
+        }
+        return true
+    }
     render() {
         return (
             <Layout>
@@ -57,7 +63,7 @@ class App extends Component {
                     <HeaderCustom historyChange={this.historyChange} history={this.props.history} toggle={this.toggle} collapsed={this.state.collapsed}/>
                     {/* <HeaderCustom toggle={this.toggle} collapsed={this.state.collapsed} user={auth.data || {}} /> */}
                     <Content id="app_Content" className="Content">
-                        <Routes auth={"是否登陆"} />
+                        <Routes collapsed = {this.state.collapsed}/>
                     </Content>
                     {/* <Footer style={{ textAlign: 'center' }}>
                         quantdo-ui ©{new Date().getFullYear()} Created by quantdo

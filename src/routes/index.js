@@ -12,7 +12,7 @@ const renderRouter = (routes) =>{
             const Component = AllComponents[r.component];
             return (
                 <Route
-                    key={r.route || r.key}
+                    key={r.route}
                     exact
                     path={r.route || r.key}
                     component={(props)=><Component {...props} />}     //此处验证身份
@@ -39,6 +39,12 @@ export default class CRouter extends Component {
     //     }
     //     return permission ? this.requireAuth(permission, component) : component;
     // };
+    shouldComponentUpdate = (newProps, newState)=>{
+        if(newProps.collapsed !== this.props.collapsed || newProps.collapsed === null){
+            return false;
+        }
+        return true;
+    }
     render() {
         return (
             <Switch>
