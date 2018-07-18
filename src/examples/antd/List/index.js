@@ -12,8 +12,8 @@ import BasicListCode from './BasicList/code.js';
 import SimpleList from './SimpleList/Detail'
 import SimpleListCode from './SimpleList/code'
 //加载更多
-// import LoadMore from './LoadMore/Detail'
-// import LoadMoreCode from './LoadMore/code'
+import LoadMore from './LoadMore/Detail'
+import LoadMoreCode from './LoadMore/code'
 //竖排列表
 import VerticalList from './VerticalList/Detail'
 import VerticalListCode from './VerticalList/code'
@@ -23,22 +23,15 @@ import GridListCode from './GridList/code'
 //响应式格栅列表
 import LayoutGridList from './LayoutGridList/Detail'
 import LayoutGridListCode from './LayoutGridList/code'
-
-
+//滚动列表
+import ScrollList from './ScrollList/Detail'
+import ScrollListCode from './ScrollList/code'
+//滚动加载无限长列表
+import VirtualizedList from './VirtualizedList/Detail'
+import VirtualizedListCode from './VirtualizedList/code'
 
 const TabPane = Tabs.TabPane;
 class App extends Component {
-    // state={
-    //     curKey:'1',
-    // }
-    // onChange=(key)=>{
-    //     console.log('key',key);
-    //     this.setState({
-    //         curKey:key
-    //     });
-    //     console.log('curKey',this.state.curKey);
-    //     console.log('defaultKey',this.defaultActiveKey);
-    // }
     render() {
         return (
             <div style={{ padding: "20px" }}>
@@ -60,14 +53,14 @@ class App extends Component {
                             <Code data={BasicListCode} />
                         </div>
                     </TabPane>
-                    {/* <TabPane tab="加载更多" key="3">
+                    <TabPane tab="加载更多" key="3">
                         <Card >
                             <LoadMore />
                         </Card>
                         <div style={{ marginTop: "30px" }}>
                             <Code data={LoadMoreCode} />
                         </div>
-                    </TabPane> */}
+                    </TabPane>
                     <TabPane tab="竖排列表" key="4">
                         <Card >
                             <VerticalList />
@@ -92,7 +85,25 @@ class App extends Component {
                             <Code data={LayoutGridListCode} />
                         </div>
                     </TabPane>
-
+                    <TabPane tab="滚动列表" key="7">
+                        <Card >
+                            <ScrollList />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={ScrollListCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab="滚动加载无限长列表" key="8">
+                        <Card >
+                            <VirtualizedList />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={VirtualizedListCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab="参数api" key="10">
+                        <Api data={data} />
+                    </TabPane>
                 </Tabs>
 
 
