@@ -17,7 +17,7 @@
     "test": "node scripts/test.js --env=jsdom"
   },
   "dependencies": {
-    "antd": "^3.6.5",
+    "antd": "^3.7.0",
     "copy-to-clipboard": "^3.0.8",
     "draftjs-to-html": "^0.8.4",
     "lodash": "^4.17.10",
