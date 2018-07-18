@@ -33,6 +33,7 @@ export default {
                         { key: '/app/antd/DataEntry/Cascader', title: 'Cascader级联选择', component: 'Cascader' },
                         { key: '/app/antd/DataEntry/Checkbox', title: 'Checkbox多选框', component: 'Checkbox' },
                         { key: '/app/antd/DataEntry/DatePicker', title: 'DatePicker日期选择框', component: 'DatePicker' },
+                        { key: '/app/antd/DataEntry/Form', title: 'Form表单', component: 'Form' },
                         
                     ]
                 },
