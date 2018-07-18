@@ -67,7 +67,7 @@ export { default as CountDown } from './count-down';
 export { default as webSocket } from './web-socket'; 
 export { default as language } from './language';
 export { default as screenfull } from './screenfull';
-
+export { default as theme } from './theme';
 
 //功能组件
 export { default as Editor } from './editor';        //富文本

@@ -1,5 +1,6 @@
-let theme = window.localStorage.getItem("quant-theme") || "default";
-switch (theme){
+
+import { theme } from 'quant-ui';
+switch (theme.getCurrentColor()){
     case "default":
         
         break;
