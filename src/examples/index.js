@@ -34,6 +34,7 @@ import Steps from './antd/steps'
 import AutoComplete from './antd/autoComplete'
 import Cascader from './antd/cascader'
 import Checkbox from './antd/checkbox'
+import DatePicker from './antd/datePicker'
 /*-------END ----------*/
 /*----DataDisplay start ---------*/
 
@@ -94,6 +95,7 @@ export default {
     AutoComplete,
     Cascader,
     Checkbox,
+    DatePicker,
     /*-------END ----------------*/
     NotFound,
     Map,
