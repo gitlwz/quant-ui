@@ -2,8 +2,10 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import cloneDeep from 'lodash/cloneDeep';
 import isFunction from 'lodash/isFunction';
-import Children from './Children';
-import Target from './Target';
+import Children from './component/Children';
+import Target from './component/Target';
+import LineFirst from './component/LineFirst';
+import LineTow from './component/LineTow';
 // import './index.less';
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
@@ -12,11 +14,13 @@ class DropTree extends PureComponent {
     static propTypes = {
         className: PropTypes.string,
         onReset: PropTypes.func,
+        onSetData: PropTypes.func,
         dataSource: PropTypes.array,
     };
 
     static defaultProps = {
         onReset: () => { },
+        onSetData: () => { },
         className: '',
         dataSource: [],
     };
@@ -30,10 +34,23 @@ class DropTree extends PureComponent {
         
     }
     onResetData = () => {
-        console.log("onResetData")
+        this.dataSource = cloneDeep(this.dataSource);
+        this._dataSource = cloneDeep(this.dataSource);;
+        this.setState({
+            refresh:!this.state.refresh
+        })
     }
     onSetData = (dataSource,callBack) => {
-        
+        if(!!dataSource){
+            this.dataSource = dataSource;
+            this._dataSource = cloneDeep(this.dataSource);;
+            this.setState({
+                refresh:!this.state.refresh
+            })
+            if(!!isFunction(callBack)){
+                callBack()
+            }
+        }
     }
     onGetData = () => {
         return "onGetData"
@@ -56,53 +73,6 @@ class DropTree extends PureComponent {
         }
         return null;
     }
-    lineFirst = (lineNum) => {
-        if (lineNum == 0) {
-            return null;
-        }
-        return (
-            <tr>
-                <td colSpan={lineNum * 2}>
-                    <div className="line down"></div>
-                </td>
-            </tr>
-        )
-    }
-    lineTow = (lineNum) => {
-        if (lineNum == 0) {
-            return null;
-        }
-        let line = []
-        for (let i = 0; i < lineNum * 2; i++) {
-            if (i == 0) {
-                line.push(
-                    <td class="line left">&nbsp;</td>
-                )
-                continue;
-            }
-            if (i == (lineNum * 2 - 1)) {
-                line.push(
-                    <td class="line right">&nbsp;</td>
-                )
-                continue;
-            }
-            if (i % 2 == 0) { //偶数
-                line.push(
-                    <td class="line left top">&nbsp;</td>
-                )
-            } else {
-                line.push(
-                    <td class="line right top">&nbsp;</td>
-                )
-            }
-
-        }
-        return (
-            <tr>
-                {line}
-            </tr>
-        )
-    }
     parent = (data) => {
         return data.map((item) => {
             let colSpan = item.childrens.length * 2;
@@ -111,11 +81,11 @@ class DropTree extends PureComponent {
                     <tbody>
                         <tr>
                             <Target onDrageFromTo={this.onDrageFromTo} data={item}>
-                                <Children renderItem={this.props.renderItem} forbidDrag={!!item.pid?false:true} onDrageFromTo={this.onDrageFromTo} data={item} />
+                                <Children onClick={this.props.onClick} renderItem={this.props.renderItem} forbidDrag={!!item.pid?false:true} onDrageFromTo={this.onDrageFromTo} data={item} />
                             </Target>
                         </tr>
-                        {this.lineFirst(item.childrens.length)}
-                        {this.lineTow(item.childrens.length)}
+                        <LineFirst lineNum = {item.childrens.length}/>
+                        <LineTow lineNum = {item.childrens.length}/>
                         {this.children(item.childrens)}
                     </tbody>
                 </table>
@@ -127,6 +97,11 @@ class DropTree extends PureComponent {
             drageData = cloneDeep(data);
        }else if(type == "to"){
             if(data.id === drageData.id) return;
+            if(isFunction(this.props.isParentToChildren)){
+                if(this.props.isParentToChildren(drageData,data) === false){
+                    return;  
+                }
+            }
             if(!!this.isParentToChildren(drageData,data)){
                 //可以给提示
                 return;
