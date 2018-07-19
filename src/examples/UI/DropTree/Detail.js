@@ -37,11 +37,14 @@ const dataSource = [
 		  }
 	];
 class Detail extends Component {
-	
+	renderItem = (item) =>{
+
+		return <div> {item.name +""+item.id }</div>
+	}
 	render() {
 		return (
 			<div>
-				<DropTree dataSource={dataSource} ref="droptree"/>
+				<DropTree renderItem = {this.renderItem} dataSource={dataSource} ref="droptree"/>
 			</div>
 		);
 	}

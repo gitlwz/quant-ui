@@ -35,6 +35,7 @@ export default {
                         { key: '/app/antd/DataEntry/DatePicker', title: 'DatePicker日期选择框', component: 'DatePicker' },
                         { key: '/app/antd/DataEntry/Form', title: 'Form表单', component: 'Form' },
                         { key: '/app/antd/DataEntry/Input', title: 'Input输入框', component: 'Input' },
+                        { key: '/app/antd/DataEntry/InputNumber', title: 'InputNumber数字输入框', component: 'InputNumber' },
                         
                     ]
                 },
