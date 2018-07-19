@@ -48,6 +48,7 @@ import Collapse from './antd/Collapse'
 import List from './antd/List'
 import PopOver from './antd/PopOver'
 import Tooltip from './antd/Tooltip'
+import Table from './antd/Table'
 /*-------END ----------------*/
 
 //page
@@ -85,6 +86,7 @@ export default {
     List,
     PopOver,
     Tooltip,
+    Table,
     /*-------END ----------------*/
     Button,
     Icon,

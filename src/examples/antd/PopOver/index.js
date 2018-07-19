@@ -23,7 +23,7 @@ class App extends Component {
     render() {
         return (
             <div style={{ padding: "20px" }}>
-                <h1>List列表</h1>
+                <h1>Popover气泡卡片</h1>
                 <Tabs tabPosition={"right"}>
                     <TabPane tab="基础" key="1">
                         <Card >
