@@ -65,7 +65,6 @@ class HeaderCustom extends Component {
         let enterData = this.dataSource.find(({name})=>name === value);
         if(!!enterData){
             this.props.historyChange(enterData.value)
-            console.log("*******8",enterData.value)
             this.props.history.push(enterData.value)
         }
     }

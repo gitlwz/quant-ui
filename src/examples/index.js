@@ -15,6 +15,9 @@ import Ellipsis from './UI/Ellipsis' //文本自动省略
 import CountDown from "./UI/CountDown" //自动计时
 import DropTree from "./UI/DropTree" //拖拽树形图
 import Color from "./UI/Color" //拾色器
+//动画
+import BasicAnimations from "./animation/BasicAnimations"
+
 //util
 import webSocket from './util/webSocket'
 import Language from './util/Language'
@@ -75,6 +78,9 @@ export default {
     CountDown,
     DropTree,
     Color,
+    //动画
+    BasicAnimations,
+
     //util
     webSocket,
     Language,

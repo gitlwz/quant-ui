@@ -87,6 +87,12 @@ export default {
             ],
         },
         {
+            key: '/app/animation', title: '动画', icon: 'rocket',
+            subs: [
+                { key: '/app/animation/basicAnimations', title: '基础动画', component: 'BasicAnimations'},
+            ],
+        },
+        {
             key: '/app/util', title: '方法', icon: 'tool',
             subs: [
                 { key: '/app/util/webSocket', title: 'webSocket链接', component: 'webSocket' },
