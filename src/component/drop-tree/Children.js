@@ -31,7 +31,7 @@ class App extends Component {
                     opacity: isDragging ? 0.5 : 1,
                     fontSize: 12,
                     cursor: 'move'
-                  }} className="node">{isFunction(item.render)?item.render(item):item.name}</div>
+                  }} className="node">{isFunction(this.props.renderItem)?this.props.renderItem(item):item.name}</div>
             
         )
   }

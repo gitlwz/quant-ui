@@ -32,8 +32,8 @@ class DropTree extends PureComponent {
     onResetData = () => {
         console.log("onResetData")
     }
-    onSetData = () => {
-        console.log("onSetData")
+    onSetData = (dataSource,callBack) => {
+        
     }
     onGetData = () => {
         return "onGetData"
@@ -111,7 +111,7 @@ class DropTree extends PureComponent {
                     <tbody>
                         <tr>
                             <Target onDrageFromTo={this.onDrageFromTo} data={item}>
-                                <Children forbidDrag={!!item.pid?false:true} onDrageFromTo={this.onDrageFromTo} data={item} />
+                                <Children renderItem={this.props.renderItem} forbidDrag={!!item.pid?false:true} onDrageFromTo={this.onDrageFromTo} data={item} />
                             </Target>
                         </tr>
                         {this.lineFirst(item.childrens.length)}
@@ -184,7 +184,7 @@ class DropTree extends PureComponent {
         if(!!this.findItem(to.id,from.childrens)) return true;
         return false
     }
-    refresh = ( callBack) =>{
+    refresh = (callBack) =>{
         this.setState({
             refresh:!this.state.refresh
         },()=>{
