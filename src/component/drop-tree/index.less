@@ -1,48 +1,48 @@
-.jOrgChart a {
+.quant-drop-tree a {
     text-decoration: none;
     color: @text-color-dark;
     font-size: 12px;
 }
-.jOrgChart .node {
+.quant-drop-tree .node {
     width: 120px;
     height: 50px;
     line-height: 50px;
     border-radius: 4px;
     margin: 0 8px;
-}
-/* Basic styling */
-/* Draw the lines */
-.jOrgChart .line {
+  }
+  /* Basic styling */
+  /* Draw the lines */
+  .quant-drop-tree .line {
     height                : 20px;
-    width                 : 4px;
+    width                 : 3px;
   }
   
-  .jOrgChart .down {
+  .quant-drop-tree .down {
     background-color 		: black;	
     margin 				: 0px auto;
   }
   
-  .jOrgChart .top {
-    border-top          : 4px solid black;
+  .quant-drop-tree .top {
+    border-top          : 3px solid black;
   }
   
-  .jOrgChart .left {
-    border-right          : 4px solid black;
+  .quant-drop-tree .left {
+    border-right          : 3px solid black;
   }
   
-  .jOrgChart .right {
-    border-left           : 4px solid black;
+  .quant-drop-tree .right {
+    border-left           : 3px solid black;
   }
   
   /* node cell */
-  .jOrgChart td {
+  .quant-drop-tree td {
     text-align            : center;
     vertical-align        : top;
     padding               : 0;
   }
   
   /* The node */
-  .jOrgChart .node {
+  .quant-drop-tree .node {
     background-color :@primary-color;
     display               : inline-block;
     width                 : 96px;
@@ -50,15 +50,8 @@
     z-index 				: 10;
     margin               : 0 2px;
   }
-  
-  /* jQuery drag 'n drop */
-  
-  .drag-active {
-    border-style			: dotted !important;
+  .quant-drop-tree .node-cell .node{
+      background-color :green !important;
   }
   
-  .drop-hover {
-    border-style			: solid !important;
-    border-color 			: #E05E00 !important;
-  }
   
