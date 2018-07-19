@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Layout, Icon, HeaderSearch ,Button,Dropdown,Menu,language,screenfull} from 'quant-ui';
-
+import { theme,Layout, Icon, HeaderSearch ,Button,Dropdown,Menu,language,screenfull} from 'quant-ui';
 import config from "../routes/config"
+const {getCurrentColor,refreshColor,setCurrentColor} = theme;
 const { Header } = Layout;
 let {getCurrentLanguage,setCurrentLanguage,refreshLanguage} = language;
 const menu = (
@@ -16,16 +16,17 @@ const menu = (
 const colormenu = (
     <Menu 
         onClick = {colorhandleMenuClick} 
-        defaultSelectedKeys={[window.localStorage.getItem("quant-theme")||"default"]}
+        defaultSelectedKeys={[getCurrentColor()]}
     >
+        <Menu.Item key="default">默认</Menu.Item>
         <Menu.Item key="red">红色</Menu.Item>
         <Menu.Item key="green">绿色</Menu.Item>
         <Menu.Item key="purple">紫色</Menu.Item>
     </Menu>
 )
 function colorhandleMenuClick(e){
-    window.localStorage.setItem("quant-theme",e.key);
-    window.location.reload()
+    setCurrentColor(e.key)
+    refreshColor()
 }
 function handleMenuClick(e) {
     setCurrentLanguage(e.key);
