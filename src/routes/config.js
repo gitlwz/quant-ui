@@ -34,6 +34,7 @@ export default {
                         { key: '/app/antd/DataEntry/Checkbox', title: 'Checkbox多选框', component: 'Checkbox' },
                         { key: '/app/antd/DataEntry/DatePicker', title: 'DatePicker日期选择框', component: 'DatePicker' },
                         { key: '/app/antd/DataEntry/Form', title: 'Form表单', component: 'Form' },
+                        { key: '/app/antd/DataEntry/Input', title: 'Input输入框', component: 'Input' },
                         
                     ]
                 },
