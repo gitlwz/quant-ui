@@ -83,6 +83,7 @@ export default {
                 { key: '/app/ui/RichText', title: '富文本', component: 'RichText' },
                 { key: '/app/ui/CountDown', title: '倒计时', component: 'CountDown' },
                 { key: '/app/ui/DropTree', title: '拖拽树形图', component: 'DropTree' },
+                { key: '/app/ui/color', title: '拾色器', component: 'Color' },
             ],
         },
         {

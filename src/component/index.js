@@ -73,7 +73,7 @@ export { default as SlidingValidation } from './sliding-validation';   //滑动�
 export { default as DropTree } from './drop-tree';   //组织树
 export { default as QRCode } from './q-r-code';
 export { default as copy } from './copy'; 
-
+export { default as colorPicker } from './color-picker'; 
 //page
 export { default as NotFound } from './not-found';
 

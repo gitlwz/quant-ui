@@ -14,6 +14,7 @@ import RichText from './UI/RichText' //富文本
 import Ellipsis from './UI/Ellipsis' //文本自动省略
 import CountDown from "./UI/CountDown" //自动计时
 import DropTree from "./UI/DropTree" //拖拽树形图
+import Color from "./UI/Color" //拾色器
 //util
 import webSocket from './util/webSocket'
 import Language from './util/Language'
@@ -73,7 +74,7 @@ export default {
     Ellipsis,
     CountDown,
     DropTree,
-
+    Color,
     //util
     webSocket,
     Language,
