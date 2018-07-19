@@ -18,6 +18,7 @@ import DropTree from "./UI/DropTree" //拖拽树形图
 import webSocket from './util/webSocket'
 import Language from './util/Language'
 import Screenfull from './util/screenfull'
+import Theme from "./util/theme";
 //antd
 import Button from './antd/button'
 import Icon from './antd/icon'
@@ -36,6 +37,7 @@ import Cascader from './antd/cascader'
 import Checkbox from './antd/checkbox'
 import DatePicker from './antd/datePicker'
 import Form from './antd/form'
+import Input from './antd/input'
 /*-------END ----------*/
 /*----DataDisplay start ---------*/
 
@@ -74,6 +76,7 @@ export default {
     webSocket,
     Language,
     Screenfull,
+    Theme,
     //antd
 
     /*----DataDisplay start ---------*/
@@ -104,6 +107,7 @@ export default {
     Checkbox,
     DatePicker,
     Form,
+    Input,
     /*-------END ----------------*/
     NotFound,
     Map,

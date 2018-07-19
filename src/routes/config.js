@@ -34,6 +34,7 @@ export default {
                         { key: '/app/antd/DataEntry/Checkbox', title: 'Checkbox多选框', component: 'Checkbox' },
                         { key: '/app/antd/DataEntry/DatePicker', title: 'DatePicker日期选择框', component: 'DatePicker' },
                         { key: '/app/antd/DataEntry/Form', title: 'Form表单', component: 'Form' },
+                        { key: '/app/antd/DataEntry/Input', title: 'Input输入框', component: 'Input' },
                         
                     ]
                 },
@@ -88,6 +89,7 @@ export default {
                 { key: '/app/util/webSocket', title: 'webSocket链接', component: 'webSocket' },
                 { key: '/app/util/Language', title: 'Language多语言', component: 'Language' },
                 { key: '/app/util/Screenfull', title: 'Screenfull全屏', component: 'Screenfull' },
+                { key: '/app/util/Theme', title: 'Theme主题', component: 'Theme' },
             ],
         }, {
             key: '/app/page', title: '页面', icon: 'database',

@@ -53,9 +53,6 @@ export { default as Mention } from './mention';
 export { default as Upload } from './upload';
 export { default as version } from './version';
 
-export { default as QRCode } from './q-r-code';
-export { default as copy } from './copy'; 
-
 export { default as Authorized } from './authorized';
 export { default as Exception } from './exception';
 export { default as NoticeIcon } from './notice-icon';
@@ -73,7 +70,9 @@ export { default as theme } from './theme';
 export { default as Editor } from './editor';        //富文本
 export { default as Nprogress } from './nprogress';   //进度条
 export { default as SlidingValidation } from './sliding-validation';   //滑动验证
-export { default as DropTree } from './drop-tree';   //滑动验证
+export { default as DropTree } from './drop-tree';   //组织树
+export { default as QRCode } from './q-r-code';
+export { default as copy } from './copy'; 
 
 //page
 export { default as NotFound } from './not-found';
