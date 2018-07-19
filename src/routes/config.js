@@ -51,6 +51,8 @@ export default {
                         { key: '/app/antd/DataDisplay/Collapse', title: 'Collapse折叠面板', component: 'Collapse' },
                         { key: '/app/antd/DataDisplay/List', title: 'List列表', component: 'List' },
                         { key: '/app/antd/DataDisplay/PopOver', title: 'PopOver气泡卡片', component: 'PopOver' },
+                        { key: '/app/antd/DataDisplay/Tooltip', title: 'Tooltip文字提示', component: 'Tooltip' },
+
 
 
 

@@ -1,23 +1,15 @@
 
 const api = [
-	{
-		title: "API",
-		api: [
-			{
-				key: "1",
-				parameter: "content",  //字段名
-				type: 'string | ReactNode',	//类型
-				must: '',				//是否必填
-				default: '-',							//默认值
-				instructions: '卡片内容	'	//描述
-            },
+    {
+        title: "API",
+        api: [
             {
-                key: "14",
-				parameter: "title",  //字段名
-				type: "string | ReactNode",	//类型
-				must: '',				//是否必填
-				default: '-',							//默认值
-				instructions: ' 卡片标题'	//描述
+                key: "1",
+                parameter: "title",  //字段名
+                type: "string | ReactNode | ()=> ReactNode",	//类型
+                must: '',				//是否必填
+                default: '-',							//默认值
+                instructions: ' 提示文字	'	//描述
             },
             {
                 key: "2",
@@ -115,11 +107,13 @@ const api = [
                 default: '-',							//默认值
                 instructions: ' 显示隐藏的回调	'	//描述
             },
+
+
         ]
     },
-    
+
 ];
 
 export default {
-	api
+    api
 }

@@ -8,15 +8,13 @@ import Code from '../../Code.js';
 //基本
 import Basic from './Basic/Detail.js';
 import BasicCode from './Basic/code.js';
-//三种触发方式
-import Type from './Type/Detail.js';
-import TypeCode from './Type/code.js';
 //12种位置
 import Position from './Position/Detail';
 import PositionCode from './Position/code';
-//在浮层关闭
-import ClosedInside from './ClosedInside/Detail'
-import ClosedInsideCode from './ClosedInside/code'
+//箭头指向
+import ArrowPointDirection from './ArrowPointDirection/Detail';
+import ArrowPointDirectionCode from './ArrowPointDirection/code';
+
 
 const TabPane = Tabs.TabPane;
 class App extends Component {
@@ -33,15 +31,8 @@ class App extends Component {
                             <Code data={BasicCode} />
                         </div>
                     </TabPane>
-                    <TabPane tab="三种触发方式" key="2">
-                        <Card >
-                            <Type />
-                        </Card>
-                        <div style={{ marginTop: "30px" }}>
-                            <Code data={TypeCode} />
-                        </div>
-                    </TabPane>
-                    <TabPane tab="12种位置" key="3">
+                  
+                    <TabPane tab="12种位置" key="2">
                         <Card >
                             <Position />
                         </Card>
@@ -49,12 +40,12 @@ class App extends Component {
                             <Code data={PositionCode} />
                         </div>
                     </TabPane>
-                    <TabPane tab="在浮层关闭" key="5">
+                    <TabPane tab="箭头指向" key="3">
                         <Card >
-                            <ClosedInside />
+                            <ArrowPointDirection />
                         </Card>
                         <div style={{ marginTop: "30px" }}>
-                            <Code data={ClosedInsideCode} />
+                            <Code data={ArrowPointDirectionCode} />
                         </div>
                     </TabPane>
                     <TabPane tab="参数api" key="10">
