@@ -38,6 +38,7 @@ import Checkbox from './antd/checkbox'
 import DatePicker from './antd/datePicker'
 import Form from './antd/form'
 import Input from './antd/input'
+import InputNumber from './antd/inputNumber'
 /*-------END ----------*/
 /*----DataDisplay start ---------*/
 
@@ -106,6 +107,7 @@ export default {
     DatePicker,
     Form,
     Input,
+    InputNumber,
     /*-------END ----------------*/
     NotFound,
     Map,
