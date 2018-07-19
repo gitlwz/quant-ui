@@ -18,6 +18,7 @@ import DropTree from "./UI/DropTree" //拖拽树形图
 import webSocket from './util/webSocket'
 import Language from './util/Language'
 import Screenfull from './util/screenfull'
+import Theme from "./util/theme";
 //antd
 import Button from './antd/button'
 import Icon from './antd/icon'
@@ -73,6 +74,7 @@ export default {
     webSocket,
     Language,
     Screenfull,
+    Theme,
     //antd
 
     /*----DataDisplay start ---------*/
