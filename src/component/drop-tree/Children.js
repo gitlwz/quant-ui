@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { DragSource } from 'react-dnd';
-
+import isFunction from 'lodash/isFunction';
 
 const knightSource = {
     beginDrag(props) {
@@ -31,7 +31,7 @@ class App extends Component {
                     opacity: isDragging ? 0.5 : 1,
                     fontSize: 12,
                     cursor: 'move'
-                  }} className="node">{item.name}</div>
+                  }} className="node">{isFunction(item.render)?item.render(item):item.name}</div>
             
         )
   }
