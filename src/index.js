@@ -11,7 +11,7 @@ import en_US from 'antd/lib/locale-provider/en_US';
 import 'moment/locale/zh-cn';
 
 let currlanguage = zh_CN;
-if(language.getCurrentLanguage !== 'zh_CN' ){
+if(language.getCurrentLanguage() !== 'zh_CN' ){
     currlanguage = en_US;
 }
 ReactDOM.render(
