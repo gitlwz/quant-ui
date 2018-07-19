@@ -35,6 +35,9 @@ const data = [{
     address: 'Sidney No. 1 Lake Park',
 }];
 
+
+
+  
 class Detail extends Component {
     state = {
         selectedRowKeys: [],
@@ -51,11 +54,13 @@ class Detail extends Component {
     onSelectedRowKeysChange = (selectedRowKeys) => {
         this.setState({ selectedRowKeys });
     }
+
     render() {
         const { selectedRowKeys } = this.state;
         const rowSelection = {
             selectedRowKeys,
             onChange: this.onSelectedRowKeysChange,
+            
         };
         return (
             <Table
