@@ -1,45 +1,27 @@
 import React, { Component } from 'react';
-import { language ,Button} from 'quant-ui';
-const $ = language.getLanguageData;
-
-
-language.setLanguageData({
-	'en_US':{
-		"你好！":"hello！",
-		"语言":"language",
-	},
-	'ja_JP':{
-		"你好！":"あろは",
-		"语言":"じ",
-	}
-})
+import {theme, Button} from 'quant-ui';
+const {getCurrentColor,refreshColor,setCurrentColor} = theme;
 class Detail extends Component {
-
-	zhClick = () =>{
-		language.setCurrentLanguage("zh_CN")
-		language.refreshLanguage()
+	redClick = () =>{
+		setCurrentColor('red')
+		refreshColor()
 	}
-	enClick = () =>{
-		language.setCurrentLanguage("en_US")
-		language.refreshLanguage()
+	greenClick = () => {
+		setCurrentColor('green')
+		refreshColor()
 	}
-	jaClick = () =>{
-		language.setCurrentLanguage("ja_JP")
-		language.refreshLanguage()
+	purpleClick = () =>{
+		setCurrentColor('purple')
+		refreshColor()
 	}
 	render() {
 		return (
 			<div>
-				<Button onClick={this.zhClick}>中文</Button>
-				<Button onClick={this.enClick}>英文</Button>
-				<Button onClick={this.jaClick}>日语</Button>
-				<div>
-					{$("你好！")} 
-					<br /><br />
-					{$("语言")}
-				</div>
+				<h2>当前字体颜色{getCurrentColor()}</h2>
+				<Button onClick={this.redClick}>红色</Button>
+				<Button onClick={this.greenClick}>绿色</Button>
+				<Button onClick={this.purpleClick}>紫色</Button>
 			</div>
-			
 		);
 	}
 }
