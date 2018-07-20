@@ -43,7 +43,7 @@ import DatePicker from './antd/datePicker'
 import Form from './antd/form'
 import Input from './antd/input'
 import InputNumber from './antd/inputNumber'
-import Mention from './antd/Mention'
+import Mention from './antd/mention'
 /*-------END ----------*/
 /*----DataDisplay start ---------*/
 
