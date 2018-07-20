@@ -4,11 +4,6 @@
     font-size: 12px;
 }
 .quant-drop-tree .node {
-    width: 120px;
-    height: 50px;
-    line-height: 50px;
-    border-radius: 4px;
-    margin: 0 8px;
   }
   /* Basic styling */
   /* Draw the lines */
@@ -45,11 +40,12 @@
   .quant-drop-tree .node {
     background-color :@primary-color;
     display               : inline-block;
-    width                 : 96px;
-    height                : 60px;
+    min-width                 : 96px;
+    min-height                : 60px;
     line-height                : 60px;
     z-index 				: 10;
     margin               : 0 2px;
+    border-radius: 4px;
   }
   .quant-drop-tree .node-cell .node{
       background-color :green !important;
