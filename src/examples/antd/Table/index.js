@@ -12,6 +12,12 @@ import JsxStyleCode from './JsxStyle/code'
 //可选择
 import Selectable from './Selectable/Detail'
 import SelectableCode from './Selectable/code'
+//选择和操作
+import SelectAndOperate from './SelectAndOperate/Detail'
+import SelectAndOperateCode from './SelectAndOperate/code'
+//自定义选择
+import CustomSelect from './CustomSelect/Detail'
+import CustomeSelectCode from './CustomSelect/code'
 
 
 const TabPane = Tabs.TabPane;
@@ -44,6 +50,22 @@ class App extends Component {
                         </Card>
                         <div style={{ marginTop: "30px" }}>
                             <Code data={SelectableCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab="选择和操作" key='4'>
+                        <Card>
+                            <SelectAndOperate />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={SelectAndOperateCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab="自定义选择" key='5'>
+                        <Card>
+                            <CustomSelect />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={CustomeSelectCode} />
                         </div>
                     </TabPane>
                     <TabPane tab="api" key='11'>

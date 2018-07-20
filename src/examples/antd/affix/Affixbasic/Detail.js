@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Affix } from 'quant-ui';
+import { relative, isAbsolute } from 'upath';
 class Detail extends Component {
 	state = {
 		top: 70,
