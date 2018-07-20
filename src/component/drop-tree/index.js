@@ -15,12 +15,14 @@ class DropTree extends PureComponent {
         className: PropTypes.string,
         onReset: PropTypes.func,
         onSetData: PropTypes.func,
+        onGetData: PropTypes.func,
         dataSource: PropTypes.array,
     };
 
     static defaultProps = {
         onReset: () => { },
         onSetData: () => { },
+        onGetData: () => { },
         className: '',
         dataSource: [],
     };
@@ -53,7 +55,7 @@ class DropTree extends PureComponent {
         }
     }
     onGetData = () => {
-        return "onGetData"
+        return this._dataSource;
     }
     children = (data) => {
         if (!!data && data.length > 0) {

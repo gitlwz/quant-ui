@@ -68,7 +68,7 @@ class Detail extends Component {
         return true;//可以拖拽
     }
     onClick = (item) => {
-        console.log(this.refs)
+        console.log(item)
     }
     onSetData = () => {
         if(this.refs.droptree){
@@ -80,11 +80,15 @@ class Detail extends Component {
             this.refs.droptree.ref.current.onResetData()
         }
     }
+    onGetData = () => {
+        console.log(this.refs.droptree.ref.current.onGetData())
+    }
 	render() {
 		return (
 			<div>
                 <Button onClick={()=>this.onResetData()}>点我复原</Button>
                 <Button onClick={()=>this.onSetData()}>点我设置数据</Button>
+                <Button onClick={()=>this.onGetData()}>点我获取返回数据</Button>
                 <DropTree 
                     renderItem = {this.renderItem}
                     isParentToChildren = {this.isParentToChildren}
