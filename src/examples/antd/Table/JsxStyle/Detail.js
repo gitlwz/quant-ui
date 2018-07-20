@@ -8,19 +8,19 @@ const dataSource = [
         firstname: 'Taylor ',
         lastname:'Swift',
         age: '22',
-        adress: 'SanFrancisco'
+        address: 'SanFrancisco'
     },
     {
         firstname: 'Eason ',
         lastname:'Chan',
         age: (new Date().getFullYear() - 1974).toString(),
-        adress: 'Hongkong'
+        address: 'Hongkong'
     },
     {
         firstname: 'Jimmy',
         lastname:'lee',
         age: '12',
-        adress: 'Shanghai'
+        address: 'Shanghai'
     },
 
 ]
@@ -39,9 +39,9 @@ const columns = [
 
     },
     {
-        title: 'Adress',
-        dataIndex: 'adress',
-        key: 'adress',
+        title: 'Address',
+        dataIndex: 'address',
+        key: 'address',
 
     },
     {

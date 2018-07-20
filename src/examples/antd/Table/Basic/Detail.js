@@ -5,17 +5,17 @@ const dataSource = [
     {
         name: 'Taylor Swift',
         age: '22',
-        adress: 'SanFrancisco'
+        address: 'SanFrancisco'
     },
     {
         name: 'Eason Chan',
         age: (new Date().getFullYear() - 1974).toString(),
-        adress: 'Hongkong'
+        address: 'Hongkong'
     },
     {
         name: 'Jimmy',
         age: '12',
-        adress: 'Shanghai'
+        address: 'Shanghai'
     },
     
 ]
@@ -34,9 +34,9 @@ const columns = [
 
     },
     {
-        title: 'Adress',
-        dataIndex: 'adress',
-        key: 'adress',
+        title: 'Address',
+        dataIndex: 'address',
+        key: 'address',
 
     },
     {

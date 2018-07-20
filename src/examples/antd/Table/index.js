@@ -18,6 +18,12 @@ import SelectAndOperateCode from './SelectAndOperate/code'
 //自定义选择
 import CustomSelect from './CustomSelect/Detail'
 import CustomeSelectCode from './CustomSelect/code'
+//筛选排序
+import FilterAndSort from './FilterAndSort/Detail'
+import FilterAndSortCode from './FilterAndSort/code'
+//搜索
+import Search from './Search/Detail'
+import SearchCode from './Search/code'
 
 
 const TabPane = Tabs.TabPane;
@@ -66,6 +72,22 @@ class App extends Component {
                         </Card>
                         <div style={{ marginTop: "30px" }}>
                             <Code data={CustomeSelectCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab="筛选排序" key='6'>
+                        <Card>
+                            <FilterAndSort />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={FilterAndSortCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab="自定义筛选菜单" key='7'>
+                        <Card>
+                            <Search />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={SearchCode} />
                         </div>
                     </TabPane>
                     <TabPane tab="api" key='11'>
