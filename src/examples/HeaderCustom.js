@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { theme,Layout, Icon, HeaderSearch ,Button,Dropdown,Menu,language,screenfull} from 'quant-ui';
 import config from "../routes/config"
+import history from "./history/history"
 const {getCurrentColor,refreshColor,setCurrentColor} = theme;
 const { Header } = Layout;
 let {getCurrentLanguage,setCurrentLanguage,refreshLanguage} = language;
@@ -96,7 +97,7 @@ class HeaderCustom extends Component {
                         onPressEnter={this.onPressEnter}
                     />
                     <span style={{display:'inline-block',margin:"0px 20px 0 20px",cursor:'pointer'}}>
-                        <Button onClick={()=>this.props.history.push("/history")}  icon="api">0.1.8</Button>
+                        <Button onClick={()=>this.props.history.push("/history")}  icon="api">{history[0].title}</Button>
                     </span >
                     <span style={{display:'inline-block',margin:"0px 20px 0 0px",cursor:'pointer'}}>
                         <Dropdown overlay={menu}>

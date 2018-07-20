@@ -1,78 +1,93 @@
 const history = [
-    {
-        title:"0.1.8",
-        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
+  {
+    title: "0.1.9",
+    code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="5bpr" class="white-blockquote">
+    <ul>
+    <li><p>Affix固钉、Breadcrumb面包屑、Dropdown下拉菜单、Menu导航菜单、Pagination分页、steps步骤条、AutoComplete自动完成、Cascader级联选择、Checkbox多选框、DatePicker日期选择框、Form表单、Input 输入框、Avatar头像、Badge徽标数、Calendar日历、Card 卡片、Carousel走马灯、Carousel走马灯、List列表、Popover气泡卡片、Tooltip文字提示、Table 表格 <br>
+    组件文档及API</p></li>
+    <li><p>中英文切换功能翻译工作可由后期添加并且剥离开发和翻译人员</p></li>
+    <li><p>富文本，完善可自定以的富文本组件。上传机制更为简单</p></li>
+    <li><p>文本自动省略，可按数字长度，行数等规则进行省略，并有响应的tips提示</p></li>
+    <li><p>通知菜单</p></li>
+    <li>回到顶部</li>
+    <li>多语言方法</li>
+    </ul>
+  </blockquote></div>`
+  },
+  {
+    title: "0.1.8",
+    code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
         <ul>
         <li>修改滑动验证成功色修改出现BUG问题</li>
         </ul>
       </blockquote></div>`
-    },{
-        title:"0.1.7",
-        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
+  }, {
+    title: "0.1.7",
+    code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
         <ul>
         <li>增加通知菜单组件</li>
         <li>修改顶部搜索样式错乱问题</li>
         </ul>
       </blockquote></div>`
-    },{
-        title:"0.1.6",
-        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
+  }, {
+    title: "0.1.6",
+    code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
         <ul>
         <li>增加ant文档库</li>
         <li>修改腾讯地图BUG</li>
         </ul>
       </blockquote></div>`
-    },{
-        title:"0.1.5",
-        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
+  }, {
+    title: "0.1.5",
+    code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
         <ul>
         <li>增加顶部进度条组件</li>
         <li>增加顶部搜索组件</li>
         </ul>
       </blockquote></div>`
-    },{
-        title:"0.1.4",
-        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
+  }, {
+    title: "0.1.4",
+    code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
         <ul>
         <li>增加页面分支</li>
         <li>添加页面组件：404、腾讯地图</li>
         <li>修改按需引用Bug</li>
         </ul>
       </blockquote></div>`
-    },{
-        title:"0.1.3",
-        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
+  }, {
+    title: "0.1.3",
+    code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
         <ul>
         <li>增加方法新分支</li>
         <li>添加方法组件：webSocket链接</li>
         <li>优化构建按需引用</li>
         </ul>
       </blockquote></div>`
-    },{
-        title:"0.1.2",
-        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
+  }, {
+    title: "0.1.2",
+    code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
         <ul>
         <li>完成文档用力构建测试</li>
         <li>添加UI组件：二维码生成、右键复制、滑动验证</li>
         </ul>
       </blockquote></div>`
-    },{
-        title:"0.1.1",
-        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
+  }, {
+    title: "0.1.1",
+    code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
         <ul>
         <li>集成antd组件库，</li>
         </ul>
       </blockquote></div>`
-    },
-	{
-        title:"0.1.0",
-        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
+  },
+  {
+    title: "0.1.0",
+    code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
         <ul>
         <li>构建整个lib包，发布npm</li>
         <li>构建文档站点，可执行测试 </li>
         </ul>
       </blockquote></div>`
-    },
+  },
 ];
 
 export default history
