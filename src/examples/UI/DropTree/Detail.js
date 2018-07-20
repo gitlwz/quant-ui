@@ -61,7 +61,7 @@ const dataSource2 = [
 class Detail extends Component {
 	renderItem = (item) =>{
 		return (
-            <div> { item.id }</div>
+            <div> { item.name }</div>
         )
     }
     isParentToChildren = (from,to) => {
