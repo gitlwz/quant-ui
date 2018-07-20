@@ -38,6 +38,7 @@ export default {
                         { key: '/app/antd/DataEntry/InputNumber', title: 'InputNumber数字输入框', component: 'InputNumber' },
                         { key: '/app/antd/DataEntry/Mention', title: 'Mention提及', component: 'Mention' },
                         { key: '/app/antd/DataEntry/Rate', title: 'Rate评分', component: 'Rate' },
+                        { key: '/app/antd/DataEntry/Radio', title: 'Radio单选框', component: 'Radio' },
                         
                     ]
                 },
