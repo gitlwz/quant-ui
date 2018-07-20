@@ -14,7 +14,7 @@ const api = [
 			{
 				key: "2",
 				parameter: "onSetData",  //字段名
-				instructions: '树形图数据设置，传入固定数据结构',	//描述
+				instructions: '树形图数据设置，传入固定数据结构与设置成功后的回调函数',	//描述
 				type: 'Function',	//类型
 				default: "",							//默认值
 				must: '',
