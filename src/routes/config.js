@@ -39,6 +39,7 @@ export default {
                         { key: '/app/antd/DataEntry/Mention', title: 'Mention提及', component: 'Mention' },
                         { key: '/app/antd/DataEntry/Rate', title: 'Rate评分', component: 'Rate' },
                         { key: '/app/antd/DataEntry/Radio', title: 'Radio单选框', component: 'Radio' },
+                        { key: '/app/antd/DataEntry/Select', title: 'Select选择器', component: 'Select' },
                         
                     ]
                 },

@@ -47,6 +47,7 @@ import InputNumber from './antd/inputNumber'
 import Mention from './antd/mention'
 import Rate from './antd/rate'
 import Radio from './antd/radio'
+import Select from './antd/select'
 /*-------END ----------*/
 /*----DataDisplay start ---------*/
 
@@ -125,6 +126,7 @@ export default {
     Mention,
     Rate,
     Radio,
+    Select,
     /*-------END ----------------*/
     NotFound,
     Map,
