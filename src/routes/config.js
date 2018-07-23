@@ -86,6 +86,7 @@ export default {
                 { key: '/app/ui/CountDown', title: '倒计时', component: 'CountDown' },
                 { key: '/app/ui/DropTree', title: '拖拽树形图', component: 'DropTree' },
                 { key: '/app/ui/color', title: '拾色器', component: 'Color' },
+                { key: '/app/ui/Table', title: '复杂table', component: 'QTable' },
             ],
         },
         {

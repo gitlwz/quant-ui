@@ -118,7 +118,7 @@ class RegistrationForm extends React.Component {
 			<Form onSubmit={this.handleSubmit}>
 				<FormItem
 					{...formItemLayout}
-					label="E-mail"
+					label="E-闪电发货数据库等发货撒即可东方红萨科技的粉红色的快捷按键粉红色大框架房哈萨克的恢复快速打回访的考试方式"
 				>
 					{getFieldDecorator('email', {
 						rules: [{
