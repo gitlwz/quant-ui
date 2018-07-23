@@ -37,14 +37,6 @@ const api = [
 			},
 			{
 				key: "5",
-				parameter: "renderItem ",  //字段名
-				instructions: '自定义显示的数据',	//描述
-				type: 'Function',	//类型
-				default: "name",							//默认值
-				must: '',
-			},
-			{
-				key: "6",
 				parameter: "isParentToChildren  ",  //字段名
 				instructions: '接受from和to参数，表示from节点是否能拖向to节点，返回true则可拖动',	//描述
 				type: 'Function',	//类型
@@ -52,7 +44,7 @@ const api = [
 				must: '',
 			},
 			{
-				key: "7",
+				key: "6",
 				parameter: "renderItem ",  //字段名
 				instructions: '自定义显示的数据，默认显示节点name属性',	//描述
 				type: 'Function',	//类型
@@ -60,7 +52,7 @@ const api = [
 				must: '',
 			},
 			{
-				key: "8",
+				key: "7",
 				parameter: "onClick ",  //字段名
 				instructions: '节点点击事件，返回该节点数据',	//描述
 				type: 'Function',	//类型

@@ -26,6 +26,7 @@
     "qrcode.react": "^0.8.0",
     "react": "^16.4.1",
     "react-color": "^2.14.1",
+    "react-contexify": "^3.0.2",
     "react-dnd": "^5.0.0",
     "react-dnd-html5-backend": "^5.0.1",
     "react-dom": "^16.4.1",

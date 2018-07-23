@@ -10,6 +10,7 @@ import LineTow from './component/LineTow';
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 let drageData = null;
+let maxId = 0;
 class DropTree extends PureComponent {
     static propTypes = {
         className: PropTypes.string,
@@ -17,6 +18,8 @@ class DropTree extends PureComponent {
         onSetData: PropTypes.func,
         onGetData: PropTypes.func,
         dataSource: PropTypes.array,
+        width:PropTypes.string,
+        isEditItem:PropTypes.string,
     };
 
     static defaultProps = {
@@ -34,6 +37,40 @@ class DropTree extends PureComponent {
         this.dataSource = props.dataSource || [];
         this._dataSource = cloneDeep(this.dataSource);
         
+    }
+    _addOneItem = (item) => {
+        maxId = 0;
+        this._findMaxId(this._dataSource);
+        let currentData = this.findItem(item.id,this._dataSource);
+        let obj = {
+            id: maxId + 1,
+            pid: item.id,
+            name:"item",
+            childrens:[]
+        }
+        currentData.childrens.push(obj)
+        this.refresh();
+    }
+    _deleteOneItem = (item) => {
+        this.delItem(item.id);
+        this.refresh();
+    }
+    _findMaxId = (datas) => {
+        for(let i = 0,length = datas.length; i < length;i++){
+            let item = datas[i];
+            if(item.id >= maxId){
+                maxId = item.id;
+            }
+            this._findMaxId(item.childrens);
+        }
+    }
+    onChangeData = (id, needChangeData) => {
+        if(id && needChangeData){
+            let currentData = this.findItem(id,this._dataSource);
+            // currentData.name = "123"
+            Object.assign(currentData,needChangeData);
+            this.refresh();
+        }
     }
     onResetData = () => {
         this.dataSource = cloneDeep(this.dataSource);
@@ -83,7 +120,9 @@ class DropTree extends PureComponent {
                     <tbody>
                         <tr>
                             <Target onDrageFromTo={this.onDrageFromTo} data={item}>
-                                <Children onClick={this.props.onClick} renderItem={this.props.renderItem} forbidDrag={!!item.pid?false:true} onDrageFromTo={this.onDrageFromTo} data={item} />
+                                <Children width={this.props.width} onClick={this.props.onClick} renderItem={this.props.renderItem} 
+                                isEditItem = {this.props.isEditItem}_addOneItem={this._addOneItem} _deleteOneItem={this._deleteOneItem}
+                                forbidDrag={!!item.pid?false:true} onDrageFromTo={this.onDrageFromTo} data={item} />
                             </Target>
                         </tr>
                         <LineFirst lineNum = {item.childrens.length}/>
