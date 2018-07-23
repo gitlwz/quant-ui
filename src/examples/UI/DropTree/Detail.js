@@ -3,7 +3,7 @@ import { DropTree ,Button } from 'quant-ui';
 const dataSource = [
     {
         "id": 1,
-        "name": "企业主体信用得分",
+        "name": "企业主体信22222用得分",
         "pid": null,
         "childrens": [
           {
@@ -59,11 +59,7 @@ const dataSource2 = [
       }
 ];
 class Detail extends Component {
-	renderItem = (item) =>{
-		return (
-            <div> { item.name }</div>
-        )
-    }
+	
     isParentToChildren = (from,to) => {
         return true;//可以拖拽
     }
@@ -85,7 +81,7 @@ class Detail extends Component {
     }
     onChangeData = () => {
         if(this.refs.droptree){
-            this.refs.droptree.ref.current.onChangeData(1,{name:"企业主得分"})
+            this.refs.droptree.ref.current.onChangeData(2,{name:"企业主得2222分"})
         }
     }
 	render() {
@@ -96,7 +92,6 @@ class Detail extends Component {
                 <Button onClick={()=>this.onGetData()}>点我获取返回数据</Button>
                 <Button onClick={()=>this.onChangeData()}>改变节点数据</Button>
                 <DropTree 
-                    renderItem = {this.renderItem}
                     isParentToChildren = {this.isParentToChildren}
                     onClick = {this.onClick}
                     dataSource={dataSource}

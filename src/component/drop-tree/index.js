@@ -66,9 +66,9 @@ class DropTree extends PureComponent {
     }
     onChangeData = (id, needChangeData) => {
         if(id && needChangeData){
-            let currentData = this.findItem(id,this._dataSource);
-            // currentData.name = "123"
-            Object.assign(currentData,needChangeData);
+            let currentData = cloneDeep(this.findItem(id,this._dataSource));
+            this.replaceData(currentData.id,{...currentData,...needChangeData})
+            this.forceUpdate();
             this.refresh();
         }
     }
@@ -151,6 +151,15 @@ class DropTree extends PureComponent {
             this.addItem(data.id,drageData);
             this.refresh();
        }
+    }
+    replaceData = (id,newData,allData = this._dataSource) =>{
+        let parent =  this.findParent(id,allData);
+        for (let i = 0 ; i < parent.childrens.length; i++) {
+            let element = parent.childrens[i];
+            if(element.id === id){
+                parent.childrens.splice(i,1,newData);
+            }
+        }
     }
     /**
      * id 当前原色id

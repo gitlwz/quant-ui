@@ -46,7 +46,7 @@ class App extends Component {
         const { connectDragSource, isDragging } = this.props;
         return connectDragSource(
             <div>
-                <ContextMenuProvider id={"menu_id" + item.id}>
+                {/* <ContextMenuProvider id={"menu_id" + item.id}> */}
                     <div 
                         onClick = {()=>this._onClick(item)}
                         style={{
@@ -57,8 +57,8 @@ class App extends Component {
                         }} className="node">
                             {this._render(item)}
                     </div>
-                </ContextMenuProvider>
-                {this.props.isEditItem == "true"?this.MyAwesomeMenu():null}
+                {/* </ContextMenuProvider> */}
+                {/* {this.props.isEditItem == "true"?this.MyAwesomeMenu():null} */}
             </div>
         )
     }
