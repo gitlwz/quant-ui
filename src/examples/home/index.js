@@ -93,7 +93,7 @@ class App extends Component {
                 <div>Quantdo Design</div>
                 <div>{$('一个服务于「量投」的设计体系，追求更好的用户体验。')}</div>
                 <div>{$('公司级的UI规范 | 基础组件 | 交互规范 | 业务组件。')}</div>
-                <div><Button>{$("开始使用")}</Button></div>
+                <div><Button onClick={()=>this.props.history.push("/app/home")}>{$("开始使用")}</Button></div>
             </div>
         </div>
     );
