@@ -53,6 +53,7 @@ import Switch from './antd/switch'
 import TreeSelect from './antd/treeSelect'
 import TimePicker from './antd/timePicker'
 import Transfer from './antd/transfer'
+import Upload from './antd/upload'
 /*-------END ----------*/
 /*----DataDisplay start ---------*/
 
@@ -137,6 +138,7 @@ export default {
     TreeSelect,
     TimePicker,
     Transfer,
+    Upload,
     /*-------END ----------------*/
     NotFound,
     Map,

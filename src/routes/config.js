@@ -45,6 +45,7 @@ export default {
                         { key: '/app/antd/DataEntry/TreeSelect', title: 'TreeSelect树选择', component: 'TreeSelect' },
                         { key: '/app/antd/DataEntry/TimePicker', title: 'TimePicker时间选择框', component: 'TimePicker' },
                         { key: '/app/antd/DataEntry/Transfer', title: 'Transfer穿梭框', component: 'Transfer' },
+                        { key: '/app/antd/DataEntry/Upload', title: 'Upload上传', component: 'Upload' },
                         
                     ]
                 },
