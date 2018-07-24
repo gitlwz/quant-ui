@@ -51,6 +51,7 @@ import Select from './antd/select'
 import Slider from './antd/slider'
 import Switch from './antd/switch'
 import TreeSelect from './antd/treeSelect'
+import TimePicker from './antd/timePicker'
 /*-------END ----------*/
 /*----DataDisplay start ---------*/
 
@@ -133,6 +134,7 @@ export default {
     Slider,
     Switch,
     TreeSelect,
+    TimePicker,
     /*-------END ----------------*/
     NotFound,
     Map,
