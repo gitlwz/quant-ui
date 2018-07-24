@@ -48,6 +48,7 @@ import Mention from './antd/mention'
 import Rate from './antd/rate'
 import Radio from './antd/radio'
 import Select from './antd/select'
+import Slider from './antd/slider'
 /*-------END ----------*/
 /*----DataDisplay start ---------*/
 
@@ -127,6 +128,7 @@ export default {
     Rate,
     Radio,
     Select,
+    Slider,
     /*-------END ----------------*/
     NotFound,
     Map,
