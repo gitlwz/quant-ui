@@ -77,7 +77,7 @@ class SiderCustom extends Component {
                 collapsed={this.props.collapsed}
                 style={{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0 }}
             >
-                <div className="app_logo" />
+                <div style={{cursor: 'pointer'}} onClick={()=>this.props.history.push('/')} className="app_logo" />
                 <SiderMenu
                     menus={routes.menus}
                     onClick={this.menuClick}

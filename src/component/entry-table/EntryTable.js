@@ -121,7 +121,7 @@ class EditableTable extends React.Component {
             }
             return (
                 <div>
-                    <Select  {...API} style={{ width:width }} value={text} onChange={value => this._handleChange(value,record,index,column)} >
+                    <Select   {...API} style={{ width:width }} value={text} onChange={value => this._handleChange(value,record,index,column)} >
                         {
                             optiondata.map((optionObj,index)=>{
                             let optionApi = collocate.optionApi || {}
@@ -139,12 +139,12 @@ class EditableTable extends React.Component {
     }
     _AutoCompleteColumns(text,record,index, column,collocate){
         const API = collocate.API || {};
+        let width = !!collocate.width? collocate.width -32 : '100%'
         if((!!collocate.disabled || this.disabled[record[this._getKey()]+"_"+column] === true) && this.disabled[record[this._getKey()]+"_"+column] !== false){
             return (
                 <div>
-                    <div style={{width:'100%'}}>{text}</div>
+                    <div style={{width:width}}>{text}</div>
                 </div>
-                
             )
         }else{
             let optiondata = [];
@@ -156,7 +156,7 @@ class EditableTable extends React.Component {
             return (
                 <div>
                     <AutoComplete
-                        style={{ width:'100%',zIndex: 0}}
+                        style={{ width:width,zIndex: 0}}
                         {...API}
                         dataSource={optiondata}
                         value={text} onChange={value => this._handleChange(value,record,index,column)}
@@ -556,6 +556,20 @@ class EditableTable extends React.Component {
             };
             this._tableProps.rowSelection = rowSelection
         }
+
+        let scroll = {}
+        if(!!this._tableProps.scroll && !!this._tableProps.scroll.x){
+            scroll.x = this._tableProps.scroll.x;
+        }else{
+            for (var i = 0; i < this.columns.length; i++) {
+                if(!this.columns[i].width){
+                    scroll = {};
+                    break
+                }
+                scroll.x =  (scroll.x || 0) + this.columns[i].width * 1;
+            };
+        }
+        scroll.y = !!this._tableProps.scroll?this._tableProps.scroll.y:undefined;
         return (
             <div className="LTtable">
     	       <Table
@@ -565,7 +579,9 @@ class EditableTable extends React.Component {
                             ...this._tableProps,
                             ...{
                                 dataSource:this.dataSource,
-                                columns:this._columns}
+                                columns:this._columns,
+                                scroll:scroll
+                            }
                         }
                     }
                 />
