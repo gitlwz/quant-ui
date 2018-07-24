@@ -24,6 +24,21 @@ import FilterAndSortCode from './FilterAndSort/code'
 //搜索
 import Search from './Search/Detail'
 import SearchCode from './Search/code'
+//远程加载数据
+import Ajax from './Ajax/Detail'
+import AjaxCode from './Ajax/code'
+//大小
+import Size from './Size/Detail'
+import SizeCode from './Size/code'
+//边框
+import Border from './BorderTitleAndFooter/Detail'
+import BorderCode from './BorderTitleAndFooter/code'
+//表格扩展
+import ExpandRow from './ExpandRow/Detail'
+import ExpandRowCode from './ExpandRow/code'
+//表格扩展
+import ColSpanRowSpan from './ColSpanAndRowSpan/Detail'
+import ColSpanRowSpanCode from './ColSpanAndRowSpan/code'
 
 
 const TabPane = Tabs.TabPane;
@@ -90,7 +105,47 @@ class App extends Component {
                             <Code data={SearchCode} />
                         </div>
                     </TabPane>
-                    <TabPane tab="api" key='11'>
+                    <TabPane tab="远程加载数据" key='8'>
+                        <Card>
+                            <Ajax />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={AjaxCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab="大小" key='9'>
+                        <Card>
+                            <Size />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={SizeCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab='边框，表头&&表' key='10'>
+                        <Card>
+                            <Border />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={BorderCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab='扩展行' key='11'>
+                        <Card>
+                            <ExpandRow />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={ExpandRowCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab='行/列合并' key='12'>
+                        <Card>
+                            <ColSpanRowSpan />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={ColSpanRowSpanCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab="api" key='20'>
                         <Api data={data} />
                     </TabPane>
                 </Tabs>

@@ -114,7 +114,7 @@ class Detail extends Component {
             <div>
                 <div className='table-operations'>
                     <Button onClick={this.setAgeSort}>Sort Age</Button>
-                    <Button onCLick={this.clearFilter}> Clear Filter</Button>
+                    <Button onClick={this.clearFilter}> Clear Filter</Button>
                     <Button onClick={this.clearAll}>Clear All </Button>
                 </div>
                 <Table columns={columns} dataSource={dataSource} onChange={this.handleChange}/>
