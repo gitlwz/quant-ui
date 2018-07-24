@@ -42,6 +42,7 @@ export default {
                         { key: '/app/antd/DataEntry/Select', title: 'Select选择器', component: 'Select' },
                         { key: '/app/antd/DataEntry/Slider', title: 'Slider滑动输入条', component: 'Slider' },
                         { key: '/app/antd/DataEntry/Switch', title: 'Switch开关', component: 'Switch' },
+                        { key: '/app/antd/DataEntry/TreeSelect', title: 'TreeSelect树选择', component: 'TreeSelect' },
                         
                     ]
                 },

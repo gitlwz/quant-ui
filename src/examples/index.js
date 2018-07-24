@@ -50,6 +50,7 @@ import Radio from './antd/radio'
 import Select from './antd/select'
 import Slider from './antd/slider'
 import Switch from './antd/switch'
+import TreeSelect from './antd/treeSelect'
 /*-------END ----------*/
 /*----DataDisplay start ---------*/
 
@@ -131,6 +132,7 @@ export default {
     Select,
     Slider,
     Switch,
+    TreeSelect,
     /*-------END ----------------*/
     NotFound,
     Map,
