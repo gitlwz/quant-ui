@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { DropTree ,Button } from 'quant-ui';
+import imgData from './quantdo.png'
 const dataSource = [
     {
         "id": 1,
@@ -41,16 +42,16 @@ class Detail extends Component {
     onClick = (item) => {
         console.log(item)
     }
-    onResetData = () => {
-        if(this.refs.droptree){
-            this.refs.droptree.ref.current.onResetData()
-        }
+    renderItem = (item) => {
+        return (
+            <label><img src = {imgData}/>{item.name}</label>
+        )
     }
 	render() {
 		return (
 			<div>
-                <Button onClick={()=>this.onResetData()}>点我复原</Button>
                 <DropTree 
+                    renderItem = {this.renderItem}
                     onClick = {this.onClick}
                     dataSource={dataSource}
                     width={100}

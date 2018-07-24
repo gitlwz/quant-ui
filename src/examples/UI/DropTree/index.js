@@ -14,6 +14,8 @@ import SetDataDetail from './setData/Detail';
 import SetDataCode from './setData/Code';
 import IsToDetail from './isParentToChildren/Detail';
 import IsToCode from './isParentToChildren/Code';
+import RenderItemDetail from './renderItem/Detail';
+import RenderItemCode from './renderItem/Code';
 import Code from '../../Code.js';
 const TabPane = Tabs.TabPane;
 class App extends Component {
@@ -70,7 +72,15 @@ class App extends Component {
                             <Code data={IsToCode} />
                         </div>
                     </TabPane>
-                    <TabPane tab="参数api" key="7">
+                    <TabPane tab="返回自定义组件" key="8">
+                        <Card >
+                            <RenderItemDetail />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={RenderItemCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab="参数api" key="9">
                         <Api data={api} />
                     </TabPane>
                 </Tabs>
