@@ -18,6 +18,9 @@ import Basic4Code from './Basic4/code.js';
 import Basic5 from './Basic5/Detail.js';
 import Basic5Code from './Basic5/code.js';
 
+import Basic6 from './Basic6/Detail.js';
+import Basic6Code from './Basic6/code.js';
+
 import Code from '../../Code.js';
 const TabPane = Tabs.TabPane;
 class App extends Component {
@@ -68,6 +71,15 @@ class App extends Component {
                         </Card>
                         <div style={{ marginTop: "30px" }}>
                             <Code data={Basic5Code} />
+                        </div>
+                    </TabPane>
+
+                    <TabPane tab="显示隐藏、合并列" key="6">
+                        <Card >
+                            <Basic6 />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={Basic6Code} />
                         </div>
                     </TabPane>
 

@@ -10,6 +10,7 @@ import isFunction  from 'lodash/isFunction';
 import isArray  from 'lodash/isArray';
 import isObject from "lodash/isObject";
 import moment from 'moment';
+import Ttile from "./Title"
 import 'moment/locale/zh-cn';
 moment.locale('zh-cn');
 const Option = Select.Option;
@@ -63,6 +64,22 @@ class EditableTable extends React.Component {
             return {
                 disabled:false
             }
+        }
+    }
+    _moveCard = (startDataIndex,endDataIndex) =>{
+        let start = this._findCard(startDataIndex);
+        let end = this._findCard(endDataIndex);
+        this.columns.splice(start.index,1);
+        this.columns.splice(end.index,0,start.data);
+        this._columns = this._EditableColumns(this.columns);
+        this.refresh();
+    }
+    _findCard = (dataIndex) =>{
+        const data = this.columns.filter(c => c.dataIndex === dataIndex)[0];
+        const index = this.columns.findIndex((c)=> c.dataIndex === dataIndex);
+        return {
+            data,
+            index
         }
     }
     _textColumns(text,record,index, column,collocate){
@@ -241,9 +258,13 @@ class EditableTable extends React.Component {
     _EditableColumns(columns){
         let _columns = columns.filter((item)=>item.show !== false).map((collocate)=>{
             let _collocate = cloneDeep(collocate)
+            _collocate.title = <Ttile
+                moveCard = {this._moveCard}  
+                collocate = {collocate}
+                text={collocate.title}/>
             if(isFunction(_collocate.render)) return _collocate;
             let props = {}
-            if(_collocate.type === 0){
+            if(_collocate.type === 0 || _collocate.type === undefined ){
                 _collocate.render = (text,record,index)=> {
                     if(isFunction(_collocate.props)){
                         props = _collocate.props(text,record,index,_collocate.dataIndex,_collocate,this.dataSource.length);
@@ -629,7 +650,7 @@ class EditableTable extends React.Component {
             this._tableProps.rowSelection = rowSelection
         }
 
-        let scroll = {x:80}
+        let scroll = {x:!!showSelection?70:0}
         if(!!this._tableProps.scroll && !!this._tableProps.scroll.x){
             scroll.x = this._tableProps.scroll.x;
         }else{
