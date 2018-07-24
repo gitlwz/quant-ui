@@ -18,7 +18,7 @@ class DropTree extends PureComponent {
         onSetData: PropTypes.func,
         onGetData: PropTypes.func,
         dataSource: PropTypes.array,
-        width:PropTypes.string,
+        width:PropTypes.number,
         isEditItem:PropTypes.string,
     };
 
@@ -68,7 +68,6 @@ class DropTree extends PureComponent {
         if(id && needChangeData){
             let currentData = cloneDeep(this.findItem(id,this._dataSource));
             this.replaceData(currentData.id,{...currentData,...needChangeData})
-            this.forceUpdate();
             this.refresh();
         }
     }
