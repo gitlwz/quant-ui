@@ -55,8 +55,12 @@ import FixedHeaderAndColCode from './FixedHeaderAndCol/code'
 //表头分组
 import TableHeader from './TableHeader/Detail'
 import TableHeaderCode from './TableHeader/code'
-
-
+//可编辑表格
+import EditTable from './EditTable/Detail'
+import EditTableCode from './EditTable/code'
+//可编辑行
+import EditableRow from './EditableRow/Detail'
+import EditableRowCode from './EditableRow/code'
 
 const TabPane = Tabs.TabPane;
 
@@ -200,6 +204,22 @@ class App extends Component {
                         </Card>
                         <div style={{ marginTop: "30px" }}>
                             <Code data={TableHeaderCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab='可编辑表格' key='18'>
+                        <Card>
+                            <EditTable />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={EditTableCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab='可编辑行' key='19'>
+                        <Card>
+                            <EditableRow />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={EditableRowCode} />
                         </div>
                     </TabPane>
                     <TabPane tab="api" key='20'>
