@@ -39,6 +39,23 @@ import ExpandRowCode from './ExpandRow/code'
 //表格扩展
 import ColSpanRowSpan from './ColSpanAndRowSpan/Detail'
 import ColSpanRowSpanCode from './ColSpanAndRowSpan/code'
+//树形数据
+import TreeStructure from './TreeStructure/Detail'
+import TreeStructureCode from './TreeStructure/code'
+//固定表头
+import FixedHeader from './FixedHeader/Detail'
+import FixedHeaderCode from './FixedHeader/code'
+//固定列
+import FixedCol from './FixedCol/Detail'
+import FixedColCode from './FixedCol/code'
+//固定头和列
+import FixedHeaderAndCol from './FixedHeaderAndCol/Detail'
+import FixedHeaderAndColCode from './FixedHeaderAndCol/code'
+
+//表头分组
+import TableHeader from './TableHeader/Detail'
+import TableHeaderCode from './TableHeader/code'
+
 
 
 const TabPane = Tabs.TabPane;
@@ -143,6 +160,46 @@ class App extends Component {
                         </Card>
                         <div style={{ marginTop: "30px" }}>
                             <Code data={ColSpanRowSpanCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab='树形结构数据展示' key='13'>
+                        <Card>
+                            <TreeStructure />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={TreeStructureCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab='固定表头' key='14'>
+                        <Card>
+                            <FixedHeader />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={FixedHeaderCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab='固定列' key='15'>
+                        <Card>
+                            <FixedCol />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={FixedColCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab='固定头和列' key='16'>
+                        <Card>
+                            <FixedHeaderAndCol />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={FixedHeaderAndColCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab='表头分组' key='17'>
+                        <Card>
+                            <TableHeader />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={TableHeaderCode} />
                         </div>
                     </TabPane>
                     <TabPane tab="api" key='20'>
