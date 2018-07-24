@@ -8,6 +8,7 @@ import DatePicker from "../date-picker";
 import cloneDeep  from 'lodash/cloneDeep';
 import isFunction  from 'lodash/isFunction';
 import isArray  from 'lodash/isArray';
+import isObject from "lodash/isObject";
 import moment from 'moment';
 import 'moment/locale/zh-cn';
 moment.locale('zh-cn');
@@ -24,13 +25,14 @@ const Option = Select.Option;
  *              index：  index索引
  *              dataIndex： 当前dataIndex值
  *              collocate：  当前columns配置
+ *              len:数据长度
  *          type：单元格属性
  *              option：
  *                  空|| 0 文本展示单元格，
  *                  1：文本输入单元格
  *                  2：数字输入单元格
  *                  3：下拉选择单元格    需要制定 option
- *                  4：模糊匹配单元格    需要制定 option
+ *                  4：模糊匹配单元格    需要制定 autoption
  *                  5：日期单元格
  *
  * showSelection:  是否显示select
@@ -66,8 +68,8 @@ class EditableTable extends React.Component {
     _textColumns(text,record,index, column,collocate){
         const API = collocate.API || {};
         return (
-            <div>
-                <div style={{ width:'100%'}}>{text}</div>
+            <div key={index}>
+                <div title={text} style={{ width:'100%'}}>{text}</div>
             </div>
         );
     }
@@ -75,14 +77,21 @@ class EditableTable extends React.Component {
         const API = collocate.API || {};
         if((!!collocate.disabled || this.disabled[record[this._getKey()]+"_"+column] === true) && this.disabled[record[this._getKey()]+"_"+column] !== false ){
             return (
-                <div>
-                    <div style={{ width:'100%'}}>{text}</div>
+                <div key={index}>
+                    <div title={text} style={{ width:'100%'}}>{text}</div>
                 </div>
             );
         }   
         return (
             <div>
-                <Input {...API} style={{width:'100%'}} value={text} onChange={e => this._handleChange(e.target.value,record,index,column)} />
+                <Input 
+                    
+                    {...API}  
+                    title={text}
+                    style={{width:'100%'}} 
+                    value={text} 
+                    onChange={e => this._handleChange(e.target.value,record,index,column)} 
+                    />
             </div>
         ); 
     }
@@ -91,24 +100,45 @@ class EditableTable extends React.Component {
         if((!!collocate.disabled || this.disabled[record[this._getKey()]+"_"+column] === true) && this.disabled[record[this._getKey()]+"_"+column] !== false){
             return (
                 <div>
-                    <div style={{ width:'100%'}}>{text}</div>
+                    <div 
+                        style={{ width:'100%'}}
+                        title={text}
+                        >
+                        {text}
+                    </div>
                 </div>
             );
         }else{
             return (
                 <div>
-                    <InputNumber {...API} style={{width:'100%' }} value={text} onChange={value => this._handleChange(value,record,index,column)} />
+                    <InputNumber 
+                        {...API}
+                        title={text} 
+                        style={{width:'100%' }} 
+                        value={text} 
+                        onChange={value => this._handleChange(value,record,index,column)} 
+                        />
                 </div>
             );
         }
     }
     _selectColumns(text,record,index, column,collocate) {
         const API = collocate.API || {};
-        let width = !!collocate.width? collocate.width -32 : '100%'
+        let width = !!collocate.width? collocate.width -32 : '100%';
+        
         if((!!collocate.disabled || this.disabled[record[this._getKey()]+"_"+column] === true) && this.disabled[record[this._getKey()]+"_"+column] !== false){
+            let showText = text;
+            if(isObject(text)){
+                showText = text.name
+            }
             return (
                 <div>
-                    <div style={{width:width}}>{text}</div>
+                    <div
+                        title={showText}  
+                        style={{width:width}}
+                    >
+                        {showText}
+                    </div>
                 </div>
                 
             )
@@ -119,13 +149,32 @@ class EditableTable extends React.Component {
             }else{
                 optiondata = record[collocate.option] || []
             }
+            let showText = {};
+            if(isObject(text)){
+                showText.key = text.value;
+                showText.label = text.name;
+            
+            }
             return (
                 <div>
-                    <Select   {...API} style={{ width:width }} value={text} onChange={value => this._handleChange(value,record,index,column)} >
+                    <Select   
+                        {...API}
+                        labelInValue ={true}
+                        style={{ width:width }} 
+                        value={showText} 
+                        key = {index}
+                        onChange={value =>{ 
+                            let _value = {
+                                value:value.key,
+                                name:value.label
+                            }
+                            this._SelectChange(_value,record,index,column)}
+                        } 
+                    >
                         {
                             optiondata.map((optionObj,index)=>{
                             let optionApi = collocate.optionApi || {}
-                            if(isFunction(collocate.disabled)){
+                            if(isFunction(optionApi.disabled)){
                                 optionApi = {...optionApi,...{disabled:optionApi(optionObj,record,index)}}
                             }
                             return (
@@ -148,10 +197,10 @@ class EditableTable extends React.Component {
             )
         }else{
             let optiondata = [];
-            if(isArray(collocate.option)){
-                optiondata = collocate.option
+            if(isArray(collocate.autooption)){
+                optiondata = collocate.autooption
             }else{
-                optiondata = record[collocate.option] || []
+                optiondata = record[collocate.autooption] || []
             }
             return (
                 <div>
@@ -159,7 +208,8 @@ class EditableTable extends React.Component {
                         style={{ width:width,zIndex: 0}}
                         {...API}
                         dataSource={optiondata}
-                        value={text} onChange={value => this._handleChange(value,record,index,column)}
+                        value={text} 
+                        onChange={value => this._handleChange(value,record,index,column)}
                         filterOption={(inputValue, option) => option.props.children.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1}
                     />
                 </div>
@@ -181,6 +231,7 @@ class EditableTable extends React.Component {
                 <div>
                     <DatePicker
                         value={_text}
+                        {...API}
                         onChange={(value,valueString) => this._handleChange(valueString,record,index,column,value)}
                     />
                 </div>
@@ -195,7 +246,7 @@ class EditableTable extends React.Component {
             if(_collocate.type === 0){
                 _collocate.render = (text,record,index)=> {
                     if(isFunction(_collocate.props)){
-                        props = _collocate.props(text,record,index,_collocate.dataIndex,_collocate);
+                        props = _collocate.props(text,record,index,_collocate.dataIndex,_collocate,this.dataSource.length);
                     }
                     return{ 
                         children:this._textColumns(text,record,index,_collocate.dataIndex,_collocate),
@@ -206,7 +257,7 @@ class EditableTable extends React.Component {
             else if(_collocate.type === 1){
                 _collocate.render = (text,record,index)=> {
                     if(isFunction(_collocate.props)){
-                        props = _collocate.props(text,record,index,_collocate.dataIndex,_collocate);
+                        props = _collocate.props(text,record,index,_collocate.dataIndex,_collocate,this.dataSource.length);
                     }
                     return{ 
                         children:this._inputColumns(text,record,index,_collocate.dataIndex,_collocate),
@@ -218,7 +269,7 @@ class EditableTable extends React.Component {
             else if(_collocate.type === 2){
                 _collocate.render = (text,record,index)=> {
                     if(isFunction(_collocate.props)){
-                        props = _collocate.props(text,record,index,_collocate.dataIndex,_collocate);
+                        props = _collocate.props(text,record,index,_collocate.dataIndex,_collocate,this.dataSource.length);
                     }
                     return{ 
                         children:this._inputNumberColumns(text,record,index,_collocate.dataIndex,_collocate),
@@ -229,7 +280,7 @@ class EditableTable extends React.Component {
             else if(_collocate.type === 3){
                 _collocate.render = (text,record,index)=> {
                     if(isFunction(_collocate.props)){
-                        props = _collocate.props(text,record,index,_collocate.dataIndex,_collocate);
+                        props = _collocate.props(text,record,index,_collocate.dataIndex,_collocate,this.dataSource.length);
                     }
                     return{
                         children:this._selectColumns(text,record,index,_collocate.dataIndex,_collocate),
@@ -240,7 +291,7 @@ class EditableTable extends React.Component {
             else if(_collocate.type === 4){
                 _collocate.render = (text,record,index)=> {
                     if(isFunction(_collocate.props)){
-                        props = _collocate.props(text,record,index,_collocate.dataIndex,_collocate);
+                        props = _collocate.props(text,record,index,_collocate.dataIndex,_collocate,this.dataSource.length);
                     }
                     return{
                         children:this._AutoCompleteColumns(text,record,index,_collocate.dataIndex,_collocate),
@@ -251,7 +302,7 @@ class EditableTable extends React.Component {
             else if(_collocate.type === 5){
                 _collocate.render = (text,record,index)=> {
                     if(isFunction(_collocate.props)){
-                        props = _collocate.props(text,record,index,_collocate.dataIndex,_collocate);
+                        props = _collocate.props(text,record,index,_collocate.dataIndex,_collocate,this.dataSource.length);
                     }
                     return{
                         children:this._DatePickerColumns(text,record,index,_collocate.dataIndex,_collocate),
@@ -265,6 +316,18 @@ class EditableTable extends React.Component {
     }
     _getKey = () =>{
         return this._tableProps.rowKey || "key";
+    }
+    _SelectChange = (value,record,index,column) =>{
+        const newData = [...this.dataSource];
+        const target = newData.filter(item => record[this._getKey()] === item[this._getKey()])[0];
+        if (target) {
+            if(isFunction(this.props.cellOnChange)){
+                this.props.cellOnChange(value,target[column],record,index,column);
+            }
+            target[column] = value;
+            this.dataSource = newData;
+            this.refresh();
+        }
     }
     _handleChange(value,record,index,column) {
         const newData = [...this.dataSource];
@@ -389,6 +452,15 @@ class EditableTable extends React.Component {
         }
         this.refresh(callback); 
     }
+    /**
+     * 根据key删除一行
+     */
+    deleteRow = (keys,callback) =>{
+        this.dataSource = this.dataSource.filter((ele)=>{
+            return  !keys.includes(ele[this._getKey()])
+        })
+        this.refresh(callback); 
+    }
     /**设置当前选中数据
      * @param {array}
      * @param {Function}
@@ -441,7 +513,7 @@ class EditableTable extends React.Component {
      * @return {[type]}             [description]
      */
     editDisable(disableds,callback){
-        this.disabled = {...this.disabled,...this.disableds};
+        this.disabled = {...this.disabled,...disableds};
         this.refresh(callback)
     }
     /**移除所有不可操作数据
@@ -557,10 +629,11 @@ class EditableTable extends React.Component {
             this._tableProps.rowSelection = rowSelection
         }
 
-        let scroll = {}
+        let scroll = {x:80}
         if(!!this._tableProps.scroll && !!this._tableProps.scroll.x){
             scroll.x = this._tableProps.scroll.x;
         }else{
+            
             for (var i = 0; i < this.columns.length; i++) {
                 if(!this.columns[i].width){
                     scroll = {};

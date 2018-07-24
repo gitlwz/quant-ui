@@ -6,6 +6,18 @@ import data from './api.js';
 import Basic1 from './Basic1/Detail.js';
 import Basic1Code from './Basic1/code.js';
 
+import Basic2 from './Basic2/Detail.js';
+import Basic2Code from './Basic2/code.js';
+
+import Basic3 from './Basic3/Detail.js';
+import Basic3Code from './Basic3/code.js';
+
+import Basic4 from './Basic4/Detail.js';
+import Basic4Code from './Basic4/code.js';
+
+import Basic5 from './Basic5/Detail.js';
+import Basic5Code from './Basic5/code.js';
+
 import Code from '../../Code.js';
 const TabPane = Tabs.TabPane;
 class App extends Component {
@@ -20,6 +32,42 @@ class App extends Component {
                         </Card>
                         <div style={{ marginTop: "30px" }}>
                             <Code data={Basic1Code} />
+                        </div>
+                    </TabPane>
+
+                    <TabPane tab="加、减行" key="2">
+                        <Card >
+                            <Basic2 />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={Basic2Code} />
+                        </div>
+                    </TabPane>
+
+                    <TabPane tab="不可操作" key="3">
+                        <Card >
+                            <Basic3 />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={Basic3Code} />
+                        </div>
+                    </TabPane>
+
+                    <TabPane tab="勾选框行" key="4">
+                        <Card >
+                            <Basic4 />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={Basic4Code} />
+                        </div>
+                    </TabPane>
+
+                    <TabPane tab="数据联动" key="5">
+                        <Card >
+                            <Basic5 />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={Basic5Code} />
                         </div>
                     </TabPane>
 
