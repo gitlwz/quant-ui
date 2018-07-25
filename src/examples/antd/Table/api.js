@@ -404,6 +404,155 @@ const api=[
 
 
         ]
+    },
+    {
+        title:'ColumnGroup',
+        api:[
+            {
+                key:'1',
+                parameter:'title',
+                type:"string | ReactNode",
+                must:'-',
+                default:'-',
+                instructions:'列头显示文字		'
+            },
+        ]
+    },
+    {
+        title:'pagination',
+        api:[
+            {
+                key:'1',
+                parameter:'position',
+                type:"'top'| 'bottom' | 'both' ",
+                must:'-',
+                default:'bottom',
+                instructions:'指定分页显示的位置'
+            },
+        ]
+    },
+    {
+        title:'rowSelection',
+        api:[
+            {
+                key:'1',
+                parameter:'columnWidth',
+                type:"string | number",
+                must:'-',
+                default:'-',
+                instructions:'自定义列表选择框宽度	'
+            },
+            {
+                key:'2',
+                parameter:'fixed',
+                type:"boolean",
+                must:'-',
+                default:'-',
+                instructions:'把选择框列固定在左边	'
+            },
+            {
+                key:'3',
+                parameter:'getCheckboxProps',
+                type:"Function(record)",
+                must:'-',
+                default:'-',
+                instructions:'选择框的默认属性配置	'
+            },
+            {
+                key:'4',
+                parameter:'hideDefaultSelections',
+                type:"boolean",
+                must:'-',
+                default:'false',
+                instructions:'去掉『全选』『反选』两个默认选项'
+            },
+            {
+                key:'5',
+                parameter:'selectedRowKeys',
+                type:"string[]",
+                must:'-',
+                default:'[]',
+                instructions:'指定选中项的 key 数组，需要和 onChange 进行配合'
+            },
+            {
+                key:'6',
+                parameter:'selections',
+                type:"object[]|boolean",
+                must:'-',
+                default:'true',
+                instructions:'自定义选择项 配置项, 设为 true 时使用默认选择项'
+            },
+            {
+                key:'7',
+                parameter:'type',
+                type:"string",
+                must:'-',
+                default:'checkbox',
+                instructions:'多选/单选，checkbox or radio'
+            },
+            
+            {
+                key:'8',
+                parameter:'onChange',
+                type:"Function(selectedRowKeys, selectedRows)",
+                must:'-',
+                default:'-',
+                instructions:'选中项发生变化的时的回调	'
+            },
+            {
+                key:'9',
+                parameter:'onSelect',
+                type:"Function(record, selected, selectedRows, nativeEvent)",
+                must:'-',
+                default:'-',
+                instructions:'用户手动选择/取消选择某列的回调'
+            },
+            {
+                key:'10',
+                parameter:'onSelectAll',
+                type:"Function(selected, selectedRows, changeRows)",
+                must:'-',
+                default:'-',
+                instructions:'用户手动选择/取消选择所有列的回调'
+            },
+            {
+                key:'11',
+                parameter:'onSelectInvert',
+                type:"Function(selectedRows)",
+                must:'-',
+                default:'-',
+                instructions:'用户手动选择反选的回调'
+            },
+        ]
+    },
+    {
+        title:'selection',
+        api:[
+            {
+                key:'1',
+                parameter:'key',
+                type:"string",
+                must:'-',
+                default:'-',
+                instructions:'React 需要的 key，建议设置'
+            },
+            {
+                key:'2',
+                parameter:'text',
+                type:"string|React.ReactNode	",
+                must:'-',
+                default:'-',
+                instructions:'选择项显示的文字	'
+            },
+            {
+                key:'3',
+                parameter:'onSelect',
+                type:"Function(changeableRowKeys)",
+                must:'-',
+                default:'-',
+                instructions:'选择项点击回调'
+            },
+        ]
     }
 ]
 

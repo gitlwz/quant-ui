@@ -68,6 +68,9 @@ import NestedTableCode from './NestedTable/code'
 //拖动排序
 import DragRow from './DragRow/Detail'
 import DragRowCode from './DragRow/code'
+//动态控制表格属性
+import Property from './DyanmicProperty/Detail'
+import PropertyCode from './DyanmicProperty/code'
 
 
 
@@ -245,6 +248,14 @@ class App extends Component {
                         </Card>
                         <div style={{ marginTop: "30px" }}>
                             <Code data={DragRowCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab='动态控制表格属性' key='22'>
+                        <Card>
+                            <Property />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={PropertyCode} />
                         </div>
                     </TabPane>
                     <TabPane tab="api" key='25'>
