@@ -61,6 +61,15 @@ import EditTableCode from './EditTable/code'
 //可编辑行
 import EditableRow from './EditableRow/Detail'
 import EditableRowCode from './EditableRow/code'
+//嵌套表格
+import NestedTable from './NestedTable/Detail'
+import NestedTableCode from './NestedTable/code'
+
+//拖动排序
+import DragRow from './DragRow/Detail'
+import DragRowCode from './DragRow/code'
+
+
 
 const TabPane = Tabs.TabPane;
 
@@ -222,7 +231,23 @@ class App extends Component {
                             <Code data={EditableRowCode} />
                         </div>
                     </TabPane>
-                    <TabPane tab="api" key='20'>
+                    <TabPane tab='嵌套表格' key='20'>
+                        <Card>
+                            <NestedTable />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={NestedTableCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab='拖动排序' key='21'>
+                        <Card>
+                            <DragRow />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={DragRowCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab="api" key='25'>
                         <Api data={data} />
                     </TabPane>
                 </Tabs>

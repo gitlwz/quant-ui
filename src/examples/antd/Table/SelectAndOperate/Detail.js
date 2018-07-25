@@ -44,7 +44,7 @@ class Detail extends Component {
             selectedRowKeys: [],
             data: data,
         })
-
+              
     }
     selectRow = (record) => {
         const selectedRowKeys = [...this.state.selectedRowKeys];

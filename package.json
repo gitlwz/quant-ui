@@ -21,6 +21,7 @@
     "copy-to-clipboard": "^3.0.8",
     "draftjs-to-html": "^0.8.4",
     "fetch-jsonp": "^1.1.3",
+    "immutability-helper": "^2.7.1",
     "lodash": "^4.17.10",
     "lodash-decorators": "^6.0.0",
     "promise": "8.0.1",

@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import { Table, Input, InputNumber, Popconfirm, Form } from 'antd';
+import { Table, Input, InputNumber, Popconfirm, Form } from 'quant-ui';
 
 const data = [];
 for (let i = 0; i < 100; i++) {
