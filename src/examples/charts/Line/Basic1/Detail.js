@@ -16,13 +16,12 @@ const option = {
 };
 class Detail extends Component {
 	componentDidMount = () =>{
-		var myChart = echarts.init(document.getElementById('main'));
-
+		var myChart = echarts.init(document.getElementById('line1_charts'));
 		myChart.setOption(option);
 	}
 	render() {
 		return (
-			<div id="main" style={{width: '600px',height:'400px'}}></div>
+			<div id="line1_charts" style={{width: '600px',height:'400px'}}></div>
 		);
 	}
 }
