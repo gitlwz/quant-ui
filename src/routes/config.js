@@ -118,6 +118,8 @@ export default {
                 { key: '/app/util/Language', title: 'Language多语言', component: 'Language' },
                 { key: '/app/util/Screenfull', title: 'Screenfull全屏', component: 'Screenfull' },
                 { key: '/app/util/Theme', title: 'Theme主题', component: 'Theme' },
+                { key: '/app/util/Utiles', title: 'Utiles方法', component: 'Utiles' },
+                
             ],
         }, {
             key: '/app/page', title: '页面', icon: 'database',
