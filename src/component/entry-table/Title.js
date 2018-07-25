@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { DropTarget, DragDropContext, ConnectDropTarget } from 'react-dnd'
+import { DropTarget, DragDropContext } from 'react-dnd'
 import HTML5Backend from 'react-dnd-html5-backend'
 import isFunction  from 'lodash/isFunction';
 import Card from "./Card";

@@ -141,7 +141,7 @@ class EditableTable extends React.Component {
     }
     _selectColumns(text,record,index, column,collocate) {
         const API = collocate.API || {};
-        let width = !!collocate.width? collocate.width -32 : '100%';
+        let width = !!collocate.width? collocate.width -33 : '100%';
         
         if((!!collocate.disabled || this.disabled[record[this._getKey()]+"_"+column] === true) && this.disabled[record[this._getKey()]+"_"+column] !== false){
             let showText = text;
@@ -205,7 +205,7 @@ class EditableTable extends React.Component {
     }
     _AutoCompleteColumns(text,record,index, column,collocate){
         const API = collocate.API || {};
-        let width = !!collocate.width? collocate.width -32 : '100%'
+        let width = !!collocate.width? collocate.width -33 : '100%'
         if((!!collocate.disabled || this.disabled[record[this._getKey()]+"_"+column] === true) && this.disabled[record[this._getKey()]+"_"+column] !== false){
             return (
                 <div>
@@ -662,7 +662,7 @@ class EditableTable extends React.Component {
                     scroll = {};
                     break
                 }
-                scroll.x =  (scroll.x || 0) + this.columns[i].width * 1;
+                scroll.x =  (scroll.x || 0) + this.columns[i].width * 1 + 0;
             };
         }
         scroll.y = !!this._tableProps.scroll?this._tableProps.scroll.y:undefined;

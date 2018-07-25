@@ -6,10 +6,23 @@ const columns = [{
 	type: 1,
 	width: 200,
 	key: 'name',
+	fixed:"left"
 }, {
 	title: '年龄(数字)',
 	dataIndex: 'age',
 	key: 'age',
+	type: 2,
+	width: 200,
+}, {
+	title: '爱好(input)',
+	dataIndex: 'hobby',
+	key: 'hobby',
+	type: 1,
+	width: 200,
+}, {
+	title: '身高(数字)',
+	dataIndex: 'height',
+	key: 'height',
 	type: 2,
 	width: 200,
 }, {
@@ -48,7 +61,7 @@ const columns = [{
 const dataSource = [{
 	key: '1',
 	name: '胡彦斌',
-	id: '2222222222',
+	id: '11',
 	age: 32,
 	address: { value: "sh" },
 	address1: "北京",
@@ -64,6 +77,8 @@ class Detail extends Component {
 			<div>
 				<EntryTable
 					ref="table"
+					bordered
+					drop={true}
 					scroll={{ y: 300 }}
 					dataSource={dataSource}
 					columns={columns}

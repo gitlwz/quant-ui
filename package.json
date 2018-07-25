@@ -37,10 +37,10 @@
     "react-qmap": "^0.1.5",
     "react-router-dom": "^4.3.1",
     "react-virtualized": "^9.20.1",
-    "reqwest": "^2.0.5",
     "screenfull": "^3.3.2"
   },
   "devDependencies": {
+    "reqwest": "^2.0.5",
     "autoprefixer": "7.1.6",
     "babel-cli": "^6.26.0",
     "babel-core": "6.26.0",

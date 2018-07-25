@@ -1,4 +1,22 @@
+.entry-table-title{
+    width: 100%;
+    position: relative;
+}
 .entry-table-dragSource{
     opacity: 0.4;
-    cursor: col-resize;
+}
+.entry-table-dragSource::after{
+    content: "";
+    top: -17px;
+    position: absolute;
+    display: inline-block;
+    right: -17px;
+    border-right: 2px @primary-color dashed;
+    height: 54px;
+}
+.entry-table-notmove{
+    cursor:not-allowed;
+}
+.entry-table-move{
+    cursor: move;
 }
