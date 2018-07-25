@@ -37,7 +37,12 @@ const dataSource = [
       }
 ];
 class Detail extends Component {
-	
+	constructor(props){
+        super(props);
+        this.state = {
+            dataSource:dataSource
+        }
+    }
     onClick = (item) => {
         console.log(item)
     }
@@ -52,7 +57,7 @@ class Detail extends Component {
                 <Button onClick={()=>this.onResetData()}>点我复原</Button>
                 <DropTree 
                     onClick = {this.onClick}
-                    dataSource={dataSource}
+                    dataSource={this.state.dataSource}
                     width={100}
                     ref="droptree"/>
 			</div>

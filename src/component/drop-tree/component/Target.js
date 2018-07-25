@@ -5,7 +5,7 @@ import { DropTarget } from 'react-dnd';
 const knightSource = {
     drop(props) {
         props.onDrageFromTo("to",props.data)
-    }
+    },
   };
   
   function collect(connect, monitor) {

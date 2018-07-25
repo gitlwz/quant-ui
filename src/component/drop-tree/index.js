@@ -33,11 +33,18 @@ class DropTree extends PureComponent {
         super(props);
         this.state = {
             refresh: false,
+            isShow:true
         };
         this.dataSource = props.dataSource || [];
         this._dataSource = cloneDeep(this.dataSource);
-        
+        this.isFromTo = true;
     }
+    componentWillReceiveProps = (nextProps) => {
+        this.dataSource = nextProps.dataSource || [];
+        this._dataSource = cloneDeep(this.dataSource);
+        this.refresh()
+    };
+    
     _addOneItem = (item) => {
         maxId = 0;
         this._findMaxId(this._dataSource);
@@ -119,7 +126,7 @@ class DropTree extends PureComponent {
                     <tbody>
                         <tr>
                             <Target onDrageFromTo={this.onDrageFromTo} data={item}>
-                                <Children width={this.props.width} onClick={this.props.onClick} renderItem={this.props.renderItem} 
+                                <Children width={this.props.width} onClick={this.props.onClick} renderItem={this.props.renderItem} isShow={this.state.isShow}
                                 isEditItem = {this.props.isEditItem}_addOneItem={this._addOneItem} _deleteOneItem={this._deleteOneItem}
                                 forbidDrag={!!item.pid?false:true} onDrageFromTo={this.onDrageFromTo} data={item} />
                             </Target>
@@ -138,11 +145,11 @@ class DropTree extends PureComponent {
        }else if(type == "to"){
             if(data.id === drageData.id) return;
             if(isFunction(this.props.isParentToChildren)){
-                if(this.props.isParentToChildren(drageData,data) === false){
+                if(this.props.isParentToChildren(drageData,data) === false){//传入的是否可拖拽
                     return;  
                 }
             }
-            if(!!this.isParentToChildren(drageData,data)){
+            if(!!this.isParentToChildren(drageData,data)){//判断是不是从父元素拖向子元素
                 //可以给提示
                 return;
             }
@@ -150,6 +157,22 @@ class DropTree extends PureComponent {
             this.addItem(data.id,drageData);
             this.refresh();
        }
+    //    else if(type == "hover"){
+    //         if(isFunction(this.props.isParentToChildren)){
+    //             if(this.props.isParentToChildren(drageData,data) === false){//传入的是否可拖拽
+    //                 this.setState({
+    //                     isShow:false
+    //                 })
+    //                 return false;
+    //             }
+    //         }
+    //         if(!!this.isParentToChildren(drageData,data)){//判断是不是从父元素拖向子元素
+    //             this.setState({
+    //                 isShow:false
+    //             })
+    //             return false;
+    //         }
+    //    }
     }
     replaceData = (id,newData,allData = this._dataSource) =>{
         let parent =  this.findParent(id,allData);
@@ -196,11 +219,13 @@ class DropTree extends PureComponent {
     }
     delItem = (id) => {
         let parent =  this.findParent(id,this._dataSource);
-        for (let i = 0 ; i < parent.childrens.length; i++) {
-            let element = parent.childrens[i];
-            if(element.id === id){
-                parent.childrens.splice(i,1);
-                return;
+        if(parent){
+            for (let i = 0 ; i < parent.childrens.length; i++) {
+                let element = parent.childrens[i];
+                if(element.id === id){
+                    parent.childrens.splice(i,1);
+                    return;
+                }
             }
         }
     }
