@@ -55,6 +55,10 @@ import TimePicker from './antd/timePicker'
 import Transfer from './antd/transfer'
 import Upload from './antd/upload'
 /*-------END ----------*/
+/*----Feedback start ---------*/
+import Alert from './antd/alert'
+
+/*-------END ----------*/
 /*----DataDisplay start ---------*/
 
 import Avatar from './antd/Avatar'
@@ -140,6 +144,10 @@ export default {
     Transfer,
     Upload,
     /*-------END ----------------*/
+    /*----Feedback start ---------*/
+    Alert,
+    
+    /*-------END ----------*/
     NotFound,
     Map,
     reactAmap

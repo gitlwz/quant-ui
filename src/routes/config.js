@@ -24,7 +24,7 @@ export default {
                         { key: '/app/antd/Navigation/Steps', title: 'Steps步骤条', component: 'Steps' },
                     ]
                 },
-                 /*-------------END ------------------*/
+                /*-------------END ------------------*/
                 /*-------------Data Entry start ------------------*/
                 {
                     key: '/app/antd/DataEntry', title: 'Data Entry组件', icon: 'mobile',
@@ -46,7 +46,15 @@ export default {
                         { key: '/app/antd/DataEntry/TimePicker', title: 'TimePicker时间选择框', component: 'TimePicker' },
                         { key: '/app/antd/DataEntry/Transfer', title: 'Transfer穿梭框', component: 'Transfer' },
                         { key: '/app/antd/DataEntry/Upload', title: 'Upload上传', component: 'Upload' },
-                        
+
+                    ]
+                },
+                /*-------------END ------------------*/
+                /*-------------Feedback start ------------------*/
+                {
+                    key: '/app/antd/Feedback', title: 'Feedback组件', icon: 'mobile',
+                    subs: [
+                        { key: '/app/antd/DataEntry/Alert', title: 'Alert警告提示', component: 'Alert' },
                     ]
                 },
                 /*-------------END ------------------*/
@@ -72,11 +80,11 @@ export default {
 
 
                     ],
-                    
+
 
                 },
-                 /*-------------END ------------------*/
-               
+                /*-------------END ------------------*/
+
             ],
         },
         {
@@ -99,7 +107,7 @@ export default {
         {
             key: '/app/animation', title: '动画', icon: 'rocket',
             subs: [
-                { key: '/app/animation/basicAnimations', title: '基础动画', component: 'BasicAnimations'},
+                { key: '/app/animation/basicAnimations', title: '基础动画', component: 'BasicAnimations' },
             ],
         },
         {
