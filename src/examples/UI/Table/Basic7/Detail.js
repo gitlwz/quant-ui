@@ -75,6 +75,9 @@ class Detail extends Component {
 	render() {
 		return (
 			<div>
+				<div>
+					<h3>固定列是不可拖动的（第一列不可拖动）</h3>
+				</div>
 				<EntryTable
 					ref="table"
 					bordered
