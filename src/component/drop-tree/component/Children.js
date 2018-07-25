@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { DragSource } from 'react-dnd';
 import { createDragPreview } from 'react-dnd-text-dragpreview'
 import isFunction from 'lodash/isFunction';
-import { ContextMenu, Item, Separator, Submenu, ContextMenuProvider } from 'react-contexify';
+import { ContextMenu, Item, Separator, ContextMenuProvider } from 'react-contexify';
 import Icon from '../../icon';
 import language from '../../language';
 import 'react-contexify/dist/ReactContexify.min.css';
