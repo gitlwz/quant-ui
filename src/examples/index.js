@@ -16,6 +16,7 @@ import CountDown from "./UI/CountDown" //自动计时
 import DropTree from "./UI/DropTree" //拖拽树形图
 import Color from "./UI/Color" //拾色器
 import QTable from "./UI/Table" //拾色器
+import ContextMenu from "./UI/ContextMenu" //右键菜单
 //动画
 import BasicAnimations from "./animation/BasicAnimations"
 
@@ -24,6 +25,7 @@ import webSocket from './util/webSocket'
 import Language from './util/Language'
 import Screenfull from './util/screenfull'
 import Theme from "./util/theme";
+import Utiles from "./util/Utiles";
 //antd
 import Button from './antd/button'
 import Icon from './antd/icon'
@@ -55,6 +57,11 @@ import TimePicker from './antd/timePicker'
 import Transfer from './antd/transfer'
 import Upload from './antd/upload'
 /*-------END ----------*/
+/*----Feedback start ---------*/
+import Alert from './antd/alert'
+import Drawer from './antd/drawer'
+import Modal from './antd/modal'
+/*-------END ----------*/
 /*----DataDisplay start ---------*/
 
 import Avatar from './antd/Avatar'
@@ -74,6 +81,10 @@ import NotFound from './page/NotFound'
 import Map from './page/map'   //地图
 import reactAmap from './page/reactAmap'   //地图
 
+
+//charts
+import Diagram from "./charts/Diagram"
+import Line from "./charts/Line"
 export default {
     Home,
     QRCode,
@@ -89,6 +100,7 @@ export default {
     DropTree,
     Color,
     QTable,
+	ContextMenu,
     //动画
     BasicAnimations,
 
@@ -97,6 +109,7 @@ export default {
     Language,
     Screenfull,
     Theme,
+    Utiles,
     //antd
 
     /*----DataDisplay start ---------*/
@@ -140,7 +153,17 @@ export default {
     Transfer,
     Upload,
     /*-------END ----------------*/
+    /*----Feedback start ---------*/
+    Alert,
+    Drawer,
+    Modal,
+    /*-------END ----------*/
     NotFound,
     Map,
-    reactAmap
+    reactAmap,
+
+
+    //charts
+    Diagram,
+    Line,
 }

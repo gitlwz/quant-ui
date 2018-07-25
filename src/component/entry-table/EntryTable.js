@@ -5,6 +5,8 @@ import InputNumber from "../input-number";
 import Select from "../select";
 import AutoComplete from "../auto-complete";
 import DatePicker from "../date-picker";
+import Cascader from "../cascader";
+import Switch  from "../switch";
 import cloneDeep  from 'lodash/cloneDeep';
 import isFunction  from 'lodash/isFunction';
 import isArray  from 'lodash/isArray';
@@ -12,6 +14,7 @@ import isObject from "lodash/isObject";
 import moment from 'moment';
 import Ttile from "./Title"
 import 'moment/locale/zh-cn';
+import {compare} from '../utils';
 moment.locale('zh-cn');
 const Option = Select.Option;
 
@@ -57,6 +60,13 @@ class EditableTable extends React.Component {
         this.columns = this.props.columns;
         this._columns = this._EditableColumns(this.columns);
     }
+    // componentWillReceiveProps = (nextProps) =>{
+    //     if(!compare(this.props,nextProps)){
+    //         this.tableProps = nextProps;
+    //         this._tableProps = cloneDeep(this.props);
+    //         this.refresh()
+    //     }
+    // }
     _getCheckboxProps = (record) =>{
         if(isFunction(this.props.getCheckboxProps)){
             return this.props.getCheckboxProps(record)
@@ -74,6 +84,9 @@ class EditableTable extends React.Component {
         this._columns = this._EditableColumns(this.columns);
         this.refresh();
     }
+    _Cascaderfilter = (inputValue, path) =>{
+        return (path.some(option => (option.name).toLowerCase().indexOf(inputValue.toLowerCase()) > -1));
+    }   
     _findCard = (dataIndex) =>{
         const data = this.columns.filter(c => c.dataIndex === dataIndex)[0];
         const index = this.columns.findIndex((c)=> c.dataIndex === dataIndex);
@@ -141,7 +154,7 @@ class EditableTable extends React.Component {
     }
     _selectColumns(text,record,index, column,collocate) {
         const API = collocate.API || {};
-        let width = !!collocate.width? collocate.width -32 : '100%';
+        let width = !!collocate.width? collocate.width -33 : '100%';
         
         if((!!collocate.disabled || this.disabled[record[this._getKey()]+"_"+column] === true) && this.disabled[record[this._getKey()]+"_"+column] !== false){
             let showText = text;
@@ -205,7 +218,7 @@ class EditableTable extends React.Component {
     }
     _AutoCompleteColumns(text,record,index, column,collocate){
         const API = collocate.API || {};
-        let width = !!collocate.width? collocate.width -32 : '100%'
+        let width = !!collocate.width? collocate.width -33 : '100%'
         if((!!collocate.disabled || this.disabled[record[this._getKey()]+"_"+column] === true) && this.disabled[record[this._getKey()]+"_"+column] !== false){
             return (
                 <div>
@@ -255,13 +268,65 @@ class EditableTable extends React.Component {
             );
         }
     }
+    _CascaderColumns(text,record,index, column,collocate) {
+        const API = collocate.API || {};
+        let disabled = false
+        if((!!collocate.disabled || this.disabled[record[this._getKey()]+"_"+column] === true) && this.disabled[record[this._getKey()]+"_"+column] !== false ){
+            disabled = true;
+        }  
+        let optiondata = [];
+        if(isArray(collocate.cascaderoption)){
+            optiondata = collocate.cascaderoption
+        }else{
+            optiondata = record[collocate.cascaderoption] || []
+        } 
+        return (
+            <div>
+                <Cascader
+                    disabled={disabled}
+                    expandTrigger="hover"
+                    fieldNames={{
+                        label:"name",
+                        value:"value",
+                        children:"children"
+                    }}
+                    {...API}
+                    options={optiondata}
+                    value={text} 
+                    showSearch={{
+                        filter :this._Cascaderfilter
+                    }}
+                    onChange = {(value, selectedOptions)=>this._CascaderChange(value,record,index,column,selectedOptions)}
+                    />
+            </div>
+        ); 
+    }
+    _Switch = (text,record,index, column,collocate) => {
+        const API = collocate.API || {};
+        let disabled = false
+        if((!!collocate.disabled || this.disabled[record[this._getKey()]+"_"+column] === true) && this.disabled[record[this._getKey()]+"_"+column] !== false ){
+            disabled = true;
+        } 
+        return (
+            <div>
+                <Switch 
+                    disabled={disabled}
+                    {...API}
+                    checked = {text}
+                    onChange = {(checked)=>this._handleChange(checked,record,index,column)}
+                    />
+            </div>
+        ); 
+    }
     _EditableColumns(columns){
         let _columns = columns.filter((item)=>item.show !== false).map((collocate)=>{
             let _collocate = cloneDeep(collocate)
-            _collocate.title = <Ttile
-                moveCard = {this._moveCard}  
-                collocate = {collocate}
-                text={collocate.title}/>
+            if(this.props.drop === true){
+                _collocate.title = <Ttile
+                    moveCard = {this._moveCard}  
+                    collocate = {collocate}
+                    text={collocate.title}/>
+            }
             if(isFunction(_collocate.render)) return _collocate;
             let props = {}
             if(_collocate.type === 0 || _collocate.type === undefined ){
@@ -330,6 +395,26 @@ class EditableTable extends React.Component {
                         props
                     }
                 }
+            }else if(_collocate.type === 6){
+                _collocate.render = (text,record,index)=> {
+                    if(isFunction(_collocate.props)){
+                        props = _collocate.props(text,record,index,_collocate.dataIndex,_collocate,this.dataSource.length);
+                    }
+                    return{
+                        children:this._CascaderColumns(text,record,index,_collocate.dataIndex,_collocate),
+                        props
+                    }
+                }
+            }else if(_collocate.type === 7){
+                _collocate.render = (text,record,index)=> {
+                    if(isFunction(_collocate.props)){
+                        props = _collocate.props(text,record,index,_collocate.dataIndex,_collocate,this.dataSource.length);
+                    }
+                    return{
+                        children:this._Switch(text,record,index,_collocate.dataIndex,_collocate),
+                        props
+                    }
+                }
             }
             return _collocate;
         })
@@ -337,6 +422,18 @@ class EditableTable extends React.Component {
     }
     _getKey = () =>{
         return this._tableProps.rowKey || "key";
+    }
+    _CascaderChange = (value,record,index,column, selectedOptions) =>{
+        const newData = [...this.dataSource];
+        const target = newData.filter(item => record[this._getKey()] === item[this._getKey()])[0];
+        if (target) {
+            if(isFunction(this.props.cellOnChange)){
+                this.props.cellOnChange(value,target[column],record,index,column,selectedOptions);
+            }
+            target[column] = value;
+            this.dataSource = newData;
+            this.refresh();
+        }
     }
     _SelectChange = (value,record,index,column) =>{
         const newData = [...this.dataSource];
@@ -660,7 +757,7 @@ class EditableTable extends React.Component {
                     scroll = {};
                     break
                 }
-                scroll.x =  (scroll.x || 0) + this.columns[i].width * 1;
+                scroll.x =  (scroll.x || 0) + this.columns[i].width * 1 + 0;
             };
         }
         scroll.y = !!this._tableProps.scroll?this._tableProps.scroll.y:undefined;

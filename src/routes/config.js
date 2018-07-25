@@ -24,7 +24,7 @@ export default {
                         { key: '/app/antd/Navigation/Steps', title: 'Steps步骤条', component: 'Steps' },
                     ]
                 },
-                 /*-------------END ------------------*/
+                /*-------------END ------------------*/
                 /*-------------Data Entry start ------------------*/
                 {
                     key: '/app/antd/DataEntry', title: 'Data Entry组件', icon: 'mobile',
@@ -46,7 +46,17 @@ export default {
                         { key: '/app/antd/DataEntry/TimePicker', title: 'TimePicker时间选择框', component: 'TimePicker' },
                         { key: '/app/antd/DataEntry/Transfer', title: 'Transfer穿梭框', component: 'Transfer' },
                         { key: '/app/antd/DataEntry/Upload', title: 'Upload上传', component: 'Upload' },
-                        
+
+                    ]
+                },
+                /*-------------END ------------------*/
+                /*-------------Feedback start ------------------*/
+                {
+                    key: '/app/antd/Feedback', title: 'Feedback组件', icon: 'mobile',
+                    subs: [
+                        { key: '/app/antd/DataEntry/Alert', title: 'Alert警告提示', component: 'Alert' },
+                        { key: '/app/antd/DataEntry/Drawer', title: 'Drawer抽屉', component: 'Drawer' },
+                        { key: '/app/antd/DataEntry/Modal', title: 'Modal对话框', component: 'Modal' },
                     ]
                 },
                 /*-------------END ------------------*/
@@ -72,11 +82,11 @@ export default {
 
 
                     ],
-                    
+
 
                 },
-                 /*-------------END ------------------*/
-               
+                /*-------------END ------------------*/
+
             ],
         },
         {
@@ -91,6 +101,7 @@ export default {
                 { key: '/app/ui/Ellipsis', title: '文本自动省略号', component: 'Ellipsis' },
                 { key: '/app/ui/RichText', title: '富文本', component: 'RichText' },
                 { key: '/app/ui/CountDown', title: '倒计时', component: 'CountDown' },
+				{ key: '/app/ui/ContextMenu', title: '环境菜单', component: 'ContextMenu' },
                 { key: '/app/ui/DropTree', title: '拖拽树形图', component: 'DropTree' },
                 { key: '/app/ui/color', title: '拾色器', component: 'Color' },
                 { key: '/app/ui/Table', title: '复杂table', component: 'QTable' },
@@ -99,7 +110,7 @@ export default {
         {
             key: '/app/animation', title: '动画', icon: 'rocket',
             subs: [
-                { key: '/app/animation/basicAnimations', title: '基础动画', component: 'BasicAnimations'},
+                { key: '/app/animation/basicAnimations', title: '基础动画', component: 'BasicAnimations' },
             ],
         },
         {
@@ -109,6 +120,8 @@ export default {
                 { key: '/app/util/Language', title: 'Language多语言', component: 'Language' },
                 { key: '/app/util/Screenfull', title: 'Screenfull全屏', component: 'Screenfull' },
                 { key: '/app/util/Theme', title: 'Theme主题', component: 'Theme' },
+                { key: '/app/util/Utiles', title: 'Utiles方法', component: 'Utiles' },
+                
             ],
         }, {
             key: '/app/page', title: '页面', icon: 'database',
@@ -116,6 +129,12 @@ export default {
                 { key: '/app/page/404', title: '404', component: 'NotFound' },
                 { key: '/app/page/map', title: '腾讯地图', component: 'Map' },
                 { key: '/app/page/react-amap', title: '高德地图', component: 'reactAmap' },
+            ],
+        }, {
+            key: '/app/charts', title: '可视化', icon: 'area-chart',
+            subs: [
+                { key: '/app/charts/Line', title: '折线图', component: 'Line' },
+                { key: '/app/charts/Diagram', title: '关系图', component: 'Diagram' },
             ],
         },
     ],

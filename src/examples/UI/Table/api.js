@@ -26,6 +26,13 @@ const api = [
 				default: "false",							//默认值
 				must: 'false',
 			},{
+				key: "3.1",
+				parameter: "drop",  //字段名
+				instructions: '列是否可拖动(固定列不可拖动)',	//描述
+				type: 'Boole',	//类型
+				default: "false",							//默认值
+				must: 'false',
+			},{
 				key: "4",
 				parameter: "defaultRowKeys",  //字段名
 				instructions: '默认选中项',	//描述
@@ -84,7 +91,7 @@ const api = [
 				key: "3",
 				parameter: "type",  //字段名
 				instructions: '单元格属性',	//描述
-				type: 'string : 0、1、2、3、4、5',	//类型
+				type: 'string : 0、1、2、3、4、5、6',	//类型
 				default: "0",							//默认值
 				must: 'false',
 				children:[{
@@ -111,6 +118,15 @@ const api = [
 					key: "5",
 					parameter: "5",  //字段名
 					instructions: '日期单元格',	//描述
+				},{
+					key: "6",
+					parameter: "6",  //字段名
+					instructions: '级联选择 需要定制cascaderoption',	//描述
+				},{
+					key: "7",
+					parameter: "7",  //字段名
+					instructions: '开关选择',	//描述
+					type:"Boole"
 				}]
 			},{
 				key: "4",
