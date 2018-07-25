@@ -129,6 +129,11 @@ export default {
                 { key: '/app/page/map', title: '腾讯地图', component: 'Map' },
                 { key: '/app/page/react-amap', title: '高德地图', component: 'reactAmap' },
             ],
+        }, {
+            key: '/app/charts', title: '可视化', icon: 'area-chart',
+            subs: [
+                { key: '/app/charts/Diagram', title: '关系图', component: 'Diagram' },
+            ],
         },
     ],
     others: []  // 非菜单相关路由

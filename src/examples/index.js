@@ -80,6 +80,9 @@ import NotFound from './page/NotFound'
 import Map from './page/map'   //地图
 import reactAmap from './page/reactAmap'   //地图
 
+
+//charts
+import Diagram from "./charts/Diagram"
 export default {
     Home,
     QRCode,
@@ -154,5 +157,9 @@ export default {
     /*-------END ----------*/
     NotFound,
     Map,
-    reactAmap
+    reactAmap,
+
+
+    //charts
+    Diagram,
 }
