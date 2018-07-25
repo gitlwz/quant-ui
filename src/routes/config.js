@@ -133,6 +133,7 @@ export default {
         }, {
             key: '/app/charts', title: '可视化', icon: 'area-chart',
             subs: [
+                { key: '/app/charts/Line', title: '折线图', component: 'Line' },
                 { key: '/app/charts/Diagram', title: '关系图', component: 'Diagram' },
             ],
         },

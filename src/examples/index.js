@@ -84,6 +84,7 @@ import reactAmap from './page/reactAmap'   //地图
 
 //charts
 import Diagram from "./charts/Diagram"
+import Line from "./charts/Line"
 export default {
     Home,
     QRCode,
@@ -164,4 +165,5 @@ export default {
 
     //charts
     Diagram,
+    Line,
 }
