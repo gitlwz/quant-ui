@@ -32,7 +32,7 @@ class Detail extends Component {
 						}}
 					>
 						Affix bottom
-			  </Button>
+			  		</Button>
 				</Affix>
 			</div>
 		);

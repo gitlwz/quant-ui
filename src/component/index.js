@@ -16,6 +16,7 @@ export { default as Checkbox } from './checkbox';
 export { default as Col } from './col';
 export { default as DatePicker } from './date-picker';
 export { default as Divider } from './divider';
+export { default as Drawer } from './drawer';
 export { default as Dropdown } from './dropdown';
 export { default as Form } from './form';
 export { default as Icon } from './icon';
