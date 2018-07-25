@@ -23,7 +23,6 @@ class App extends Component {
         let item = this.props.data;
         let colSpan = item.childrens.length * 2;
         const { connectDropTarget, isOver, isShow } = this.props;
-        console.log(isShow)
         return connectDropTarget(
                 <td className={isOver?isShow?'node-cell':"node-forbid":""} colSpan={colSpan}>
                     {this.props.children}

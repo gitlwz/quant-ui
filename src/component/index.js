@@ -77,6 +77,7 @@ export { default as QRCode } from './q-r-code';
 export { default as copy } from './copy'; 
 export { default as colorPicker } from './color-picker'; 
 export { default as EntryTable } from './entry-table'; 
+export { default as QContextMenu } from './context-menu'; 
 
 //page
 export { default as NotFound } from './not-found';
