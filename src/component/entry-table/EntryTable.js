@@ -258,10 +258,12 @@ class EditableTable extends React.Component {
     _EditableColumns(columns){
         let _columns = columns.filter((item)=>item.show !== false).map((collocate)=>{
             let _collocate = cloneDeep(collocate)
-            _collocate.title = <Ttile
-                moveCard = {this._moveCard}  
-                collocate = {collocate}
-                text={collocate.title}/>
+            if(this.props.drop === true){
+                _collocate.title = <Ttile
+                    moveCard = {this._moveCard}  
+                    collocate = {collocate}
+                    text={collocate.title}/>
+            }
             if(isFunction(_collocate.render)) return _collocate;
             let props = {}
             if(_collocate.type === 0 || _collocate.type === undefined ){
