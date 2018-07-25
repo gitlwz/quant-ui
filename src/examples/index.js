@@ -24,6 +24,7 @@ import webSocket from './util/webSocket'
 import Language from './util/Language'
 import Screenfull from './util/screenfull'
 import Theme from "./util/theme";
+import Utiles from "./util/Utiles";
 //antd
 import Button from './antd/button'
 import Icon from './antd/icon'
@@ -101,6 +102,7 @@ export default {
     Language,
     Screenfull,
     Theme,
+    Utiles,
     //antd
 
     /*----DataDisplay start ---------*/
