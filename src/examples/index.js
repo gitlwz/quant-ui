@@ -61,6 +61,7 @@ import Upload from './antd/upload'
 import Alert from './antd/alert'
 import Drawer from './antd/drawer'
 import Modal from './antd/modal'
+import Message from './antd/message'
 /*-------END ----------*/
 /*----DataDisplay start ---------*/
 
@@ -157,6 +158,7 @@ export default {
     Alert,
     Drawer,
     Modal,
+    Message,
     /*-------END ----------*/
     NotFound,
     Map,
