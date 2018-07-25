@@ -56,6 +56,7 @@ export default {
                     subs: [
                         { key: '/app/antd/DataEntry/Alert', title: 'Alert警告提示', component: 'Alert' },
                         { key: '/app/antd/DataEntry/Drawer', title: 'Drawer抽屉', component: 'Drawer' },
+                        { key: '/app/antd/DataEntry/Modal', title: 'Modal对话框', component: 'Modal' },
                     ]
                 },
                 /*-------------END ------------------*/

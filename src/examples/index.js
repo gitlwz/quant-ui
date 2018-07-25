@@ -60,6 +60,7 @@ import Upload from './antd/upload'
 /*----Feedback start ---------*/
 import Alert from './antd/alert'
 import Drawer from './antd/drawer'
+import Modal from './antd/modal'
 /*-------END ----------*/
 /*----DataDisplay start ---------*/
 
@@ -151,6 +152,7 @@ export default {
     /*----Feedback start ---------*/
     Alert,
     Drawer,
+    Modal,
     /*-------END ----------*/
     NotFound,
     Map,
