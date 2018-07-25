@@ -6,6 +6,9 @@ const knightSource = {
     drop(props) {
         props.onDrageFromTo("to",props.data)
     },
+    hover(props){
+        props.onDrageFromTo("hover",props.data)
+    },
   };
   
   function collect(connect, monitor) {
@@ -19,9 +22,10 @@ class App extends Component {
   render() {
         let item = this.props.data;
         let colSpan = item.childrens.length * 2;
-        const { connectDropTarget, isOver } = this.props;
+        const { connectDropTarget, isOver, isShow } = this.props;
+        console.log(isShow)
         return connectDropTarget(
-                <td className={isOver?'node-cell':""} colSpan={colSpan}>
+                <td className={isOver?isShow?'node-cell':"node-forbid":""} colSpan={colSpan}>
                     {this.props.children}
                 </td>
             

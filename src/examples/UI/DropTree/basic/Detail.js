@@ -5,6 +5,7 @@ const dataSource = [
         "id": 1,
         "name": "企业主体信用得分",
         "pid": null,
+        "notDrag": true,//不可拖拽
         "childrens": [
           {
             "id": 2,

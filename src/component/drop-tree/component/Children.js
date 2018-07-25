@@ -45,7 +45,7 @@ class App extends Component {
         isEditItem: true
     };
     formatDragMessage = () => {
-        return `Moving`
+        return `Moving 1 rows`
     }
     componentDidMount() {
         // handles first time dragPreview setup

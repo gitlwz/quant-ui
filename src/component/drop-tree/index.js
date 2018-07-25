@@ -125,10 +125,10 @@ class DropTree extends PureComponent {
                 <table cellPadding="0" cellSpacing="0" border="0">
                     <tbody>
                         <tr>
-                            <Target onDrageFromTo={this.onDrageFromTo} data={item}>
-                                <Children width={this.props.width} onClick={this.props.onClick} renderItem={this.props.renderItem} isShow={this.state.isShow}
+                            <Target onDrageFromTo={this.onDrageFromTo} data={item} isShow={this.state.isShow}>
+                                <Children width={this.props.width} onClick={this.props.onClick} renderItem={this.props.renderItem}
                                 isEditItem = {this.props.isEditItem}_addOneItem={this._addOneItem} _deleteOneItem={this._deleteOneItem}
-                                forbidDrag={!!item.pid?false:true} onDrageFromTo={this.onDrageFromTo} data={item} />
+                                forbidDrag={!!item.notDrag?true:false} onDrageFromTo={this.onDrageFromTo} data={item} />
                             </Target>
                         </tr>
                         <LineFirst lineNum = {item.childrens.length}/>
@@ -142,7 +142,13 @@ class DropTree extends PureComponent {
     onDrageFromTo = (type, data) => {
        if(type == "from"){
             drageData = cloneDeep(data);
+            this.setState({
+                isShow:true
+            })
        }else if(type == "to"){
+            this.setState({
+                isShow:true
+            })
             if(data.id === drageData.id) return;
             if(isFunction(this.props.isParentToChildren)){
                 if(this.props.isParentToChildren(drageData,data) === false){//传入的是否可拖拽
@@ -157,22 +163,22 @@ class DropTree extends PureComponent {
             this.addItem(data.id,drageData);
             this.refresh();
        }
-    //    else if(type == "hover"){
-    //         if(isFunction(this.props.isParentToChildren)){
-    //             if(this.props.isParentToChildren(drageData,data) === false){//传入的是否可拖拽
-    //                 this.setState({
-    //                     isShow:false
-    //                 })
-    //                 return false;
-    //             }
-    //         }
-    //         if(!!this.isParentToChildren(drageData,data)){//判断是不是从父元素拖向子元素
-    //             this.setState({
-    //                 isShow:false
-    //             })
-    //             return false;
-    //         }
-    //    }
+       else if(type == "hover"){
+            if(isFunction(this.props.isParentToChildren)){
+                if(this.props.isParentToChildren(drageData,data) === false){//传入的是否可拖拽
+                    this.setState({
+                        isShow:false
+                    })
+                    return false;
+                }
+            }
+            if(!!this.isParentToChildren(drageData,data)){//判断是不是从父元素拖向子元素
+                this.setState({
+                    isShow:false
+                })
+                return false;
+            }
+       }
     }
     replaceData = (id,newData,allData = this._dataSource) =>{
         let parent =  this.findParent(id,allData);
