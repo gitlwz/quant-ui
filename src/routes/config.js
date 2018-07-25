@@ -55,6 +55,7 @@ export default {
                     key: '/app/antd/Feedback', title: 'Feedback组件', icon: 'mobile',
                     subs: [
                         { key: '/app/antd/DataEntry/Alert', title: 'Alert警告提示', component: 'Alert' },
+                        { key: '/app/antd/DataEntry/Drawer', title: 'Drawer抽屉', component: 'Drawer' },
                     ]
                 },
                 /*-------------END ------------------*/

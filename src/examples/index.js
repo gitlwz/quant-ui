@@ -57,7 +57,7 @@ import Upload from './antd/upload'
 /*-------END ----------*/
 /*----Feedback start ---------*/
 import Alert from './antd/alert'
-
+import Drawer from './antd/drawer'
 /*-------END ----------*/
 /*----DataDisplay start ---------*/
 
@@ -146,7 +146,7 @@ export default {
     /*-------END ----------------*/
     /*----Feedback start ---------*/
     Alert,
-    
+    Drawer,
     /*-------END ----------*/
     NotFound,
     Map,
