@@ -57,6 +57,7 @@ export default {
                         { key: '/app/antd/DataEntry/Alert', title: 'Alert警告提示', component: 'Alert' },
                         { key: '/app/antd/DataEntry/Drawer', title: 'Drawer抽屉', component: 'Drawer' },
                         { key: '/app/antd/DataEntry/Modal', title: 'Modal对话框', component: 'Modal' },
+                        { key: '/app/antd/DataEntry/Message', title: 'Message全局提示', component: 'Message' },
                     ]
                 },
                 /*-------------END ------------------*/
@@ -135,7 +136,10 @@ export default {
             key: '/app/charts', title: '可视化', icon: 'area-chart',
             subs: [
                 { key: '/app/charts/Line', title: '折线图', component: 'Line' },
+                { key: '/app/charts/Bar', title: '柱状图', component: 'Bar' },
                 { key: '/app/charts/Diagram', title: '关系图', component: 'Diagram' },
+                { key: '/app/charts/Dcharts', title: '3D图', component: 'Dcharts' },
+                { key: '/app/charts/DropCharts', title: '可拖拽图表', component: 'DropCharts' },
             ],
         },
     ],

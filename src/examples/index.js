@@ -61,6 +61,7 @@ import Upload from './antd/upload'
 import Alert from './antd/alert'
 import Drawer from './antd/drawer'
 import Modal from './antd/modal'
+import Message from './antd/message'
 /*-------END ----------*/
 /*----DataDisplay start ---------*/
 
@@ -86,6 +87,9 @@ import reactAmap from './page/reactAmap'   //地图
 //charts
 import Diagram from "./charts/Diagram"
 import Line from "./charts/Line"
+import Bar from "./charts/Bar"
+import Dcharts from "./charts/3DCharts"
+import DropCharts from "./charts/DropCharts"
 export default {
     Home,
     QRCode,
@@ -159,6 +163,7 @@ export default {
     Alert,
     Drawer,
     Modal,
+    Message,
     /*-------END ----------*/
     NotFound,
     Map,
@@ -168,4 +173,7 @@ export default {
     //charts
     Diagram,
     Line,
+    Dcharts,
+    Bar,
+    DropCharts,
 }
