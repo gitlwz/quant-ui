@@ -29,6 +29,16 @@ import PositionCode from './Position/code'
 //CardType
 import CardType from './CardType/Detail'
 import CardTypeCode from './CardType/code'
+//AddNClode
+import AddNClose from './AddNClose/Detail'
+import AddNCloseCode from './AddNClose/code'
+//Container
+import Container from './Container/Detail'
+import ContainerCode from './Container/code'
+//Customized
+import Customized from './Customized/Detail'
+import CustomizedCode from './Customized/code'
+
 
 const TabPane = Tabs.TabPane;
 class App extends Component {
@@ -102,7 +112,31 @@ class App extends Component {
                             <Code data={CardTypeCode} />
                         </div>
                     </TabPane>
-                    <TabPane tab="参数api" key="10">
+                    <TabPane tab="增加&删除标签页" key="9">
+                        <Card >
+                            <AddNClose />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={AddNCloseCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab="卡片式页签容器" key="10">
+                        <Card >
+                            <Container />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={ContainerCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab="自定义添加标签页" key="11">
+                        <Card >
+                            <Customized />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={CustomizedCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab="参数api" key="13">
                         <Api data={data} />
                     </TabPane>
                 </Tabs>
