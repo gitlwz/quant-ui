@@ -12,7 +12,7 @@ class App extends Component {
     render() {
         return (
             <div style={{ padding: "20px" }}>
-                <h1>关系图</h1>
+                <h1>组织结构图</h1>
                 <Tabs tabPosition={"right"}>
                     <TabPane tab="基本" key="1">
                         <Card >
