@@ -81,6 +81,7 @@ import Tooltip from './antd/Tooltip'
 import Table from './antd/Table'
 import Tabs from './antd/Tabs'
 import Tags from './antd/Tag'
+import Timeline from './antd/Timeline'
 /*-------END ----------------*/
 
 //page
@@ -137,6 +138,7 @@ export default {
     Table,
     Tabs,
     Tags,
+    Timeline,
     /*-------END ----------------*/
     Button,
     Icon,
