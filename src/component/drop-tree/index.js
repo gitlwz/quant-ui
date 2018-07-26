@@ -107,7 +107,7 @@ class DropTree extends PureComponent {
                     {
                         data.map((item) => {
                             return (
-                                <td className="node-container" colSpan="2">
+                                <td key={"childrenTd" + item.id} className="node-container" colSpan="2">
                                     {this.parent([item])}
                                 </td>
                             )
@@ -122,7 +122,7 @@ class DropTree extends PureComponent {
         return data.map((item) => {
             let colSpan = item.childrens.length * 2;
             return (
-                <table cellPadding="0" cellSpacing="0" border="0">
+                <table key={"children" + item.id} cellPadding="0" cellSpacing="0" border="0">
                     <tbody>
                         <tr>
                             <Target onDrageFromTo={this.onDrageFromTo} data={item} isShow={this.state.isShow}>

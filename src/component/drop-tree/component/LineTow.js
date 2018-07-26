@@ -20,23 +20,23 @@ export default class LineTow extends Component {
         for (let i = 0; i < lineNum * 2; i++) {
             if (i == 0) {
                 line.push(
-                    <td className="line left">&nbsp;</td>
+                    <td key = {"lineTd" + i} className="line left">&nbsp;</td>
                 )
                 continue;
             }
             if (i == (lineNum * 2 - 1)) {
                 line.push(
-                    <td className="line right">&nbsp;</td>
+                    <td key = {"lineTd" + i} className="line right">&nbsp;</td>
                 )
                 continue;
             }
             if (i % 2 == 0) { //偶数
                 line.push(
-                    <td className="line left top">&nbsp;</td>
+                    <td key = {"lineTd" + i} className="line left top">&nbsp;</td>
                 )
             } else {
                 line.push(
-                    <td className="line right top">&nbsp;</td>
+                    <td key = {"lineTd" + i} className="line right top">&nbsp;</td>
                 )
             }
 

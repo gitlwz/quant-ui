@@ -17,6 +17,8 @@ import DropTree from "./UI/DropTree" //拖拽树形图
 import Color from "./UI/Color" //拾色器
 import QTable from "./UI/Table" //拾色器
 import ContextMenu from "./UI/ContextMenu" //右键菜单
+import ReactMarkdown from "./UI/ReactMarkdown" //右键菜单
+
 //动画
 import BasicAnimations from "./animation/BasicAnimations"
 
@@ -113,7 +115,8 @@ export default {
     DropTree,
     Color,
     QTable,
-	ContextMenu,
+    ContextMenu,
+    ReactMarkdown,
     //动画
     BasicAnimations,
 
