@@ -88,6 +88,7 @@ import Diagram from "./charts/Diagram"
 import Line from "./charts/Line"
 import Bar from "./charts/Bar"
 import Dcharts from "./charts/3DCharts"
+import DropCharts from "./charts/DropCharts"
 export default {
     Home,
     QRCode,
@@ -171,5 +172,6 @@ export default {
     Diagram,
     Line,
     Dcharts,
-    Bar
+    Bar,
+    DropCharts,
 }

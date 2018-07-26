@@ -138,6 +138,7 @@ export default {
                 { key: '/app/charts/Bar', title: '柱状图', component: 'Bar' },
                 { key: '/app/charts/Diagram', title: '关系图', component: 'Diagram' },
                 { key: '/app/charts/Dcharts', title: '3D图', component: 'Dcharts' },
+                { key: '/app/charts/DropCharts', title: '可拖拽图表', component: 'DropCharts' },
             ],
         },
     ],
