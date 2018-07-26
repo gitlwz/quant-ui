@@ -75,6 +75,7 @@ export default {
                         { key: '/app/antd/DataDisplay/PopOver', title: 'PopOver气泡卡片', component: 'PopOver' },
                         { key: '/app/antd/DataDisplay/Tooltip', title: 'Tooltip文字提示', component: 'Tooltip' },
                         { key: '/app/antd/DataDisplay/Table', title: 'Table表格', component: 'Table' },
+                        { key: '/app/antd/DataDisplay/Tabs', title: 'Tabs标签页', component: 'Tabs' },
 
 
 

@@ -74,6 +74,7 @@ import List from './antd/List'
 import PopOver from './antd/PopOver'
 import Tooltip from './antd/Tooltip'
 import Table from './antd/Table'
+import Tabs from './antd/Tabs'
 /*-------END ----------------*/
 
 //page
@@ -123,6 +124,7 @@ export default {
     PopOver,
     Tooltip,
     Table,
+    Tabs,
     /*-------END ----------------*/
     Button,
     Icon,
