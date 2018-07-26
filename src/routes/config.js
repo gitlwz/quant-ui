@@ -58,6 +58,7 @@ export default {
                         { key: '/app/antd/DataEntry/Drawer', title: 'Drawer抽屉', component: 'Drawer' },
                         { key: '/app/antd/DataEntry/Modal', title: 'Modal对话框', component: 'Modal' },
                         { key: '/app/antd/DataEntry/Message', title: 'Message全局提示', component: 'Message' },
+                        { key: '/app/antd/DataEntry/Notification', title: 'Notification通知提醒框', component: 'Notification' },
                     ]
                 },
                 /*-------------END ------------------*/
