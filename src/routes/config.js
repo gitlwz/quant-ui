@@ -95,7 +95,7 @@ export default {
             ],
         },
         {
-            key: '/app/ui', title: 'UI', icon: 'qd18',
+            key: '/app/ui', title: 'UI', icon: 'qd7',
             subs: [
                 { key: '/app/ui/QRCode', title: '二维码生成', component: 'QRCode' },
                 { key: '/app/ui/Copy', title: '右键复制', component: 'Copy' },
