@@ -60,6 +60,7 @@ export default {
                         { key: '/app/antd/DataEntry/Message', title: 'Message全局提示', component: 'Message' },
                         { key: '/app/antd/DataEntry/Notification', title: 'Notification通知提醒框', component: 'Notification' },
                         { key: '/app/antd/DataEntry/Progress', title: 'Progress进度条', component: 'Progress' },
+                        { key: '/app/antd/DataEntry/Popconfirm', title: 'Popconfirm气泡确认框', component: 'Popconfirm' },
                     ]
                 },
                 /*-------------END ------------------*/

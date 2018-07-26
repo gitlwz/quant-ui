@@ -64,6 +64,7 @@ import Modal from './antd/modal'
 import Message from './antd/message'
 import Notification from './antd/notification'
 import Progress from './antd/progress'
+import Popconfirm from './antd/popconfirm'
 /*-------END ----------*/
 /*----DataDisplay start ---------*/
 
@@ -168,6 +169,7 @@ export default {
     Message,
     Notification,
     Progress,
+    Popconfirm,
     /*-------END ----------*/
     NotFound,
     Map,
