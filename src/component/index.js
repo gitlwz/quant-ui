@@ -78,7 +78,7 @@ export { default as copy } from './copy';
 export { default as colorPicker } from './color-picker'; 
 export { default as EntryTable } from './entry-table'; 
 export { default as QContextMenu } from './q-context-menu'; 
-
+export { default as ReactMarkdown } from './react-markdown';
 //page
 export { default as NotFound } from './not-found';
 
