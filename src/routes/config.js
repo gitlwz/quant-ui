@@ -137,6 +137,8 @@ export default {
                 { key: '/app/charts/Line', title: '折线图', component: 'Line' },
                 { key: '/app/charts/Bar', title: '柱状图', component: 'Bar' },
                 { key: '/app/charts/Diagram', title: '关系图', component: 'Diagram' },
+                { key: '/app/charts/Diagram1', title: '关系图-复杂', component: 'Diagram1' },
+                { key: '/app/charts/Diagram2', title: '组织图', component: 'Diagram2' },
                 { key: '/app/charts/Dcharts', title: '3D图', component: 'Dcharts' },
                 { key: '/app/charts/DropCharts', title: '可拖拽图表', component: 'DropCharts' },
             ],
