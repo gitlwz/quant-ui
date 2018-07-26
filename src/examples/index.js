@@ -62,6 +62,7 @@ import Alert from './antd/alert'
 import Drawer from './antd/drawer'
 import Modal from './antd/modal'
 import Message from './antd/message'
+import Notification from './antd/notification'
 /*-------END ----------*/
 /*----DataDisplay start ---------*/
 
@@ -86,6 +87,8 @@ import reactAmap from './page/reactAmap'   //地图
 
 //charts
 import Diagram from "./charts/Diagram"
+import Diagram1 from "./charts/Diagram1"
+import Diagram2 from "./charts/Diagram2"
 import Line from "./charts/Line"
 import Bar from "./charts/Bar"
 import Dcharts from "./charts/3DCharts"
@@ -164,6 +167,7 @@ export default {
     Drawer,
     Modal,
     Message,
+    Notification,
     /*-------END ----------*/
     NotFound,
     Map,
@@ -172,6 +176,8 @@ export default {
 
     //charts
     Diagram,
+    Diagram1,
+    Diagram2,
     Line,
     Dcharts,
     Bar,
