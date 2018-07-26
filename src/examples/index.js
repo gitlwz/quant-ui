@@ -63,6 +63,7 @@ import Drawer from './antd/drawer'
 import Modal from './antd/modal'
 import Message from './antd/message'
 import Notification from './antd/notification'
+import Progress from './antd/progress'
 /*-------END ----------*/
 /*----DataDisplay start ---------*/
 
@@ -168,6 +169,7 @@ export default {
     Modal,
     Message,
     Notification,
+    Progress,
     /*-------END ----------*/
     NotFound,
     Map,
