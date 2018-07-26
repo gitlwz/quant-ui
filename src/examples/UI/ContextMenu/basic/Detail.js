@@ -25,7 +25,13 @@ class Detail extends Component {
         return (
             <div>
                 <ContextMenuProvider id="menu_id">
-                    <h1>我是环境菜单</h1>
+                    <h1>右击我</h1>
+                </ContextMenuProvider>
+                <ContextMenuProvider event="onClick" id="menu_id">
+                    <h1>单击我</h1>
+                </ContextMenuProvider>
+                <ContextMenuProvider event="onDoubleClick" id="menu_id">
+                    <h1>双击我</h1>
                 </ContextMenuProvider>
                 <MyAwesomeMenu />
             </div>
