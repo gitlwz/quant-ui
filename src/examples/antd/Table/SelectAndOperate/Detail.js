@@ -5,12 +5,15 @@ const columns = [
     {
         title: 'Name',
         dataIndex: 'name',
+        key:'name',
     }, {
         title: 'Age',
         dataIndex: 'age',
+        key:'age',
     }, {
         title: 'Address',
         dataIndex: 'address',
+        key:'address',
     }];
 
 const dataSource = [];
@@ -41,7 +44,7 @@ class Detail extends Component {
             selectedRowKeys: [],
             data: data,
         })
-
+              
     }
     selectRow = (record) => {
         const selectedRowKeys = [...this.state.selectedRowKeys];
