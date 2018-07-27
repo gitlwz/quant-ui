@@ -1,33 +1,6 @@
 import React, { Component } from 'react';
-import { CountDown ,EntryTable} from 'quant-ui';
-import Resizable from "re-resizable"
-const cascaderoption = [{
-    value: 'zhejiang',
-    name: 'Zhejiang',
-    children: [{
-        value: 'hangzhou',
-        name: 'Hangzhou',
-        children: [{
-            value: 'xihu',
-            name: 'West Lake',
-        }, {
-            value: 'xiasha',
-            name: 'Xia Sha',
-            disabled: true,
-        }],
-    }],
-}, {
-    value: 'jiangsu',
-    name: 'Jiangsu',
-    children: [{
-        value: 'nanjing',
-        name: 'Nanjing',
-        children: [{
-            value: 'zhonghuamen',
-            name: 'Zhong Hua men',
-        }],
-    }],
-}]
+import {EntryTable} from 'quant-ui';
+
 const columns = [{
     title: '编号(展示)',
     dataIndex: 'num',
@@ -79,18 +52,16 @@ class Detail extends Component {
 	render() {
 		return (
 			<div>
-				
-						<EntryTable
-							ref="table"
-							scroll={{ y: 300 }}
-							drop={true}
-							sizable={true}
-							dataSource={dataSource}
-							columns={columns}
-							cellOnChange={this.cellOnChange}
-							rowKey="id"
-						></EntryTable>
-				 
+                <EntryTable
+                    ref="table"
+                    scroll={{ y: 300 }}
+                    drop={true}
+                    sizable={true}
+                    dataSource={dataSource}
+                    columns={columns}
+                    cellOnChange={this.cellOnChange}
+                    rowKey="id"
+                ></EntryTable>
 			</div>
 		);
 	}
