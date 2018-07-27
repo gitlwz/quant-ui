@@ -15,9 +15,11 @@ import Ellipsis from './UI/Ellipsis' //文本自动省略
 import CountDown from "./UI/CountDown" //自动计时
 import DropTree from "./UI/DropTree" //拖拽树形图
 import Color from "./UI/Color" //拾色器
-import QTable from "./UI/Table" //拾色器
+import QTable from "./UI/Table" //
 import ContextMenu from "./UI/ContextMenu" //右键菜单
-import ReactMarkdown from "./UI/ReactMarkdown" //右键菜单
+import ReactMarkdown from "./UI/ReactMarkdown" //
+import Resizable from "./UI/Resizable" //
+
 
 //动画
 import BasicAnimations from "./animation/BasicAnimations"
@@ -118,6 +120,7 @@ export default {
     QTable,
     ContextMenu,
     ReactMarkdown,
+    Resizable,
     //动画
     BasicAnimations,
 

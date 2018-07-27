@@ -29,6 +29,7 @@
     "lodash-decorators": "^6.0.0",
     "promise": "8.0.1",
     "qrcode.react": "^0.8.0",
+    "re-resizable": "^4.7.1",
     "react": "^16.4.1",
     "react-color": "^2.14.1",
     "react-contexify": "^3.0.2",
