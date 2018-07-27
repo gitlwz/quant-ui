@@ -1,6 +1,6 @@
 const history = [
   {
-    title:"0.1.95",
+    title:"0.1.98",
     code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="vrxa" class="white-blockquote">
     <ul>
     <li>新增antd数据录入组件：InputNumber数字输入框，Mention提及，Rate 评分，Radio单选框，Select选择器，Slider滑动输入条，Switch开关，TreeSelect树选择，TimePicker时间选择框，Transfer穿梭框，Upload上传。</li>
