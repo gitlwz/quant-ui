@@ -83,6 +83,7 @@ export default {
                         { key: '/app/antd/DataDisplay/Tabs', title: 'Tabs标签页', component: 'Tabs' },
                         { key: '/app/antd/DataDisplay/Tags', title: 'Tags标签', component: 'Tags' },
                         { key: '/app/antd/DataDisplay/Timeline', title: 'Timeline时间轴', component: 'Timeline' },
+                        { key: '/app/antd/DataDisplay/Tree', title: 'Tree树形控件', component: 'Tree' },
 
 
 

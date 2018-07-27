@@ -84,6 +84,7 @@ import Table from './antd/Table'
 import Tabs from './antd/Tabs'
 import Tags from './antd/Tag'
 import Timeline from './antd/Timeline'
+import Tree from './antd/Tree'
 /*-------END ----------------*/
 
 //page
@@ -142,6 +143,7 @@ export default {
     Tabs,
     Tags,
     Timeline,
+    Tree,
     /*-------END ----------------*/
     Button,
     Icon,
