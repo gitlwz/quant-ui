@@ -3,8 +3,11 @@ import { Card, Tabs } from 'quant-ui';
 import Api from '../../API.js';
 import data from './api.js';
 
-import Basic1 from './Basic1/Detail.js';
-import Basic1Code from './Basic1/code.js';
+import Basic2 from './Basic1/Detail.js';
+import Basic2Code from './Basic1/code.js';
+
+import Basic1 from './Basic2/Detail.js';
+import Basic1Code from './Basic2/code.js';
 
 import Code from '../../Code.js';
 const TabPane = Tabs.TabPane;
@@ -20,6 +23,15 @@ class App extends Component {
                         </Card>
                         <div style={{ marginTop: "30px" }}>
                             <Code data={Basic1Code} />
+                        </div>
+                    </TabPane>
+
+                    <TabPane tab="基本" key="2">
+                        <Card >
+                            <Basic2 />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={Basic2Code} />
                         </div>
                     </TabPane>
 
