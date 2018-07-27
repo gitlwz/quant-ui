@@ -5,6 +5,9 @@ const history = [
     <ul>
     <li>新增antd数据录入组件：InputNumber数字输入框，Mention提及，Rate 评分，Radio单选框，Select选择器，Slider滑动输入条，Switch开关，TreeSelect树选择，TimePicker时间选择框，Transfer穿梭框，Upload上传。</li>
     <li>新增antd提示组件:Alert警告提示，Drawer抽屉，Modal对话框，Message全局提示，Notification通知提醒框，Progress进度条，Popconfirm气泡确认框，Spin加载中。</li>
+    <li>拖拽树形图组件: 完成数据复原、设置数据、数据返回、改变节点数据接口。实现右键事件，增加删除节点。修改拖拽样式，不可拖拽边框变红。节点自定义返回。不可拖拽鼠标显示红色禁止图标。</li>
+    <li>环境菜单环境菜单组建封装，可设置主题样式、动画效果、菜单出现事件（单击、双击、右键）</li>
+    <li>页面meta属性 点击菜单栏，改变页面title属性。</li>
     <li>Table表格用来展示行列数据</li>
     <li class="todo-list-item"><i class="icon-check-sign"></i>联动选择</li>
     <li class="todo-list-item"><i class="icon-check-sign"></i>选中某一行或多行进行删除、编辑等操作</li>
@@ -28,13 +31,11 @@ const history = [
     <li class="todo-list-item"><i class="icon-check-sign"></i>自定义时间轴节点为图标或其他元素</li>
     <li>拾色器组件 支持各种版本的拾色器。</li>
     <li class="todo-list-item"><i class="icon-check-sign"></i>支持13中样式拾色器</li>
-    <li>录入型table组件</li>
-    <li class="todo-list-item"><i class="icon-check-sign"></i>支持6中可配置数据录入</li>
-    <li class="todo-list-item"><i class="icon-check-sign"></i>支持动态加减行操作</li>
-    <li class="todo-list-item"><i class="icon-check-sign"></i>支持动态获取数据、设置数据，修改api</li>
-    <li class="todo-list-item"><i class="icon-check-sign"></i>支持单元格不可操作</li>
-    <li class="todo-list-item"><i class="icon-check-sign"></i>支持勾选框行操作</li>
-    <li class="todo-list-item"><i class="icon-check-sign"></i>支持列可拖动</li>
+    <li>可视化基于echarts</li>
+    <li class="todo-list-item"><i class="icon-check-sign"></i>普通图表</li>
+    <li class="todo-list-item"><i class="icon-check-sign"></i>3D图表</li>
+    <li class="todo-list-item"><i class="icon-check-sign"></i>组织图表</li>
+    <li class="todo-list-item"><i class="icon-check-sign"></i>拖拽图表</li>
     <li>方法组件Screenfull全屏</li>
     <li class="todo-list-item"><i class="icon-check-sign"></i>可html元素全屏（既页面全屏）</li>
     <li class="todo-list-item"><i class="icon-check-sign"></i>单元素全屏（图片、table表格。。。）</li>
