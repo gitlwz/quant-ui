@@ -13,10 +13,11 @@ import isArray  from 'lodash/isArray';
 import isObject from "lodash/isObject";
 import moment from 'moment';
 import Ttile from "./Title"
-import Resizable from "re-resizable"
 import 'moment/locale/zh-cn';
-import {compare} from '../utils';
-import classNames from 'classnames';
+
+// import Resizable from "re-resizable"
+// import {compare} from '../utils';
+// import classNames from 'classnames';
 moment.locale('zh-cn');
 const Option = Select.Option;
 
@@ -763,15 +764,15 @@ class EditableTable extends React.Component {
             };
         }
         scroll.y = !!this._tableProps.scroll?this._tableProps.scroll.y:undefined;
-        let classNameaa =  classNames("entry-table-title",{
-            'entry-table-sizable':!!this._tableProps.sizable
-        })
+        // let classNameaa =  classNames("entry-table-title",{
+        //     'entry-table-sizable':!!this._tableProps.sizable
+        // })
         return (
             <div>
-                <Resizable
+                {/* <Resizable
 					className={classNameaa}
 					enable={{ top:false, right:!!this._tableProps.sizable, bottom:false, left:!!this._tableProps.sizable, topRight:false, bottomRight:false, bottomLeft:false, topLeft:false }}
-				>
+				> */}
     	       <Table
                     pagination={false}
                     {
@@ -785,7 +786,7 @@ class EditableTable extends React.Component {
                         }
                     }
                 />
-                </Resizable>
+                {/* </Resizable> */}
             </div>)
     }
 }

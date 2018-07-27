@@ -111,7 +111,7 @@ export default {
                 { key: '/app/ui/color', title: '拾色器', component: 'Color' },
                 { key: '/app/ui/Table', title: '复杂table', component: 'QTable' },
                 { key: '/app/ui/ReactMarkdown', title: 'Markdown语法翻译', component: 'ReactMarkdown' },
-                { key: '/app/ui/Resizable', title: '组件拖动', component: 'Resizable' },
+                { key: '/app/ui/Resizable', title: '尺寸改变', component: 'Resizable' },
                 
             ],
         },
