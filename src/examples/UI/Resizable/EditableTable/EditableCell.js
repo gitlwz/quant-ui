@@ -23,20 +23,18 @@ class EditableCell extends Component {
         return (
             <EditableContext.Consumer>
                 {(form) => {
-                    console.log("----",form)
-                    // const { getFieldDecorator } = form;
+                    const { getFieldDecorator } = form;
                     return (
                         <td {...restProps}>
                             {editing ? (
                                 <FormItem style={{ margin: 0 }}>
-                                    {/* {getFieldDecorator(dataIndex, {
+                                    {getFieldDecorator(dataIndex, {
                                         rules: [{
                                             required: true,
                                             message: `Please Input ${title}!`,
                                         }],
                                         initialValue: record[dataIndex],
-                                    })()} */}
-                                    {this.getInput()}
+                                    })(this.getInput())}
                                 </FormItem>
                             ) : restProps.children}
                         </td>
@@ -46,5 +44,13 @@ class EditableCell extends Component {
         );
     }
 }
-export default EditableCell;
+const EditableRow = ({ form, index, ...props }) => {
+    return  <EditableContext.Provider value={form}>
+                <tr {...props} />
+            </EditableContext.Provider>
+}
+module.exports = {
+    EditableCell,
+    EditableRow:Form.create()(EditableRow)
+}
 

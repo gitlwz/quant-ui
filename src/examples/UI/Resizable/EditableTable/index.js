@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import EditableRow from './EditableRow';
-import EditableCell from './EditableCell';
+import { Table, Input, InputNumber, Popconfirm, Form } from 'antd';
+import { EditableCell,EditableRow } from './EditableCell';
 
 import cloneDeep from 'lodash/cloneDeep';
 import isFunction from 'lodash/isFunction';
 import isArray from 'lodash/isArray';
 import isObject from "lodash/isObject";
 
-import { Table, Input, InputNumber, Popconfirm, Form } from 'antd';
 class EditableTable extends Component {
     static defaultProps = {
         columns: [],
@@ -96,6 +95,7 @@ class EditableTable extends Component {
                 cell: EditableCell,
             },
         };
+        console.log("*********",this._columns)
         return (
             <Table
                 components={components}

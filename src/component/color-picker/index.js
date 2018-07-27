@@ -13,6 +13,21 @@ import {
     SwatchesPicker,
     TwitterPicker,
 } from 'react-color';
+module.exports = {
+    SketchPicker,
+    AlphaPicker,
+    BlockPicker,
+    ChromePicker,
+    CirclePicker,
+    CompactPicker,
+    GithubPicker,
+    HuePicker,
+    MaterialPicker,
+    PhotoshopPicker,
+    SliderPicker,
+    SwatchesPicker,
+    TwitterPicker,
+}
 export default {
     SketchPicker,
     AlphaPicker,

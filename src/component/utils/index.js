@@ -9,6 +9,20 @@ import getOS from "./getOS"
 import getCookie from "./getCookie"
 import removeCookie from "./removeCookie"
 import setCookie from "./setCookie"
+
+module.exports = {
+    compare,
+    throttle,
+    debounce,
+    currency,
+    parseQueryString,
+    stringfyQueryString,
+    getExplore,
+    getOS,
+    getCookie,
+    removeCookie,
+    setCookie
+}
 export default {
     compare,
     throttle,
