@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { theme,Layout, Icon, HeaderSearch ,Button,Dropdown,Menu,language,screenfull} from 'quant-ui';
+import { theme,Layout, Icon, HeaderSearch ,Button,Dropdown,Menu,language,screenfull, Switch} from 'quant-ui';
 import config from "../routes/config"
 import history from "./history/history"
 const {getCurrentColor,refreshColor,setCurrentColor} = theme;
@@ -37,10 +37,32 @@ class HeaderCustom extends Component {
     constructor(props){
         super(props)
         this.state = {
-            dataSource:[]
+            dataSource:[],
+            check:false
         }
         this.dataSource = [];
         this.findDataSource(config.menus)
+    }
+    componentDidMount(){
+        let LDtheme =  window.localStorage.getItem("quant-LDtheme");
+        if(LDtheme === "light"){
+            this.setState({
+                check:true
+            })
+        }else{
+            this.setState({
+                check:false
+            })
+        }
+    }
+    themeChange = (check) => {
+        if(check){
+            window.localStorage.setItem("quant-LDtheme","light")
+            window.location.reload()
+        }else{
+            window.localStorage.setItem("quant-LDtheme","dark")
+            window.location.reload()
+        }
     }
     screenFull = () =>{
         if (screenfull.enabled) {
@@ -111,10 +133,12 @@ class HeaderCustom extends Component {
                             <Icon className="icon" type="skin" />
                         </Dropdown>
                     </span >
+                    <span style={{display:'inline-block',margin:"0px 20px 0 0px",cursor:'pointer'}}>
+                        <Switch onChange={this.themeChange} checkedChildren="亮色" unCheckedChildren="暗色" checked={this.state.check} />
+                    </span >
                     <span onClick={this.screenFull} style={{display:'inline-block',margin:"0px 20px 0 0px",cursor:'pointer'}}>
                         <Icon type="arrows-alt" />
                     </span >
-                    
                 </div>
 
             </Header>

@@ -44,7 +44,7 @@ class Detail extends Component {
     }
     renderItem = (item) => {
         return (
-            <label><img src = {imgData}/>{item.name}</label>
+            <label><img style={{width:95}} src = {imgData}/>{item.name}</label>
         )
     }
 	render() {

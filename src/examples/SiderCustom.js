@@ -8,7 +8,10 @@ import routes from '../routes/config';
 import SiderMenu from './SiderMenu';
 import config from '../routes/config'
 import Helmet from "react-helmet"
+import darkImage from '../imgs/quantdo.png'
+import lightImage from '../imgs/logo@3x.png'
 const { Sider } = Layout;
+const LDtheme =  window.localStorage.getItem("quant-LDtheme") || "dark"
 let title = "";
 class SiderCustom extends Component {
     static setMenuOpen = props => {
@@ -33,13 +36,19 @@ class SiderCustom extends Component {
         openKey: '',
         selectedKey: '',
         firstHide: false,        // 点击收缩菜单，第一次隐藏展开子菜单，openMenu时恢复
-        title:"首页"
+        title:"首页",
+        imgSrc:darkImage
     };
     componentDidMount() {
         // this.setMenuOpen(this.props);
         const state = SiderCustom.setMenuOpen(this.props);
         this.findSrcTitle(config.menus, state.selectedKey);
         state.title = title;
+        if(LDtheme === "light"){
+            state.imgSrc = lightImage;
+        }else{
+            state.imgSrc = darkImage;
+        }
         this.setState(state);
     }
     menuClick = e => {
@@ -93,16 +102,17 @@ class SiderCustom extends Component {
                 className="application"
                 trigger={null}
                 breakpoint="lg"
+                theme={LDtheme}
                 collapsedWidth="0"
                 collapsed={this.props.collapsed}
                 style={{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0 }}
             >
                 <Helmet title={this.state.title} />
-                <div style={{cursor: 'pointer'}} onClick={()=>this.props.history.push('/')} className="app_logo" />
+                <div style={{cursor: 'pointer', backgroundImage:'url(' + this.state.imgSrc + ')'}} onClick={()=>this.props.history.push('/')} className="app_logo" />
                 <SiderMenu
                     menus={routes.menus}
                     onClick={this.menuClick}
-                    theme="dark"
+                    theme={LDtheme}
                     mode="inline"
                     selectedKeys={[this.state.selectedKey]}
                     openKeys={this.state.firstHide ? null : [...this.state.openKey]}
