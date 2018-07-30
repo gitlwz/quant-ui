@@ -3,7 +3,7 @@ import { EntryTable ,Button,Divider } from 'quant-ui';
 const columns = [{
 	title: '姓名(展示)',
 	dataIndex: 'name',
-	type: 0,
+	type: 1,
 	width: 200,
 	key: 'name',
 }, {

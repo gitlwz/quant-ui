@@ -15,6 +15,11 @@ import moment from 'moment';
 import {currency} from '../utils'
 import Ttile from "./Title"
 import 'moment/locale/zh-cn';
+
+
+import Einput from "./entry/Einput"
+import EinputNumber from "./entry/EinputNumber"
+import ESelect from "./entry/ESelect"
 // import Resizable from "re-resizable"
 // import {compare} from '../utils';
 // import classNames from 'classnames';
@@ -76,26 +81,17 @@ class EditableTable extends React.Component {
         const API = collocate.API || {};
         const type = collocate.type;
         if(type == 1){
-            return  <div>
-                        <Input 
-                            
-                            {...API}  
-                            title={text}
-                            style={{width:'100%'}} 
-                            value={text} 
-                            onChange={e => this._handleChange(e.target.value,record,index,dataIndex)} 
-                            />
-                    </div>
+            return  <Einput 
+                        API={API} 
+                        text={text} 
+                        onChange={(value)=>this._handleChange(value,record,index,dataIndex)}
+                        />
         }else if(type == 2){
-           return <div>
-                <InputNumber 
-                    {...API}
-                    title={text} 
-                    style={{width:'100%'}} 
-                    value={text} 
-                    onChange={value => this._handleChange(value,record,index,dataIndex)} 
+            return <EinputNumber 
+                        API={API}
+                        text={text}
+                        onChange={value => this._handleChange(value,record,index,dataIndex)}
                     />
-            </div>
         }else if(type == 3){
             let optiondata = [];
             if(isArray(collocate.option)){
@@ -110,7 +106,22 @@ class EditableTable extends React.Component {
             
             }
             let width = !!collocate.width? collocate.width -33 : '100%';
-            return (<div>
+            return (<ESelect 
+                        API={API}
+                        text={showText}
+                        width={width}
+                        optiondata={optiondata}
+                        onChange = {value =>{ 
+                            let _value = {
+                                value:value.key,
+                                name:value.label
+                            }
+                            this._SelectChange(_value,record,index,dataIndex)}
+                        } 
+                    />
+
+            
+            <div>
                 <Select   
                     {...API}
                     style={{width:width}}
@@ -238,7 +249,7 @@ class EditableTable extends React.Component {
                     <div title={showText} style={{ width:'100%'}}>{showText}</div>
                 </div>
     }
-    _EditableColumns(columns){
+    _EditableColumns = (columns)=>{
         let _columns = columns.filter((item)=>item.show !== false).map((collocate)=>{
             let _collocate = cloneDeep(collocate)
             if(this.props.drop === true){
@@ -291,7 +302,7 @@ class EditableTable extends React.Component {
             this.refresh();
         }
     }
-    _handleChange(value,record,index,column) {
+    _handleChange = (value,record,index,column) => {
         const newData = [...this.dataSource];
         const target = newData.filter(item => record[this._getKey()] === item[this._getKey()])[0];
         if (target) {
@@ -300,7 +311,7 @@ class EditableTable extends React.Component {
             }
             target[column] = value;
             this.dataSource = newData;
-            this.refresh();
+            // this.refresh();
         }
     }
     _onRow = (record, index) =>{
@@ -324,7 +335,7 @@ class EditableTable extends React.Component {
      * @param  {[type]} column [description]
      * @return {[type]}        [description]
      */
-    handleChange(value,record,index,column) {
+    handleChange = (value,record,index,column) => {
         const newData = [...this.dataSource];
         const target = newData.filter(item => record[this._getKey()] === item[this._getKey()])[0];
         if (target) {
@@ -339,31 +350,31 @@ class EditableTable extends React.Component {
     /**获取当前dataSource
      * @return {array}
      */
-    getDataSource(){
+    getDataSource = () =>{
         return cloneDeep(this.dataSource)
     }
     /**获取列配置项
      * @return {array}
      */
-    getColumns(){
+    getColumns = () => {
         return cloneDeep(this.columns)
     }
     /**获取表格配置
      * @return {obj}
      */
-    getAPI(){
+    getAPI = () => {
         return cloneDeep(this.tableProps)
     }
     /**获取选中项keys
      * @return {array}
      */
-    getSelectedRowKeys(){
+    getSelectedRowKeys = () => {
         return cloneDeep(this.selectedRowKeys)
     }
     /**获得所有选中的数据
      * @return {array}
      */
-    getRowDataBySelectedAll(){
+    getRowDataBySelectedAll = () => {
         return this.dataSource.filter( item => {
             return this.selectedRowKeys.includes(item[this._getKey()])
         })
@@ -372,7 +383,7 @@ class EditableTable extends React.Component {
      * @param  {array}
      * @return {array}
      */
-    getRowDataByKeys(keys){
+    getRowDataByKeys = (keys) => {
         let _keys = [];
         if(isArray(keys)){
             _keys = keys;
@@ -390,7 +401,7 @@ class EditableTable extends React.Component {
      * @param  {Function}
      * @return {[type]}
      */
-    saveCellData(rowId,dataIndex,cellValue,callback){
+    saveCellData = (rowId,dataIndex,cellValue,callback) => {
         const newData = [...this.dataSource];
         const target = newData.filter(item => rowId == item[this._getKey()])[0];
         if (target) {
@@ -403,7 +414,7 @@ class EditableTable extends React.Component {
      * @param {obj || array}
      * @param {Function}
      */
-    addLastRow(rowData,callback){
+    addLastRow = (rowData,callback) => {
         const newData = [...this.dataSource];
         if(isArray(rowData)){
             this.dataSource = [...newData,...rowData]
@@ -418,7 +429,7 @@ class EditableTable extends React.Component {
      * @param {[type]}   rowData  [description]
      * @param {Function} callback [description]
      */
-    addBeforeRow(rowData,callback){
+    addBeforeRow = (rowData,callback) => {
        const newData = [...this.dataSource];
         if(isArray(rowData)){
             this.dataSource = [...rowData,...newData]
@@ -440,7 +451,7 @@ class EditableTable extends React.Component {
      * @param {array}
      * @param {Function}
      */
-    setSelectedKeys(keys,callback){
+    setSelectedKeys = (keys,callback) => {
         this.selectedRowKeys = keys;
         this.refresh(callback)
     }
@@ -450,7 +461,7 @@ class EditableTable extends React.Component {
      * @param  {Function} callback [description]
      * @return {[type]}            [description]
      */
-    addSelectedKeys(keys,callback){
+    addSelectedKeys = (keys,callback) => {
         if(isArray(keys)){
             this.selectedRowKeys = [...this.selectedRowKeys,...keys]
         }else{
@@ -463,7 +474,7 @@ class EditableTable extends React.Component {
      * @param {string}
      * @param {Function}
      */
-    addDisabled(key,column,callback){
+    addDisabled = (key,column,callback) => {
         let _disabled = cloneDeep(this.disabled)
         _disabled[key+"_"+column] = true;
         this.disabled = _disabled;
@@ -475,7 +486,7 @@ class EditableTable extends React.Component {
      * @param  {Function}
      * @return {[type]}
      */
-    removeDisabled(key,column,callback){
+    removeDisabled = (key,column,callback) => {
         let _disabled = cloneDeep(this.disabled)
         _disabled[key+"_"+column] = false;
         this.disabled = _disabled;
@@ -487,7 +498,7 @@ class EditableTable extends React.Component {
      * @param  {Function} callback  [description]
      * @return {[type]}             [description]
      */
-    editDisable(disableds,callback){
+    editDisable = (disableds,callback) => {
         this.disabled = {...this.disabled,...disableds};
         this.refresh(callback)
     }
@@ -495,7 +506,7 @@ class EditableTable extends React.Component {
      * @param  {Function}
      * @return {[type]}
      */
-    removeAllDisabled(callback){
+    removeAllDisabled = (callback) => {
         this.disabled = {};
         this.refresh(callback)
     }
@@ -503,7 +514,7 @@ class EditableTable extends React.Component {
      * @param {array}
      * @param {Function}
      */
-    setDataSource(dataSource,callback){
+    setDataSource = (dataSource,callback) => {
         this.dataSource = dataSource;
         this.refresh(callback);
     }
@@ -512,7 +523,7 @@ class EditableTable extends React.Component {
      * @param {[type]}   columns  [description]
      * @param {Function} callback [description]
      */
-    setColumns(columns,callback){
+    setColumns = (columns,callback) => {
         this.columns = columns;
         this._columns = this._EditableColumns(columns)
         this.refresh(callback);
@@ -522,7 +533,7 @@ class EditableTable extends React.Component {
      * @param {[type]}   API      [description]
      * @param {Function} callback [description]
      */
-    setAPI(API,callback){
+    setAPI = (API,callback) => {
         let _API = cloneDeep(this.tableProps)
         let __API = {..._API,...API};
         this.tableProps = __API;
@@ -534,7 +545,7 @@ class EditableTable extends React.Component {
      * @param  {Function} callback [description]
      * @return {[type]}            [description]
      */
-    clearRowData(callback){
+    clearRowData = (callback) =>{
         this.dataSource = [];
         this.refresh(callback)
     }
@@ -543,7 +554,7 @@ class EditableTable extends React.Component {
      * @param  {Function} callback [description]
      * @return {[type]}            [description]
      */
-    refresh(callback){
+    refresh = (callback) => {
         this.setState({
             forceUpdate:this.state.forceUpdate++
         },()=>{
@@ -558,7 +569,7 @@ class EditableTable extends React.Component {
      * @param  {[type]} rowValue        [description]
      * @return {[type]}                 [description]
      */
-    onSelectChange(selectedRowKeys,rowValue){
+    onSelectChange = (selectedRowKeys,rowValue) => {
         this.selectedRowKeys = selectedRowKeys;
         if(isFunction(this.props.onSelectChange)){
             this.props.onSelectChange(selectedRowKeys,rowValue)
@@ -573,7 +584,7 @@ class EditableTable extends React.Component {
      * @param  {[type]} nativeEvent  [description]
      * @return {[type]}              [description]
      */
-    onSelect(record, selected, selectedRows, nativeEvent){
+    onSelect = (record, selected, selectedRows, nativeEvent) => {
         if(isFunction(this.props.onSelect)){
             this.props.onSelect(record, selected, selectedRows, nativeEvent)
         }
@@ -585,7 +596,7 @@ class EditableTable extends React.Component {
      * @param  {[type]} changeRow    [description]
      * @return {[type]}              [description]
      */
-    onSelectAll(selected, selectedRows, changeRow){
+    onSelectAll = (selected, selectedRows, changeRow) => {
         if(isFunction(this.props.onSelectAll)){
             this.props.onSelectAll(selected, selectedRows, changeRow)
         }
