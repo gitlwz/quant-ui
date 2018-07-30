@@ -89,6 +89,9 @@ import Timeline from './antd/Timeline'
 import Tree from './antd/Tree'
 /*-------END ----------------*/
 
+//Layout Components
+import Grid from './antd/Grid'
+import Layout from './antd/Layout'
 //page
 import NotFound from './page/NotFound'
 import Map from './page/map'   //地图
@@ -187,6 +190,10 @@ export default {
     Popconfirm,
     Spin,
     /*-------END ----------*/
+    /*-----Layout----*/
+    Grid,
+    Layout,
+    /*-----end-----*/
     NotFound,
     Map,
     reactAmap,

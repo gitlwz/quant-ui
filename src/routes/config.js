@@ -84,18 +84,18 @@ export default {
                         { key: '/app/antd/DataDisplay/Tags', title: 'Tags标签', component: 'Tags' },
                         { key: '/app/antd/DataDisplay/Timeline', title: 'Timeline时间轴', component: 'Timeline' },
                         { key: '/app/antd/DataDisplay/Tree', title: 'Tree树形控件', component: 'Tree' },
-
-
-
-
-
-
                     ],
-
 
                 },
                 /*-------------END ------------------*/
+                {
+                    key:'/app/antd/Layout',title:'Layout组件',icon:'',
+                    subs:[
+                        {key:'/app/antd/Layout/Grid',title:'Grid栅栏',component:'Grid'},
+                        {key:'/app/antd/Layout/Layout',title:'Layout布局',component:'Layout'},
 
+                    ]
+                }
             ],
         },
         {
