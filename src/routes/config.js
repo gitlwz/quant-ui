@@ -95,7 +95,18 @@ export default {
                         {key:'/app/antd/Layout/Layout',title:'Layout布局',component:'Layout'},
 
                     ]
-                }
+                },
+                {
+                    key:'/app/antd/Other',title:'Other组件',icon:'',
+                    subs:[
+                        {key:'/app/antd/Other/Anchor',title:'Anchor锚点',component:'Anchor'},
+                        {key:'/app/antd/Other/BackTop',title:'BackTop回到顶部',component:'BackTop'},
+                        {key:'/app/antd/Other/Divider',title:'Divider分割线',component:'Divider'},
+                        {key:'/app/antd/Other/LocaleProvider',title:'LocaleProvider国际化',component:'LocaleProvider'},
+
+
+                    ]
+                },
             ],
         },
         {
@@ -162,6 +173,7 @@ export default {
                 { key: '/app/charts/Dcharts', title: '3D图', component: 'Dcharts' },
                 { key: '/app/charts/DropCharts', title: '可拖拽图表', component: 'DropCharts' },
                 { key: '/app/charts/Dynamic_timeCharts', title: '动态数据+时间坐标轴', component: 'Dynamic_timeCharts' },
+                { key: '/app/charts/K_line_graph', title: 'k线图', component: 'K_line_graph' },
             ],
         },
     ],

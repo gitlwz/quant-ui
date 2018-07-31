@@ -11,6 +11,14 @@ import TS from './TS/Detail'
 import TSCode from './TS/code'
 import TCS from './TCS/Detail'
 import TCSCode from './TCS/code'
+import CustomTrigger from './CustomTrigger/Detail'
+import CustomTriggerCode from './CustomTrigger/code'
+import Responsive from './Responsive/Detail'
+import ResponsiveCode from './Responsive/code'
+import FixedHeader from './FixedHeader/Detail'
+import FixedHeaderCode from './FixedHeader/code'
+import FixedSider from './FixedSider/Detail'
+import FixedSiderCode from './FixedSider/code'
 
 import Code from '../../Code.js';
 const TabPane = Tabs.TabPane;
@@ -50,6 +58,38 @@ class App extends Component {
                         </Card>
                         <div style={{ marginTop: "30px" }}>
                             <Code data={TCSCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab="自定义触发器" key="5">
+                        <Card >
+                            <CustomTrigger />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={CustomTriggerCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab="响应式" key="6">
+                        <Card >
+                            <Responsive />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={ResponsiveCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab="固定头部" key="7">
+                        <Card >
+                            <FixedHeader />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={FixedHeaderCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab="固定侧边" key="8">
+                        <Card >
+                            <FixedSider />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={FixedSiderCode} />
                         </div>
                     </TabPane>
                     <TabPane tab="参数api" key="16">

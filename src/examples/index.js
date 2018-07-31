@@ -97,6 +97,13 @@ import Tree from './antd/Tree'
 //Layout Components
 import Grid from './antd/Grid'
 import Layout from './antd/Layout'
+
+//other components
+import Anchor from './antd/Anchor'
+import BackTop from './antd/BackTop'
+import Divider from './antd/Divider'
+import LocaleProvider from './antd/LocaleProvider'
+
 //page
 import NotFound from './page/NotFound'
 import Map from './page/map'   //地图
@@ -112,6 +119,7 @@ import Bar from "./charts/Bar"
 import Dcharts from "./charts/3DCharts"
 import DropCharts from "./charts/DropCharts"
 import Dynamic_timeCharts from "./charts/Dynamic_timeCharts"
+import K_line_graph from "./charts/K_line_graph"
 export default {
     Home,
     QRCode,
@@ -197,10 +205,19 @@ export default {
     Popconfirm,
     Spin,
     /*-------END ----------*/
+
     /*-----Layout----*/
     Grid,
     Layout,
     /*-----end-----*/
+
+    //Other
+    Anchor,
+    BackTop,
+    Divider,
+    LocaleProvider,
+
+
     NotFound,
     Map,
     reactAmap,
@@ -215,4 +232,5 @@ export default {
     Bar,
     DropCharts,
     Dynamic_timeCharts,
+    K_line_graph,
 }
