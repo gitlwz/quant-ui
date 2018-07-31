@@ -4,6 +4,7 @@ import './index.less';
 import './theme';
 import App from './App';
 import history from './examples/history';
+import quick from './examples/quick';
 import home from './examples/home';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { LocaleProvider ,language} from 'quant-ui';
@@ -23,6 +24,7 @@ ReactDOM.render(
                 <Route path="/home" component={home} />       
                 <Route path="/app" component={App} />
                 <Route path="/history" component={history} />
+                <Route path="/quick" component={quick} />
             </Switch>
         </Router>
     </LocaleProvider >
