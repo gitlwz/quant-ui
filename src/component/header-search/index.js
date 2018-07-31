@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Input, Icon, AutoComplete } from 'antd';
+import Input from '../input';
+import Icon from '../icon';
+import AutoComplete from '../auto-complete';
 import classNames from 'classnames';
-import './index.less';
 
 export default class HeaderSearch extends PureComponent {
   static propTypes = {

@@ -6,7 +6,6 @@ import  Badge from '../badge';
 import  Spin from '../spin';
 import classNames from 'classnames';
 import List from './NoticeList';
-import  './index.less';
 
 const { TabPane } = Tabs;
 

@@ -2,7 +2,6 @@ import React from 'react';
 import  Avatar from '../avatar';
 import  List from '../list';
 import classNames from 'classnames';
-import  './NoticeList.less';
 
 export default function NoticeList({
   data = [],
