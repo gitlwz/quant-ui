@@ -128,6 +128,7 @@ import DropCharts from "./charts/DropCharts"
 import Dynamic_timeCharts from "./charts/Dynamic_timeCharts"
 import K_line_graph from "./charts/K_line_graph"
 import Gauge from './charts/Gauge'
+import Pie_custom from './charts/Pie_custom' 
 export default {
     Home,
     QRCode,
@@ -251,4 +252,5 @@ export default {
     Dynamic_timeCharts,
     K_line_graph,
     Gauge,
+    Pie_custom,
 }
