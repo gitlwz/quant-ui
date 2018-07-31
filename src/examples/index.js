@@ -106,6 +106,7 @@ import Line from "./charts/Line"
 import Bar from "./charts/Bar"
 import Dcharts from "./charts/3DCharts"
 import DropCharts from "./charts/DropCharts"
+import Dynamic_timeCharts from './charts/Dynamic_timeCharts'
 export default {
     Home,
     QRCode,
@@ -207,4 +208,5 @@ export default {
     Dcharts,
     Bar,
     DropCharts,
+    Dynamic_timeCharts,
 }
