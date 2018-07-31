@@ -27,7 +27,14 @@ import BasicAnimations from "./animation/BasicAnimations"
 
 //pro
 import Authorized from "./pro/authorized";
-
+import Login from "./pro/login";
+import GlobalFooter from "./pro/GlobalFooter";
+import DescriptionList from "./pro/DescriptionList";
+import FooterToolbar from "./pro/FooterToolbar";
+import NumberInfo from "./pro/NumberInfo";
+import Trend from "./pro/Trend";
+import AvatarList from "./pro/AvatarList";
+import TagSelect from "./pro/TagSelect";
 //util
 import webSocket from './util/webSocket'
 import Language from './util/Language'
@@ -148,6 +155,15 @@ export default {
     Theme,
     Utiles,
     Authorized,
+    Login,
+    GlobalFooter,
+    DescriptionList,
+    FooterToolbar,
+    NumberInfo,
+    Trend,
+    AvatarList,
+    TagSelect,
+
     //antd
 
     /*----DataDisplay start ---------*/

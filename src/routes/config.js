@@ -140,7 +140,14 @@ export default {
             key: '/app/pro', title: '功能组件', icon: 'qd16',
             subs: [
                 { key: '/app/pro/Authorized', title: 'Authorized权限', component: 'Authorized' },
-                
+                { key: '/app/pro/Login', title: 'Login登录', component: 'Login' },
+                { key: '/app/pro/GlobalFooter', title: 'GlobalFooter全局页脚', component: 'GlobalFooter' },
+                { key: '/app/pro/DescriptionList', title: 'DescriptionList描述列表', component: 'DescriptionList' },
+                { key: '/app/pro/FooterToolbar', title: 'FooterToolbar底部工具栏', component: 'FooterToolbar' },
+                { key: '/app/pro/NumberInfo', title: 'NumberInfo数据文本', component: 'NumberInfo' },
+                { key: '/app/pro/Trend', title: 'Trend趋势标记', component: 'Trend' },
+                { key: '/app/pro/AvatarList', title: 'AvatarList用户头像列表', component: 'AvatarList' },
+                { key: '/app/pro/TagSelect', title: 'TagSelect标签选择器', component: 'TagSelect' },
                 
             ],
         }, 
