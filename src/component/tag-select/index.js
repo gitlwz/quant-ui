@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
-import { Tag, Icon } from 'antd';
+import Tag from '../tag';
+import Icon from '../icon';
 
 const { CheckableTag } = Tag;
 

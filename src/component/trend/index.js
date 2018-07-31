@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon } from 'antd';
+import  Icon  from '../icon';
 import classNames from 'classnames';
 
 const Trend = ({ colorful = true, reverseColor = false, flag, children, className, ...rest }) => {

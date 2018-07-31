@@ -1,5 +1,6 @@
 import React from 'react';
-import { Tooltip, Avatar } from 'antd';
+import Tooltip from '../tooltip';
+import Avatar from '../avatar';
 import classNames from 'classnames';
 
 
