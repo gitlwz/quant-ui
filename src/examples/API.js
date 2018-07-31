@@ -39,7 +39,8 @@ class API extends Component {
                             <div style={{padding:"20px",marginBottom:"20px", 'backgroundColor': "#fff", overflowX: "auto" }}>
                                 <div style={{ minWidth: "600px", }}>
                                     <h2>{ele.title}</h2>
-                                    <Table bordered pagination={false} dataSource={ele.api} columns={columns} />
+                                    <div>{ele.text}</div>
+                                    {ele.api&&<Table bordered pagination={false} dataSource={ele.api} columns={columns} />}
                                 </div>
                             </div>
                         )

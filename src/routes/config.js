@@ -126,6 +126,14 @@ export default {
             ],
         },
         {
+            key: '/app/pro', title: '功能组件', icon: 'qd16',
+            subs: [
+                { key: '/app/pro/Authorized', title: 'Authorized权限', component: 'Authorized' },
+                
+                
+            ],
+        }, 
+        {
             key: '/app/util', title: '方法', icon: 'qd22',
             subs: [
                 { key: '/app/util/webSocket', title: 'webSocket链接', component: 'webSocket' },
@@ -133,6 +141,7 @@ export default {
                 { key: '/app/util/Screenfull', title: 'Screenfull全屏', component: 'Screenfull' },
                 { key: '/app/util/Theme', title: 'Theme主题', component: 'Theme' },
                 { key: '/app/util/Utiles', title: 'Utiles方法', component: 'Utiles' },
+                
                 
             ],
         }, {

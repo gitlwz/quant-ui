@@ -1,5 +1,5 @@
 import React from 'react';
-import { Spin } from 'antd';
+import  Spin  from '../spin';
 
 export default class PromiseRender extends React.PureComponent {
   state = {
