@@ -153,6 +153,7 @@ export default {
                 { key: '/app/charts/Dcharts', title: '3D图', component: 'Dcharts' },
                 { key: '/app/charts/DropCharts', title: '可拖拽图表', component: 'DropCharts' },
                 { key: '/app/charts/Dynamic_timeCharts', title: '动态数据+时间坐标轴', component: 'Dynamic_timeCharts' },
+                { key: '/app/charts/K_line_graph', title: 'k线图', component: 'K_line_graph' },
             ],
         },
     ],
