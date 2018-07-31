@@ -11,6 +11,14 @@ export default {
                         { key: '/app/antd/General/Icon', title: 'Icon图标', component: 'Icon' },
                     ],
                 },
+                {
+                    key:'/app/antd/Layout',title:'Layout组件',icon:'qdiconlayout',
+                    subs:[
+                        {key:'/app/antd/Layout/Grid',title:'Grid栅栏',component:'Grid'},
+                        {key:'/app/antd/Layout/Layout',title:'Layout布局',component:'Layout'},
+
+                    ]
+                },
                 /*-------------Navigation start ------------------*/
                 {
                     key: '/app/antd/Navigation', title: 'Navigation组件', icon: 'qdnavigationdirectio',//2018.7.14新增加的
@@ -88,16 +96,9 @@ export default {
 
                 },
                 /*-------------END ------------------*/
+                
                 {
-                    key:'/app/antd/Layout',title:'Layout组件',icon:'',
-                    subs:[
-                        {key:'/app/antd/Layout/Grid',title:'Grid栅栏',component:'Grid'},
-                        {key:'/app/antd/Layout/Layout',title:'Layout布局',component:'Layout'},
-
-                    ]
-                },
-                {
-                    key:'/app/antd/Other',title:'Other组件',icon:'',
+                    key:'/app/antd/Other',title:'Other组件',icon:'qdother',
                     subs:[
                         {key:'/app/antd/Other/Anchor',title:'Anchor锚点',component:'Anchor'},
                         {key:'/app/antd/Other/BackTop',title:'BackTop回到顶部',component:'BackTop'},
