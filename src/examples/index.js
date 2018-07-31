@@ -92,6 +92,13 @@ import Tree from './antd/Tree'
 //Layout Components
 import Grid from './antd/Grid'
 import Layout from './antd/Layout'
+
+//other components
+import Anchor from './antd/Anchor'
+import BackTop from './antd/BackTop'
+import Divider from './antd/Divider'
+import LocaleProvider from './antd/LocaleProvider'
+
 //page
 import NotFound from './page/NotFound'
 import Map from './page/map'   //地图
@@ -190,10 +197,19 @@ export default {
     Popconfirm,
     Spin,
     /*-------END ----------*/
+
     /*-----Layout----*/
     Grid,
     Layout,
     /*-----end-----*/
+
+    //Other
+    Anchor,
+    BackTop,
+    Divider,
+    LocaleProvider,
+
+
     NotFound,
     Map,
     reactAmap,

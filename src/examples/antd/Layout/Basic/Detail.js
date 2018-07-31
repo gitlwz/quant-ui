@@ -6,37 +6,37 @@ class Detail extends Component {
     render() {
 
         return (
-            <div>
+            <div >
                 <Layout style={{margin:10}}>
-                    <Header style={{backgroundColor:'#6BA9F1'}}>Header</Header>
-                    <Content style={{backgroundColor:'#2087FF'}}>Content</Content>
-                    <Footer style={{backgroundColor:'#6BA9F1'}}>Footer</Footer>
+                    <Header style={{backgroundColor:'#9BC66F'}}>Header</Header>
+                    <Content style={{backgroundColor:'#468205'}}>Content</Content>
+                    <Footer style={{backgroundColor:'#9BC66F'}}>Footer</Footer>
                 </Layout>
 
                 <Layout style={{margin:10}}>
-                    <Header style={{backgroundColor:'#6BA9F1'}}>Header</Header>
+                    <Header style={{backgroundColor:'#9BC66F'}}>Header</Header>
                     <Layout>
-                        <Sider style={{backgroundColor:'#5299ED'}}>Sider</Sider>
-                        <Content style={{backgroundColor:'#2087FF'}}>Content</Content>
+                        <Sider style={{backgroundColor:'#67A128'}}>Sider</Sider>
+                        <Content style={{backgroundColor:'#468205'}}>Content</Content>
                     </Layout>
-                    <Footer style={{backgroundColor:'#6BA9F1'}}>Footer</Footer>
+                    <Footer style={{backgroundColor:'#9BC66F'}}>Footer</Footer>
                 </Layout>
 
                 <Layout style={{margin:10}}>
-                    <Header style={{backgroundColor:'#6BA9F1'}}>Header</Header>
+                    <Header style={{backgroundColor:'#9BC66F'}}>Header</Header>
                     <Layout>
-                        <Content style={{backgroundColor:'#2087FF'}}>Content</Content>
-                        <Sider style={{backgroundColor:'#5299ED'}}>Sider</Sider>
+                        <Content style={{backgroundColor:'#468205'}}>Content</Content>
+                        <Sider style={{backgroundColor:'#67A128'}}>Sider</Sider>
                     </Layout>
-                    <Footer style={{backgroundColor:'#6BA9F1'}}>Footer</Footer>
+                    <Footer style={{backgroundColor:'#9BC66F'}}>Footer</Footer>
                 </Layout>
 
                 <Layout style={{margin:10}}>
-                    <Sider style={{backgroundColor:'#5299ED'}}>Sider</Sider>
+                    <Sider style={{backgroundColor:'#67A128'}}>Sider</Sider>
                     <Layout>
-                        <Header style={{backgroundColor:'#6BA9F1'}}>Header</Header>
-                        <Content style={{backgroundColor:'#2087FF'}}>Content</Content>
-                        <Footer style={{backgroundColor:'#6BA9F1'}}>Footer</Footer>
+                        <Header style={{backgroundColor:'#9BC66F'}}>Header</Header>
+                        <Content style={{backgroundColor:'#468205'}}>Content</Content>
+                        <Footer style={{backgroundColor:'#9BC66F'}}>Footer</Footer>
                     </Layout>
                 </Layout>
             </div>
