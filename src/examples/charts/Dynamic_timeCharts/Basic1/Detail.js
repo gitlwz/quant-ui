@@ -1,73 +1,81 @@
 import React, { Component } from 'react';
 import echarts from 'echarts';
-import 'echarts-gl';
-
-
+var data = [];
+var now = +new Date(1997, 9, 3); // 初始化一个时间点
+var oneDay = 24 * 3600 * 1000; //两个时间点之间的间隔 一天
+var value = Math.random() * 1000; //初始时间点，大于100小于1000
+function makedata() {
+    now = new Date(+now + oneDay);     //下一个时间点
+    value = value + Math.random() * 21 - 10;   //随机值
+    return {
+        name: now.toString(),
+        value: [
+            [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'),
+            Math.round(value)
+        ]
+    }
+}
+for (let i = 0; i < 1000; i++) {
+    data.push(makedata());
+}
 let option = {
-    tooltip: {},
-    backgroundColor: '#fff',
-    visualMap: {
-        show: false,
-        dimension: 2,
-        min: -1,
-        max: 1,
-        inRange: {
-            color: ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf', '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026']
+    title: {
+        text: '动态数据+时间坐标轴'
+    },
+    tooltip: {
+        trigger: 'axis',
+        //定义tip的显示样式
+        formatter: function (params) {
+            params = params[0];
+            var date = new Date(params.name);
+            return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
+        },
+        axisPointer: {   //坐标轴触发
+            animation: false
         }
     },
-    xAxis3D: {
-        type: 'value'
+    xAxis: {
+        type: 'time'
     },
-    yAxis3D: {
-        type: 'value'
-    },
-    zAxis3D: {
+    yAxis: {
         type: 'value',
-        max: 1,
-        splitNumber: 2
-    },
-    grid3D: {
-        viewControl: {
-            // projection: 'orthographic'
-        },
-        boxHeight: 40
+        boundaryGap: [0, 1],   //坐标轴最值上下的扩展空间
+        splitLine: true,     //坐标轴切分显示
     },
     series: [{
-        type: 'surface',
-        wireframe: {
-            show: false
-        },
-        shading: 'color',
-        equation: {
-            x: {
-                step: 0.05,
-                min: -3,
-                max: 3,
-            },
-            y: {
-                step: 0.05,
-                min: -3,
-                max: 3,
-            },
-            z: function (x, y) {
-                return Math.sin(x * x + y * y) * x / 3.14
-            }
-        }
-    }]
+        type: 'line',
+        showSymbol: false,
+        data: data,
+    }],
+
 }
 
 
-
 class Detail extends Component {
-	componentDidMount = () =>{
+    componentDidMount = () => {
         var myChart = echarts.init(document.getElementById('line1_charts'));
-		myChart.setOption(option);
-        
-	}
-	render() {
-		return (
-			<div id="line1_charts" style={{width: '600px',height:'400px'}}></div>
-		);
-	}
+        myChart.setOption(option);
+        //刷新图标
+        setInterval(function () {
+
+            for (var i = 0; i < 5; i++) {
+                data.shift();
+                data.push(makedata());
+            }
+
+            myChart.setOption({
+                series: [{
+                    data: data
+                }]
+            });
+        }, 1000);
+    }
+
+
+    render() {
+        return (
+            <div id="line1_charts" style={{ width: '600px', height: '400px' }}></div>
+        );
+    }
 }
 export default Detail;
