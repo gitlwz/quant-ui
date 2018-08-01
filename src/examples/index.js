@@ -129,6 +129,7 @@ import Dynamic_timeCharts from "./charts/Dynamic_timeCharts"
 import K_line_graph from "./charts/K_line_graph"
 import Gauge from './charts/Gauge'
 import Pie_custom from './charts/Pie_custom' 
+import Scatter from './charts/Scatter'
 export default {
     Home,
     QRCode,
@@ -253,4 +254,5 @@ export default {
     K_line_graph,
     Gauge,
     Pie_custom,
+    Scatter,
 }

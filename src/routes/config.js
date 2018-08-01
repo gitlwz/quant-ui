@@ -175,6 +175,7 @@ export default {
             subs: [
                 { key: '/app/charts/Line', title: '折线图', component: 'Line'},
                 { key: '/app/charts/Bar', title: '柱状图', component: 'Bar'},
+                { key: '/app/charts/Scatter', title: '散点图', component: 'Scatter'},
                 { key: '/app/charts/Diagram', title: '关系图', component: 'Diagram' },
                 { key: '/app/charts/Diagram1', title: '关系图-复杂', component: 'Diagram1' },
                 { key: '/app/charts/Diagram2', title: '组织图', component: 'Diagram2' },
