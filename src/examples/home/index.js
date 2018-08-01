@@ -106,7 +106,7 @@ class App extends Component {
                         <Divider type="vertical" />
                         {$('业务组件')}
                         <Divider type="vertical" />
-                        <a href="/#/management">{$('管理项目框架')}</a>
+                        <a href="#/management">{$('管理项目框架')}</a>
                     </div>
                 <div>
                     <Button onClick={()=>this.props.history.push("/app/home")}>{$("开始使用")}</Button>
