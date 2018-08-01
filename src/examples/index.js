@@ -8,11 +8,8 @@ import QRCode from './UI/QRCode';
 import Copy from './UI/Copy'
 import NProgress from './UI/NProgress'
 import SlidingValidation from './UI/SlidingValidation' //滑动验证
-import NoticeIcon from './UI/NoticeIcon' //通知菜单
-import HeaderSearch from './UI/HeaderSearch' //顶部搜索框
 import RichText from './UI/RichText' //富文本
 import Ellipsis from './UI/Ellipsis' //文本自动省略
-import CountDown from "./UI/CountDown" //自动计时
 import DropTree from "./UI/DropTree" //拖拽树形图
 import Color from "./UI/Color" //拾色器
 import QTable from "./UI/Table" //
@@ -35,6 +32,10 @@ import NumberInfo from "./pro/NumberInfo";
 import Trend from "./pro/Trend";
 import AvatarList from "./pro/AvatarList";
 import TagSelect from "./pro/TagSelect";
+import NoticeIcon from './pro/NoticeIcon' //通知菜单
+import HeaderSearch from './pro/HeaderSearch' //顶部搜索框
+import CountDown from "./pro/CountDown" //自动计时
+
 //util
 import webSocket from './util/webSocket'
 import Language from './util/Language'
