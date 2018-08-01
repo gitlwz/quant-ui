@@ -19,7 +19,7 @@ class Detail extends Component {
 		return (
 			<div>
 				<h2>点击图片切换全屏</h2>
-				<img onClick={this.screenFull} ref="img" src="https://picsum.photos/200/300/?random" />
+				<img onClick={this.screenFull} src="https://picsum.photos/200/300/?random" />
 			</div>
 			
 		);

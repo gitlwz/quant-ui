@@ -9,6 +9,11 @@ import Basic1Code from './Basic1/code.js';
 import Basic2 from './Basic2/Detail.js';
 import Basic2Code from './Basic2/code.js';
 
+import Screenfull_charts from './screenfull_charts/Detail.js';
+import Screenfull_chartsCode from './screenfull_charts/code.js';
+
+import Screenfull_table from './screenfull_table/Detail.js';
+import Screenfull_tableCode from './screenfull_table/code.js';
 import Code from '../../Code.js';
 const TabPane = Tabs.TabPane;
 class App extends Component {
@@ -33,7 +38,22 @@ class App extends Component {
                             <Code data={Basic2Code} />
                         </div>
                     </TabPane>
-
+                    <TabPane tab="图表全屏" key="3">
+                        <Card >
+                            <Screenfull_charts />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={Screenfull_chartsCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab="表格全屏" key="4">
+                        <Card >
+                            <Screenfull_table />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={Screenfull_tableCode} />
+                        </div>
+                    </TabPane>
                     <TabPane tab="参数api" key="10">
                         <Api data={data} />
                     </TabPane>
