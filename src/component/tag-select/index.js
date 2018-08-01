@@ -90,8 +90,8 @@ class TagSelect extends Component {
     const checkedAll = this.getAllTags().length === value.length;
 
     const cls = classNames('quant-tagSelect', className, {
-      ['hasExpandTag']: expandable,
-      ['expanded']: expand,
+      'hasExpandTag': expandable,
+      'expanded': expand,
     });
     return (
       <div className={cls} style={style}>
