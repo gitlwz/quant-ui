@@ -38,7 +38,8 @@ class HeaderCustom extends Component {
         super(props)
         this.state = {
             dataSource:[],
-            check:false
+            check:false,
+            icontype: 'arrows-alt',
         }
         this.dataSource = [];
         this.findDataSource(config.menus)
@@ -66,7 +67,14 @@ class HeaderCustom extends Component {
     }
     screenFull = () =>{
         if (screenfull.enabled) {
-            screenfull.request();
+            if(screenfull.isFullscreen){
+                this.setState({icontype:'arrows-alt'});
+                screenfull.exit();
+            }else{
+                this.setState({icontype:'shrink'});
+                screenfull.request();
+            }
+           
         }
     }
     findDataSource = (config) =>{
@@ -137,7 +145,7 @@ class HeaderCustom extends Component {
                         <Switch onChange={this.themeChange} checkedChildren="亮色" unCheckedChildren="暗色" checked={this.state.check} />
                     </span >
                     <span onClick={this.screenFull} style={{display:'inline-block',margin:"0px 20px 0 0px",cursor:'pointer'}}>
-                        <Icon type="arrows-alt" />
+                        <Icon type={this.state.icontype} />
                     </span >
                 </div>
 
