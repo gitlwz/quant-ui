@@ -7,17 +7,17 @@ import AutoComplete from "../auto-complete";
 import DatePicker from "../date-picker";
 import Cascader from "../cascader";
 import Switch  from "../switch";
+import Resizable from "../resizable"
 import cloneDeep  from 'lodash/cloneDeep';
 import isFunction  from 'lodash/isFunction';
 import isArray  from 'lodash/isArray';
 import isObject from "lodash/isObject";
 import moment from 'moment';
+import {currency} from '../utils'
 import Ttile from "./Title"
 import 'moment/locale/zh-cn';
 
-// import Resizable from "re-resizable"
-// import {compare} from '../utils';
-// import classNames from 'classnames';
+import classNames from 'classnames';
 moment.locale('zh-cn');
 const Option = Select.Option;
 
@@ -62,22 +62,8 @@ class EditableTable extends React.Component {
         this.dataSource = this.props.dataSource;
         this.columns = this.props.columns;
         this._columns = this._EditableColumns(this.columns);
-    }
-    // componentWillReceiveProps = (nextProps) =>{
-    //     if(!compare(this.props,nextProps)){
-    //         this.tableProps = nextProps;
-    //         this._tableProps = cloneDeep(this.props);
-    //         this.refresh()
-    //     }
-    // }
-    _getCheckboxProps = (record) =>{
-        if(isFunction(this.props.getCheckboxProps)){
-            return this.props.getCheckboxProps(record)
-        }else{
-            return {
-                disabled:false
-            }
-        }
+
+        this.editingKey = ""
     }
     _moveCard = (startDataIndex,endDataIndex) =>{
         let start = this._findCard(startDataIndex);
@@ -98,114 +84,68 @@ class EditableTable extends React.Component {
             index
         }
     }
-    _textColumns(text,record,index, column,collocate){
-        const API = collocate.API || {};
-        return (
-            <div key={index}>
-                <div title={text} style={{ width:'100%'}}>{text}</div>
-            </div>
-        );
-    }
-    _inputColumns(text,record,index, column,collocate) {
-        const API = collocate.API || {};
-        if((!!collocate.disabled || this.disabled[record[this._getKey()]+"_"+column] === true) && this.disabled[record[this._getKey()]+"_"+column] !== false ){
-            return (
-                <div key={index}>
-                    <div title={text} style={{ width:'100%'}}>{text}</div>
-                </div>
-            );
-        }   
-        return (
-            <div>
-                <Input 
-                    
-                    {...API}  
-                    title={text}
-                    style={{width:'100%'}} 
-                    value={text} 
-                    onChange={e => this._handleChange(e.target.value,record,index,column)} 
-                    />
-            </div>
-        ); 
-    }
-    _inputNumberColumns(text,record,index, column,collocate) {
-        const API = collocate.API || {};
-        if((!!collocate.disabled || this.disabled[record[this._getKey()]+"_"+column] === true) && this.disabled[record[this._getKey()]+"_"+column] !== false){
-            return (
-                <div>
-                    <div 
-                        style={{ width:'100%'}}
-                        title={text}
-                        >
-                        {text}
-                    </div>
-                </div>
-            );
+    _renderColumns = (text,record,index,dataIndex,collocate) =>{
+        if(!collocate.type /*|| record[this._getKey()]!== this.editingKey */ || ((!!collocate.disabled || this.disabled[record[this._getKey()]+"_"+dataIndex] === true) && this.disabled[record[this._getKey()]+"_"+dataIndex] !== false )){
+            return this._disabledRender(text,record,index,dataIndex,collocate)
         }else{
-            return (
-                <div>
-                    <InputNumber 
-                        {...API}
-                        title={text} 
-                        style={{width:'100%' }} 
-                        value={text} 
-                        onChange={value => this._handleChange(value,record,index,column)} 
-                        />
-                </div>
-            );
+            return this._entryRender(text,record,index,dataIndex,collocate)
         }
     }
-    _selectColumns(text,record,index, column,collocate) {
+    _entryRender = (text,record,index,dataIndex,collocate) =>{
         const API = collocate.API || {};
-        let width = !!collocate.width? collocate.width -33 : '100%';
-        
-        if((!!collocate.disabled || this.disabled[record[this._getKey()]+"_"+column] === true) && this.disabled[record[this._getKey()]+"_"+column] !== false){
-            let showText = text;
-            if(isObject(text)){
-                showText = text.name
-            }
-            return (
-                <div>
-                    <div
-                        title={showText}  
-                        style={{width:width}}
-                    >
-                        {showText}
+        const type = collocate.type;
+        if(type == 1){
+            return  <div>
+                        <Input 
+                            
+                            {...API}  
+                            title={text}
+                            style={{width:'100%'}} 
+                            value={text} 
+                            onChange={e => this._handleChange(e.target.value,record,index,dataIndex)} 
+                            />
                     </div>
-                </div>
-                
-            )
-        }else{
+        }else if(type == 2){
+           return <div>
+                <InputNumber 
+                    {...API}
+                    title={text} 
+                    style={{width:'100%'}} 
+                    value={text} 
+                    onChange={value => this._handleChange(value,record,index,dataIndex)} 
+                    />
+            </div>
+        }else if(type == 3){
             let optiondata = [];
             if(isArray(collocate.option)){
                 optiondata = collocate.option
             }else{
                 optiondata = record[collocate.option] || []
             }
-            let showText = {};
+            let showText = {key:null};
             if(isObject(text)){
                 showText.key = text.value;
                 showText.label = text.name;
             
             }
-            return (
-                <div>
-                    <Select   
-                        {...API}
-                        labelInValue ={true}
-                        style={{ width:width }} 
-                        value={showText} 
-                        key = {index}
-                        onChange={value =>{ 
-                            let _value = {
-                                value:value.key,
-                                name:value.label
-                            }
-                            this._SelectChange(_value,record,index,column)}
-                        } 
-                    >
-                        {
-                            optiondata.map((optionObj,index)=>{
+            let width = !!collocate.width? collocate.width -33 : '100%';
+            return (<div>
+                <Select   
+                    {...API}
+                    style={{width:width}}
+                    labelInValue ={true}
+                    value={showText} 
+                    key = {index}
+                    onChange={value =>{ 
+                        let _value = {
+                            value:value.key,
+                            name:value.label
+                        }
+                        this._SelectChange(_value,record,index,dataIndex)}
+                    } 
+                >
+                    {
+                        optiondata.map((optionObj,index)=>{
                             let optionApi = collocate.optionApi || {}
                             if(isFunction(optionApi.disabled)){
                                 optionApi = {...optionApi,...{disabled:optionApi(optionObj,record,index)}}
@@ -213,113 +153,109 @@ class EditableTable extends React.Component {
                             return (
                                     <Option key={index} {...optionApi} value={optionObj.value}>{optionObj.name}</Option>
                                 )
-                        })}
-                    </Select>
-                </div>
-            );
-        }
-    }
-    _AutoCompleteColumns(text,record,index, column,collocate){
-        const API = collocate.API || {};
-        let width = !!collocate.width? collocate.width -33 : '100%'
-        if((!!collocate.disabled || this.disabled[record[this._getKey()]+"_"+column] === true) && this.disabled[record[this._getKey()]+"_"+column] !== false){
-            return (
-                <div>
-                    <div style={{width:width}}>{text}</div>
-                </div>
-            )
-        }else{
+                        })
+                    }
+                </Select>
+            </div>)
+        }else if(type == 4){
             let optiondata = [];
             if(isArray(collocate.autooption)){
                 optiondata = collocate.autooption
             }else{
                 optiondata = record[collocate.autooption] || []
             }
+            let width = !!collocate.width? collocate.width -33 : '100%';
             return (
                 <div>
                     <AutoComplete
-                        style={{ width:width,zIndex: 0}}
+                        style={{width,width,zIndex: 0}}
                         {...API}
                         dataSource={optiondata}
                         value={text} 
-                        onChange={value => this._handleChange(value,record,index,column)}
+                        onChange={value => this._handleChange(value,record,index,dataIndex)}
                         filterOption={(inputValue, option) => option.props.children.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1}
                     />
                 </div>
             );
-        }
-    }
-    _DatePickerColumns(text,record,index, column,collocate){
-        const API = collocate.API || {};    
-        if((!!collocate.disabled || this.disabled[record[this._getKey()]+"_"+column] === true) && this.disabled[record[this._getKey()]+"_"+column] !== false){
-            let _text = moment(text, 'YYYY-MM-DD').toString() === "Invalid date"?null:moment(text, 'YYYY-MM-DD').format('YYYY-MM-DD');
-            return (
-                <div>
-                    <div style={{width:'100%'}}>{_text}</div>
-                </div>                
-            )
-        }else{
+        }else if(type == 5){
             let _text = moment(text, 'YYYY-MM-DD').toString() === "Invalid date"?null:moment(text, 'YYYY-MM-DD');
             return (
                 <div>
                     <DatePicker
                         value={_text}
                         {...API}
-                        onChange={(value,valueString) => this._handleChange(valueString,record,index,column,value)}
+                        onChange={(value,valueString) => this._handleChange(valueString,record,index,dataIndex,value)}
                     />
                 </div>
             );
+        }else if(type == 6){
+            let optiondata = [];
+            if(isArray(collocate.cascaderoption)){
+                optiondata = collocate.cascaderoption
+            }else{
+                optiondata = record[collocate.cascaderoption] || []
+            } 
+            return (
+                <div>
+                    <Cascader
+                        expandTrigger="hover"
+                        fieldNames={{
+                            label:"name",
+                            value:"value",
+                            children:"children"
+                        }}
+                        {...API}
+                        options={optiondata}
+                        value={text} 
+                        showSearch={{
+                            filter :this._Cascaderfilter
+                        }}
+                        onChange = {(value, selectedOptions)=>this._CascaderChange(value,record,index,dataIndex,selectedOptions)}
+                        />
+                </div>
+            ); 
+        }else if(type == 7){
+            const API = collocate.API || {};
+            return  <div>
+                        <Switch 
+                            {...API}
+                            checked = {text}
+                            onChange = {(checked)=>this._handleChange(checked,record,index,dataIndex)}
+                            />
+                    </div>
         }
+
     }
-    _CascaderColumns(text,record,index, column,collocate) {
+    _disabledRender = (text,record,index,dataIndex,collocate) =>{
+        let {type} = collocate;
         const API = collocate.API || {};
-        let disabled = false
-        if((!!collocate.disabled || this.disabled[record[this._getKey()]+"_"+column] === true) && this.disabled[record[this._getKey()]+"_"+column] !== false ){
-            disabled = true;
-        }  
-        let optiondata = [];
-        if(isArray(collocate.cascaderoption)){
-            optiondata = collocate.cascaderoption
-        }else{
-            optiondata = record[collocate.cascaderoption] || []
-        } 
-        return (
-            <div>
-                <Cascader
-                    disabled={disabled}
-                    expandTrigger="hover"
-                    fieldNames={{
-                        label:"name",
-                        value:"value",
-                        children:"children"
-                    }}
-                    {...API}
-                    options={optiondata}
-                    value={text} 
-                    showSearch={{
-                        filter :this._Cascaderfilter
-                    }}
-                    onChange = {(value, selectedOptions)=>this._CascaderChange(value,record,index,column,selectedOptions)}
-                    />
-            </div>
-        ); 
-    }
-    _Switch = (text,record,index, column,collocate) => {
-        const API = collocate.API || {};
-        let disabled = false
-        if((!!collocate.disabled || this.disabled[record[this._getKey()]+"_"+column] === true) && this.disabled[record[this._getKey()]+"_"+column] !== false ){
-            disabled = true;
-        } 
-        return (
-            <div>
+        let showText = null;
+        if(!type || type == 1 || type == 4){
+            showText = text;
+        }else if(type == 2){ //inputeNumber
+            showText = text;
+            if(API.precision !== undefined && text !== null && text !== "" && text !== undefined ){
+                showText = currency(text,{precision:API.precision}).format()
+            }
+        }else if(type == 3 && isObject(text)){
+            showText = text.name;
+        }else if(type == 5 ){
+            showText = moment(text, 'YYYY-MM-DD').toString() === "Invalid date"?null:moment(text, 'YYYY-MM-DD').format('YYYY-MM-DD');
+        }else if (type == 6 && isArray(text)){
+            showText = text.join('/')
+        }else if (type == 7){
+            const API = collocate.API || {};
+            return <div>
                 <Switch 
-                    disabled={disabled}
                     {...API}
+                    disabled={true}
                     checked = {text}
-                    onChange = {(checked)=>this._handleChange(checked,record,index,column)}
                     />
             </div>
-        ); 
+        }
+        return  <div>
+                    <div title={showText} style={{ width:'100%'}}>{showText}</div>
+                </div>
     }
     _EditableColumns(columns){
         let _columns = columns.filter((item)=>item.show !== false).map((collocate)=>{
@@ -331,92 +267,16 @@ class EditableTable extends React.Component {
                     text={collocate.title}/>
             }
             if(isFunction(_collocate.render)) return _collocate;
+
+
             let props = {}
-            if(_collocate.type === 0 || _collocate.type === undefined ){
-                _collocate.render = (text,record,index)=> {
-                    if(isFunction(_collocate.props)){
-                        props = _collocate.props(text,record,index,_collocate.dataIndex,_collocate,this.dataSource.length);
-                    }
-                    return{ 
-                        children:this._textColumns(text,record,index,_collocate.dataIndex,_collocate),
-                        props
-                    }
+            _collocate.render = (text,record,index)=> {
+                if(isFunction(_collocate.props)){
+                    props = _collocate.props(text,record,index,_collocate.dataIndex,_collocate,this.dataSource.length);
                 }
-            }
-            else if(_collocate.type === 1){
-                _collocate.render = (text,record,index)=> {
-                    if(isFunction(_collocate.props)){
-                        props = _collocate.props(text,record,index,_collocate.dataIndex,_collocate,this.dataSource.length);
-                    }
-                    return{ 
-                        children:this._inputColumns(text,record,index,_collocate.dataIndex,_collocate),
-                        props
-                    }
-                }
-                
-            }
-            else if(_collocate.type === 2){
-                _collocate.render = (text,record,index)=> {
-                    if(isFunction(_collocate.props)){
-                        props = _collocate.props(text,record,index,_collocate.dataIndex,_collocate,this.dataSource.length);
-                    }
-                    return{ 
-                        children:this._inputNumberColumns(text,record,index,_collocate.dataIndex,_collocate),
-                        props
-                    }
-                }
-            }
-            else if(_collocate.type === 3){
-                _collocate.render = (text,record,index)=> {
-                    if(isFunction(_collocate.props)){
-                        props = _collocate.props(text,record,index,_collocate.dataIndex,_collocate,this.dataSource.length);
-                    }
-                    return{
-                        children:this._selectColumns(text,record,index,_collocate.dataIndex,_collocate),
-                        props
-                    }
-                }
-            }
-            else if(_collocate.type === 4){
-                _collocate.render = (text,record,index)=> {
-                    if(isFunction(_collocate.props)){
-                        props = _collocate.props(text,record,index,_collocate.dataIndex,_collocate,this.dataSource.length);
-                    }
-                    return{
-                        children:this._AutoCompleteColumns(text,record,index,_collocate.dataIndex,_collocate),
-                        props
-                    }
-                }
-            }
-            else if(_collocate.type === 5){
-                _collocate.render = (text,record,index)=> {
-                    if(isFunction(_collocate.props)){
-                        props = _collocate.props(text,record,index,_collocate.dataIndex,_collocate,this.dataSource.length);
-                    }
-                    return{
-                        children:this._DatePickerColumns(text,record,index,_collocate.dataIndex,_collocate),
-                        props
-                    }
-                }
-            }else if(_collocate.type === 6){
-                _collocate.render = (text,record,index)=> {
-                    if(isFunction(_collocate.props)){
-                        props = _collocate.props(text,record,index,_collocate.dataIndex,_collocate,this.dataSource.length);
-                    }
-                    return{
-                        children:this._CascaderColumns(text,record,index,_collocate.dataIndex,_collocate),
-                        props
-                    }
-                }
-            }else if(_collocate.type === 7){
-                _collocate.render = (text,record,index)=> {
-                    if(isFunction(_collocate.props)){
-                        props = _collocate.props(text,record,index,_collocate.dataIndex,_collocate,this.dataSource.length);
-                    }
-                    return{
-                        children:this._Switch(text,record,index,_collocate.dataIndex,_collocate),
-                        props
-                    }
+                return{ 
+                    children:this._renderColumns(text,record,index,_collocate.dataIndex,_collocate),
+                    props
                 }
             }
             return _collocate;
@@ -462,6 +322,19 @@ class EditableTable extends React.Component {
             this.refresh();
         }
     }
+    _onRow = (record, index) =>{
+        return {
+            onDoubleClick: () => this._rowDoubleClick(record, index)
+        }
+    }
+    _rowDoubleClick = (record, index) => {
+        let key = record[this._getKey()]
+        if (key !== this.editingKey) {
+            this.editingKey = key;
+            this.refresh();
+        }
+    }
+
     /**
      * 自定义时确认行为
      * @param  {[type]} value  [description]
@@ -764,15 +637,15 @@ class EditableTable extends React.Component {
             };
         }
         scroll.y = !!this._tableProps.scroll?this._tableProps.scroll.y:undefined;
-        // let classNameaa =  classNames("entry-table-title",{
-        //     'entry-table-sizable':!!this._tableProps.sizable
-        // })
+        let classNameaa =  classNames("entry-table-title",{
+            'entry-table-sizable':!!this._tableProps.sizable
+        })
         return (
             <div>
-                {/* <Resizable
+                <Resizable
 					className={classNameaa}
 					enable={{ top:false, right:!!this._tableProps.sizable, bottom:false, left:!!this._tableProps.sizable, topRight:false, bottomRight:false, bottomLeft:false, topLeft:false }}
-				> */}
+				>
     	       <Table
                     pagination={false}
                     {
@@ -781,12 +654,13 @@ class EditableTable extends React.Component {
                             ...{
                                 dataSource:this.dataSource,
                                 columns:this._columns,
-                                scroll:scroll
+                                scroll:scroll,
+                                // onRow:this._onRow
                             }
                         }
                     }
                 />
-                {/* </Resizable> */}
+                </Resizable>
             </div>)
     }
 }

@@ -6,8 +6,8 @@ const Trend = ({ colorful = true, reverseColor = false, flag, children, classNam
   const classString = classNames(
     'quant-trendItem',
     {
-      ['trendItemGrey']: !colorful,
-      ['reverseColor']: reverseColor && colorful,
+      'trendItemGrey': !colorful,
+      'reverseColor': reverseColor && colorful,
     },
     className
   );

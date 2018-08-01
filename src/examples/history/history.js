@@ -1,6 +1,6 @@
 const history = [
   {
-    title:"0.1.98",
+    title:"v0.1.98",
     code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="vrxa" class="white-blockquote">
     <ul>
     <li>新增antd数据录入组件：InputNumber数字输入框，Mention提及，Rate 评分，Radio单选框，Select选择器，Slider滑动输入条，Switch开关，TreeSelect树选择，TimePicker时间选择框，Transfer穿梭框，Upload上传。</li>
@@ -48,7 +48,7 @@ const history = [
   </blockquote></div>`
   },
   {
-    title:"0.1.95#文档站点",
+    title:"v0.1.95#文档站点",
     code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="im6h" class="white-blockquote">
     <ul>
     <li>文档站点进入页设计</li>
@@ -58,7 +58,7 @@ const history = [
   </blockquote></div>`
   },
   {
-    title: "0.1.9",
+    title: "v0.1.9",
     code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="5bpr" class="white-blockquote">
     <ul>
     <li><p>Affix固钉、Breadcrumb面包屑、Dropdown下拉菜单、Menu导航菜单、Pagination分页、steps步骤条、AutoComplete自动完成、Cascader级联选择、Checkbox多选框、DatePicker日期选择框、Form表单、Input 输入框、Avatar头像、Badge徽标数、Calendar日历、Card 卡片、Carousel走马灯、Carousel走马灯、List列表、Popover气泡卡片、Tooltip文字提示、Table 表格 <br>
@@ -73,14 +73,14 @@ const history = [
   </blockquote></div>`
   },
   {
-    title: "0.1.8",
+    title: "v0.1.8",
     code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
         <ul>
         <li>修改滑动验证成功色修改出现BUG问题</li>
         </ul>
       </blockquote></div>`
   }, {
-    title: "0.1.7",
+    title: "v0.1.7",
     code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
         <ul>
         <li>增加通知菜单组件</li>
@@ -88,7 +88,7 @@ const history = [
         </ul>
       </blockquote></div>`
   }, {
-    title: "0.1.6",
+    title: "v0.1.6",
     code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
         <ul>
         <li>增加ant文档库</li>
@@ -96,7 +96,7 @@ const history = [
         </ul>
       </blockquote></div>`
   }, {
-    title: "0.1.5",
+    title: "v0.1.5",
     code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
         <ul>
         <li>增加顶部进度条组件</li>
@@ -104,7 +104,7 @@ const history = [
         </ul>
       </blockquote></div>`
   }, {
-    title: "0.1.4",
+    title: "v0.1.4",
     code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
         <ul>
         <li>增加页面分支</li>
@@ -113,7 +113,7 @@ const history = [
         </ul>
       </blockquote></div>`
   }, {
-    title: "0.1.3",
+    title: "v0.1.3",
     code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
         <ul>
         <li>增加方法新分支</li>
@@ -122,7 +122,7 @@ const history = [
         </ul>
       </blockquote></div>`
   }, {
-    title: "0.1.2",
+    title: "v0.1.2",
     code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
         <ul>
         <li>完成文档用力构建测试</li>
@@ -130,7 +130,7 @@ const history = [
         </ul>
       </blockquote></div>`
   }, {
-    title: "0.1.1",
+    title: "v0.1.1",
     code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
         <ul>
         <li>集成antd组件库，</li>
@@ -138,7 +138,7 @@ const history = [
       </blockquote></div>`
   },
   {
-    title: "0.1.0",
+    title: "v0.1.0",
     code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
         <ul>
         <li>构建整个lib包，发布npm</li>
