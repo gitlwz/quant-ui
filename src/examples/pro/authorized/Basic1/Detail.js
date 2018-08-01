@@ -9,6 +9,10 @@ class Detail extends Component {
 				<Authorizeds authority="admin" noMatch={noMatch}>
 					<Alert message="user Passed!" type="success" showIcon />
 				</Authorizeds>
+                <br/>
+                <Authorizeds authority="user" noMatch={noMatch}>
+					<Alert message="user Passed!" type="success" showIcon />
+				</Authorizeds>
 			</div>
 		);
 	}
