@@ -33,6 +33,13 @@ const api = [
 				default: "false",							//默认值
 				must: 'false',
 			},{
+				key: "3.2",
+				parameter: "sizable",  //字段名
+				instructions: '表格尺寸是否可拖动',	//描述
+				type: 'Boole',	//类型
+				default: "false",							//默认值
+				must: 'false',
+			},{
 				key: "4",
 				parameter: "defaultRowKeys",  //字段名
 				instructions: '默认选中项',	//描述

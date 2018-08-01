@@ -7,6 +7,7 @@ import AutoComplete from "../auto-complete";
 import DatePicker from "../date-picker";
 import Cascader from "../cascader";
 import Switch  from "../switch";
+import Resizable from "../resizable"
 import cloneDeep  from 'lodash/cloneDeep';
 import isFunction  from 'lodash/isFunction';
 import isArray  from 'lodash/isArray';
@@ -15,9 +16,8 @@ import moment from 'moment';
 import {currency} from '../utils'
 import Ttile from "./Title"
 import 'moment/locale/zh-cn';
-// import Resizable from "re-resizable"
-// import {compare} from '../utils';
-// import classNames from 'classnames';
+
+import classNames from 'classnames';
 moment.locale('zh-cn');
 const Option = Select.Option;
 
@@ -637,15 +637,15 @@ class EditableTable extends React.Component {
             };
         }
         scroll.y = !!this._tableProps.scroll?this._tableProps.scroll.y:undefined;
-        // let classNameaa =  classNames("entry-table-title",{
-        //     'entry-table-sizable':!!this._tableProps.sizable
-        // })
+        let classNameaa =  classNames("entry-table-title",{
+            'entry-table-sizable':!!this._tableProps.sizable
+        })
         return (
             <div>
-                {/* <Resizable
+                <Resizable
 					className={classNameaa}
 					enable={{ top:false, right:!!this._tableProps.sizable, bottom:false, left:!!this._tableProps.sizable, topRight:false, bottomRight:false, bottomLeft:false, topLeft:false }}
-				> */}
+				>
     	       <Table
                     pagination={false}
                     {
@@ -660,7 +660,7 @@ class EditableTable extends React.Component {
                         }
                     }
                 />
-                {/* </Resizable> */}
+                </Resizable>
             </div>)
     }
 }

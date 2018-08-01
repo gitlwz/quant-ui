@@ -24,6 +24,12 @@ import Basic6Code from './Basic6/code.js';
 import Basic7 from './Basic7/Detail.js';
 import Basic7Code from './Basic7/code.js';
 
+import Basic8 from './Basic8/Detail.js';
+import Basic8Code from './Basic8/code.js';
+
+import Basic9 from './Basic9/Detail.js';
+import Basic9Code from './Basic9/code.js';
+
 import Code from '../../Code.js';
 const TabPane = Tabs.TabPane;
 class App extends Component {
@@ -92,6 +98,24 @@ class App extends Component {
                         </Card>
                         <div style={{ marginTop: "30px" }}>
                             <Code data={Basic7Code} />
+                        </div>
+                    </TabPane>
+
+                    <TabPane tab="拖动表格" key="8">
+                        <Card >
+                            <Basic8 />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={Basic8Code} />
+                        </div>
+                    </TabPane>
+
+                    <TabPane tab="配合全屏方法使用" key="9">
+                        <Card >
+                            <Basic9 />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={Basic9Code} />
                         </div>
                     </TabPane>
 
