@@ -1,0 +1,82 @@
+import React, { Component } from 'react';
+import { Button, screenfull, Editor } from 'quant-ui';
+
+const draftToHtml = Editor.draftToHtml;
+class Detail extends Component {
+
+	state = {
+		editorContent: undefined,
+		editorState: '',
+	};
+	onEditorStateChange = (editorState) => {
+		this.setState({
+			editorState,
+		});
+	}
+	onEditorChange = (editorContent) => {
+		this.setState({
+			editorContent,
+		});
+	}
+	imageUploadCallBack = (file) => new Promise(
+		(resolve, reject) => {
+			resolve({
+				data: {
+					link: "https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1396680571,2063525739&fm=173&app=25&f=JPEG?w=640&h=360&s=C8185C9B8C34B298CC7990C6030030B3"
+				}
+			})
+		}
+	)
+	screenFullDom = () => {
+		window.onresize = null;
+		if (screenfull.enabled) {
+			screenfull.request(this.refs.Editorref);
+		}
+	}
+	componentWillMount = () => {
+		if (screenfull.enabled) {
+			screenfull.on('change', () => {
+				console.log('是否全屏?', screenfull.isFullscreen ? 'Yes' : 'No');
+			});
+		}
+	}
+	render() {
+		const { editorContent, editorState } = this.state;
+		return (
+			<div>
+				<h2>图表全屏</h2>
+				<Button onClick={this.screenFullDom}>全屏</Button>
+				<br /><br />
+				<div ref='Editorref'>
+					<Editor
+						wrapperClassName="home-wrapper" //应用于编辑器和工具栏的类
+						editorClassName="home-editor"  //在编辑器周围应用的类
+						toolbarClassName="home-toolbar" //应用于工具栏周围的类
+						wrapperStyle={{}}               //应用于编辑器和工具栏的样式对象
+						editorStyle={{}}                    //在编辑器周围应用样式对象
+						toolbarStyle={{}}                   //应用于工具栏周围的样式对象
+						//toolbarHidden 如果此属性为true，则隐藏工具栏。
+						//toolbarOnFocus  //只有在编辑器聚焦时，工具栏才可见。
+						//toolbarCustomButtons  向工具栏添加新选项。
+						toolbar={{
+							image: {
+								uploadEnabled: true,
+								uploadCallback: this.imageUploadCallBack,
+								previewImage: true
+							},
+						}}             //自定义预先构建的工具栏选项。
+						localization={{ locale: 'zh' }}     //中英文
+						onEditorStateChange={this.onEditorStateChange}  //每次编辑器状态发生变化时调用函数，传递的函数参数是EditorState类型的  对象
+						onContentStateChange={this.onEditorChange}  //每次编辑器状态发生变化时调用函数，传递的函数参数是RawDraftContentState类型的  对象
+					/>
+					<br /><br />
+					<h2>同步转换HTML</h2>
+					<pre>{draftToHtml(editorContent)}</pre>
+				</div>
+
+			</div>
+
+		);
+	}
+}
+export default Detail;

@@ -14,6 +14,9 @@ import Screenfull_chartsCode from './screenfull_charts/code.js';
 
 import Screenfull_table from './screenfull_table/Detail.js';
 import Screenfull_tableCode from './screenfull_table/code.js';
+
+import Screenfull_Editor from './screenfull_Editor/Detail.js';
+import Screenfull_EditorCode from './screenfull_Editor/code.js';
 import Code from '../../Code.js';
 const TabPane = Tabs.TabPane;
 class App extends Component {
@@ -52,6 +55,14 @@ class App extends Component {
                         </Card>
                         <div style={{ marginTop: "30px" }}>
                             <Code data={Screenfull_tableCode} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab="富文本全屏" key="5">
+                        <Card >
+                            <Screenfull_Editor />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={Screenfull_EditorCode} />
                         </div>
                     </TabPane>
                     <TabPane tab="参数api" key="10">
