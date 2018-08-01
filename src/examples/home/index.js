@@ -22,7 +22,11 @@ function handleMenuClick(e) {
 language.setLanguageData({
 	'en_US':{
 		"一个服务于「量投」的设计体系，追求更好的用户体验。":"A Design System serves for「Quantdo Technology」for better user experience.",
-		"公司级的UI规范 | 基础组件 | 交互规范 | 业务组件。":"Company based UI Standard | Basic Widget | UX Standard | Business Widget.",
+        "公司级的UI规范":"Company based UI Standard",
+        "基础组件":"Basic Widget",
+        "交互规范":"UX Standard",
+        "业务组件":"Business Widget",
+        "管理项目框架":"Project Management Framework",
         "开始使用":"Get Started",
         "快速上手":"EasyStart"
     }
@@ -94,15 +98,15 @@ class App extends Component {
                 <div>Quantdo Design</div>
                 <div>{$('一个服务于「量投」的设计体系，追求更好的用户体验。')}</div>
                     <div>
-                        公司级的UI规范
+                        {$('公司级的UI规范')}
                         <Divider type="vertical" />
-                        基础组件
+                        {$('基础组件')}
                         <Divider type="vertical" />
-                        交互规范
+                        {$('交互规范')}
                         <Divider type="vertical" />
-                        业务组件
+                        {$('业务组件')}
                         <Divider type="vertical" />
-                        <a href="/#/management">管理项目框架</a>
+                        <a href="/#/management">{$('管理项目框架')}</a>
                     </div>
                 <div>
                     <Button onClick={()=>this.props.history.push("/app/home")}>{$("开始使用")}</Button>
