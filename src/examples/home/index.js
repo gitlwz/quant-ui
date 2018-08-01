@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Menu,Dropdown,Icon,Row,Col,Button,HeaderSearch,language} from "quant-ui"
+import {Menu,Dropdown,Icon,Row,Col,Button,HeaderSearch,language,Divider} from "quant-ui"
 import logo from "../../imgs/logo@3x.png";
 import config from "../../routes/config"
 import history from "../history/history"
@@ -93,11 +93,22 @@ class App extends Component {
             <div className="home_text">
                 <div>Quantdo Design</div>
                 <div>{$('一个服务于「量投」的设计体系，追求更好的用户体验。')}</div>
-                <div>{$('公司级的UI规范 | 基础组件 | 交互规范 | 业务组件。')}</div>
+                    <div>
+                        公司级的UI规范
+                        <Divider type="vertical" />
+                        基础组件
+                        <Divider type="vertical" />
+                        交互规范
+                        <Divider type="vertical" />
+                        业务组件
+                        <Divider type="vertical" />
+                        <a href="/#/management">管理项目框架</a>
+                    </div>
                 <div>
                     <Button onClick={()=>this.props.history.push("/app/home")}>{$("开始使用")}</Button>
                     <Button onClick={()=>this.props.history.push("/quick")}>{$("快速上手")}</Button>
-                    </div>
+                </div>
+                
             </div>
         </div>
     );

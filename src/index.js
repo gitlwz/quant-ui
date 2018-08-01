@@ -6,6 +6,8 @@ import App from './App';
 import history from './examples/history';
 import quick from './examples/quick';
 import home from './examples/home';
+import management from './examples/home/management';
+
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { LocaleProvider ,language} from 'quant-ui';
 import zh_CN from 'antd/lib/locale-provider/zh_CN';
@@ -25,6 +27,8 @@ ReactDOM.render(
                 <Route path="/app" component={App} />
                 <Route path="/history" component={history} />
                 <Route path="/quick" component={quick} />
+                <Route path="/management" component={management} />
+                
             </Switch>
         </Router>
     </LocaleProvider >
