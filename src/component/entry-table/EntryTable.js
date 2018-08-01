@@ -65,6 +65,25 @@ class EditableTable extends React.Component {
 
         this.editingKey = ""
     }
+    _moveCard = (startDataIndex,endDataIndex) =>{
+        let start = this._findCard(startDataIndex);
+        let end = this._findCard(endDataIndex);
+        this.columns.splice(start.index,1);
+        this.columns.splice(end.index,0,start.data);
+        this._columns = this._EditableColumns(this.columns);
+        this.refresh();
+    }
+    _Cascaderfilter = (inputValue, path) =>{
+        return (path.some(option => (option.name).toLowerCase().indexOf(inputValue.toLowerCase()) > -1));
+    }   
+    _findCard = (dataIndex) =>{
+        const data = this.columns.filter(c => c.dataIndex === dataIndex)[0];
+        const index = this.columns.findIndex((c)=> c.dataIndex === dataIndex);
+        return {
+            data,
+            index
+        }
+    }
     _renderColumns = (text,record,index,dataIndex,collocate) =>{
         if(!collocate.type /*|| record[this._getKey()]!== this.editingKey */ || ((!!collocate.disabled || this.disabled[record[this._getKey()]+"_"+dataIndex] === true) && this.disabled[record[this._getKey()]+"_"+dataIndex] !== false )){
             return this._disabledRender(text,record,index,dataIndex,collocate)
