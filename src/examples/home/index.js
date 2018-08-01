@@ -23,7 +23,8 @@ language.setLanguageData({
 	'en_US':{
 		"一个服务于「量投」的设计体系，追求更好的用户体验。":"A Design System serves for「Quantdo Technology」for better user experience.",
 		"公司级的UI规范 | 基础组件 | 交互规范 | 业务组件。":"Company based UI Standard | Basic Widget | UX Standard | Business Widget.",
-        "开始使用":"Get Started"
+        "开始使用":"Get Started",
+        "快速上手":"EasyStart"
     }
 })
 class App extends Component {
