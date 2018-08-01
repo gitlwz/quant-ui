@@ -117,11 +117,8 @@ export default {
                 { key: '/app/ui/Copy', title: '右键复制', component: 'Copy' },
                 { key: '/app/ui/nprogress', title: '顶部进度条', component: 'NProgress' },
                 { key: '/app/ui/SlidingValidation', title: '滑动验证', component: 'SlidingValidation' },
-                { key: '/app/ui/NoticeIcon', title: '通知菜单', component: 'NoticeIcon' },
-                { key: '/app/ui/HeaderSearch', title: '顶部搜索框', component: 'HeaderSearch' },
                 { key: '/app/ui/Ellipsis', title: '文本自动省略号', component: 'Ellipsis' },
                 { key: '/app/ui/RichText', title: '富文本', component: 'RichText' },
-                { key: '/app/ui/CountDown', title: '倒计时', component: 'CountDown' },
 				{ key: '/app/ui/ContextMenu', title: '环境菜单', component: 'ContextMenu' },
                 { key: '/app/ui/DropTree', title: '拖拽树形图', component: 'DropTree' },
                 { key: '/app/ui/color', title: '拾色器', component: 'Color' },
@@ -149,7 +146,10 @@ export default {
                 { key: '/app/pro/Trend', title: 'Trend趋势标记', component: 'Trend' },
                 { key: '/app/pro/AvatarList', title: 'AvatarList用户头像列表', component: 'AvatarList' },
                 { key: '/app/pro/TagSelect', title: 'TagSelect标签选择器', component: 'TagSelect' },
-                
+                { key: '/app/pro/HeaderSearch', title: '顶部搜索框', component: 'HeaderSearch' },
+                { key: '/app/pro/CountDown', title: '倒计时', component: 'CountDown' },
+                { key: '/app/pro/NoticeIcon', title: '通知菜单', component: 'NoticeIcon' },
+
             ],
         }, 
         {
