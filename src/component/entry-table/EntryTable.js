@@ -314,11 +314,13 @@ class EditableTable extends React.Component {
         const newData = [...this.dataSource];
         const target = newData.filter(item => record[this._getKey()] === item[this._getKey()])[0];
         if (target) {
-            if(isFunction(this.props.cellOnChange)){
-                this.props.cellOnChange(value,target[column],record,index,column);
-            }
+            let _oldValue = cloneDeep(target[column])
+            
             target[column] = value;
             this.dataSource = newData;
+            if(isFunction(this.props.cellOnChange)){
+                this.props.cellOnChange(value,_oldValue,record,index,column);
+            }
             this.refresh();
         }
     }
