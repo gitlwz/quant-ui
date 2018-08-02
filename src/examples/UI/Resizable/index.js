@@ -6,6 +6,9 @@ import data from './api.js';
 import Basic1 from './Basic1/Detail.js';
 import Basic1Code from './Basic1/code.js';
 
+//富文本尺寸变换
+import Edit from './Edit/Detail.js';
+import EditCode from './Edit/code.js';
 import Code from '../../Code.js';
 const TabPane = Tabs.TabPane;
 class App extends Component {
@@ -22,7 +25,14 @@ class App extends Component {
                             <Code data={Basic1Code} />
                         </div>
                     </TabPane>
-
+                    <TabPane tab="富文本尺寸变换" key="2">
+                        <Card >
+                            <Edit />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={EditCode} />
+                        </div>
+                    </TabPane>
                     <TabPane tab="参数api" key="10">
                         <Api data={data} />
                     </TabPane>
