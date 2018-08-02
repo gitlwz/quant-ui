@@ -62,7 +62,7 @@ class Detail extends Component {
                     <div className="detail">修改config文件夹中 webpack.config.dev.js 和 webpack.config-prod.js 配置文件</div>
                     <div className="detail">将两个文件中的<label className="fontStyle">test: /\.css$/</label> 改为 <label className="fontStyle">test: /\.(css|less)$/</label>,</div>
                     <div className="detail">并且两个文件中的
-                        <label className="fontStyle">test: /\.css$/</label> 中的 
+                        <label className="fontStyle">test: /\.css$/</label> 下方的
                         <label className="fontStyle">use</label>数组增加如下配置项
                     </div>
                     <div style={{lineHeight:1.5}} dangerouslySetInnerHTML = {{__html:`<pre class="prettyprint linenums prettyprinted" data-anchor-id="grd3" style=""><ol class="linenums"><li class="L0"><code><span class="pun">{</span></code></li><li class="L1"><code><span class="pln">    loader</span><span class="pun">:</span><span class="kwd">require</span><span class="pun">.</span><span class="pln">resolve</span><span class="pun">(</span><span class="str">'less-loader'</span><span class="pun">),</span></code></li><li class="L2"><code><span class="pln">    options</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> javascriptEnabled</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pln"> </span><span class="pun">}</span></code></li><li class="L3"><code><span class="pun">}</span></code></li></ol></pre>`}} ></div>
