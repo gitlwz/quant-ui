@@ -66,6 +66,9 @@ class Detail extends Component {
                         <label className="fontStyle">use</label>数组增加如下配置项
                     </div>
                     <div style={{lineHeight:1.5}} dangerouslySetInnerHTML = {{__html:`<pre class="prettyprint linenums prettyprinted" data-anchor-id="grd3" style=""><ol class="linenums"><li class="L0"><code><span class="pun">{</span></code></li><li class="L1"><code><span class="pln">    loader</span><span class="pun">:</span><span class="kwd">require</span><span class="pun">.</span><span class="pln">resolve</span><span class="pun">(</span><span class="str">'less-loader'</span><span class="pun">),</span></code></li><li class="L2"><code><span class="pln">    options</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> javascriptEnabled</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pln"> </span><span class="pun">}</span></code></li><li class="L3"><code><span class="pun">}</span></code></li></ol></pre>`}} ></div>
+                    <div className="detail">配置完成后，将src下的<label className="fontStyle">.css文件</label>后缀都改成<label className="fontStyle">.less</label>。
+                        页面刷新不报错，则便是配置成功。
+                    </div>
                     <div className="thirdTitle">4. 使用babel-plugin-import进行按需加载</div>
                     <div className="detail">从Quantdo Design中引入所需组件时，可以只引入所需类中的某个组件，不必引整个组件，babel-plugin-import 是一个用于按需加载组件代码和样式的 babel 插件</div>
                     <div className="secondDetail">
@@ -82,7 +85,7 @@ class Detail extends Component {
                             npm install quant-ui
                         </p>
                     </div>
-                    <div className="detail">接下来，我们还需要引入Quantdo Design的样式文件，在<label className="fontStyle">App.less</label>的第一行加入以下代码：</div>
+                    <div className="detail">接下来，我们还需要引入Quantdo Design的样式文件，在src中的<label className="fontStyle">App.less</label>的第一行加入以下代码：</div>
                     <div style={{lineHeight:1.5}} dangerouslySetInnerHTML = {{__html:`<pre class="prettyprint linenums prettyprinted" data-anchor-id="qs1q" style=""><ol class="linenums"><li class="L0"><code><span class="lit">@import</span><span class="pln"> </span><span class="str">'~quant-ui/lib/theme/index.less'</span><span class="pun">;</span></code></li></ol></pre>`}} ></div>
                     <div className="thirdTitle">6. 使用Quantdo Design组件</div>
                     <div className="detail">现在我们就可以使用Quantdo Desigh组件啦，将App.js替换成下面的代码看看效果吧。</div>
