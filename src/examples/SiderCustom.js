@@ -11,7 +11,7 @@ import Helmet from "react-helmet"
 import darkImage from '../imgs/quantdo.png'
 import lightImage from '../imgs/logo@3x.png'
 const { Sider } = Layout;
-const LDtheme =  window.localStorage.getItem("quant-LDtheme") || "dark"
+const LDtheme =  'dark';
 let title = "";
 class SiderCustom extends Component {
     static setMenuOpen = props => {
@@ -44,7 +44,7 @@ class SiderCustom extends Component {
         const state = SiderCustom.setMenuOpen(this.props);
         this.findSrcTitle(config.menus, state.selectedKey);
         state.title = title;
-        if(LDtheme === "light"){
+        if(this.props.msg === "light"){
             state.imgSrc = lightImage;
         }else{
             state.imgSrc = darkImage;
@@ -97,12 +97,18 @@ class SiderCustom extends Component {
         }
     }
     render() {
+        if(this.props.msg === "light"){
+            this.state.imgSrc = lightImage;
+        }else{
+            this.state.imgSrc = darkImage;
+        }
+        
         return (
             <Sider
                 className="application"
                 trigger={null}
                 breakpoint="lg"
-                theme={LDtheme}
+                theme={this.props.msg}
                 collapsedWidth="0"
                 collapsed={this.props.collapsed}
                 style={{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0 }}
@@ -112,7 +118,7 @@ class SiderCustom extends Component {
                 <SiderMenu
                     menus={routes.menus}
                     onClick={this.menuClick}
-                    theme={LDtheme}
+                    theme={this.props.msg}
                     mode="inline"
                     selectedKeys={[this.state.selectedKey]}
                     openKeys={this.state.firstHide ? null : [...this.state.openKey]}
