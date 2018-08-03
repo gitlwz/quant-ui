@@ -146,9 +146,9 @@ export default {
                 { key: '/app/pro/Trend', title: 'Trend趋势标记', component: 'Trend' },
                 { key: '/app/pro/AvatarList', title: 'AvatarList用户头像列表', component: 'AvatarList' },
                 { key: '/app/pro/TagSelect', title: 'TagSelect标签选择器', component: 'TagSelect' },
-                { key: '/app/pro/HeaderSearch', title: '顶部搜索框', component: 'HeaderSearch' },
-                { key: '/app/pro/CountDown', title: '倒计时', component: 'CountDown' },
-                { key: '/app/pro/NoticeIcon', title: '通知菜单', component: 'NoticeIcon' },
+                { key: '/app/pro/HeaderSearch', title: 'HeaderSearch顶部搜索框', component: 'HeaderSearch' },
+                { key: '/app/pro/CountDown', title: 'CountDown倒计时', component: 'CountDown' },
+                { key: '/app/pro/NoticeIcon', title: 'NoticeIcon通知菜单', component: 'NoticeIcon' },
 
             ],
         }, 
