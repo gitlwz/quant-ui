@@ -59,7 +59,7 @@ npm install babel-plugin-import --save-dev
 ```
 npm install quant-ui
 ```
-接下来，我们还需要引入Quantdo Design的样式文件，在App.less的第一行加入以下代码：接下来，我们还需要引入Quantdo Design的样式文件，在`App.less`的第一行加入以下代码：
+接下来，我们还需要引入Quantdo Design的样式文件，在`App.less`的第一行加入以下代码：
 ```
 @import '~quant-ui/lib/theme/index.less';
 ```
