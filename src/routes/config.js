@@ -125,6 +125,8 @@ export default {
                 { key: '/app/ui/Table', title: '复杂table', component: 'QTable' },
                 { key: '/app/ui/ReactMarkdown', title: 'Markdown语法翻译', component: 'ReactMarkdown' },
                 { key: '/app/ui/Resizable', title: '尺寸改变', component: 'Resizable' },
+                { key: '/app/ui/Ip', title: '尺寸改变-Ip', component: 'Ip' },
+                
                 
             ],
         },

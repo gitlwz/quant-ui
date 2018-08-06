@@ -16,6 +16,7 @@ import QTable from "./UI/Table" //
 import ContextMenu from "./UI/ContextMenu" //右键菜单
 import ReactMarkdown from "./UI/ReactMarkdown" //
 import Resizable from "./UI/Resizable" //
+import Ip from "./UI/ip" //
 
 
 //动画
@@ -149,6 +150,7 @@ export default {
     ContextMenu,
     ReactMarkdown,
     Resizable,
+    Ip,
     //动画
     BasicAnimations,
 
