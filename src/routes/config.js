@@ -1,6 +1,21 @@
 export default {
     menus: [    // 菜单相关路由
-        { key: '/app/home', title: '首页', icon: 'qd0', component: 'Home' },
+        { key: '/app/home', title: '首页', icon: 'qd0',
+          subs: [
+              {
+                  key: '/app/home/process', title: "进度页", component: 'Home',
+              }, 
+              {
+                  key: '/app/home/workplace', title: "工作台", component: 'Workplace',
+              },
+              {
+                  key: '/app/home/analysis', title: "分析页", component: 'Analysis',
+              },
+              {
+                  key: '/app/home/monitor', title: "监控页", component: 'Monitor',
+              }
+          ],
+        },
         {
             key: '/app/antd', title: 'antd', icon: 'qdantdesign',
             subs: [

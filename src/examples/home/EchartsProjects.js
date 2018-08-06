@@ -2,54 +2,74 @@ import React, { Component } from 'react';
 import echarts from 'echarts';
 
 var xAxisData = [];
-var data1 = [];
-var data2 = [];
+var data = [];
 for (var i = 0; i < 50; i++) {
-    xAxisData.push('项目' + i);
-    data1.push((Math.sin(i / 5) * (i / 5 -10) + i / 6) * 5);
-    data2.push((Math.cos(i / 5) * (i / 5 -10) + i / 6) * 5);
+    xAxisData.push(i);
+    data.push((Math.sin(i / 5) * (i / 5 -10) + i / 6) * 5);
 }
+
 let option = {
     title: {
-        text: '近50天项目完成情况'
-    },
-    legend: {
-        data: ['bar', 'bar2'],
-        align: 'left'
-    },
-    toolbox: {
-        // y: 'bottom',
-        feature: {
-            magicType: {
-                type: ['stack', 'tiled']
-            },
-            dataView: {},
-            saveAsImage: {
-                pixelRatio: 2
-            }
+        text: '近50天项目完成情况',
+        textStyle:{
+            color:'#fff',
         }
     },
-    tooltip: {},
-    xAxis: {
-        data: xAxisData,
-        silent: false,
-        splitLine: {
-            show: false
+    backgroundColor: '#08263a',
+    xAxis: [{
+        show: false,
+        data: xAxisData
+    }, {
+        show: false,
+        data: xAxisData
+    }],
+    visualMap: {
+        show: false,
+        min: 0,
+        max: 50,
+        dimension: 0,
+        inRange: {
+            color: ['#4a657a', '#308e92', '#b1cfa5', '#f5d69f', '#f5898b', '#ef5055']
         }
     },
     yAxis: {
+        axisLine: {
+            show: false
+        },
+        axisLabel: {
+            textStyle: {
+                color: '#4a657a'
+            }  
+        },
+        splitLine: {
+            show: true,
+            lineStyle: {
+                color: '#08263f'
+            }
+        },
+        axisTick: {
+            show: false
+        }
     },
     series: [{
-        name: 'bar',
+        name: 'front',
         type: 'bar',
-        data: data1,
-        animationDelay: function (idx) {
-            return idx * 10;
+        data: data,
+        xAxisIndex: 1,
+        z: 3,
+        itemStyle: {
+            normal: {
+                barBorderRadius: 5
+            }
         }
     }],
     animationEasing: 'elasticOut',
+    animationEasingUpdate: 'elasticOut',
+    animationDelay: function (idx) {
+        return idx * 20;
+    },
     animationDelayUpdate: function (idx) {
-        return idx * 5;
+        return idx * 20;
     }
 };
 
