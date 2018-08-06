@@ -109,7 +109,7 @@ class App extends Component {
                         <a href="#/management">{$('管理项目框架')}</a>
                     </div>
                 <div>
-                    <Button onClick={()=>this.props.history.push("/app/home")}>{$("开始使用")}</Button>
+                    <Button onClick={()=>this.props.history.push("/app/home/process")}>{$("开始使用")}</Button>
                     <Button onClick={()=>this.props.history.push("/quick")}>{$("快速上手")}</Button>
                 </div>
                 
