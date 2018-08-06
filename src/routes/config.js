@@ -140,7 +140,6 @@ export default {
                 { key: '/app/ui/Table', title: '复杂table', component: 'QTable' },
                 { key: '/app/ui/ReactMarkdown', title: 'Markdown语法翻译', component: 'ReactMarkdown' },
                 { key: '/app/ui/Resizable', title: '尺寸改变', component: 'Resizable' },
-                { key: '/app/ui/Ip', title: 'Ip', component: 'Ip' },
                 
                 
             ],
@@ -166,6 +165,8 @@ export default {
                 { key: '/app/pro/HeaderSearch', title: '顶部搜索框', component: 'HeaderSearch' },
                 { key: '/app/pro/CountDown', title: '倒计时', component: 'CountDown' },
                 { key: '/app/pro/NoticeIcon', title: '通知菜单', component: 'NoticeIcon' },
+                { key: '/app/pro/Ip', title: 'Ip地址输入', component: 'Ip' },
+
 
             ],
         }, 

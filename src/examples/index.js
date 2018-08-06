@@ -19,7 +19,7 @@ import QTable from "./UI/Table" //
 import ContextMenu from "./UI/ContextMenu" //右键菜单
 import ReactMarkdown from "./UI/ReactMarkdown" //
 import Resizable from "./UI/Resizable" //
-import Ip from "./UI/ip" //
+
 
 
 //动画
@@ -39,6 +39,7 @@ import TagSelect from "./pro/TagSelect";
 import NoticeIcon from './pro/NoticeIcon' //通知菜单
 import HeaderSearch from './pro/HeaderSearch' //顶部搜索框
 import CountDown from "./pro/CountDown" //自动计时
+import Ip from "./pro/ip" //ip地址输入
 
 //util
 import webSocket from './util/webSocket'

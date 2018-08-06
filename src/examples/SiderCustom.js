@@ -105,16 +105,18 @@ class SiderCustom extends Component {
         
         return (
             <Sider
-                className="application"
+                className="quant-ui-application"
                 trigger={null}
                 breakpoint="lg"
                 theme={this.props.msg}
                 collapsedWidth="0"
                 collapsed={this.props.collapsed}
-                style={{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0 }}
+                style={{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0,minWidth:"250px",width:"250px" }}
             >
                 <Helmet title={this.state.title} />
-                <div style={{cursor: 'pointer', backgroundImage:'url(' + this.state.imgSrc + ')'}} onClick={()=>this.props.history.push('/')} className="app_logo" />
+                <div style={{cursor: 'pointer'}} onClick={()=>this.props.history.push('/')} className="app_logo" >
+                    <img width="130px" src={this.state.imgSrc}/>
+                </div>
                 <SiderMenu
                     menus={routes.menus}
                     onClick={this.menuClick}

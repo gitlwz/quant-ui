@@ -1,0 +1,27 @@
+.quant-strength {
+    width: 30%;
+    line-height: 1;
+    span {
+        display: inline-block;
+        background-color: @disabled-bg ;
+        width: 30%;
+        text-align: center;
+        margin-right: 2px;
+    }
+}
+
+.quant-strength-L span:nth-child(1) {
+    background-color: @error-color ;
+}
+
+.quant-strength-M span:nth-child(1),
+.quant-strength-M span:nth-child(2) {
+    background-color: @warning-color;
+}
+
+.quant-strength-H span:nth-child(1),
+.quant-strength-H span:nth-child(2),
+.quant-strength-H span:nth-child(3),
+    {
+    background-color: @success-color ;
+}

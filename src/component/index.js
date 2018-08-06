@@ -91,6 +91,8 @@ export { default as EntryTable } from './entry-table';
 export { default as QContextMenu } from './q-context-menu'; 
 export { default as ReactMarkdown } from './react-markdown';
 export { default as IpInput } from './ip-input';
+export { default as Strength } from './strength';  //密码强度
+
 //page
 export { default as NotFound } from './not-found';
 
