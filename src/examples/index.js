@@ -2,6 +2,9 @@
  * 路由组件出口文件
  */
 import Home from './home/home';
+import Analysis from './home/analysis';
+import Monitor from './home/monitor';
+import Workplace from './home/workplace';
 
 //ui
 import QRCode from './UI/QRCode';
@@ -138,6 +141,9 @@ export default {
     Copy,
     NProgress,
     SlidingValidation,
+    Analysis,
+    Monitor,
+    Workplace,
     
     NoticeIcon,
     HeaderSearch,
