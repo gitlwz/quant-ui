@@ -1,7 +1,81 @@
 const history = [
-  {
-    title:"v0.1.98",
-    code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="vrxa" class="white-blockquote">
+    {
+        title: "v0.1.99",
+        code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="ojpb" class="white-blockquote">
+        <ul>
+        <li>Grid栅栏 基于行(row)和列(col)来定义信息区块的外部框架，以保证页面每个区域能够稳健 排布</li>
+        <li class="todo-list-item"><i class="icon-check-sign"></i>区块之间设置row.gutter设置区块间隔</li>
+        <li class="todo-list-item"><i class="icon-check-sign"></i>设置offset使区块左右偏移</li>
+        <li class="todo-list-item"><i class="icon-check-sign"></i>设置push或者pull改变列的顺序</li>
+        <li class="todo-list-item"><i class="icon-check-sign"></i>定义一行中列的flex布局、对齐方式以及排序</li>
+        <li class="todo-list-item"><i class="icon-check-sign"></i>响应式布局，根据屏幕尺寸更改一行中列的个数</li>
+        <li>Layout布局其中包含的组件：Layout 布局容器、Header 顶部布局、Sider 侧边栏、Content 内容、Footer 底部布局</li>
+        <li class="todo-list-item"><i class="icon-check-sign"></i>上中下布局：header+content+footer</li>
+        <li class="todo-list-item"><i class="icon-check-sign"></i>顶部-侧边布局-通栏，特点是左右边距为0，多用于应用型网站</li>
+        <li class="todo-list-item"><i class="icon-check-sign"></i>顶部-侧边布局，与上面的区别是sider不是贴边的，多用于展示类网站</li>
+        <li class="todo-list-item"><i class="icon-check-sign"></i>侧边布局，sider上下边距为0，页面横向空间有限时可收起或者可以自定义触发器</li>
+        <li class="todo-list-item"><i class="icon-check-sign"></i>响应式布局，配置breakpoint属性，视窗宽度小于breakpoint时sider缩小为collapseWidth宽度</li>
+        <li class="todo-list-item"><i class="icon-check-sign"></i>固定头部</li>
+        <li class="todo-list-item"><i class="icon-check-sign"></i>固定侧边栏</li>
+        <li>Anchor锚点 <br>
+        用于跳转到页面指定位置</li>
+        <li>BackTop回到顶部</li>
+        <li>Divider 分割线</li>
+        <li>LocalProvider 国际化为组件内建文案提供统一的国际化支持</li>
+        <li>增添了Icon组件、</li>
+        <li>全屏用例、</li>
+        <li>尺寸变换用例、</li>
+        <li>动态时间轴，K线图，仪表盘，南丁格尔图等可视化图表</li>
+        <li>数据录入表格</li>
+        <li class="todo-list-item"><i class="icon-check-sign"></i>支持7中数据录入</li>
+        <li class="todo-list-item"><i class="icon-check-sign"></i>加、减行、不可操作、勾选框行、数据联动、显示隐藏、合并列、固定列、拖动列、拖动表格</li>
+        <li>权限功能性组件 <br>
+        设置访问权限，可以以单值或数组或方法作为参数</li>
+        <li>登录功能性组件 <br>
+        普通账号密码登录或者手机号码获取验证码登录</li>
+        <li>全局页脚功能性组件 <br>
+        全局footer</li>
+        <li>描述列表功能性组件 <br>
+        可设置描述文字在描述对象的横排或竖直方向</li>
+        <li>底部工具功能性组件 <br>
+        位于窗口底部，可自定义工具栏内容</li>
+        <li>数据文本功能性组件 <br>
+        常用于数据卡片，用于突出展示某个业务数据</li>
+        <li>趋势标记功能性组件 <br>
+        趋势符号，标记上升和下降趋势。</li>
+        <li>用户头像列表功能性组件 <br>
+        一组用户头像，常用在项目/团队成员列表。</li>
+        <li>标签选择器功能性组件 <br>
+        可进行多选，带折叠收起和展开更多功能，常用于对列表进行筛选。</li>
+        <li>顶部搜索功能性组件 <br>
+        通常作为全局搜索的入口，放置在导航工具条右侧。</li>
+        <li>倒计时功能性组件</li>
+        <li>通知菜单功能性组件 <br>
+        用在导航工具栏上，作为整个产品统一的通知中心。</li>
+        </ul>
+      </blockquote></div>`
+    },
+    {
+        title: "v0.1.99#管理框架",
+        code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="makd" class="white-blockquote">
+        <ul>
+        <li>管理端框架这是一个专门为管理端服务的框架的，框架本身已经集成 组件按需加载打包、整体性能优化、 权限管理、后台交互、上传交互处理、数据流（dva）、路由功能、全局loading处理等等一个开箱即用的框架。同时完美的配合quant-ui组件库，各种功能的组件能够方便使用、能快捷的实现多语言、动态主题、自适应等功能</li>
+        </ul>
+      </blockquote></div>`
+    },
+    {
+        title: "v0.1.99#文档站点",
+        code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="b3j2" class="white-blockquote">
+        <ul>
+        <li>主题切换 左侧菜单栏暗色与亮色主题切换</li>
+        <li>快速上手 新增快速上手页面，对组件使用、主题配置、中英文切换配置做介绍。利用markdown语法修改readme.md文件。通过create-react-app创建项目配置组件使用环境。</li>
+        <li>管理端框架导读页</li>
+        </ul>
+      </blockquote></div>`
+    },
+    {
+        title: "v0.1.98",
+        code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="vrxa" class="white-blockquote">
     <ul>
     <li>新增antd数据录入组件：InputNumber数字输入框，Mention提及，Rate 评分，Radio单选框，Select选择器，Slider滑动输入条，Switch开关，TreeSelect树选择，TimePicker时间选择框，Transfer穿梭框，Upload上传。</li>
     <li>新增antd提示组件:Alert警告提示，Drawer抽屉，Modal对话框，Message全局提示，Notification通知提醒框，Progress进度条，Popconfirm气泡确认框，Spin加载中。</li>
@@ -46,20 +120,20 @@ const history = [
     <li class="todo-list-item"><i class="icon-check-sign"></i>currency及其10种方法用于处理前端小数精度损失问题</li>
     </ul>
   </blockquote></div>`
-  },
-  {
-    title:"v0.1.95#文档站点",
-    code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="im6h" class="white-blockquote">
+    },
+    {
+        title: "v0.1.95#文档站点",
+        code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="im6h" class="white-blockquote">
     <ul>
     <li>文档站点进入页设计</li>
     <li>文档站点首页建立</li>
     <li>文档站点添加阿里巴巴矢量图标库图标</li>
     </ul>
   </blockquote></div>`
-  },
-  {
-    title: "v0.1.9",
-    code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="5bpr" class="white-blockquote">
+    },
+    {
+        title: "v0.1.9",
+        code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="5bpr" class="white-blockquote">
     <ul>
     <li><p>Affix固钉、Breadcrumb面包屑、Dropdown下拉菜单、Menu导航菜单、Pagination分页、steps步骤条、AutoComplete自动完成、Cascader级联选择、Checkbox多选框、DatePicker日期选择框、Form表单、Input 输入框、Avatar头像、Badge徽标数、Calendar日历、Card 卡片、Carousel走马灯、Carousel走马灯、List列表、Popover气泡卡片、Tooltip文字提示、Table 表格 <br>
     组件文档及API</p></li>
@@ -71,81 +145,81 @@ const history = [
     <li>多语言方法</li>
     </ul>
   </blockquote></div>`
-  },
-  {
-    title: "v0.1.8",
-    code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
+    },
+    {
+        title: "v0.1.8",
+        code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
         <ul>
         <li>修改滑动验证成功色修改出现BUG问题</li>
         </ul>
       </blockquote></div>`
-  }, {
-    title: "v0.1.7",
-    code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
+    }, {
+        title: "v0.1.7",
+        code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
         <ul>
         <li>增加通知菜单组件</li>
         <li>修改顶部搜索样式错乱问题</li>
         </ul>
       </blockquote></div>`
-  }, {
-    title: "v0.1.6",
-    code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
+    }, {
+        title: "v0.1.6",
+        code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
         <ul>
         <li>增加ant文档库</li>
         <li>修改腾讯地图BUG</li>
         </ul>
       </blockquote></div>`
-  }, {
-    title: "v0.1.5",
-    code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
+    }, {
+        title: "v0.1.5",
+        code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
         <ul>
         <li>增加顶部进度条组件</li>
         <li>增加顶部搜索组件</li>
         </ul>
       </blockquote></div>`
-  }, {
-    title: "v0.1.4",
-    code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
+    }, {
+        title: "v0.1.4",
+        code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
         <ul>
         <li>增加页面分支</li>
         <li>添加页面组件：404、腾讯地图</li>
         <li>修改按需引用Bug</li>
         </ul>
       </blockquote></div>`
-  }, {
-    title: "v0.1.3",
-    code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
+    }, {
+        title: "v0.1.3",
+        code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
         <ul>
         <li>增加方法新分支</li>
         <li>添加方法组件：webSocket链接</li>
         <li>优化构建按需引用</li>
         </ul>
       </blockquote></div>`
-  }, {
-    title: "v0.1.2",
-    code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
+    }, {
+        title: "v0.1.2",
+        code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
         <ul>
         <li>完成文档用力构建测试</li>
         <li>添加UI组件：二维码生成、右键复制、滑动验证</li>
         </ul>
       </blockquote></div>`
-  }, {
-    title: "v0.1.1",
-    code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
+    }, {
+        title: "v0.1.1",
+        code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
         <ul>
         <li>集成antd组件库，</li>
         </ul>
       </blockquote></div>`
-  },
-  {
-    title: "v0.1.0",
-    code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
+    },
+    {
+        title: "v0.1.0",
+        code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="2evs" class="white-blockquote">
         <ul>
         <li>构建整个lib包，发布npm</li>
         <li>构建文档站点，可执行测试 </li>
         </ul>
       </blockquote></div>`
-  },
+    },
 ];
 
 export default history
