@@ -1,0 +1,30 @@
+.quant-ip-input{
+    display: inline-block;
+    border: @border-width-base @border-style-base @input-border-color;
+    border-radius:  @border-radius-base;
+    transition: all .3s;
+    .ant-input{
+        width: 54px;
+        border: none !important;
+        box-shadow: none !important;
+        padding-right: 11px !important;
+    }
+}
+.quant-ip-input:focus-within { 
+    border-color: @primary-5;
+    box-shadow: @input-outline-offset @outline-blur-size @shadow-1-down;
+}
+.quant-ip-input:hover{
+    border-color: @primary-5;
+}
+.has-error .quant-ip-input, 
+.has-error .quant-ip-input:hover{
+    border-color: @error-color ;
+}
+.has-error .quant-ip-input:focus-within {
+    border-color: @error-color ;
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 2px rgba(245, 34, 45, 0.2);
+    box-shadow: 0 0 0 2px rgba(245, 34, 45, 0.2);
+    border-right-width: 1px !important;
+}
