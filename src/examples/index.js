@@ -21,6 +21,7 @@ import ReactMarkdown from "./UI/ReactMarkdown" //
 import Resizable from "./UI/Resizable" //
 
 
+
 //动画
 import BasicAnimations from "./animation/BasicAnimations"
 
@@ -38,6 +39,7 @@ import TagSelect from "./pro/TagSelect";
 import NoticeIcon from './pro/NoticeIcon' //通知菜单
 import HeaderSearch from './pro/HeaderSearch' //顶部搜索框
 import CountDown from "./pro/CountDown" //自动计时
+import Ip from "./pro/ip" //ip地址输入
 
 //util
 import webSocket from './util/webSocket'
@@ -155,6 +157,7 @@ export default {
     ContextMenu,
     ReactMarkdown,
     Resizable,
+    Ip,
     //动画
     BasicAnimations,
 
