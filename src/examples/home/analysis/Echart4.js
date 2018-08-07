@@ -3,7 +3,7 @@ import echarts from "echarts";
 
 const option = {
   title: {
-    text: "销售量趋势"
+    text: "访问量趋势"
   },
   color: ["#3398DB"],
   tooltip: {
@@ -26,16 +26,16 @@ const option = {
     }
   ]
 };
-class Echarts3 extends Component {
+class Echarts4 extends Component {
   componentDidMount = () => {
-    let myChart = echarts.init(document.getElementById("echart3"));
+    let myChart = echarts.init(document.getElementById("echart4"));
     myChart.setOption(option);
   };
 
   render() {
     return (
       <div
-        id="echart3"
+        id="echart4"
         style={{
           height: 500,
           width: "100%",
@@ -46,4 +46,4 @@ class Echarts3 extends Component {
   }
 }
 
-export default Echarts3;
+export default Echarts4;

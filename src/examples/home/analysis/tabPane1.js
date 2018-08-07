@@ -1,16 +1,61 @@
 import React, { Component } from "react";
-import { Radio, RangePicker, Tabs, DatePicker, List, Icon } from "quant-ui";
+import {
+  Radio,
+  RangePicker,
+  Tabs,
+  DatePicker,
+  List,
+  Icon,
+  utils
+} from "quant-ui";
 import Chart3 from "./Echart3.js";
+import Chart4 from "./Echart4.js";
+
 const TabPane = Tabs.TabPane;
 const RadioGroup = Radio.Group;
 const RadioButton = Radio.Button;
 const ListItem = List.Item;
-
+const { currency } = utils;
 const data = [
   {
     icon: "smile-o",
-    des: "123"
-    //<div>工专路 0 号店<div>323,234</div></div>,
+    name: "工专路 0 号店",
+    num: currency(323234).format()
+  },
+  {
+    icon: "smile-o",
+    name: "工专路 1 号店",
+    num: currency(323234).format()
+  },
+  {
+    icon: "smile-o",
+    name: "工专路 2 号店",
+    num: currency(323234).format()
+  },
+  {
+    icon: "smile-o",
+    name: "工专路 3 号店",
+    num: currency(323234).format()
+  },
+  {
+    icon: "smile-o",
+    name: "工专路 4 号店",
+    num: currency(323234).format()
+  },
+  {
+    icon: "smile-o",
+    name: "工专路 5 号店",
+    num: currency(323234).format()
+  },
+  {
+    icon: "smile-o",
+    name: "工专路 6 号店",
+    num: currency(323234).format()
+  },
+  {
+    icon: "smile-o",
+    name: "工专路 7 号店",
+    num: currency(323234).format()
   }
 ];
 class ExtraContent extends Component {
@@ -62,27 +107,58 @@ class ExtraContent extends Component {
           >
             <Chart3 />
           </div>
-          <div>
-            {/* <List>
-              <ListItem description="123">123</ListItem>
-            </List> */}
+          <div style={{ float: "left", width: "30%" }}>
             <List
-              style={{ float: "right", display: "inlineBlock" }}
+              header={
+                <div>
+                  <b>门店销售额排名</b>
+                </div>
+              }
               dataSource={data}
+              split={false}
+              style={{ width: "100%" }}
               renderItem={item => (
                 <ListItem>
-                  <Icon type="smile-o" />
-                  <ListItem.Meta
-                    //   Avatar={<Icon type={item.icon} />}
-                    description={item.des}
+                  <List.Item.Meta
+                    avatar={<Icon type={item.icon} />}
+                    title={item.name}
                   />
+                  <div>{item.num}</div>
                 </ListItem>
               )}
             />
           </div>
         </TabPane>
         <TabPane tab="访问量" key="2">
-          12
+          <div
+            style={{
+              width: "70%",
+              float: "left"
+            }}
+          >
+            <Chart4/>
+          </div>
+          <div style={{ float: "left", width: "30%" }}>
+            <List
+              header={
+                <div>
+                  <b>门店访问量排名</b>
+                </div>
+              }
+              dataSource={data}
+              split={false}
+              style={{ width: "100%" }}
+              renderItem={item => (
+                <ListItem>
+                  <List.Item.Meta
+                    avatar={<Icon type={item.icon} />}
+                    title={item.name}
+                  />
+                  <div>{item.num}</div>
+                </ListItem>
+              )}
+            />
+          </div>
         </TabPane>
       </Tabs>
     );

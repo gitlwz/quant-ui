@@ -10,12 +10,16 @@ import {
   Card,
   Trend,
   Tooltip,
-  Progress
+  Progress,
+  Button
 } from "quant-ui";
-import { Divider } from "quant-ui";
 import Echarts1 from "./Echart1.js";
 import Echarts2 from "./Echart2.js";
 import Tab from "./tabPane1.js";
+import Tab2 from "./tab2.js";
+import Tab3 from "./tab3.js";
+import Tab4 from "./tab4.js";
+//import { Button } from "antd/lib/radio";
 const { currency } = utils;
 
 const dataSource = [
@@ -70,6 +74,7 @@ const dataSource = [
     )
   }
 ];
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -81,10 +86,10 @@ class App extends Component {
           gutter={16}
           type="flex"
           justify="space-between"
-          style={{ margin: 10 }}
+          style={{ margin: 20 }}
         >
           {dataSource.map(element => (
-            <Col span={6}>
+            <Col xs={24} sm={12} lg={12} xl={6}>
               <Card
                 title={element.title}
                 extra={
@@ -103,10 +108,39 @@ class App extends Component {
           gutter={16}
           type="flex"
           justify="space-between"
-          style={{ margin: 10 }}
+          style={{ margin: 20 }}
         >
           <Col span={24}>
-            <Tab />
+            <Card>
+              <Tab />
+            </Card>
+          </Col>
+        </Row>
+
+        <Row
+          gutter={16}
+          type="flex"
+          justify="space-between"
+          style={{ margin: 20 }}
+        >
+          <Col lg={24} xl={12}>
+            <Tab2 />
+          </Col>
+          <Col lg={24} xl={12}>
+            <Tab3 />
+          </Col>
+        </Row>
+
+        <Row
+          gutter={16}
+          type="flex"
+          justify="space-between"
+          style={{ margin: 20 }}
+        >
+          <Col span={24}>
+            <Card>
+              <Tab4 />
+            </Card>
           </Col>
         </Row>
       </div>
