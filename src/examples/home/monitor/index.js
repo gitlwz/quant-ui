@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Card, Timeline, Icon, CountDown  } from "quant-ui"
+import { Row, Col, Card, utils, Icon, CountDown  } from "quant-ui"
 import "./index.less";
 import EchartsScatter from "./echart/EchartsScatter";
 import EchartLine from "./echart/EchartLine";
@@ -7,6 +7,8 @@ import EchartGauge from "./echart/EchartGauge";
 import EchartPie1 from "./echart/EchartPie1";
 import EchartPie2 from "./echart/EchartPie2";
 import EchartRadar from "./echart/EchartRadar";
+import TitleText from "./component/TitleText";
+const { currency } = utils;
 const targetTime = new Date().getTime() + 3900000;
 class App extends Component {
     constructor(props){
@@ -35,40 +37,16 @@ class App extends Component {
                         <Card className="cardDiv" title="实时活动交易情况">
                             <Row style={{marginBottom:10}} gutter={10}>
                                 <Col md={6}>
-                                    <div>
-                                        <div className="text1">今日交易总额</div>
-                                        <div className="text2">
-                                            <span>124,543,233</span>
-                                            <em className="textY">元</em>
-                                        </div>
-                                    </div>
+                                    <TitleText title="今日交易总额" number={currency(12345678).format()} unit="元" />
                                 </Col>
                                 <Col md={6}>
-                                    <div>
-                                        <div className="text1">销售目标完成率</div>
-                                        <div className="text2">
-                                            <span>92%</span>
-                                        </div>
-                                    </div>
+                                    <TitleText title="销售目标完成率" number="92" unit="%" />
                                 </Col>
                                 <Col md={6}>
-                                    <div>
-                                        <div className="text1">活动剩余时间</div>
-                                        <div className="text2">
-                                            <span>
-                                                <CountDown target={targetTime} />
-                                            </span>
-                                        </div>
-                                    </div>
+                                    <TitleText title="活动剩余时间" number={<CountDown target={targetTime} />}/>
                                 </Col>
                                 <Col md={6}>
-                                    <div>
-                                        <div className="text1">每秒交易总额</div>
-                                        <div className="text2">
-                                            <span>234</span>
-                                            <em className="textY">元</em>
-                                        </div>
-                                    </div>
+                                    <TitleText title="每秒交易总额" number="234" unit="元" />
                                 </Col>
                             </Row>
                             <EchartsScatter/>
@@ -76,13 +54,8 @@ class App extends Component {
                     </Col>
                     <Col md={6}>
                         <Card className="cardDiv" title="活动情况预测">
-                            <div>
-                                <div className="text1">目标评估</div>
-                                <div className="text2"> 
-                                    <span>有望达到预期</span>
-                                </div>
-                                <EchartLine/>
-                            </div>
+                            <TitleText title="目标评估" number="有望达到预期"/>
+                            <EchartLine/>
                         </Card>
                         <Card className="cardDiv" title="券核效率">
                             <EchartGauge/>

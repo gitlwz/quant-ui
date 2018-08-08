@@ -56,7 +56,7 @@ class Detail extends Component {
 	}
 	render() {
 		return (
-			<div id="EchartsLine_charts" style={{height: '200px', width: '100%'}}></div>
+			<div id="EchartsLine_charts" style={{height: '200px', width: '100%', marginBottom: -20,marginTop:-50}}></div>
 		);
 	}
 }
