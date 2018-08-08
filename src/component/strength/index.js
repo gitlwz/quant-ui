@@ -2,6 +2,15 @@
 import React, { Component } from 'react';
 import classNames from 'classNames';
 import isFunction  from 'lodash/isFunction';
+import language  from "../language";
+const {setLanguageData,getLanguageData:$} = language;
+setLanguageData({
+    'en_US':{
+        "弱":"L",
+        "中":"M",
+        "强":"H"
+    },
+})
 class Strength extends React.Component{
     constructor(props){
         super(props)
@@ -65,9 +74,9 @@ class Strength extends React.Component{
         })
         return (
             <div className={_class}>
-                <span>弱</span>
-                <span>中</span>
-                <span>强</span>
+                <span>{$("弱")}</span>
+                <span>{$("中")}</span>
+                <span>{$("强")}</span>
             </div>
         )
     } 
