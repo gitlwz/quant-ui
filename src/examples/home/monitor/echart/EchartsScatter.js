@@ -292,7 +292,7 @@ class Detail extends Component {
 	}
 	render() {
 		return (
-			<div id="EchartsScatter_charts" style={{height: '520px', width: '100%'}}></div>
+			<div id="EchartsScatter_charts" style={{height: '450px', width: '100%'}}></div>
 		);
 	}
 }

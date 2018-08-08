@@ -40,6 +40,8 @@ import NoticeIcon from './pro/NoticeIcon' //通知菜单
 import HeaderSearch from './pro/HeaderSearch' //顶部搜索框
 import CountDown from "./pro/CountDown" //自动计时
 import Ip from "./pro/ip" //ip地址输入
+import Strength from "./pro/Strength" //Strength强度确认
+
 
 //util
 import webSocket from './util/webSocket'
@@ -158,6 +160,7 @@ export default {
     ReactMarkdown,
     Resizable,
     Ip,
+    Strength,
     //动画
     BasicAnimations,
 

@@ -56,7 +56,7 @@ class App extends Component {
         return (
             <Layout>
                 <SiderCustom pathname={this.state.pathname} collapsed={this.state.collapsed} msg={this.state.LDtheme} />
-                <Layout style={{ marginLeft: this.state.collapsed ? 0 : 250, flexDirection: 'column' }}>
+                <Layout style={{ marginLeft: this.state.collapsed ? 0 : 250, flexDirection: 'column',zIndex: 0 }}>
                     <HeaderCustom historyChange={this.historyChange} history={this.props.history} toggle={this.toggle} collapsed={this.state.collapsed} msg={(theme) => {
                         this.setState({
                             LDtheme: theme

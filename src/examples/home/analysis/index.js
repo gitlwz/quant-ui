@@ -2,16 +2,16 @@ import React, { Component } from "react";
 import "./index.less";
 
 import {
-  Row,
-  Col,
-  Icon,
-  NumberInfo,
-  utils,
-  Card,
-  Trend,
-  Tooltip,
-  Progress,
-  Button
+    Row,
+    Col,
+    Icon,
+    NumberInfo,
+    utils,
+    Card,
+    Trend,
+    Tooltip,
+    Progress,
+    Button
 } from "quant-ui";
 import Echarts1 from "./charts/Echart1.js";
 import Echarts2 from "./charts/Echart2.js";
@@ -23,56 +23,56 @@ import Tab4 from "./tab4.js";
 const { currency } = utils;
 
 const dataSource = [
-  {
-    title: (
-      <div>
-        <NumberInfo
-          subTitle={<span>总销售额</span>}
-          total={currency(7777777).format()}
-        />
-        <Trend flag="up">同周比 12%</Trend>
-        <br />
+    {
+        title: (
+            <div>
+                <NumberInfo
+                    subTitle={<span>总销售额</span>}
+                    total={currency(7777777).format()}
+                />
+                <Trend flag="up">同周比 12%</Trend>
+                <br />
+                <Trend flag="down">日环比 11%</Trend>
+            </div>
+        ),
+        footer: (
+            <p>
+                日均销售额 <span> {currency(777770).format()}</span>
+            </p>
+        )
+    },
+    {
+        title: (
+            <div>
+                <NumberInfo subTitle="访问量" total={currency(8846).format()} />
+                <Echarts1 />
+            </div>
+        ),
+        footer: <p>日访问量 1234</p>
+    },
+    {
+        title: (
+            <div>
+                <NumberInfo subTitle="支付笔数" total={currency(6560).format()} />
+                <Echarts2 />
+            </div>
+        ),
+        footer: <p>转化率 60%</p>
+    },
+    {
+        title: (
+            <div>
+                <NumberInfo subTitle="运营活动效果" total="78%" />
+                <Progress percent={78} />
+            </div>
+        ),
+        footer: (
+            <div>
+                <Trend flag="up">同周比 12%</Trend>&nbsp;&nbsp;
         <Trend flag="down">日环比 11%</Trend>
-      </div>
-    ),
-    footer: (
-      <p>
-        日均销售额 <span> {currency(777770).format()}</span>
-      </p>
-    )
-  },
-  {
-    title: (
-      <div>
-        <NumberInfo subTitle="访问量" total={currency(8846).format()} />
-        <Echarts1 />
-      </div>
-    ),
-    footer: <p>日访问量 1234</p>
-  },
-  {
-    title: (
-      <div>
-        <NumberInfo subTitle="支付笔数" total={currency(6560).format()} />
-        <Echarts2 />
-      </div>
-    ),
-    footer: <p>转化率 60%</p>
-  },
-  {
-    title: (
-      <div>
-        <NumberInfo subTitle="运营活动效果" total="78%" />
-        <Progress percent={78} />
-      </div>
-    ),
-    footer: (
-      <div>
-        <Trend flag="up">同周比 12%</Trend>&nbsp;&nbsp;
-        <Trend flag="down">日环比 11%</Trend>
-      </div>
-    )
-  }
+            </div>
+        )
+    }
 ];
 
 class App extends Component {

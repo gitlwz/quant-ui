@@ -32,7 +32,6 @@ const generateData = (_level, _preKey, _tns) => {
     });
 };
 generateData(z);
-
 const dataList = [];
 const generateList = (data) => {
     for (let i = 0; i < data.length; i++) {
@@ -77,19 +76,21 @@ class Detail extends Component {
 
     onChange = (e) => {
         const value = e.target.value;
-        const expandedKeys = dataList.map((item) => {
+        let expandedKeys = dataList.map((item) => {
             if (item.title.indexOf(value) > -1) {
                 return getParentKey(item.key, gData);
             }
             return null;
-        }).filter((item, i, self) => item && self.indexOf(item) === i);
+        })
+        expandedKeys = expandedKeys.filter((item, i, self) => item );
         this.setState({
             expandedKeys,
             searchValue: value,
             autoExpandParent: true,
         });
     }
-
+    onCheck = (checkedKeys, e) =>{
+    }
     render() {
         const { searchValue, expandedKeys, autoExpandParent } = this.state;
         const loop = data => data.map((item) => {
@@ -116,6 +117,8 @@ class Detail extends Component {
             <div>
                 <Search style={{ marginBottom: 8 }} placeholder="Search" onChange={this.onChange} />
                 <Tree
+                    checkable
+                    onCheck = {this.onCheck}
                     onExpand={this.onExpand}
                     expandedKeys={expandedKeys}
                     autoExpandParent={autoExpandParent}
