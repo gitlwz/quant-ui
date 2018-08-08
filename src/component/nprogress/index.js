@@ -1,5 +1,3 @@
-import "./style.less";
-
 export default (function() {
     var NProgress = {};
   

@@ -20,7 +20,7 @@ class NotFound extends React.Component {
     };
     render() {
         return (
-            <div style={{textAlign:"center",height: '100%', background: '#ececec', overflow: 'hidden'}}>
+            <div className="quant-not-found" style={{textAlign:"center",height: '100%', background: '#ececec', overflow: 'hidden'}}>
                 <img src={this.props.img} alt="404" className={`animated swing ${this.state.animated}`} onMouseEnter={this.enter} />
             </div>
         )
