@@ -11,11 +11,11 @@ import {
   Tabs,
   Progress
 } from "quant-ui";
-import Echarts9 from "./Echart9";
-import Echarts10 from "./Echart10";
-import Echarts11 from "./Echart11";
-import Echarts12 from "./Echart12";
-import Echarts13 from "./Echart13";
+import Echarts9 from "./charts/Echart9";
+import Echarts10 from "./charts/Echart10";
+import Echarts11 from "./charts/Echart11";
+import Echarts12 from "./charts/Echart12";
+import Echarts13 from "./charts/Echart13";
 
 const TabPane = Tabs.TabPane;
 

@@ -8,8 +8,8 @@ import {
   Icon,
   utils
 } from "quant-ui";
-import Chart3 from "./Echart3.js";
-import Chart4 from "./Echart4.js";
+import Chart3 from "./charts/Echart3.js";
+import Chart4 from "./charts/Echart4.js";
 
 const TabPane = Tabs.TabPane;
 const RadioGroup = Radio.Group;

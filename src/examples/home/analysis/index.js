@@ -13,13 +13,13 @@ import {
   Progress,
   Button
 } from "quant-ui";
-import Echarts1 from "./Echart1.js";
-import Echarts2 from "./Echart2.js";
+import Echarts1 from "./charts/Echart1.js";
+import Echarts2 from "./charts/Echart2.js";
 import Tab from "./tabPane1.js";
 import Tab2 from "./tab2.js";
 import Tab3 from "./tab3.js";
 import Tab4 from "./tab4.js";
-//import { Button } from "antd/lib/radio";
+
 const { currency } = utils;
 
 const dataSource = [
@@ -81,16 +81,17 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="analysis">
         <Row
           gutter={16}
           type="flex"
           justify="space-between"
-          style={{ margin: 20 }}
+          className="alignRow"
         >
           {dataSource.map(element => (
             <Col xs={24} sm={12} lg={12} xl={6}>
               <Card
+                className="alignItem"
                 title={element.title}
                 extra={
                   <Tooltip title="指标说明">
@@ -104,12 +105,7 @@ class App extends Component {
           ))}
         </Row>
 
-        <Row
-          gutter={16}
-          type="flex"
-          justify="space-between"
-          style={{ margin: 20 }}
-        >
+        <Row gutter={16} type="flex" justify="space-between" className="row">
           <Col span={24}>
             <Card>
               <Tab />
@@ -121,7 +117,7 @@ class App extends Component {
           gutter={16}
           type="flex"
           justify="space-between"
-          style={{ margin: 20 }}
+          className="alignRow"
         >
           <Col lg={24} xl={12}>
             <Tab2 />
@@ -131,12 +127,7 @@ class App extends Component {
           </Col>
         </Row>
 
-        <Row
-          gutter={16}
-          type="flex"
-          justify="space-between"
-          style={{ margin: 20 }}
-        >
+        <Row gutter={16} type="flex" justify="space-between" className="row">
           <Col span={24}>
             <Card>
               <Tab4 />

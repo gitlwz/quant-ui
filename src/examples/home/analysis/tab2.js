@@ -1,17 +1,7 @@
 import React, { Component } from "react";
-import {
-  Card,
-  Popover,
-  Icon,
-  Button,
-  NumberInfo,
-  Trend,
-  utils,
-  Table
-} from "quant-ui";
-import Echarts6 from "./Echart6";
-import Echarts5 from "./Echart5";
-import { Pagination } from "antd";
+import { Card, Popover, Icon, NumberInfo, Trend, utils, Table } from "quant-ui";
+import Echarts6 from "./charts/Echart6";
+import Echarts5 from "./charts/Echart5";
 
 const { currency } = utils;
 const content = (
@@ -97,6 +87,7 @@ class Tab2 extends Component {
   render() {
     return (
       <Card
+        style={{ paddingBottom: "2000px", marginBottom: "-2000px" }}
         title="热点"
         extra={
           <Popover content={content}>
