@@ -2,14 +2,14 @@ import React from 'react';
 import  Icon  from '../icon';
 import classNames from 'classnames';
 
-const NumberInfo = ({ theme, title, subTitle, total, subTotal, status, suffix, gap, ...rest }) => (
+const NumberInfo = ({ theme, title, subTitle, total, subTotal, status, suffix, gap,sap, ...rest }) => (
   <div
     className={classNames('quant-numberInfo', {
       [`quant-numberInfo${theme}`]: theme,
     })}
     {...rest}
   >
-    {title && <div className={'numberInfoTitle'}>{title}</div>}
+    {title && <div className={'numberInfoTitle'} style={sap ? { marginBottom: sap } : null}>{title}</div>}
     {subTitle && <div className={'numberInfoSubTitle'}>{subTitle}</div>}
     <div className={'numberInfoValue'} style={gap ? { marginTop: gap } : null}>
       <span>

@@ -48,9 +48,16 @@ const api = [
 			},{
 				key: "7",
 				parameter: "gap",  //字段名
-				instructions: '设置数字和描述直接的间距（像素）',	//描述
+				instructions: '设置数字和子标题直接的间距（像素）',	//描述
 				type: '	number',	//类型
 				default: "8",							//默认值
+				must: '',
+			},{
+				key: "8",
+				parameter: "sap",  //字段名
+				instructions: '设置字表题和主标题直接的间距（像素）',	//描述
+				type: '	number',	//类型
+				default: "6",							//默认值
 				must: '',
 			},
 		]

@@ -7,10 +7,11 @@ class Detail extends Component {
 		return (
 			<div>
 				<NumberInfo
-				subTitle={<span>本周访问</span>}
+                title="本周访问"
+				subTitle={<span>子标题</span>}
 				total={currency(12321).format()}
-				status="up"
-				subTotal={17.1}
+                status="up"
+                subTotal={17.1}
 				/>
 			</div>
 		);
