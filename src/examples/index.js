@@ -41,6 +41,8 @@ import HeaderSearch from './pro/HeaderSearch' //顶部搜索框
 import CountDown from "./pro/CountDown" //自动计时
 import Ip from "./pro/ip" //ip地址输入
 import Strength from "./pro/Strength" //Strength强度确认
+import MoveModal from "./pro/movemodal" //MoveModal移动弹出框
+
 
 
 //util
@@ -161,6 +163,7 @@ export default {
     Resizable,
     Ip,
     Strength,
+    MoveModal,
     //动画
     BasicAnimations,
 
