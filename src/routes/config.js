@@ -132,7 +132,7 @@ export default {
                 { key: '/app/ui/Copy', title: '右键复制', component: 'Copy' },
                 { key: '/app/ui/nprogress', title: '顶部进度条', component: 'NProgress' },
                 { key: '/app/ui/SlidingValidation', title: '滑动验证', component: 'SlidingValidation' },
-                { key: '/app/ui/Ellipsis', title: '文本自动省略号', component: 'Ellipsis' },
+                
                 { key: '/app/ui/RichText', title: '富文本', component: 'RichText' },
 				{ key: '/app/ui/ContextMenu', title: '环境菜单', component: 'ContextMenu' },
                 { key: '/app/ui/DropTree', title: '拖拽树形图', component: 'DropTree' },
@@ -155,6 +155,7 @@ export default {
             subs: [
                 { key: '/app/pro/Authorized', title: 'Authorized权限', component: 'Authorized' },
                 { key: '/app/pro/Login', title: 'Login登录', component: 'Login' },
+                { key: '/app/pro/Ellipsis', title: 'Ellipsis文本自动省略号', component: 'Ellipsis' },
                 { key: '/app/pro/GlobalFooter', title: 'GlobalFooter全局页脚', component: 'GlobalFooter' },
                 { key: '/app/pro/DescriptionList', title: 'DescriptionList描述列表', component: 'DescriptionList' },
                 { key: '/app/pro/FooterToolbar', title: 'FooterToolbar底部工具栏', component: 'FooterToolbar' },

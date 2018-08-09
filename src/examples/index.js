@@ -12,7 +12,7 @@ import Copy from './UI/Copy'
 import NProgress from './UI/NProgress'
 import SlidingValidation from './UI/SlidingValidation' //滑动验证
 import RichText from './UI/RichText' //富文本
-import Ellipsis from './UI/Ellipsis' //文本自动省略
+
 import DropTree from "./UI/DropTree" //拖拽树形图
 import Color from "./UI/Color" //拾色器
 import QTable from "./UI/Table" //
@@ -42,7 +42,7 @@ import CountDown from "./pro/CountDown" //自动计时
 import Ip from "./pro/ip" //ip地址输入
 import Strength from "./pro/Strength" //Strength强度确认
 import MoveModal from "./pro/movemodal" //MoveModal移动弹出框
-
+import Ellipsis from './pro/Ellipsis' //文本自动省略
 
 
 //util
