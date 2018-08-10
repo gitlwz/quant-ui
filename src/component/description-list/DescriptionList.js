@@ -12,14 +12,14 @@ const DescriptionList = ({
   size,
   ...restProps
 }) => {
-  const clsString = classNames('quant-descriptionList', layout, className, {
-    'small': size === 'small',
-    'large': size === 'large',
+  const clsString = classNames('quant-descriptionList', `quant-descriptionList-${layout}`, className, {
+    ['quant-descriptionList-small']: size === 'small',
+    ['quant-descriptionList-large']: size === 'large',
   });
   const column = col > 4 ? 4 : col;
   return (
     <div className={clsString} {...restProps}>
-      {title ? <div className={'title'}>{title}</div> : null}
+      {title ? <div className={'quant-descriptionList-title'}>{title}</div> : null}
       <Row gutter={gutter}>
         {React.Children.map(
           children,

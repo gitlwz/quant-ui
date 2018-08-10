@@ -6,8 +6,8 @@ export default class FooterToolbar extends Component {
     const { children, className, extra, ...restProps } = this.props;
     return (
       <div className={classNames(className, 'quant-footer-toolbar')} {...restProps}>
-        <div className={'left'}>{extra}</div>
-        <div className={'right'}>{children}</div>
+        <div className={'quant-footer-toolbar-left'}>{extra}</div>
+        <div className={'quant-footer-toolbar-right'}>{children}</div>
       </div>
     );
   }

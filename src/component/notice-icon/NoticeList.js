@@ -24,26 +24,26 @@ export default function NoticeList({
     <div>
       <List className={'quant-notice-icon-list'}>
         {data.map((item, i) => {
-          const itemCls = classNames('item', {
+          const itemCls = classNames('quant-notice-icon-item', {
             ['read']: item.read,
           });
           return (
             <List.Item className={itemCls} key={item.key || i} onClick={() => onClick(item)}>
               <List.Item.Meta
-                className={'meta'}
-                avatar={item.avatar ? <Avatar className={'avatar'} src={item.avatar} /> : null}
+                className={'quant-notice-icon-meta'}
+                avatar={item.avatar ? <Avatar className={'quant-notice-icon-avatar'} src={item.avatar} /> : null}
                 title={
-                  <div className={'title'}>
+                  <div className={'quant-notice-icon-title'}>
                     {item.title}
-                    <div className={'extra'}>{item.extra}</div>
+                    <div className={'quant-notice-icon-extra'}>{item.extra}</div>
                   </div>
                 }
                 description={
                   <div>
-                    <div className={'description'} title={item.description}>
+                    <div className={'quant-notice-icon-description'} title={item.description}>
                       {item.description}
                     </div>
-                    <div className={'datetime'}>{item.datetime}</div>
+                    <div className={'quant-notice-icon-datetime'}>{item.datetime}</div>
                   </div>
                 }
               />

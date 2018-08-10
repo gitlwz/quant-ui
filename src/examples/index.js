@@ -44,6 +44,7 @@ import Strength from "./pro/Strength" //Strength强度确认
 import MoveModal from "./pro/movemodal" //MoveModal移动弹出框
 import Ellipsis from './pro/Ellipsis' //文本自动省略
 import Result from './pro/result' //结果页
+import PageHeader from './pro/PageHeader' //PageHeader页头
 
 
 
@@ -164,6 +165,7 @@ export default {
     ReactMarkdown,
     Resizable,
     Result,
+    PageHeader,
     Ip,
     Strength,
     MoveModal,

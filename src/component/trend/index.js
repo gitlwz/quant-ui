@@ -6,16 +6,16 @@ const Trend = ({ colorful = true, reverseColor = false, flag, children, classNam
   const classString = classNames(
     'quant-trendItem',
     {
-      'trendItemGrey': !colorful,
-      'reverseColor': reverseColor && colorful,
+      'quant-trendItem-trendItemGrey': !colorful,
+      'quant-trendItem-reverseColor': reverseColor && colorful,
     },
     className
   );
   return (
     <div {...rest} className={classString} title={typeof children === 'string' ? children : ''}>
-      <span className={'value'}>{children}</span>
+      <span className={'quant-trendItem-value'}>{children}</span>
       {flag && (
-        <span className={flag}>
+        <span className={`quant-trendItem-${flag}`}>
           <Icon type={`caret-${flag}`} />
         </span>
       )}

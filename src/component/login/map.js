@@ -7,7 +7,7 @@ const map = {
     component: Input,
     props: {
       size: 'large',
-      prefix: <Icon type="user" className={'prefixIcon'} />,
+      prefix: <Icon type="user" className={'quant-login-prefixIcon'} />,
       placeholder: 'admin',
     },
     rules: [
@@ -21,7 +21,7 @@ const map = {
     component: Input,
     props: {
       size: 'large',
-      prefix: <Icon type="lock" className={'prefixIcon'} />,
+      prefix: <Icon type="lock" className={'quant-login-prefixIcon'} />,
       type: 'password',
       placeholder: '888888',
     },
@@ -36,7 +36,7 @@ const map = {
     component: Input,
     props: {
       size: 'large',
-      prefix: <Icon type="mobile" className={'prefixIcon'} />,
+      prefix: <Icon type="mobile" className={'quant-login-prefixIcon'} />,
       placeholder: 'mobile number',
     },
     rules: [
@@ -54,7 +54,7 @@ const map = {
     component: Input,
     props: {
       size: 'large',
-      prefix: <Icon type="mail" className={'prefixIcon'} />,
+      prefix: <Icon type="mail" className={'quant-login-prefixIcon'} />,
       placeholder: 'captcha',
     },
     rules: [

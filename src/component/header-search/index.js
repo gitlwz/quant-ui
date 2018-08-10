@@ -75,8 +75,8 @@ export default class HeaderSearch extends PureComponent {
     const { className, placeholder, ...restProps } = this.props;
     const { searchMode, value } = this.state;
     delete restProps.defaultOpen; // for rc-select not affected
-    const inputClass = classNames('input', {
-      ['show']: searchMode,
+    const inputClass = classNames('quant-headerSearch-input', {
+      ['quant-headerSearch-show']: searchMode,
     });
     return (
       <span className={classNames(className, 'quant-headerSearch')} onClick={this.enterSearchMode}>

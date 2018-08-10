@@ -8,16 +8,16 @@ const Exception = ({ className, linkElement = 'a', type, title, desc, img, actio
   const clsString = classNames('quant-exception', className);
   return (
     <div className={clsString} {...rest}>
-      <div className={'quant-imgBlock'}>
+      <div className={'quant-exception-imgBlock'}>
         <div
-          className={'quant-imgEle'}
+          className={'quant-exception-imgEle'}
           style={{ backgroundImage: `url(${img || config[pageType].img})` }}
         />
       </div>
-      <div className={'quant-content'}>
+      <div className={'quant-exception-content'}>
         <h1>{title || config[pageType].title}</h1>
-        <div className={'quant-desc'}>{desc || config[pageType].desc}</div>
-        <div className={'quant-actions'}>
+        <div className={'quant-exception-desc'}>{desc || config[pageType].desc}</div>
+        <div className={'quant-exception-actions'}>
           {actions ||
             createElement(
               linkElement,

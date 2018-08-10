@@ -80,7 +80,7 @@ function generator({ defaultProps, defaultRules, type }) {
                 <Col span={8}>
                   <Button
                     disabled={count}
-                    className={'getCaptcha'}
+                    className={'quant-login-getCaptcha'}
                     size="large"
                     onClick={this.onGetCaptcha}
                   >

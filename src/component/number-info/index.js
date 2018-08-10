@@ -9,15 +9,15 @@ const NumberInfo = ({ theme, title, subTitle, total, subTotal, status, suffix, g
     })}
     {...rest}
   >
-    {title && <div className={'numberInfoTitle'} style={sap ? { marginBottom: sap } : null}>{title}</div>}
-    {subTitle && <div className={'numberInfoSubTitle'}>{subTitle}</div>}
-    <div className={'numberInfoValue'} style={gap ? { marginTop: gap } : null}>
+    {title && <div className={'quant-numberInfo-numberInfoTitle'} style={sap ? { marginBottom: sap } : null}>{title}</div>}
+    {subTitle && <div className={'quant-numberInfo-numberInfoSubTitle'}>{subTitle}</div>}
+    <div className={'quant-numberInfo-numberInfoValue'} style={gap ? { marginTop: gap } : null}>
       <span>
         {total}
-        {suffix && <em className={'suffix'}>{suffix}</em>}
+        {suffix && <em className={'quant-numberInfo-suffix'}>{suffix}</em>}
       </span>
       {(status || subTotal) && (
-        <span className={'subTotal'}>
+        <span className={'quant-numberInfo-subTotal'}>
           {subTotal}
           {status && <Icon type={`caret-${status}`} />}
         </span>

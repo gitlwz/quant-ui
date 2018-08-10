@@ -254,10 +254,10 @@ export default class Ellipsis extends Component {
           ) : (
             childNode
           )}
-          <div className={'shadow'} ref={this.handleShadowChildren}>
+          <div className={'quant-ellipsis-shadow'} ref={this.handleShadowChildren}>
             {children}
           </div>
-          <div className={'shadow'} ref={this.handleShadow}>
+          <div className={'quant-ellipsis-shadow'} ref={this.handleShadow}>
             <span>{text}</span>
           </div>
         </div>

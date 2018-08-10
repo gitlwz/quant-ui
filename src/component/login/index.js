@@ -109,7 +109,7 @@ class Login extends Component {
             <div>
               <Tabs
                 animated={false}
-                className={'tabs'}
+                className={'quant-login-tabs'}
                 activeKey={type}
                 onChange={this.onSwitch}
               >

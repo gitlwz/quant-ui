@@ -1,30 +1,29 @@
-
 .quant-tagSelect {
-  user-select: none;
-  margin-left: -8px;
-  position: relative;
-  overflow: hidden;
-  max-height: 32px;
-  line-height: 32px;
-  transition: all 0.3s;
-    .ant-tag {
-      padding: 0 8px;
-      margin-right: 24px;
-      font-size: @font-size-base;
-    }
-  &.expanded {
+    user-select: none;
+    margin-left: -8px;
+    position: relative;
+    overflow: hidden;
+    max-height: 32px;
+    line-height: 32px;
     transition: all 0.3s;
-    max-height: 200px;
-  }
-  .trigger {
-    position: absolute;
-    top: 0;
-    right: 0;
-    i {
-      font-size: 12px;
+    .ant-tag {
+        padding: 0 8px;
+        margin-right: 24px;
+        font-size: @font-size-base;
     }
-  }
-  &.hasExpandTag {
-    padding-right: 50px;
-  }
+    &.quant-tagSelect-expanded {
+        transition: all 0.3s;
+        max-height: 200px;
+    }
+    .quant-tagSelect-trigger {
+        position: absolute;
+        top: 0;
+        right: 0;
+        i {
+            font-size: 12px;
+        }
+    }
+    &.quant-tagSelect-hasExpandTag {
+        padding-right: 50px;
+    }
 }

@@ -90,8 +90,8 @@ class TagSelect extends Component {
     const checkedAll = this.getAllTags().length === value.length;
 
     const cls = classNames('quant-tagSelect', className, {
-      'hasExpandTag': expandable,
-      'expanded': expand,
+      'quant-tagSelect-hasExpandTag': expandable,
+      'quant-tagSelect-expanded': expand,
     });
     return (
       <div className={cls} style={style}>
@@ -111,7 +111,7 @@ class TagSelect extends Component {
             return child;
           })}
         {expandable && (
-          <a className={'trigger'} onClick={this.handleExpand}>
+          <a className={'quant-tagSelect-trigger'} onClick={this.handleExpand}>
             {expand ? '收起' : '展开'} <Icon type={expand ? 'up' : 'down'} />
           </a>
         )}

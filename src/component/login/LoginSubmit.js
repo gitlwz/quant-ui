@@ -6,7 +6,7 @@ import Form from '../form';
 const FormItem = Form.Item;
 
 const LoginSubmit = ({ className, ...rest }) => {
-  const clsString = classNames('submit', className);
+  const clsString = classNames('quant-login-submit', className);
   return (
     <FormItem>
       <Button size="large" className={clsString} type="primary" htmlType="submit" {...rest} />
