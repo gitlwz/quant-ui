@@ -166,6 +166,7 @@ export default {
                 { key: '/app/pro/HeaderSearch', title: 'HeaderSearch顶部搜索框', component: 'HeaderSearch' },
                 { key: '/app/pro/CountDown', title: 'CountDown倒计时', component: 'CountDown' },
                 { key: '/app/pro/NoticeIcon', title: 'NoticeIcon通知菜单', component: 'NoticeIcon' },
+                { key: '/app/pro/Result', title: 'Result结果页', component: 'Result' },
                 { key: '/app/pro/Ip', title: 'Ip地址输入', component: 'Ip' },
                 { key: '/app/pro/Strength', title: 'Strength密码强度', component: 'Strength' },
                 { key: '/app/pro/MoveModal', title: 'MoveModal移动弹出框', component: 'MoveModal' },

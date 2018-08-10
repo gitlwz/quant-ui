@@ -43,6 +43,8 @@ import Ip from "./pro/ip" //ip地址输入
 import Strength from "./pro/Strength" //Strength强度确认
 import MoveModal from "./pro/movemodal" //MoveModal移动弹出框
 import Ellipsis from './pro/Ellipsis' //文本自动省略
+import Result from './pro/result' //结果页
+
 
 
 //util
@@ -161,6 +163,7 @@ export default {
     ContextMenu,
     ReactMarkdown,
     Resizable,
+    Result,
     Ip,
     Strength,
     MoveModal,

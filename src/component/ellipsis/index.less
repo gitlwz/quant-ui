@@ -1,24 +1,27 @@
 .quant-ellipsis {
-  overflow: hidden;
-  display: inline-block;
-  word-break: break-all;
-  width: 100%;
+    overflow: hidden;
+    display: inline-block;
+    word-break: break-all;
+    width: 100%;
 }
 
 .quant-ellipsis-lines {
-  position: relative;
-  .shadow {
-    display: block;
     position: relative;
-    color: transparent;
-    opacity: 0;
-    z-index: -999;
-  }
+    .shadow {
+        display: block;
+        position: relative;
+        color: transparent;
+        opacity: 0;
+        z-index: -999;
+    }
 }
 
 .quant-ellipsis-lineClamp {
-  position: relative;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    p {
+        margin: 0px;
+    }
 }

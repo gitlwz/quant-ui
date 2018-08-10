@@ -90,6 +90,8 @@ export { default as colorPicker } from './color-picker';
 export { default as EntryTable } from './entry-table'; 
 export { default as QContextMenu } from './q-context-menu'; 
 export { default as ReactMarkdown } from './react-markdown';
+export { default as Result } from './result';
+
 export { default as IpInput } from './ip-input';
 export { default as Strength } from './strength';  //密码强度
 export { default as MoveModal } from './move-modal';  //密码强度
