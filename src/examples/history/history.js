@@ -1,5 +1,42 @@
 const history = [
     {
+        title:"v0.2.0",
+        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="0n5d" class="white-blockquote">
+        <ul>
+        <li>新增功能型组件IP地址输入框</li>
+        <li>新增功能型组件Strength密码强度校验</li>
+        <li>新增功能型组件MoveModal可移动弹出框</li>
+        <li>新增功能型组件Result处理结果</li>
+        <li class="todo-list-item"><i class="icon-check-sign"></i>典型结果页面</li>
+        <li class="todo-list-item"><i class="icon-check-sign"></i>提交失败结果页面</li>
+        <li>新增功能型组件PageHeader页头</li>
+        <li class="todo-list-item"><i class="icon-check-sign"></i>标准页头</li>
+        <li class="todo-list-item"><i class="icon-check-sign"></i>带图片的页头</li>
+        <li class="todo-list-item"><i class="icon-check-sign"></i>简单的页头</li>
+        <li>处理各个组件样式权限BUG问题</li>
+        </ul>
+      </blockquote></div>`
+    },
+    {
+        title:"v0.2.0#管理框架",
+        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="ruw4" class="white-blockquote">
+        <ul>
+        <li>管理框架新增公共图标、ICON、说明配置</li>
+        <li>集成后台侧边导航配置</li>
+        </ul>
+      </blockquote></div>`
+    },
+    {
+        title:"v0.2.0#文档站点",
+        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="qx22" class="white-blockquote">
+        <ul>
+        <li>首页添加工作台展示页面</li>
+        <li>添加分析页展示页面</li>
+        <li>添加监控页展示页面</li>
+        </ul>
+      </blockquote></div>`
+    },
+    {
         title: "v0.1.99",
         code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="ojpb" class="white-blockquote">
         <ul>
