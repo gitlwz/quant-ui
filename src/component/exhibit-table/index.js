@@ -29,7 +29,7 @@ class ExhibitTable extends Component {
         let { columns, showRight, ...restProps } = this.props;
         let _columns = columns.filter((ele) => ele.show !== false);
         _columns = _columns.map((ele)=>{
-            if(!ele.render && !!ele.isMoney){
+            if(!ele.render && ele.type === 2){
                 ele.render = (text, record, index) => {
                     let _text = text;
                     if( !isNaN(text) ){

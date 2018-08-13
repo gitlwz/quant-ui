@@ -25,10 +25,10 @@ const api = [
 				must: '',
 			},{
 				key: "2",
-				parameter: "isMoney",  //字段名
-				instructions: '是否按金额处理此列（千分位、保留两位小数、右对齐）	',	//描述
-				type: 'true|false',	//类型
-				default: "false",							//默认值
+				parameter: "type",  //字段名
+				instructions: '处理数据的格式(2:按金额处理，保留两位小数、千分位)',	//描述
+				type: '2',	//类型
+				default: "undefined",							//默认值
 				must: '',
 			},
 		]

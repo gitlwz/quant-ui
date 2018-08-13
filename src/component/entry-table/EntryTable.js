@@ -643,7 +643,7 @@ class EditableTable extends React.Component {
         //     'entry-table-sizable':!!this._tableProps.sizable
         // })
         return (
-            <div>
+            <div className="quant-entry-table">
                 {/* <Resizable
 					className={classNameaa}
 					enable={{ top:false, right:!!this._tableProps.sizable, bottom:false, left:!!this._tableProps.sizable, topRight:false, bottomRight:false, bottomLeft:false, topLeft:false }}

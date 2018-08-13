@@ -67,13 +67,14 @@ class Detail extends Component {
                     title: 'money',
                     dataIndex: 'money',
                     key: 'money',
-                    isMoney:true,
+                    type: 2,
                     width: 300
                 },
                 {
                     title: 'Adress',
                     dataIndex: 'adress',
                     key: 'adress',
+                    align:"right",
                     width: 300
                 },
                 {
