@@ -9,6 +9,8 @@ import getOS from "./getOS"
 import getCookie from "./getCookie"
 import removeCookie from "./removeCookie"
 import setCookie from "./setCookie"
+import interchange from "./interchange"
+
 export default {
     compare,
     throttle,
@@ -20,5 +22,6 @@ export default {
     getOS,
     getCookie,
     removeCookie,
-    setCookie
+    setCookie,
+    interchange
 };

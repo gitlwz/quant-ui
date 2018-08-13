@@ -171,7 +171,7 @@ export default {
                 { key: '/app/pro/Ip', title: 'Ip地址输入', component: 'Ip' },
                 { key: '/app/pro/Strength', title: 'Strength密码强度', component: 'Strength' },
                 { key: '/app/pro/MoveModal', title: 'MoveModal移动弹出框', component: 'MoveModal' },
-                
+                { key: '/app/pro/ExhibitTable', title: 'ExhibitTable', component: 'ExhibitTable' },
                 
 
             ],

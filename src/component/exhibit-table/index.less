@@ -1,0 +1,25 @@
+.quant-ExhibitTable{
+    .ant-table-thead > tr > th{
+        text-align: center;
+    }
+}
+.quant-ExhibitTable-list-item{
+    display: flex;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    white-space: nowrap;
+    width: 100%;
+    >div:nth-child(1){
+        flex: auto;
+        flex-basis: 58px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: break-all;
+        white-space: nowrap;
+    }
+    >div:nth-child(2){
+        color: rgba(0,0,0,.25);
+        flex:none;
+    }
+}

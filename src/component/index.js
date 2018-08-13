@@ -96,6 +96,8 @@ export { default as PageHeader } from './page-header';
 export { default as IpInput } from './ip-input';
 export { default as Strength } from './strength';  //密码强度
 export { default as MoveModal } from './move-modal';  //密码强度
+export { default as ExhibitTable } from './exhibit-table';  //密码强度
+
 
 //page
 export { default as NotFound } from './not-found';
