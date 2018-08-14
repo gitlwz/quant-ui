@@ -83,6 +83,58 @@ const api = [
 				must: '',
 			}
 		]
+	}],[{
+		title: "Number-API",
+		api: [
+			{
+				key: "1",
+				parameter: "digitUppercase",  //字段名
+				instructions: '数字转中文大写',	//描述
+				type: '',	//类型
+				default: "fucntion(number)",							//默认值
+				must: '',
+			}
+		]
+	}],[{
+		title: "Time-API",
+		api: [
+			{
+				key: "1",
+				parameter: "getTimeDistance",  //字段名
+				instructions: '获取时间间隔',	//描述
+				type: '',	//类型
+				default: "fucntion('today | week | month | year' )",							//默认值
+				must: '',
+			}
+		]
+	}],[{
+		title: "Regexp-API",
+		api: [
+			{
+				key: "1",
+				parameter: "isEmail",  //字段名
+				instructions: '判断是否为邮箱地址',	//描述
+				type: '',	//类型
+				default: "fucntion(string)",							//默认值
+				must: '',
+            },
+            {
+				key: "2",
+				parameter: "isIdCard",  //字段名
+				instructions: '判断是否为身份证号',	//描述
+				type: '',	//类型
+				default: "fucntion(string)",							//默认值
+				must: '',
+			},
+            {
+				key: "3",
+				parameter: "isPhoneNum",  //字段名
+				instructions: '判断是否为手机号',	//描述
+				type: '',	//类型
+				default: "fucntion(string)",							//默认值
+				must: '',
+			}
+		]
 	}]
 
 ]
