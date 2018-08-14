@@ -37,11 +37,8 @@ class Title extends React.Component{
     }
     render(){
         return(
-            <div >
-                <div className="quant-move-modal-move"  onMouseDown={(e)=>this.mousedown(e)}></div>
-                <div className="quant-move-modal-title">
-                    {this.props.children}
-                </div>
+            <div className="quant-move-modal-move"  onMouseDown={(e)=>this.mousedown(e)}>
+                {this.props.children}
             </div>
         )
     }
