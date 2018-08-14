@@ -105,6 +105,22 @@ const api = [
 				type: '',	//类型
 				default: "fucntion('today | week | month | year' )",							//默认值
 				must: '',
+            },
+            {
+				key: "2",
+				parameter: "formatPassTime",  //字段名
+				instructions: '格式化${startTime}距现在的已过时间',	//描述
+				type: '',	//类型
+				default: "fucntion(startTime)",							//默认值
+				must: '',
+			},
+            {
+				key: "3",
+				parameter: "formatRemainTime",  //字段名
+				instructions: '格式化现在距${endTime}的剩余时间',	//描述
+				type: '',	//类型
+				default: "fucntion(endTime)",							//默认值
+				must: '',
 			}
 		]
 	}],[{

@@ -15,6 +15,8 @@ import getTimeDistance from "./getTimeDistance"
 import isEmail from "./isEmail"
 import isIdCard from "./isIdCard"
 import isPhoneNum from "./isPhoneNum"
+import formatPassTime from "./formatPassTime"
+import formatRemainTime from "./formatRemainTime"
 
 export default {
     compare,   //深比较
@@ -30,9 +32,10 @@ export default {
     setCookie,          //添加Cookie
     interchange,
     digitUppercase,      //数字转中文大写
-    getTimeDistance,      //获取时间间隔
+    getTimeDistance,     //获取时间间隔
     isEmail,               //判断是否为邮箱地址
     isIdCard,               //判断是否为身份证号
     isPhoneNum,             //判断是否为手机号
-
+    formatPassTime,         //格式化${startTime}距现在的已过时间
+    formatRemainTime,       //格式化现在距${endTime}的剩余时间
 };
