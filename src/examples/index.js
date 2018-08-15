@@ -57,7 +57,7 @@ import Language from './util/Language'
 import Screenfull from './util/screenfull'
 import Theme from "./util/theme";
 import Utiles from "./util/Utiles";
-
+import Md5 from './util/md5'
 //antd
 import Button from './antd/button'
 import Icon from './antd/icon'
@@ -178,6 +178,7 @@ export default {
     //动画
     BasicAnimations,
     ExhibitTable,
+    Md5,
 
     //util
     webSocket,

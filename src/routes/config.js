@@ -184,7 +184,7 @@ export default {
                 { key: '/app/util/Screenfull', title: 'Screenfull全屏', component: 'Screenfull' },
                 { key: '/app/util/Theme', title: 'Theme主题', component: 'Theme' },
                 { key: '/app/util/Utiles', title: 'Utiles方法', component: 'Utiles' },
-                
+                { key: '/app/util/Md5', title: 'Md5密码加密', component: 'Md5' },
                 
             ],
         }, {

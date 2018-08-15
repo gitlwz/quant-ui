@@ -77,7 +77,7 @@ export { default as screenfull } from './screenfull';
 export { default as theme } from './theme';
 export { default as utils } from './utils';
 export { default as Resizable } from './resizable';
-
+export { default as md5 } from './md5';
 
 //功能组件
 export { default as Editor } from './editor';        //富文本
