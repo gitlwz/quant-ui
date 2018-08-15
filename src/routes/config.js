@@ -210,6 +210,11 @@ export default {
                 { key: '/app/charts/Gauge', title: '仪表盘', component: 'Gauge'},
                 { key: '/app/charts/Pie_custom', title: '南丁格尔图', component: 'Pie_custom'},
             ],
+        },{
+            key: '/app/test', title: '组件功能测试', icon: 'lock',
+            subs: [
+                { key: '/app/test/Testupload', title: 'Testupload', component: 'Testupload' },
+            ],
         },
     ],
     others: []  // 非菜单相关路由

@@ -6,6 +6,9 @@ import Analysis from './home/analysis';
 import Monitor from './home/monitor';
 import Workplace from './home/workplace';
 
+//test 组件测试
+import Testupload from './test/upload';
+
 //ui
 import QRCode from './UI/QRCode';
 import Copy from './UI/Copy'
@@ -152,6 +155,9 @@ export default {
     Analysis,
     Monitor,
     Workplace,
+
+    //test
+    Testupload,
     
     NoticeIcon,
     HeaderSearch,
