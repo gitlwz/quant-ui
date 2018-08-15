@@ -71,9 +71,9 @@ class Strength extends React.Component{
             'quant-strength-L':strength == 1,
             'quant-strength-M':strength == 2,
             'quant-strength-H':strength == 3,
-        })
+        },this.props.className)
         return (
-            <div className={_class}>
+            <div style={this.props.style} className={_class}>
                 <span>{$("弱")}</span>
                 <span>{$("中")}</span>
                 <span>{$("强")}</span>
