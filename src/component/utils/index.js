@@ -17,7 +17,7 @@ import isIdCard from "./isIdCard"
 import isPhoneNum from "./isPhoneNum"
 import formatPassTime from "./formatPassTime"
 import formatRemainTime from "./formatRemainTime"
-
+import store from "./store"
 export default {
     compare,   //深比较
     throttle,   //函数节流
@@ -38,4 +38,5 @@ export default {
     isPhoneNum,             //判断是否为手机号
     formatPassTime,         //格式化${startTime}距现在的已过时间
     formatRemainTime,       //格式化现在距${endTime}的剩余时间
+    store,                  //数据存储
 };

@@ -7,7 +7,7 @@ import List from "../list";
 import utils from "../utils";
 import cloneDeep from "lodash/cloneDeep";
 import "./index.less";
-const { currency } = utils;
+const { currency,store } = utils;
 class ExhibitTable extends Component {
     constructor(props) {
         super(props);
@@ -24,6 +24,17 @@ class ExhibitTable extends Component {
         this.setState({
             visible: false
         })
+    }
+    afterClose = () =>{
+        let _layout = store.get("layout")||{};
+        let _columns = []
+        this.props.columns.forEach((ele)=>{
+            if(ele.show === false){
+                _columns.push(ele.key)
+            }
+        })
+        _layout[this.props.name] = _columns;
+        store.set("layout",_layout);
     }
     render() {
         let { columns, showRight, ...restProps } = this.props;
@@ -62,6 +73,7 @@ class ExhibitTable extends Component {
                     title="控制显示列"
                     footer={null}
                     width={300}
+                    afterClose={this.afterClose}
                 >
                     <List
                         bordered

@@ -114,6 +114,7 @@ class Detail extends Component {
                 <ExhibitTable
                     columns={this.state.columns}
                     dataSource={dataSource}
+                    name="ExhibitTable"
                     scroll={{
                         x: 2700
                     }}
