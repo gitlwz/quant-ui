@@ -4,6 +4,11 @@ import  getLanguageData  from './getLanguageData';
 import  refreshLanguage  from './refreshLanguage';
 import  setCurrentLanguage  from './setCurrentLanguage';
 import  setLanguageData  from './setLanguageData';
+import  defaultData  from './defaultData';
+
+setLanguageData({
+    'en_US':defaultData
+})
 export default {
     getAllLanguage,     //获取所有语言数据
     getCurrentLanguage,  //获取当前语言类型

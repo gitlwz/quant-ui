@@ -5,7 +5,8 @@ import Breadcrumb from '../breadcrumb';
 import Tabs from '../tabs';
 import classNames from 'classnames';
 import { urlToList } from '../_utils/pathTools';
-
+import language from '../language';
+const $ = language.getLanguageData;
 const { TabPane } = Tabs;
 export function getBreadcrumb(breadcrumbNameMap, url) {
   let breadcrumb = breadcrumbNameMap[url];
@@ -120,7 +121,7 @@ export default class PageHeader extends PureComponent {
           {
             [linkElement === 'a' ? 'href' : 'to']: '/',
           },
-          '首页'
+          $('首页')
         )}
       </Breadcrumb.Item>
     );
