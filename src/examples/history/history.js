@@ -1,5 +1,44 @@
 const history = [
     {
+        title:"v0.2.12",
+        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="0nly" class="white-blockquote">
+        <ul>
+        <li>新增展示型table</li>
+        <li class="todo-list-item"><i class="icon-check-sign"></i>表头右键可弹出显示隐藏功能，显示隐藏列会缓存到浏览器</li>
+        <li class="todo-list-item"><i class="icon-check-sign"></i>对表头，和数字列进行处理</li>
+        <li>修改录入型表格为配合后台使用</li>
+        <li>修改功能型组件可移动弹框焦点问题</li>
+        <li>新增function-API</li>
+        <li>新增Url-API</li>
+        <li>新增Device-API</li>
+        <li>新增Cookie-API</li>
+        <li>新增Number-API</li>
+        <li>新增Time-API</li>
+        <li>新增Regexp-API</li>
+        <li>新增数据缓存api-store</li>
+        <li>新增md5算法加密</li>
+        </ul>
+      </blockquote></div>`
+    },
+    {
+        title:"v0.2.12#文档站点",
+        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="f6go" class="white-blockquote">
+        <ul>
+        <li>增加各方法aip文档</li>
+        <li>增加测试导航，新组件测试</li>
+        </ul>
+      </blockquote></div>`
+    },
+    {
+        title:"v0.2.12#管理框架",
+        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="vs0c" class="white-blockquote">
+        <ul>
+        <li>PageHeaderLayout组件，配合管理框架使用</li>
+        <li>增加表格布局缓存/清除功能</li>
+        </ul>
+      </blockquote></div>`
+    },
+    {
         title:"v0.2.0",
         code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="0n5d" class="white-blockquote">
         <ul>
