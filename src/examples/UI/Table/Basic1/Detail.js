@@ -49,9 +49,19 @@ const columns = [{
 	title: '住址(下拉选择)',
 	dataIndex: 'address',
 	key: 'address',
-	type: 3,
+    type: 3,
+    disabled:true,
     width: 200,
-	option:"select" ,
+	option:[{
+        name: "上海",
+        value: "sh"
+    }, {
+        name: "北京",
+        value: "bg"
+    }, {
+        name: "广州",
+        value: "gz"
+    }] ,
 
 }, {
 	title: '住址(模糊匹配)',

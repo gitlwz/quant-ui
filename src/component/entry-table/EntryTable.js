@@ -123,12 +123,12 @@ class EditableTable extends React.Component {
                 optiondata = this._optionData[collocate.option] || []
             }
             let width = !!collocate.width? collocate.width -33 : '100%';
-            let text = optiondata.length > 0? text:null;
+            let _text = optiondata.length > 0? text:null;
             return (<div>
                 <Select   
                     {...API}
                     style={{width:width}}
-                    value={text} 
+                    value={_text} 
                     key = {index}
                     onChange={value =>{ 
                         this._SelectChange(value,record,index,dataIndex)}
