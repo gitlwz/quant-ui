@@ -8,7 +8,7 @@ import Workplace from './home/workplace';
 
 //test 组件测试
 import Testupload from './test/upload';
-
+import Test2 from './test/test2';
 //ui
 import QRCode from './UI/QRCode';
 import Copy from './UI/Copy'
@@ -158,6 +158,7 @@ export default {
 
     //test
     Testupload,
+    Test2,
     
     NoticeIcon,
     HeaderSearch,

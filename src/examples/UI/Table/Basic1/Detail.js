@@ -50,24 +50,15 @@ const columns = [{
 	dataIndex: 'address',
 	key: 'address',
 	type: 3,
-	width: 200,
-	option: [{
-		name: "上海",
-		value: "sh"
-	}, {
-		name: "北京",
-		value: "bg"
-	}, {
-		name: "广州",
-		value: "gz"
-	}],
+    width: 200,
+	option:"select" ,
 
 }, {
 	title: '住址(模糊匹配)',
 	dataIndex: 'address1',
 	key: 'address1',
 	type: 4,
-	width: 200,
+    width: 200,
 	autooption: ["上海", "北京", "广州",],
 }, {
 	title: '生日(日期)',
@@ -98,21 +89,37 @@ const dataSource = [{
 	name: '胡彦斌',
 	id: '11',
 	age: 32,
-	address: { value: "sh" },
+	address:  "sh" ,
 	address1: "北京",
 	birthday: new Date()
 }];
 class Detail extends Component {
 	constructor(props) {
 		super(props);
-	}
+    }
 	cellOnChange = (newValue,oldValue,record,index,column) =>{
 		console.log("发生改变",newValue,oldValue,record,index,column)
-	}
+    }
+    onClick = () => {
+        this.refs.table.setOptions({
+            select:[{
+                name: "上海",
+                value: "sh"
+            }, {
+                name: "北京",
+                value: "bg"
+            }, {
+                name: "广州",
+                value: "gz"
+            }]
+        })
+    }
 	render() {
 		return (
 			<div>
+                <button onClick={this.onClick}>aaa</button>
 				<EntryTable
+
 					ref="table"
 					scroll={{ y: 300 }}
 					dataSource={dataSource}

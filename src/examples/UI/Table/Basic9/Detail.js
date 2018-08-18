@@ -46,7 +46,7 @@ const dataSource = [{
     name: '胡彦斌',
     id: '11',
     age: 32,
-    address: { value: "sh",name:"上海" },
+    address:  "sh",
     birthday: new Date()
 }];
 class Detail extends Component {

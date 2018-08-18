@@ -214,6 +214,8 @@ export default {
             key: '/app/test', title: '组件功能测试', icon: 'lock',
             subs: [
                 { key: '/app/test/Testupload', title: 'Testupload', component: 'Testupload' },
+                { key: '/app/test/Test2', title: '输入表格测试', component: 'Test2' },
+                
             ],
         },
     ],

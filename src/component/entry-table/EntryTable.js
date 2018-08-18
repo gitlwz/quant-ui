@@ -62,7 +62,7 @@ class EditableTable extends React.Component {
         this.dataSource = this.props.dataSource;
         this.columns = this.props.columns;
         this._columns = this._EditableColumns(this.columns);
-
+        this._optionData = this.props.options || {};
         this.editingKey = ""
     }
     _moveCard = (startDataIndex,endDataIndex) =>{
@@ -120,28 +120,18 @@ class EditableTable extends React.Component {
             if(isArray(collocate.option)){
                 optiondata = collocate.option
             }else{
-                optiondata = record[collocate.option] || []
-            }
-            let showText = {key:null};
-            if(isObject(text)){
-                showText.key = text.value;
-                showText.label = text.name;
-            
+                optiondata = this._optionData[collocate.option] || []
             }
             let width = !!collocate.width? collocate.width -33 : '100%';
+            let text = optiondata.length > 0? text:null;
             return (<div>
                 <Select   
                     {...API}
                     style={{width:width}}
-                    labelInValue ={true}
-                    value={showText} 
+                    value={text} 
                     key = {index}
                     onChange={value =>{ 
-                        let _value = {
-                            value:value.key,
-                            name:value.label
-                        }
-                        this._SelectChange(_value,record,index,dataIndex)}
+                        this._SelectChange(value,record,index,dataIndex)}
                     } 
                 >
                     {
@@ -162,7 +152,7 @@ class EditableTable extends React.Component {
             if(isArray(collocate.autooption)){
                 optiondata = collocate.autooption
             }else{
-                optiondata = record[collocate.autooption] || []
+                optiondata = this._optionData[collocate.autooption] || []
             }
             let width = !!collocate.width? collocate.width -33 : '100%';
             return (
@@ -193,7 +183,7 @@ class EditableTable extends React.Component {
             if(isArray(collocate.cascaderoption)){
                 optiondata = collocate.cascaderoption
             }else{
-                optiondata = record[collocate.cascaderoption] || []
+                optiondata = this._optionData[collocate.cascaderoption] || []
             } 
             return (
                 <div>
@@ -237,8 +227,15 @@ class EditableTable extends React.Component {
             if(API.precision !== undefined && text !== null && text !== "" && text !== undefined ){
                 showText = currency(text,{precision:API.precision}).format()
             }
-        }else if(type == 3 && isObject(text)){
-            showText = text.name;
+        }else if(type == 3){
+            let optiondata = [];
+            if(isArray(collocate.option)){
+                optiondata = collocate.option
+            }else{
+                optiondata = this._optionData[collocate.option] || []
+            }
+            let item = optiondata.find((ele)=>{return ele.value === text});
+            showText =  item?item.name:"";
         }else if(type == 5 ){
             showText = moment(text, 'YYYY-MM-DD').toString() === "Invalid date"?null:moment(text, 'YYYY-MM-DD').format('YYYY-MM-DD');
         }else if (type == 6 && isArray(text)){
@@ -336,7 +333,10 @@ class EditableTable extends React.Component {
             this.refresh();
         }
     }
-
+    setOptions = (option,callback) =>{
+        this._optionData = option;
+        this.refresh(callback)
+    }
     /**
      * 自定义时确认行为
      * @param  {[type]} value  [description]

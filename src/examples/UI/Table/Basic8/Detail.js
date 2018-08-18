@@ -43,7 +43,7 @@ const dataSource = [{
     name: '胡彦斌',
     id: '11',
     age: 32,
-    address: { value: "sh" },
+    address:"sh",
     address1: "北京",
     birthday: new Date()
 }];
