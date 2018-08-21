@@ -9,7 +9,6 @@ import cloneDeep from "lodash/cloneDeep";
 import isArray from "lodash/isArray";
 import Input from "../input";
 import Button from "../button";
-import "./index.less";
 import language from "../language";
 const $ = language.getLanguageData
 const { currency, store } = utils;
@@ -41,9 +40,9 @@ class ExhibitTable extends Component {
     }
     _filter = (ele) => {
         if (!ele.type) {
-            ele.filterIcon = filtered => <Icon type="search" style={{ color: filtered ? '#108ee9' : '#aaa' }} />
+            ele.filterIcon = filtered => <Icon type="search" className={filtered?'quant-ExhibitTable-highlight':'quant-ExhibitTable-nolight'} />
             ele.filterDropdown = ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
-                <div className="custom-filter-dropdown">
+                <div className="quant-ExhibitTable-filter-dropdown">
                     <Input
                         ref={ele => this.searchInput = ele}
                         placeholder={$("请输入")}
