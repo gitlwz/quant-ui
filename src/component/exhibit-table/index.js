@@ -52,7 +52,7 @@ class ExhibitTable extends Component {
                         onPressEnter={this.handleSearch(selectedKeys, confirm)}
                     />
                     <Button type="primary" onClick={this.handleSearch(selectedKeys, confirm)}>{$("搜索")}</Button>
-                    <Button onClick={this.handleReset(clearFilters)}>{$("搜索")}</Button>
+                    <Button onClick={this.handleReset(clearFilters)}>{$("重置")}</Button>
                 </div>
             )
         }
