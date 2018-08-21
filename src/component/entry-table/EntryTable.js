@@ -7,7 +7,7 @@ import AutoComplete from "../auto-complete";
 import DatePicker from "../date-picker";
 import Cascader from "../cascader";
 import Switch  from "../switch";
-import Resizable from "../resizable"
+// import Resizable from "../resizable"
 import cloneDeep  from 'lodash/cloneDeep';
 import isFunction  from 'lodash/isFunction';
 import isArray  from 'lodash/isArray';

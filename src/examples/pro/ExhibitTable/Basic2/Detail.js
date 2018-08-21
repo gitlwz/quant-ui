@@ -5,6 +5,7 @@ const dataSource = [
     {
         name: 'Taylor Swift',
         money: '22',
+        name1:"zhangsan",
         adress: 'SanFrancisco'
     },
     {
@@ -36,11 +37,16 @@ class Detail extends Component {
                     title: 'Name1',
                     dataIndex: 'name1',
                     key: 'name1',
+                    filter:true,
+                    type:3,
+                    option:"Name",
                     width: 300
                 },
                 {
                     title: 'Name2',
                     dataIndex: 'name2',
+                    filter:true,
+
                     key: 'name2',
                     width: 300
                 },
@@ -60,6 +66,8 @@ class Detail extends Component {
                     title: 'Name5',
                     dataIndex: 'name5',
                     key: 'name5',
+                    filter:true,
+                    type: 2,
                     width: 300
                 },
 
@@ -67,6 +75,7 @@ class Detail extends Component {
                     title: 'money',
                     dataIndex: 'money',
                     key: 'money',
+                    filter:true,
                     type: 2,
                     width: 300
                 },
@@ -107,7 +116,9 @@ class Detail extends Component {
             columns: columns
         })
     }
-
+    onChange = (pagination, filters, sorter) => {
+        console.log("&&&&&&&&&",pagination, filters, sorter)
+    }
     render() {
         return (
             <div>
@@ -118,6 +129,16 @@ class Detail extends Component {
                     scroll={{
                         x: 2700
                     }}
+                    options={{
+                        Name:[{
+                            name:"张三",
+                            value:"zhangsan"
+                        },{
+                            name:"李四",
+                            value:"lisi"
+                        }]
+                    }}
+                    onChange = {this.onChange}
                     showRight={true}
                     bordered
                     switchChange={this.switchChange}
