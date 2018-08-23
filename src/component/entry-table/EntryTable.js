@@ -334,7 +334,7 @@ class EditableTable extends React.Component {
         }
     }
     setOptions = (option,callback) =>{
-        this._optionData = option;
+        this._optionData ={...this._optionData,...option};
         this.refresh(callback)
     }
     /**
