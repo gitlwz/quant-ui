@@ -117,10 +117,14 @@ class EditableTable extends React.Component {
             </div>
         }else if(type == 3){
             let optiondata = [];
-            if(isArray(collocate.option)){
-                optiondata = collocate.option
+            if(collocate.select === true){
+                optiondata = record[collocate.option] || []
             }else{
-                optiondata = this._optionData[collocate.option] || []
+                if(isArray(collocate.option)){
+                    optiondata = collocate.option
+                }else{
+                    optiondata = this._optionData[collocate.option] || []
+                }
             }
             let width = !!collocate.width? collocate.width -33 : '100%';
             let _text = optiondata.length > 0? text:null;
