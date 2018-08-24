@@ -233,10 +233,14 @@ class EditableTable extends React.Component {
             }
         }else if(type == 3){
             let optiondata = [];
-            if(isArray(collocate.option)){
-                optiondata = collocate.option
+            if(collocate.select === true){
+                optiondata = record[collocate.option] || []
             }else{
-                optiondata = this._optionData[collocate.option] || []
+                if(isArray(collocate.option)){
+                    optiondata = collocate.option
+                }else{
+                    optiondata = this._optionData[collocate.option] || []
+                }
             }
             let item = optiondata.find((ele)=>{return ele.value === text});
             showText =  item?item.name:"";
