@@ -36,8 +36,10 @@ const columns = [{
 },{
 	title: '姓名(input)',
 	dataIndex: 'name',
-	type: 1,
-	width: 200,
+	type: 3,
+    width: 200,
+    select:true,
+    option:"nameOption",
 	key: 'name',
 }, {
 	title: '年龄(数字)',
@@ -101,7 +103,7 @@ const dataSource = [{
 	age: 32,
 	address:  "sh" ,
 	address1: "北京",
-	birthday: new Date()
+    birthday: new Date(),
 }];
 class Detail extends Component {
 	constructor(props) {
@@ -111,18 +113,21 @@ class Detail extends Component {
 		console.log("发生改变",newValue,oldValue,record,index,column)
     }
     onClick = () => {
-        this.refs.table.setOptions({
-            select:[{
-                name: "上海",
-                value: "sh"
-            }, {
-                name: "北京",
-                value: "bg"
-            }, {
-                name: "广州",
-                value: "gz"
-            }]
-        })
+        let dataSource = this.refs.table.getDataSource()
+        dataSource[0].nameOption = [{name:"222",value:"胡彦斌"}]
+        this.refs.table.setDataSource(dataSource)
+        // this.refs.table.setOptions({
+        //     select:[{
+        //         name: "上海",
+        //         value: "sh"
+        //     }, {
+        //         name: "北京",
+        //         value: "bg"
+        //     }, {
+        //         name: "广州",
+        //         value: "gz"
+        //     }]
+        // })
     }
 	render() {
 		return (

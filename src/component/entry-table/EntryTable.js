@@ -92,7 +92,12 @@ class EditableTable extends React.Component {
         }
     }
     _entryRender = (text,record,index,dataIndex,collocate) =>{
-        const API = collocate.API || {};
+        let  API = {};
+        if(collocate.apiSet === true){
+            API = record[collocate.API] || {};
+        }else{
+            API = collocate.API || {};
+        }
         const type = collocate.type;
         if(type == 1){
             return  <div>
@@ -109,6 +114,11 @@ class EditableTable extends React.Component {
            return <div>
                 <InputNumber 
                     {...API}
+                    onFocus={()=>{
+                        if(isFunction(collocate.onFocus)){
+                            collocate.onFocus(record,index,dataIndex)
+                        }
+                    }}
                     title={text} 
                     style={{width:'100%'}} 
                     value={text} 
@@ -131,6 +141,11 @@ class EditableTable extends React.Component {
             return (<div>
                 <Select   
                     {...API}
+                    onFocus={()=>{
+                        if(isFunction(API.onFocus)){
+                            API.onFocus(record,index,dataIndex)
+                        }
+                    }}
                     style={{width:width}}
                     value={_text} 
                     key = {index}
