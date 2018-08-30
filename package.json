@@ -1,6 +1,6 @@
 {
   "name": "quant-ui",
-  "version": "0.2.126",
+  "version": "0.2.128",
   "main": "/lib/index.js",
   "files": [
     "lib"
@@ -17,7 +17,7 @@
     "test": "node scripts/test.js --env=jsdom"
   },
   "dependencies": {
-    "antd": "^3.7.0",
+    "antd": "3.8.1",
     "copy-to-clipboard": "^3.0.8",
     "currency.js": "^1.1.4",
     "draftjs-to-html": "^0.8.4",

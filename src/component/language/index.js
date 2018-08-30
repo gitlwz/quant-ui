@@ -1,11 +1,11 @@
-import  getAllLanguage  from './getAllLanguage';
+import  language  from './getAllLanguage';
 import  getCurrentLanguage  from './getCurrentLanguage';
 import  getLanguageData  from './getLanguageData';
 import  refreshLanguage  from './refreshLanguage';
 import  setCurrentLanguage  from './setCurrentLanguage';
-import  setLanguageData  from './setLanguageData';
+// import  setLanguageData  from './setLanguageData';
 import  defaultData  from './defaultData';
-
+let { getAllLanguage,setLanguageData} = language
 setLanguageData({
     'en_US':defaultData
 })

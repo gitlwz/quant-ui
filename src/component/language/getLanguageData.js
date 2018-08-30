@@ -1,5 +1,6 @@
 import  getCurrentLanguage  from './getCurrentLanguage';
-import  getAllLanguage  from './getAllLanguage';
+import  language  from './getAllLanguage';
+let { getAllLanguage } = language;
 export default function(data){
     let currentLanguage = getCurrentLanguage();
     let allLanguageData = getAllLanguage()

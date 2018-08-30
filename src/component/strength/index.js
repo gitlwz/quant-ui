@@ -63,9 +63,6 @@ class Strength extends React.Component{
     render(){
         const {value} = this.state
         const strength = this.checkStrong(value)
-        if(this._strength !== strength && isFunction(this.props.onChange)){
-            this.props.onChange(strength);
-        }
         this._strength = strength;
         let _class =  classNames("quant-strength",{
             'quant-strength-L':strength == 1,
