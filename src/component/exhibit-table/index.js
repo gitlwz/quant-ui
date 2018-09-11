@@ -109,7 +109,7 @@ class ExhibitTable extends Component {
                         optiondata = options[ele.option] || []
                     }
                     if (!!text) {
-                        let item = optiondata.find((ele) => { return ele.value === text });
+                        let item = optiondata.find((ele) => { return ele.value == text });
                         _text = item ? item.name : "";
                     }
                     return <div>{_text}</div>
