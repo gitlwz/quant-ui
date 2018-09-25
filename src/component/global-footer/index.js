@@ -8,7 +8,7 @@ const GlobalFooter = ({ className, links, copyright }) => {
       {links && (
         <div className={'quant-globalFooter-links'}>
           {links.map(link => (
-            <a key={link.key} target={link.blankTarget ? '_blank' : '_self'} href={link.href}>
+            <a {...link} key={link.key} target={link.blankTarget ? '_blank' : '_self'} href={link.href}>
               {link.title}
             </a>
           ))}

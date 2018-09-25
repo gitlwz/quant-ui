@@ -1,6 +1,6 @@
 {
   "name": "quant-ui",
-  "version": "0.2.131",
+  "version": "0.2.132",
   "main": "/lib/index.js",
   "files": [
     "lib"
