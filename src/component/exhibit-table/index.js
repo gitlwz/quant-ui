@@ -40,7 +40,7 @@ class ExhibitTable extends Component {
     }
     _filter = (ele) => {
         if (!ele.type) {
-            ele.filterIcon = filtered => <Icon type="search" className={filtered?'quant-ExhibitTable-highlight':'quant-ExhibitTable-nolight'} />
+            ele.filterIcon = filtered => <Icon type="search" className={filtered ? 'quant-ExhibitTable-highlight' : 'quant-ExhibitTable-nolight'} />
             ele.filterDropdown = ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
                 <div className="quant-ExhibitTable-filter-dropdown">
                     <Input
@@ -56,7 +56,7 @@ class ExhibitTable extends Component {
             )
         }
         if (ele.type == 2) {
-            ele.sorter =  true
+            ele.sorter = true
         }
         if (ele.type == 3) {
             let optiondata = [];
@@ -76,7 +76,10 @@ class ExhibitTable extends Component {
             ele.filters = _optiondata;
         }
         if (ele.type == 5) {
-            ele.sorter =  true
+            ele.sorter = true
+        }
+        if (ele.type == 6) {
+            ele.sorter = true
         }
         return ele;
 
@@ -111,6 +114,16 @@ class ExhibitTable extends Component {
                     if (!!text) {
                         let item = optiondata.find((ele) => { return ele.value == text });
                         _text = item ? item.name : "";
+                    }
+                    return <div>{_text}</div>
+                }
+            }
+            if (!ele.render && ele.type === 6) {
+                ele.align = "right"
+                ele.render = (text, record, index) => {
+                    let _text = text;
+                    if (text !== undefined && text !== null && !isNaN(text)) {
+                        _text = currency(text, { precision: 0 }).format()
                     }
                     return <div>{_text}</div>
                 }
