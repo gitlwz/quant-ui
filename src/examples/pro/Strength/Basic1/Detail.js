@@ -6,9 +6,6 @@ const FormItem = Form.Item;
 class NormalLoginForm extends React.Component {
     constructor(props){
         super(props)
-        this.state = {
-            userNameStrength:null
-        }
     }
 	handleSubmit = (e) => {
 		e.preventDefault();
@@ -27,10 +24,7 @@ class NormalLoginForm extends React.Component {
 					{getFieldDecorator('userName', {
 						rules: [{ required: true, message: 'Please input your username!' }],
 					})(
-                        <div>
-						    <Input onChange={(e)=>this.setState({userNameStrength:e.target.value})} prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />
-                            <Strength value={this.state.userNameStrength}/>
-                        </div>
+                        <Strength />
 					)}
 				</FormItem>
 				<FormItem>
