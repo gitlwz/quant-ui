@@ -78,6 +78,7 @@ export { default as theme } from './theme';
 export { default as utils } from './utils';
 export { default as Resizable } from './resizable';
 export { default as md5 } from './md5';
+export { default as qs } from './qs';
 
 //功能组件
 export { default as Editor } from './editor';        //富文本
@@ -104,6 +105,12 @@ export { default as NotFound } from './not-found';
 
 //地图
 export { default as ReactQMap } from './react-qmap';
+
+
+//qdp
+export { default as request } from './request';
+export { default as DownLoadButton } from './down-load-button';
+
 
 
 

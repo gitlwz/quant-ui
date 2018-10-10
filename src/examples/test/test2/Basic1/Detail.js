@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Button, MoveModal, Divider, Icon, Table, Card } from 'quant-ui';
 import cloneDeep from 'lodash/cloneDeep';
-
+import qs from 'qs';
+console.log("4444444444",qs)
 class SearchButton extends Component {
     constructor(props) {
         super(props);

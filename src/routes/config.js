@@ -185,6 +185,7 @@ export default {
                 { key: '/app/util/Theme', title: 'Theme主题', component: 'Theme' },
                 { key: '/app/util/Utiles', title: 'Utiles方法', component: 'Utiles' },
                 { key: '/app/util/Md5', title: 'Md5密码加密', component: 'Md5' },
+                { key: '/app/util/Qs', title: '对象解析', component: 'Qs' },
                 
             ],
         }, {
@@ -209,6 +210,12 @@ export default {
                 { key: '/app/charts/K_line_graph', title: 'k线图', component: 'K_line_graph' },
                 { key: '/app/charts/Gauge', title: '仪表盘', component: 'Gauge'},
                 { key: '/app/charts/Pie_custom', title: '南丁格尔图', component: 'Pie_custom'},
+            ],
+        },{
+            key: '/app/qdp', title: 'QDP组件整理', icon: 'cloud',
+            subs: [
+                { key: '/app/qdp/fetch', title: 'Fetch', component: 'Fetch' },
+                { key: '/app/qdp/DownLoad', title: 'DownLoad', component: 'DownLoad' },
             ],
         },{
             key: '/app/test', title: '组件功能测试', icon: 'lock',

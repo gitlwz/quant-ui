@@ -58,6 +58,7 @@ import Screenfull from './util/screenfull'
 import Theme from "./util/theme";
 import Utiles from "./util/Utiles";
 import Md5 from './util/md5'
+import Qs from './util/qs'
 //antd
 import Button from './antd/button'
 import Icon from './antd/icon'
@@ -146,6 +147,14 @@ import K_line_graph from "./charts/K_line_graph"
 import Gauge from './charts/Gauge'
 import Pie_custom from './charts/Pie_custom' 
 import Scatter from './charts/Scatter'
+
+
+
+
+//qdp
+import Fetch from './QDP/fetch';
+import DownLoad from './QDP/DownLoad'
+
 export default {
     Home,
     QRCode,
@@ -180,6 +189,7 @@ export default {
     BasicAnimations,
     ExhibitTable,
     Md5,
+    Qs,
 
     //util
     webSocket,
@@ -285,4 +295,9 @@ export default {
     Gauge,
     Pie_custom,
     Scatter,
+
+
+    //qdp
+    Fetch,
+    DownLoad
 }
