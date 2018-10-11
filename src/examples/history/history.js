@@ -1,5 +1,56 @@
 const history = [
     {
+        title:"v0.2.135",
+        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="rt8i" class="white-blockquote">
+        <ul>
+        <li>新增qdp组件模块</li>
+        <li>封装qdp请求模块 <br>
+        包含request,post请求、get请求,Download导出请求，UploadMethod文件上传请求</li>
+        <li>封装qdp导出按钮组件</li>
+        </ul>
+      </blockquote></div>`
+    },
+    {
+        title:"v0.2.134",
+        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="rt8i" class="white-blockquote">
+        <ul>
+        <li>输入型表格允许单个表格添加自定义属性事件</li>
+        </ul>
+      </blockquote></div>`
+    },
+    {
+        title:"v0.2.133",
+        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="rt8i" class="white-blockquote">
+        <ul>
+        <li>输入型表格允许单个单元格设置属性</li>
+        </ul>
+      </blockquote></div>`
+    },
+    {
+        title:"v0.2.132",
+        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="rt8i" class="white-blockquote">
+        <ul>
+        <li>修改global-footer无法下载bug</li>
+        </ul>
+      </blockquote></div>`
+    },
+    {
+        title:"v0.2.131",
+        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="rt8i" class="white-blockquote">
+        <ul>
+        <li>修改录入型table下的options功能vue对比严校验无法通过问题</li>
+        </ul>
+      </blockquote></div>`
+    },
+    {
+        title:"v0.2.130",
+        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="rt8i" class="white-blockquote">
+        <ul>
+        <li>解决currency.js货币组件初始化时有时无法下载bug</li>
+        </ul>
+      </blockquote></div>`
+    },
+    {
         title:"v0.2.12",
         code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="0nly" class="white-blockquote">
         <ul>
