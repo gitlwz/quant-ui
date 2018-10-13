@@ -28,7 +28,7 @@ class App extends Component {
     render() {
         return (
             <div style={{ padding: "20px" }}>
-                <h1>Login登录</h1>
+                <h1>Dragact拖拽式网格(grid)布局</h1>
                 <Tabs tabPosition={"right"}>
                     <TabPane tab="拖拽把手" key="1">
                         <Card >

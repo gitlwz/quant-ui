@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Dragact } from 'dragact'
+import { Dragact } from 'quant-ui'
 import './index.less';
 const Words = [
     { content: 'You can do anything, but not everything.' },
@@ -17,7 +17,7 @@ export const Card  = ({ item, provided }) => {
             {...provided.dragHandle}
             style={{
                 ...provided.props.style,
-                background: `${provided.isDragging ? '#eaff8f' : 'white'}`
+                background: provided.isDragging ? '#eaff8f' : 'white'
             }}
         >
             <div

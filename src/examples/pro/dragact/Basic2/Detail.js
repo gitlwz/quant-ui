@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Dragact } from 'dragact'
+import { Dragact } from 'quant-ui'
 
 
 const Words = [

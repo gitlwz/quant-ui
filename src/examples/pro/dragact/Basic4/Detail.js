@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Dragact } from 'dragact'
+import { Dragact } from 'quant-ui'
 import './index.less'
 const Words = [
     { content: 'Sorry I just can not move in any circumstances', static: true },
@@ -24,7 +24,7 @@ const Cell = ({ item, provided }) => {
         <div
             {...provided.props}
             {...provided.dragHandle}
-            className={`layout-Cell ${item.static ? "static" : ""}`}
+            className={"layout-Cell "+ item.static ? "static" : ""}
             style={{ ...provided.props.style, background: item.static ? "#e8e8e8" : "" }}
         >
             <div style={{ padding: 10, color: '#595959' }}>{item.content}</div>

@@ -96,8 +96,9 @@ export { default as PageHeader } from './page-header';
 
 export { default as IpInput } from './ip-input';
 export { default as Strength } from './strength';  //密码强度
-export { default as MoveModal } from './move-modal';  //密码强度
-export { default as ExhibitTable } from './exhibit-table';  //密码强度
+export { default as MoveModal } from './move-modal';  //移动modal
+export { default as ExhibitTable } from './exhibit-table';  //展示型table
+export { default as Dragact } from './dragact';  // 拖拽式网格(grid)布局
 
 
 //page

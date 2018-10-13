@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Dragact } from 'dragact'
+import { Dragact } from 'quant-ui'
 import  {Words}  from './largedata'
 const fakeData = () => {
     var Y = 0;
@@ -19,7 +19,7 @@ const Card = ({ item, provided }) => {
             {...provided.dragHandle}
             style={{
                 ...provided.props.style,
-                background: `${provided.isDragging ? '#eaff8f' : 'white'}`
+                background: provided.isDragging ? '#eaff8f' : 'white'
             }}
         >
             <div

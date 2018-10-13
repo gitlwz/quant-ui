@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { Dragact } from 'dragact'
-
+import { Dragact } from 'quant-ui'
 import './index.less'
-
 const Words = [
     { content: 'You can do anything, but not everything.' },
     { content: 'Those who dare to fail miserably can achieve greatly.' },
