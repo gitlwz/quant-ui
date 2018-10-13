@@ -21,6 +21,7 @@
     "copy-to-clipboard": "^3.0.8",
     "currency.js": "^1.1.4",
     "draftjs-to-html": "^0.8.4",
+    "dragact": "^0.2.12",
     "echarts": "^4.1.0",
     "echarts-gl": "^1.1.1",
     "fetch-jsonp": "^1.1.3",

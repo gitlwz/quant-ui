@@ -172,7 +172,7 @@ export default {
                 { key: '/app/pro/Strength', title: 'Strength密码强度', component: 'Strength' },
                 { key: '/app/pro/MoveModal', title: 'MoveModal移动弹出框', component: 'MoveModal' },
                 { key: '/app/pro/ExhibitTable', title: 'ExhibitTable', component: 'ExhibitTable' },
-                
+                { key: '/app/pro/dragact', title: 'dragact', component: 'Dragact' },
 
             ],
         }, 

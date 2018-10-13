@@ -49,6 +49,7 @@ import Ellipsis from './pro/Ellipsis' //文本自动省略
 import Result from './pro/result' //结果页
 import PageHeader from './pro/PageHeader' //PageHeader页头
 import ExhibitTable from './pro/ExhibitTable'
+import Dragact from './pro/dragact'
 
 
 //util
@@ -168,6 +169,7 @@ export default {
     //test
     Testupload,
     Test2,
+    Dragact,
     
     NoticeIcon,
     HeaderSearch,
