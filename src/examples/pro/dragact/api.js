@@ -101,6 +101,18 @@ const api = [
 				must: 'true',
 			}
 		]
+    },{
+		title: "Ref Api",
+		api: [
+			{
+				key: "1",
+				parameter: "ref",  //字段名
+				instructions: '',	//描述
+				type: 'getLayout():DragactLayout',	//类型
+				default: "-",							//默认值
+				must: 'true',
+			}
+		]
     },
 ];
 
