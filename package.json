@@ -17,7 +17,7 @@
     "test": "node scripts/test.js --env=jsdom"
   },
   "dependencies": {
-    "antd": "3.10.0",
+    "antd": "3.10.1",
     "copy-to-clipboard": "^3.0.8",
     "currency.js": "^1.1.4",
     "draftjs-to-html": "^0.8.4",
