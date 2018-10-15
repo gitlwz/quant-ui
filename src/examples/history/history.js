@@ -1,5 +1,15 @@
 const history = [
     {
+        title:"v0.2.138",
+        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="0dzm" class="white-blockquote">
+        <ul>
+        <li>添加拖拽式网格(grid)布局</li>
+        <li>修改antd版本</li>
+        <li>配合公共框架修改table中的BUG</li>
+        </ul>
+      </blockquote></div>`
+    },
+    {
         title:"v0.2.135",
         code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="rt8i" class="white-blockquote">
         <ul>
