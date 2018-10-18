@@ -87,7 +87,7 @@ class App extends Component {
             <div className="quick_text">
                 <div className="title">框架介绍</div>
                 <div className="detail">
-                    这是一个专门为前端设计的框架，框架本身已经集成 组件按需加载打包、整体性能优化、 权限管理、后台交互、上传交互处理、数据流（dva）、路由功能、全局loading处理等等一个开箱即用的框架。同时完美的配合quant-ui组件库，各种功能的组件能够方便使用、能快捷的实现多语言、动态主题、自适应等功能。<a href="https://codeload.github.com/gitlwz/quant/zip/master">前去下载</a>
+                    这是一个专门为前端设计的框架，框架本身已经集成 组件按需加载打包、整体性能优化、 权限管理、后台交互、上传交互处理、数据流（dva）、路由功能、全局loading处理等等一个开箱即用的框架。同时完美的配合quant-ui组件库，各种功能的组件能够方便使用、能快捷的实现多语言、动态主题、自适应等功能。<a href="https://codeload.github.com/gitlwz/new-quant/zip/master">前去下载</a>
                     下载完成后执行npm install 、npm start就可以看到项目啦！
                 </div>
                 <div className="title">运行环境&开发环境</div>
