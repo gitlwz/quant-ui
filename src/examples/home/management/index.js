@@ -87,8 +87,7 @@ class App extends Component {
             <div className="quick_text">
                 <div className="title">框架介绍</div>
                 <div className="detail">
-                    这是一个专门为前端设计的框架，框架本身已经集成 组件按需加载打包、整体性能优化、 权限管理、后台交互、上传交互处理、数据流（dva）、路由功能、全局loading处理等等一个开箱即用的框架。同时完美的配合quant-ui组件库，各种功能的组件能够方便使用、能快捷的实现多语言、动态主题、自适应等功能。<a href="https://codeload.github.com/gitlwz/new-quant/zip/master">前去下载</a>
-                    下载完成后执行npm install 、npm start就可以看到项目啦！
+                    这是一个专门为前端设计的框架，框架本身已经集成 组件按需加载打包、整体性能优化、 权限管理、后台交互、上传交互处理、数据流（dva）、路由功能、全局loading处理等等一个开箱即用的框架。同时完美的配合quant-ui组件库，各种功能的组件能够方便使用、能快捷的实现多语言、动态主题、自适应等功能。为此我们准备了一个脚手架工具来快速生成框架<a href="#/quantcli">quant-cli</a>
                 </div>
                 <div className="title">运行环境&开发环境</div>
                 <div>
@@ -129,7 +128,7 @@ class App extends Component {
                     好啦！页面出来啦。赶快去开发吧。具体的数据流处理请参考<a href="https://dvajs.com/" >dva </a>
                 </div>
 
-                <div style={{lineHeight:1.5}} dangerouslySetInnerHTML = {{__html:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><div class="md-section-divider"></div><h1 data-anchor-id="nx1l" id="quant-项目包-纯净版-使用文档">quant 项目包-纯净版 使用文档</h1><hr><div class="md-section-divider"></div><h2 data-anchor-id="v7y0" id="一目录结构">一、目录结构</h2><pre data-anchor-id="7iu2"><code> |---config 
+                <div  style={{lineHeight:1.5}} dangerouslySetInnerHTML = {{__html:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><div class="md-section-divider"></div><h1 data-anchor-id="nx1l" id="quant-项目包-纯净版-使用文档">quant 项目包-纯净版 使用文档</h1><hr><div class="md-section-divider"></div><h2 data-anchor-id="v7y0" id="一目录结构">一、目录结构</h2><pre data-anchor-id="7iu2"><code> |---config 
  |--- public
  |--- scripts
  |--- src

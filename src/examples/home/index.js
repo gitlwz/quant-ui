@@ -106,6 +106,8 @@ class App extends Component {
                         <Divider type="vertical" />
                         {$('业务组件')}
                         <Divider type="vertical" />
+                        <a href="#/quantcli">{$('脚手架工具quant-cli')}</a>
+                        <Divider type="vertical" />
                         <a href="#/management">{$('前端框架')}</a>
                     </div>
                 <div>
