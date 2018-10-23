@@ -8,6 +8,7 @@ import quick from './examples/quick';
 import home from './examples/home';
 import management from './examples/home/management';
 import quantcli from './examples/home/quantcli';
+import quanttemplate from './examples/home/quanttemplate';
 
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { LocaleProvider ,language} from 'quant-ui';
@@ -30,6 +31,8 @@ ReactDOM.render(
                 <Route path="/quick" component={quick} />
                 <Route path="/management" component={management} />
                 <Route path="/quantcli" component={quantcli} />
+                <Route path="/quanttemplate" component={quanttemplate} />
+                
             </Switch>
         </Router>
     </LocaleProvider >

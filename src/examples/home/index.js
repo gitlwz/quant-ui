@@ -109,6 +109,8 @@ class App extends Component {
                         <a href="#/quantcli">{$('脚手架工具quant-cli')}</a>
                         <Divider type="vertical" />
                         <a href="#/management">{$('前端框架')}</a>
+                        <Divider type="vertical" />
+                        <a href="#/quanttemplate">{$('vscode插件quant-template')}</a>
                     </div>
                 <div>
                     <Button onClick={()=>this.props.history.push("/app/home/process")}>{$("开始使用")}</Button>
