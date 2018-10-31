@@ -98,7 +98,8 @@ export { default as IpInput } from './ip-input';
 export { default as Strength } from './strength';  //密码强度
 export { default as MoveModal } from './move-modal';  //移动modal
 export { default as ExhibitTable } from './exhibit-table';  //展示型table
-export { default as Dragact } from './dragact';  // 拖拽式网格(grid)布局
+export { default as ReactGridLayout } from './react-grid-layout';  // 拖拽式网格(grid)布局
+export { default as GridContent } from './grid-content';  // 拖拽式网格(grid)布局
 
 
 //page

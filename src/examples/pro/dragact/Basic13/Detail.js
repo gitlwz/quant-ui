@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
-import  { ReactGridLayout } from "quant-ui";
 import "./style.less"
 import _ from "lodash";
+import  { ReactGridLayout } from "quant-ui";
 const {WidthProvider} = ReactGridLayout
 const ReactGridLayout2 = WidthProvider(ReactGridLayout);
-class Detail extends Component {
+
+class NoCompactingLayout extends React.PureComponent {
     static defaultProps = {
         className: "layout",
-        items: 20,
+        items: 50,
+        cols: 12,
         rowHeight: 30,
         onLayoutChange: function () { },
-        cols: 12
+        // This turns off compaction so you can place items wherever.
+        verticalCompact: false
     };
 
     constructor(props) {
@@ -61,4 +64,6 @@ class Detail extends Component {
     }
 }
 
-export default Detail;
+export default NoCompactingLayout;
+
+

@@ -1,121 +1,116 @@
 import React, { Component } from 'react';
-import { Dragact } from 'quant-ui'
-
-
-const Words = [
-    { content: 'You can do anything, but not everything.' },
-    { content: 'Those who dare to fail miserably can achieve greatly.' },
-    { content: 'You miss 100 percent of the shots you never take.' },
-    { content: 'Those who believe in telekinetics, raise my hand.' },
-    { content: 'I’d rather live with a good question than a bad answer.' }
-]
-
-
-const Card = ({ item, provided, onDelete }) => {
-    return (
-        <div
-            className="layout-Item"
-            {...provided.props}
-            {...provided.dragHandle}
-        >
-            <div
-                style={{
-                    position: 'absolute',
-                    width: 10,
-                    height: 10,
-                    right: 15,
-                    top: 5,
-                    cursor: 'pointer'
-                }}
-                onClick={() => onDelete(item.key)}
-            >
-                ❌
-            </div>
-            <div style={{ padding: 5, textAlign: 'center', color: '#595959' }}>
-                {item.content}
-            </div>
-        </div>
-    )
-}
-
-const fakeData = () => {
-    var Y = 0
-    return Words.map((item, index) => {
-        if (index % 4 === 0) Y++
-
-        return {
-            ...item,
-            GridX: (index % 4) * 4,
-            GridY: Y * 4,
-            w: 4,
-            h: 3,
-            key: index
-        }
-    })
-}
-
-const makeOne = () => {
-    return { content: 'added', GridX: 0, GridY: 0, w: 4, h: 3, key: Date.now() }
-}
-
+import  { ReactGridLayout } from "quant-ui";
+import "./style.less"
+import _ from "lodash";
+const {Responsive, WidthProvider} = ReactGridLayout
+const ResponsiveReactGridLayout = WidthProvider(Responsive);
 class Detail extends Component {
+    static defaultProps = {
+        className: "layout",
+        rowHeight: 30,
+        onLayoutChange: function () { },
+        cols: { lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 },
+        initialLayout: generateLayout()
+    };
     state = {
-        layout: fakeData()
+        currentBreakpoint: "lg",
+        compactType: "vertical",
+        mounted: false,
+        layouts: { lg: this.props.initialLayout }
+    };
+    componentDidMount() {
+        this.setState({ mounted: true });
     }
+    generateDOM() {
+        return _.map(this.state.layouts.lg, function (l, i) {
+            return (
+                <div key={i} className={l.static ? "static" : ""}>
+                    {l.static ? (
+                        <span
+                            className="text"
+                            title="This item is static and cannot be removed or resized."
+                        >
+                            Static - {i}
+                        </span>
+                    ) : (
+                            <span className="text">{i}</span>
+                        )}
+                </div>
+            );
+        });
+    }
+    onBreakpointChange = breakpoint => {
+        this.setState({
+            currentBreakpoint: breakpoint
+        });
+    };
 
-    componentDidMount() {}
-    handleClick = () => {
-        const change = this.state.layout.map(item => {
-            return { ...item, content: '21312' }
-        })
+    onCompactTypeChange = () => {
+        const { compactType: oldCompactType } = this.state;
+        const compactType =
+            oldCompactType === "horizontal"
+                ? "vertical"
+                : oldCompactType === "vertical" ? null : "horizontal";
+        this.setState({ compactType });
+    };
+
+    onLayoutChange = (layout, layouts) => {
+        this.props.onLayoutChange(layout, layouts);
+    };
+
+    onNewLayout = () => {
         this.setState({
-            layout: [...change, makeOne()]
-        })
-    }
-    hanldeOnDelete = (key) => {
-        const layout = this.state.layout.filter(item => {
-            if (item.key !== key) {
-                return item
-            }
-        })
-        this.setState({
-            layout: layout
-        })
-    }
+            layouts: { lg: generateLayout() }
+        });
+    };
 
     render() {
-        const margin = [5, 5]
-        const dragactInit = {
-            width: 600,
-            col: 12,
-            rowHeight: 800 / 12,
-            margin: margin,
-            className: 'normal-layout',
-            layout: this.state.layout,
-            placeholder: true
-        }
         return (
             <div>
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <div>
-                        <h1 style={{ textAlign: 'center' }}>AddRemove Demo</h1>
-                        <h3 style={{ textAlign: 'center' }}>在这个布局中，新增一个布局，会新加入一个布局</h3>
-                        <button onClick={this.handleClick}>新增</button>
-                        <Dragact {...dragactInit}>
-                            {(item, provided) => {
-                                return (
-                                    <Card
-                                        item={item}
-                                        provided={provided}
-                                        onDelete={this.hanldeOnDelete}
-                                    />
-                                )
-                            }}
-                        </Dragact>
-                    </div>
-                </div>
+                <div>
+                    Current Breakpoint: {this.state.currentBreakpoint} ({
+                        this.props.cols[this.state.currentBreakpoint]
+                    }{" "}
+                    columns)
             </div>
-        )
+                <div>
+                    Compaction type:{" "}
+                    {_.capitalize(this.state.compactType) || "No Compaction"}
+                </div>
+                <button onClick={this.onNewLayout}>Generate New Layout</button>
+                <button onClick={this.onCompactTypeChange}>
+                    Change Compaction Type
+            </button>
+                <ResponsiveReactGridLayout
+                    {...this.props}
+                    layouts={this.state.layouts}
+                    onBreakpointChange={this.onBreakpointChange}
+                    onLayoutChange={this.onLayoutChange}
+                    // WidthProvider option
+                    measureBeforeMount={false}
+                    // I like to have it animate on mount. If you don't, delete `useCSSTransforms` (it's default `true`)
+                    // and set `measureBeforeMount={true}`.
+                    useCSSTransforms={this.state.mounted}
+                    compactType={this.state.compactType}
+                    preventCollision={!this.state.compactType}
+                >
+                    {this.generateDOM()}
+                </ResponsiveReactGridLayout>
+            </div>
+        );
     }
+}
+function generateLayout() {
+    return _.map(_.range(0, 25), function (item, i) {
+        var y = Math.ceil(Math.random() * 4) + 1;
+        return {
+            x: (_.random(0, 5) * 2) % 12,
+            y: Math.floor(i / 6) * y,
+            w: 2,
+            h: y,
+            i: i.toString(),
+            static: Math.random() < 0.05
+        };
+    });
 }
 export default Detail;

@@ -1,61 +1,66 @@
 import React, { Component } from 'react';
-import { Dragact } from 'quant-ui'
-import './index.less'
-const Words = [
-    { content: 'Sorry I just can not move in any circumstances', static: true },
-    { content: 'Those who dare to fail miserably can achieve greatly.' },
-    { content: 'You miss 100 percent of the shots you never take.' },
-    { content: 'Sorry I just can not move in any circumstances,too' },
-    { content: 'I’d rather live with a good question than a bad answer.' }
-]
-
-const fakeData = () => {
-    var Y = 0;
-    return Words.map((item, index) => {
-        if (index % 4 === 0) Y++;
-
-        return { ...item, GridX: index % 4 * 4, GridY: Y * 4, w: 4, h: 4, key: index + '', canResize: false }
-    })
-}
-
-
-const Cell = ({ item, provided }) => {
-    return (
-        <div
-            {...provided.props}
-            {...provided.dragHandle}
-            className={"layout-Cell "+ item.static ? "static" : ""}
-            style={{ ...provided.props.style, background: item.static ? "#e8e8e8" : "" }}
-        >
-            <div style={{ padding: 10, color: '#595959' }}>{item.content}</div>
-        </div>
-    )
-}
-
-
+import  { ReactGridLayout } from "quant-ui";
+import "./style.less"
+import _ from "lodash";
+const {WidthProvider} = ReactGridLayout
+const ReactGridLayout2 = WidthProvider(ReactGridLayout);
 class Detail extends Component {
-    render = () => {
-        return (
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <div>
-                    <h1 style={{ textAlign: 'center' }}>静态组件 Demo</h1>
-                    <Dragact
-                        width={600}
-                        col={16}
-                        rowHeight={30}
-                        margin={[2, 2]}
-                        className='normal-layout'
-                        layout={fakeData()}
-                        placeholder={true}
-                    >
-                        {(item, provided) => {
-                            return <Cell item={item} provided={provided} />
-                        }}
-                    </Dragact>
-                </div>
+    static defaultProps = {
+        className: "layout",
+        isDraggable: false,
+        isResizable: false,
+        items: 50,
+        cols: 12,
+        rowHeight: 30,
+        onLayoutChange: function() {}
+      };
+    
+      constructor(props) {
+        super(props);
+    
+        const layout = this.generateLayout();
+        this.state = { layout };
+      }
+    
+      generateDOM() {
+        return _.map(_.range(this.props.items), function(i) {
+          return (
+            <div key={i}>
+              <span className="text">{i}</span>
             </div>
-        )
-    }
-
+          );
+        });
+      }
+    
+      generateLayout() {
+        const p = this.props;
+        return _.map(new Array(p.items), function(item, i) {
+          var y = _.result(p, "y") || Math.ceil(Math.random() * 4) + 1;
+          return {
+            x: (i * 2) % 12,
+            y: Math.floor(i / 6) * y,
+            w: 2,
+            h: y,
+            i: i.toString()
+          };
+        });
+      }
+    
+      onLayoutChange(layout) {
+        this.props.onLayoutChange(layout);
+      }
+    
+      render() {
+        return (
+          <ReactGridLayout2
+            layout={this.state.layout}
+            onLayoutChange={this.onLayoutChange}
+            {...this.props}
+          >
+            {this.generateDOM()}
+          </ReactGridLayout2>
+        );
+      }
 }
+
 export default Detail;

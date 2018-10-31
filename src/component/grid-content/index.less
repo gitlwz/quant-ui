@@ -1,0 +1,46 @@
+.react-grid-buttons{
+    button:nth-child(1){
+        margin-left: 10px;
+    }
+    button{
+        margin-right: 6px;
+    }
+}
+.quant-gridcard{
+    user-select:none;
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+    background: #ffffff;
+    overflow: hidden;
+    .quant-gridcard-dragHandle{
+        padding-left: 14px;
+        padding-right: 14px;
+        background-color: #9DABB6;
+        height: 32px;
+        line-height: 32px;
+        font-weight: bold;
+        border-bottom: 1px solid #bbb;
+        display: flex;
+        .quant-gridcard-title{
+            cursor: move;
+            flex: 1 1 auto;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            
+        }
+        .quant-gridcard-controls{
+            padding-left: 14px;
+            display: flex;
+            align-items: center;
+            align-self: center;
+        }
+    }
+    .quant-gridcard-content{
+        height:calc(~"100% - 32px");
+        overflow: hidden;
+        overflow-y: auto;
+        width: 100%;
+    }
+}
