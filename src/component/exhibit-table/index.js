@@ -38,51 +38,82 @@ class ExhibitTable extends Component {
             visible: false
         })
     }
-    _filter = (ele) => {
-        if (!ele.type) {
-            ele.filterIcon = filtered => <Icon type="search" className={filtered ? 'quant-ExhibitTable-highlight' : 'quant-ExhibitTable-nolight'} />
-            ele.filterDropdown = ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
-                <div className="quant-ExhibitTable-filter-dropdown">
-                    <Input
-                        ref={ele => this.searchInput = ele}
-                        placeholder={$("请输入")}
-                        value={selectedKeys[0]}
-                        onChange={e => setSelectedKeys(e.target.value ? [e.target.value] : [])}
-                        onPressEnter={this.handleSearch(selectedKeys, confirm)}
-                    />
-                    <Button type="primary" onClick={this.handleSearch(selectedKeys, confirm)}>{$("搜索")}</Button>
-                    <Button onClick={this.handleReset(clearFilters)}>{$("重置")}</Button>
-                </div>
-            )
+    grabble = (ele) => {
+        ele.filterIcon = filtered => <Icon type="search" className={filtered ? 'quant-ExhibitTable-highlight' : 'quant-ExhibitTable-nolight'} />
+        ele.filterDropdown = ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
+            <div className="quant-ExhibitTable-filter-dropdown">
+                <Input
+                    ref={ele => this.searchInput = ele}
+                    placeholder={$("请输入")}
+                    value={selectedKeys[0]}
+                    onChange={e => setSelectedKeys(e.target.value ? [e.target.value] : [])}
+                    onPressEnter={this.handleSearch(selectedKeys, confirm)}
+                />
+                <Button type="primary" onClick={this.handleSearch(selectedKeys, confirm)}>{$("搜索")}</Button>
+                <Button onClick={this.handleReset(clearFilters)}>{$("重置")}</Button>
+            </div>
+        )
+        return ele;
+    }
+    selectGrabble = (ele) => {
+        let optiondata = [];
+        if (isArray(ele.option)) {
+            optiondata = ele.option
+        } else {
+            let options = this.props.options || {};
+            optiondata = options[ele.option] || []
         }
-        if (ele.type == 2) {
-            ele.sorter = true
-        }
-        if (ele.type == 3) {
-            let optiondata = [];
-            if (isArray(ele.option)) {
-                optiondata = ele.option
-            } else {
-                let options = this.props.options || {};
-                optiondata = options[ele.option] || []
+        let _optiondata = optiondata.map((item) => {
+            return {
+                text: item.name,
+                value: item.value
             }
-
-            let _optiondata = optiondata.map((item) => {
-                return {
-                    text: item.name,
-                    value: item.value
+        })
+        ele.filters = _optiondata;
+        return ele;
+    }
+    _filter = (ele) => {
+        if (ele.filterType !== undefined) {
+            ele.filterType.forEach((item) => {
+                if (item == 0) {
+                    ele = this.grabble(ele)
+                    return ele;
+                } else if (item == 3) {
+                    ele = this.selectGrabble(ele);
+                    return ele;
+                } else if (item == 2 || item == 4 || item == 5) {
+                    ele.sorter = true
+                    return ele;
                 }
             })
-            ele.filters = _optiondata;
+            return ele;
         }
+        //文本
+        if (!ele.type) {
+            ele = this.grabble(ele)
+            return ele;
+        }
+        //数字
+        if (ele.type == 2) {
+            ele.sorter = true
+            return ele;
+        }
+        //下拉
+        if (ele.type == 3) {
+            ele = this.selectGrabble(ele);
+            return ele;
+        }
+        //时间
+        if (ele.type == 4) {
+            ele.sorter = true
+            return ele;
+        }
+        //日期
         if (ele.type == 5) {
             ele.sorter = true
-        }
-        if (ele.type == 6) {
-            ele.sorter = true
+            return ele;
         }
         return ele;
-
     }
     _rednderColumns = (columns) => {
         let _columns = columns.filter((ele) => ele.show !== false)
@@ -91,16 +122,11 @@ class ExhibitTable extends Component {
                 //搜索处理
                 ele = this._filter(ele)
             }
-
+            //数字
             if (!ele.render && ele.type === 2) {
-                ele.render = (text, record, index) => {
-                    let _text = text;
-                    if (!isNaN(text)) {
-                        _text = currency(text).format()
-                    }
-                    return <div style={{ textAlign: "right" }}>{_text}</div>
-                }
+                ele.align = "right";
             }
+            //下拉
             if (!ele.render && ele.type === 3) {
                 ele.render = (text, record, index) => {
                     let _text = text;
@@ -118,16 +144,16 @@ class ExhibitTable extends Component {
                     return <div>{_text}</div>
                 }
             }
-            if (!ele.render && ele.type === 6) {
-                ele.align = "right"
-                ele.render = (text, record, index) => {
-                    let _text = text;
-                    if (text !== undefined && text !== null && !isNaN(text)) {
-                        _text = currency(text, { precision: 0 }).format()
-                    }
-                    return <div>{_text}</div>
-                }
-            }
+            //时间
+            // if(!ele.render && ele.type === 4){
+
+            // }
+
+            //日期
+            // if(!ele.render && ele.type === 5){
+
+            // }
+
             return ele
         })
         return _columns;

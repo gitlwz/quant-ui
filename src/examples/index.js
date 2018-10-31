@@ -9,6 +9,7 @@ import Workplace from './home/workplace';
 //test 组件测试
 import Testupload from './test/upload';
 import Test2 from './test/test2';
+import Gridlayout from './test/gridlayout';
 //ui
 import QRCode from './UI/QRCode';
 import Copy from './UI/Copy'
@@ -170,6 +171,7 @@ export default {
     Testupload,
     Test2,
     Dragact,
+    Gridlayout,
     
     NoticeIcon,
     HeaderSearch,

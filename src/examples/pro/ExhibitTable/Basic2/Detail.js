@@ -4,19 +4,33 @@ import { Icon, Divider,ExhibitTable} from 'quant-ui';
 const dataSource = [
     {
         name: 'Taylor Swift',
-        money: '22',
         name1:"zhangsan",
-        adress: 'SanFrancisco'
+        name2:"文本",
+        name3:123,
+        name4:"5:32:00",
+        name5:"2018-01-12",
+        name6:"123",
+        name7:"2222"
     },
     {
-        name: 'Eason Chan',
-        money: (new Date().getFullYear() - 1974).toString(),
-        adress: 'Hongkong'
+        name: 'Taylor Swift',
+        name1:"zhangsan",
+        name2:"文本",
+        name3:123,
+        name4:"5:32:00",
+        name5:"2018-01-12",
+        name6:"123",
+        name7:"2222"
     },
     {
-        name: 'Jimmy',
-        money: '22555',
-        adress: 'Shanghai'
+        name: 'Taylor Swift',
+        name1:"zhangsan",
+        name2:"文本",
+        name3:123,
+        name4:"5:32:00",
+        name5:"2018-01-12",
+        name6:"123",
+        name7:"2222"
     },
 ]
 
@@ -34,56 +48,62 @@ class Detail extends Component {
                     width: 300
                 },
                 {
-                    title: 'Name1',
+                    title: 'name1',
                     dataIndex: 'name1',
                     key: 'name1',
                     filter:true,
+                    
                     type:3,
-                    option:"Name",
+                    option:"name1",
                     width: 300
                 },
                 {
-                    title: 'Name2',
+                    title: 'name2',
                     dataIndex: 'name2',
                     filter:true,
-
+                    type:0,
+                    filterType:[2,0],
                     key: 'name2',
                     width: 300
                 },
                 {
-                    title: 'Name3',
+                    title: 'name3',
                     dataIndex: 'name3',
                     key: 'name3',
+                    filter:true,
+                    type:2,
                     width: 300
                 },
                 {
-                    title: 'Name4',
+                    title: 'name4',
                     dataIndex: 'name4',
                     key: 'name4',
+                    filter:true,
+                    type:4,
                     width: 300
                 },
                 {
-                    title: 'Name5',
+                    title: 'name5',
                     dataIndex: 'name5',
                     key: 'name5',
                     filter:true,
-                    type: 2,
+                    type: 5,
                     width: 300
                 },
 
                 {
-                    title: 'money',
-                    dataIndex: 'money',
-                    key: 'money',
+                    title: 'name6',
+                    dataIndex: 'name6',
+                    key: 'name6',
                     filter:true,
-                    type: 2,
                     width: 300
                 },
                 {
-                    title: 'Adress',
-                    dataIndex: 'adress',
-                    key: 'adress',
+                    title: 'name7',
+                    dataIndex: 'name7',
+                    key: 'name7',
                     align:"right",
+                    filter:true,
                     width: 300
                 },
                 {
@@ -117,7 +137,7 @@ class Detail extends Component {
         })
     }
     onChange = (pagination, filters, sorter) => {
-        console.log("&&&&&&&&&",pagination, filters, sorter)
+        console.log(pagination, filters, sorter)
     }
     render() {
         return (
@@ -130,7 +150,7 @@ class Detail extends Component {
                         x: 2700
                     }}
                     options={{
-                        Name:[{
+                        name1:[{
                             name:"张三",
                             value:"zhangsan"
                         },{

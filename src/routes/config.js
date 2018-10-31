@@ -222,6 +222,7 @@ export default {
             subs: [
                 { key: '/app/test/Testupload', title: 'Testupload', component: 'Testupload' },
                 { key: '/app/test/Test2', title: '输入表格测试', component: 'Test2' },
+                { key: '/app/test/Gridlayout', title: '网格拖动测试', component: 'Gridlayout' },
                 
             ],
         },
