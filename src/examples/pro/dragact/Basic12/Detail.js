@@ -5,12 +5,7 @@ import  { ReactGridLayout } from "quant-ui";
 const {WidthProvider} = ReactGridLayout
 const ReactGridLayout2 = WidthProvider(ReactGridLayout);
 
-/**
- * This layout demonstrates how to use the `onResize` handler to enforce a min/max width and height.
- *
- * In this grid, all elements are allowed a max width of 2 if the height < 3,
- * and a min width of 2 if the height >= 3.
- */
+
 class DynamicMinMaxLayout extends React.PureComponent {
     static defaultProps = {
         isDraggable: true,
@@ -53,8 +48,7 @@ class DynamicMinMaxLayout extends React.PureComponent {
     }
 
     onResize(layout, oldLayoutItem, layoutItem, placeholder) {
-        // `oldLayoutItem` contains the state of the item before the resize.
-        // You can modify `layoutItem` to enforce constraints.
+       
 
         if (layoutItem.h < 3 && layoutItem.w > 2) {
             layoutItem.w = 2;

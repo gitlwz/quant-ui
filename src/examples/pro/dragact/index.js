@@ -56,7 +56,7 @@ class App extends Component {
     render() {
         return (
             <div style={{ padding: "20px" }}>
-                <h1>AvatarList用户头像列表</h1>
+                <h1>拖拽网格布局</h1>
                 <Tabs tabPosition={"right"}>
                     <TabPane tab="基本" key="1">
                         <Card >
@@ -199,12 +199,10 @@ class App extends Component {
                             <Code data={Basic16Code} />
                         </div>
                     </TabPane>
-                    <TabPane tab="参数api" key="10">
+                    <TabPane tab="参数api" key="100">
                         <Api data={data} />
                     </TabPane>
                 </Tabs>
-
-
             </div>
         );
     }

@@ -86,10 +86,8 @@ class Detail extends Component {
                     layouts={this.state.layouts}
                     onBreakpointChange={this.onBreakpointChange}
                     onLayoutChange={this.onLayoutChange}
-                    // WidthProvider option
                     measureBeforeMount={false}
-                    // I like to have it animate on mount. If you don't, delete `useCSSTransforms` (it's default `true`)
-                    // and set `measureBeforeMount={true}`.
+                    
                     useCSSTransforms={this.state.mounted}
                     compactType={this.state.compactType}
                     preventCollision={!this.state.compactType}
