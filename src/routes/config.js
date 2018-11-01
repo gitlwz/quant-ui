@@ -1,6 +1,6 @@
 export default {
     menus: [    // 菜单相关路由
-        { key: '/app/home', title: '首页', icon: 'qd0',
+        { key: '/app/home', title: '首页', icon: 'home',
           subs: [
               {
                   key: '/app/home/process', title: "进度页", component: 'Home',
@@ -17,7 +17,7 @@ export default {
           ],
         },
         {
-            key: '/app/antd', title: 'antd', icon: 'qdantdesign',
+            key: '/app/antd', title: 'antd', icon: 'ant-design',
             subs: [
                 {
                     key: '/app/antd/General', title: 'General组件', icon: 'qdgeneral',
@@ -126,7 +126,7 @@ export default {
             ],
         },
         {
-            key: '/app/ui', title: 'UI', icon: 'qd7',
+            key: '/app/ui', title: 'UI', icon: 'bg-colors',
             subs: [
                 { key: '/app/ui/QRCode', title: '二维码生成', component: 'QRCode' },
                 { key: '/app/ui/Copy', title: '右键复制', component: 'Copy' },
@@ -145,13 +145,13 @@ export default {
             ],
         },
         {
-            key: '/app/animation', title: '动画', icon: 'qd19',
+            key: '/app/animation', title: '动画', icon: 'robot',
             subs: [
                 { key: '/app/animation/basicAnimations', title: '基础动画', component: 'BasicAnimations' },
             ],
         },
         {
-            key: '/app/pro', title: '功能组件', icon: 'qd16',
+            key: '/app/pro', title: '功能组件', icon: 'build',
             subs: [
                 { key: '/app/pro/Authorized', title: 'Authorized权限', component: 'Authorized' },
                 { key: '/app/pro/Login', title: 'Login登录', component: 'Login' },
@@ -177,7 +177,7 @@ export default {
             ],
         }, 
         {
-            key: '/app/util', title: '方法', icon: 'qd22',
+            key: '/app/util', title: '方法', icon: 'api',
             subs: [
                 { key: '/app/util/webSocket', title: 'webSocket链接', component: 'webSocket' },
                 { key: '/app/util/Language', title: 'Language多语言', component: 'Language' },
@@ -189,14 +189,14 @@ export default {
                 
             ],
         }, {
-            key: '/app/page', title: '页面', icon: 'qd1',
+            key: '/app/page', title: '页面', icon: 'book',
             subs: [
                 { key: '/app/page/404', title: '404', component: 'NotFound' },
                 { key: '/app/page/map', title: '腾讯地图', component: 'Map' },
                 { key: '/app/page/react-amap', title: '高德地图', component: 'reactAmap' },
             ],
         }, {
-            key: '/app/charts', title: '可视化', icon: 'qdbar',
+            key: '/app/charts', title: '可视化', icon: 'area-chart',
             subs: [
                 { key: '/app/charts/Line', title: '折线图', component: 'Line'},
                 { key: '/app/charts/Bar', title: '柱状图', component: 'Bar'},
