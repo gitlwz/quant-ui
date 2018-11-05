@@ -7,7 +7,8 @@ import Basic1 from './Basic1/Detail.js';
 import Basic1Code from './Basic1/code.js';
 import Basic2 from './Basic2/Detail.js';
 import Basic2Code from './Basic2/code.js';
-
+import Basic3 from './Basic3/Detail.js';
+import Basic3Code from './Basic3/code.js';
 import Code from '../../Code.js';
 const TabPane = Tabs.TabPane;
 class App extends Component {
@@ -30,6 +31,14 @@ class App extends Component {
                         </Card>
                         <div style={{ marginTop: "30px" }}>
                             <Code data={Basic2Code} />
+                        </div>
+                    </TabPane>
+                    <TabPane tab="受控模式" key="3">
+                        <Card >
+                            <Basic3 />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={Basic3Code} />
                         </div>
                     </TabPane>
                     <TabPane tab="参数api" key="10">
