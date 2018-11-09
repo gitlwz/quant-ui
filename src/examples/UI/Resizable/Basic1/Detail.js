@@ -57,6 +57,7 @@ class Detail extends Component {
                     scroll={{ y: 300 }}
                     drop={true}
                     sizable={true}
+                    name="222"
                     dataSource={dataSource}
                     columns={columns}
                     cellOnChange={this.cellOnChange}
