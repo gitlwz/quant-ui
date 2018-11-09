@@ -99,6 +99,13 @@ class App extends Component {
                         <img src={IMG2} />
                         <p>推荐 <a href="https://code.visualstudio.com/">Visual Studio Code</a></p>
                     </div>
+                    <p style={{color:"red",fontSize:"18px"}} className="detail">
+                        如果你实用的是Visual Studio Code。框架中集成了规范代码格式、检验代码语言、代码调试功能。因此你需要下载Debugger for Chrome、ESLint插件。如果你希望你的样式文件一样的漂亮的话，你需要下载Beautify css/sass/scss/less插件。如果你习惯中文开发工具的话，你需要下载Chinese (Simplified) Language Pack for Visual Studio Code插件。
+                    </p>
+                    <p style={{color:"blue",fontSize:"16px"}} className="detail">
+                        代码调试功能是已经设置好的，但是如果你启动了多个前端服务那么你的端口号就可能发生改变不再是3000端口，此时你可以修改.vscode->launch.json中的端口号配置。
+                        如果你想修改默认的启动端口的话可以修改package.json->"start": "node scripts/start.js"  为   "set PORT=4000&&node scripts/start.js" 改为4000端口
+                    </p>
                 </div>
                 <div className="title">
                     项目结构
