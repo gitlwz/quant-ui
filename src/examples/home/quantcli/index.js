@@ -92,7 +92,7 @@ class App extends Component {
                             </blockquote><p data-anchor-id="77kv"><strong>用法</strong></p><blockquote data-anchor-id="2cks" class="white-blockquote">
                               <p>$ quant init </p>
                             </blockquote><p data-anchor-id="3dhp">例：</p><blockquote data-anchor-id="q395" class="white-blockquote">
-                              <p>$ vue init my-project</p>
+                              <p>$ quant init my-project</p>
                             </blockquote></div>`}} />
                     </div>
 

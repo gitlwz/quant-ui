@@ -79,8 +79,10 @@ export { default as utils } from './utils';
 export { default as Resizable } from './resizable';
 export { default as md5 } from './md5';
 export { default as qs } from './qs';
+export { default as storage } from './storage';
 
 //功能组件
+export { default as Number } from './number';        //数字输入框
 export { default as Editor } from './editor';        //富文本
 export { default as Nprogress } from './nprogress';   //进度条
 export { default as SlidingValidation } from './sliding-validation';   //滑动验证

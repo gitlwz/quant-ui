@@ -51,7 +51,7 @@ import Result from './pro/result' //结果页
 import PageHeader from './pro/PageHeader' //PageHeader页头
 import ExhibitTable from './pro/ExhibitTable'
 import Dragact from './pro/dragact'
-
+import Number from './pro/Number'
 
 //util
 import webSocket from './util/webSocket'
@@ -61,6 +61,7 @@ import Theme from "./util/theme";
 import Utiles from "./util/Utiles";
 import Md5 from './util/md5'
 import Qs from './util/qs'
+import storage from './util/storage'
 //antd
 import Button from './antd/button'
 import Icon from './antd/icon'
@@ -172,6 +173,7 @@ export default {
     Test2,
     Dragact,
     Gridlayout,
+    Number,
     
     NoticeIcon,
     HeaderSearch,
@@ -194,6 +196,7 @@ export default {
     ExhibitTable,
     Md5,
     Qs,
+    storage,
 
     //util
     webSocket,
