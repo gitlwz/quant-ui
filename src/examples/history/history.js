@@ -1,7 +1,22 @@
 const history = [
     {
-        title:"v0.2.138",
-        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="0dzm" class="white-blockquote">
+        title: "v0.2.15",
+        code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="stxt" class="white-blockquote">
+        <ul>
+        <li>修改网格拖拽控件</li>
+        <li>提升网格拖拽的性能</li>
+        <li>修改展示型表格性能</li>
+        <li>添加本地数据缓存数据收口方法</li>
+        <li>添加文本型number输入框组件 <br>
+        避免出现科学计数法 <br>
+        可添加单位符号 <br>
+        保留小数位为直接截取不四舍五入</li>
+        </ul>
+      </blockquote></div>`
+    },
+    {
+        title: "v0.2.138",
+        code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="0dzm" class="white-blockquote">
         <ul>
         <li>添加拖拽式网格(grid)布局</li>
         <li>修改antd版本</li>
@@ -10,8 +25,8 @@ const history = [
       </blockquote></div>`
     },
     {
-        title:"v0.2.135",
-        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="rt8i" class="white-blockquote">
+        title: "v0.2.135",
+        code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="rt8i" class="white-blockquote">
         <ul>
         <li>新增qdp组件模块</li>
         <li>封装qdp请求模块 <br>
@@ -21,48 +36,48 @@ const history = [
       </blockquote></div>`
     },
     {
-        title:"v0.2.134",
-        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="rt8i" class="white-blockquote">
+        title: "v0.2.134",
+        code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="rt8i" class="white-blockquote">
         <ul>
         <li>输入型表格允许单个表格添加自定义属性事件</li>
         </ul>
       </blockquote></div>`
     },
     {
-        title:"v0.2.133",
-        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="rt8i" class="white-blockquote">
+        title: "v0.2.133",
+        code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="rt8i" class="white-blockquote">
         <ul>
         <li>输入型表格允许单个单元格设置属性</li>
         </ul>
       </blockquote></div>`
     },
     {
-        title:"v0.2.132",
-        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="rt8i" class="white-blockquote">
+        title: "v0.2.132",
+        code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="rt8i" class="white-blockquote">
         <ul>
         <li>修改global-footer无法下载bug</li>
         </ul>
       </blockquote></div>`
     },
     {
-        title:"v0.2.131",
-        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="rt8i" class="white-blockquote">
+        title: "v0.2.131",
+        code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="rt8i" class="white-blockquote">
         <ul>
         <li>修改录入型table下的options功能vue对比严校验无法通过问题</li>
         </ul>
       </blockquote></div>`
     },
     {
-        title:"v0.2.130",
-        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="rt8i" class="white-blockquote">
+        title: "v0.2.130",
+        code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="rt8i" class="white-blockquote">
         <ul>
         <li>解决currency.js货币组件初始化时有时无法下载bug</li>
         </ul>
       </blockquote></div>`
     },
     {
-        title:"v0.2.12",
-        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="0nly" class="white-blockquote">
+        title: "v0.2.12",
+        code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="0nly" class="white-blockquote">
         <ul>
         <li>新增展示型table</li>
         <li class="todo-list-item"><i class="icon-check-sign"></i>表头右键可弹出显示隐藏功能，显示隐藏列会缓存到浏览器</li>
@@ -82,8 +97,8 @@ const history = [
       </blockquote></div>`
     },
     {
-        title:"v0.2.12#文档站点",
-        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="f6go" class="white-blockquote">
+        title: "v0.2.12#文档站点",
+        code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="f6go" class="white-blockquote">
         <ul>
         <li>增加各方法aip文档</li>
         <li>增加测试导航，新组件测试</li>
@@ -91,8 +106,8 @@ const history = [
       </blockquote></div>`
     },
     {
-        title:"v0.2.12#管理框架",
-        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="vs0c" class="white-blockquote">
+        title: "v0.2.12#管理框架",
+        code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="vs0c" class="white-blockquote">
         <ul>
         <li>PageHeaderLayout组件，配合管理框架使用</li>
         <li>增加表格布局缓存/清除功能</li>
@@ -100,8 +115,8 @@ const history = [
       </blockquote></div>`
     },
     {
-        title:"v0.2.0",
-        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="0n5d" class="white-blockquote">
+        title: "v0.2.0",
+        code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="0n5d" class="white-blockquote">
         <ul>
         <li>新增功能型组件IP地址输入框</li>
         <li>新增功能型组件Strength密码强度校验</li>
@@ -118,8 +133,8 @@ const history = [
       </blockquote></div>`
     },
     {
-        title:"v0.2.0#管理框架",
-        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="ruw4" class="white-blockquote">
+        title: "v0.2.0#管理框架",
+        code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="ruw4" class="white-blockquote">
         <ul>
         <li>管理框架新增公共图标、ICON、说明配置</li>
         <li>集成后台侧边导航配置</li>
@@ -127,8 +142,8 @@ const history = [
       </blockquote></div>`
     },
     {
-        title:"v0.2.0#文档站点",
-        code:`<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="qx22" class="white-blockquote">
+        title: "v0.2.0#文档站点",
+        code: `<div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;"><div class="md-section-divider"></div><blockquote data-anchor-id="qx22" class="white-blockquote">
         <ul>
         <li>首页添加工作台展示页面</li>
         <li>添加分析页展示页面</li>

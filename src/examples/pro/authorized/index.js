@@ -12,6 +12,8 @@ import Basic2Code from './Basic2/code.js';
 import Basic3 from './Basic3/Detail.js';
 import Basic3Code from './Basic3/code.js';
 
+import Basic4 from './Basic4/Detail.js';
+import Basic4Code from './Basic4/code.js';
 
 import Code from '../../Code.js';
 const TabPane = Tabs.TabPane;
@@ -47,7 +49,14 @@ class App extends Component {
                             <Code data={Basic3Code} />
                         </div>
                     </TabPane>
-
+                    <TabPane tab="异步" key="4">
+                        <Card >
+                            <Basic4 />
+                        </Card>
+                        <div style={{ marginTop: "30px" }}>
+                            <Code data={Basic4Code} />
+                        </div>
+                    </TabPane>
                     <TabPane tab="参数api" key="10">
                         <Api data={data} />
                     </TabPane>
